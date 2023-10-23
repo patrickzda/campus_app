@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.27)  19 OCT 2023 12:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.27)  23 OCT 2023 17:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/x/Desktop/Bachelorarbeit Latex/main"
-(/Users/x/Desktop/Bachelorarbeit Latex/main.tex
+**/Users/x/Desktop/campus_app/thesis/main
+(/Users/x/Desktop/campus_app/thesis/main.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrbook.cls
 Document Class: scrbook 2022/10/12 v3.38 KOMA-Script document class (book)
@@ -1195,14 +1195,14 @@ Package rerunfilecheck Info: File `main.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  32034 strings out of 476025
- 599500 string characters out of 5790017
+ 599489 string characters out of 5790017
  1866388 words of memory out of 5000000
  51775 multiletter control sequences out of 15000+600000
  544172 words of font info for 85 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 108i,16n,106p,10656b,1364s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,16n,106p,10651b,1364s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (33 pages, 285025 bytes).
+Output written on main.pdf (33 pages, 285026 bytes).
 PDF statistics:
  449 PDF objects out of 1000 (max. 8388607)
  394 compressed objects within 4 object streams
