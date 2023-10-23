@@ -1,0 +1,32 @@
+\chapter{Introduction}
+\label{cha:introduction}
+\section{Context and background}
+With over 60 different buildings, more than 35000 students and an area of over 600,000 square meters, TU Berlin's campus in Charlottenburg is one of the biggest continuous campuses in Europe. While studying is the main reason for most people to be on campus, learning and visiting courses are not the only tasks that take place on it. Campus Charlottenburg gives people the opportunity to learn and research, but also to connect to other like-minded people, eat meals in one of the cafeterias or bakeries, as well as to participate in one of the many social events that take place on it. Campus Charlottenburg is also the working place of over 7000 persons, including professors, students and researchers.
+
+With its enormous amount of important facilities for students, families and other members of the university, campus Charlottenburg plays a central role in the lives of many people.
+
+\section{Motivation}
+TU Berlin's enormous size and complexity come with several difficulties for people working and studying on campus Charlottenburg, including an overwhelming amount of information about and around the campus as well as problems with navigation across it. New members of TU Berlin have problems localizing certain buildings and are overwhelmed by the amount of information the campus provides.
+
+A working, manageable and modern digital information culture is one of the most significant key factors for overcoming those difficulties and for successful study, work and life on campus Charlottenburg. Such a system should offer an easy and intuitive way of accessing and managing information about the university to all of TU Berlin's members.
+
+Some online resources and systems attempt to enhance the digital information culture including websites provided by TU Berlin and Studierendenwerk Berlin as well as a campus map and digital navigation systems for mobile devices. Nevertheless, there are several problems with the current landscape of web resources and platforms provided by TU Berlin and Studierendenwerk Berlin:
+
+One of them is the fact that there is currently no fitting digital solution for navigation on the campus. Students currently have two options when choosing a tool to navigate across it: On the one hand, TU Berlin provides a downloadable image of campus Charlottenburg, which gives a basic aerial overview of the whole campus. Although this solution is straightforward and understandable, it only provides the possibility to navigate manually over the campus. It also does not take full advantage of the digital tools mobile devices and personal computers offer us.\\
+On the other hand, there are several external digital navigation system providers such as Google or Apple Maps. Those systems take advantage of the digital tooling we have and provide a modern and mobile way of navigation. The main problem with these systems is the fact that they do not contain a detailed mapping of campus Charlottenburg. Searching for several buildings is difficult/impossible and since these systems are not profound for most of the paths on campus, proposed routes are often based on public routes around the campus rather than the faster ones inside of it.
+
+Another problem is the fact that the amount and size of provided platforms is, in itself, overwhelming and complicated. The information about campus Charlottenburg is spread across the internet, instead of bundled. There is no central entity, that contains all information. The fact that most of the information is provided in the form of websites has another consequence for members of TU Berlin: Looking up information fast and intuitive on mobile devices, one of the most used digital tools in the present time, is often slow, unintuitive and unnecessarily complicated.
+
+\section{Proposed solution}
+This bachelor's thesis tries to investigate the current digital information culture at TU Berlin and wants to solve information retrieval and navigation difficulties by providing an implementation of a digital information and navigation system for mobile devices.
+
+Both of these features use an underlying offline map of campus Charlottenburg, which provides a base layer for the main screen of the app. All other features and interface elements are therefore stacked in separate layers on top of it.
+
+\subsection{Campus map}
+A custom map of campus Charlottenburg represents the main element of the app. It comes completely bundled with the application for offline usage and displays the most relevant information about the structure of campus Charlottenburg, e.g., buildings, cafeterias, green areas and pathways across the campus.
+
+\subsection{Navigation system}
+A fast, reliable and offline-usable navigation system overlays the campus map and helps users find their way across the campus. It contains all the geodata and points of interest (POI) of the campus and can reliably calculate the fastest route between them. It also integrates the GPS functionality of the mobile device, to consider the current user location while navigating.
+
+\subsection{Information layer}
+The second layer on the map displays information about the campus. It fetches and parses them automatically from publicly available web resources and maps the information onto their respective POI\@.
