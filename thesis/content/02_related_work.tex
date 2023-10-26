@@ -1,38 +1,19 @@
 \chapter{Related Work}
 \label{cha:relatedwork}
-\section{GPS-based navigation systems}
+
+\section{GPS}
+The global positioning system (GPS) as described in \cite{272176} and \cite{1013999415003} is the modern standard for determining the position of a user on Earth. It is widely used across several different domains including navigation, tracking functionalities, military usage and other location-based services. At least since the rise of mobile devices equipped with GPS capabilities, the majority of people regularly use GPS within several mobile apps and services.
+
+The basis of GPS technology consists of a synchronized satellite network, which constantly broadcasts status information about the respective position, orbit and time of its members. GPS devices calculate their latitude, longitude and altitude by receiving data from at least four satellites. After data is transmitted, the signal propagation time is used for lateriation, from which the position of the device can be determined. Since a correct measurement of signal runtime is essential (errors of 1 ms result in uncertainties of around 300 km \cite{1013999415003}) and consumer-friendly GPS devices usually only contain a simple quartz-based clock, error estimation and correction systems are needed to estimate the exact time.
+
+Depending on the environment and scenario in which GPS is used, several optimizations and improvements can be made. Since this thesis implements a navigation system for mobile devices, smartphone-focused implementation and usage techniques are particularly interesting.
+
+One important example of such an improvement is the Google fused location provider API \cite{fused_location_api}. 
+
+\section{OSM mapping service}
+
+\section{Navigation systems for mobile devices}
+
+\section{Location-based services and geofencing}
 
 \section{Collection of publicly available data from the web}
-\cite{FakePaper11}
-\cite{FakeWebPage11}
-
-% GPS:
-% file:///Users/x/Downloads/A\%201013999415003.pdf
-% https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=272176
-% https://ieeexplore.ieee.org/abstract/document/7479935
-% https://developers.google.com/location-context/fused-location-provider?hl=de
-% https://ieeexplore.ieee.org/abstract/document/7451199
-% 
-% Location-based Services und Geofencing:
-% https://ieeexplore.ieee.org/abstract/document/5370802
-% https://dl.acm.org/doi/pdf/10.1145/2632048.2636093
-% 
-% Google-Maps, OSM und weitere Kartendienste:
-% https://www.researchgate.net/profile/Pratik-Kanani/publication/333117435_Google_Maps/links/5eb6cc7da6fdcc1f1dcb10aa/Google-Maps.pdf
-% file:///Users/x/Downloads/s40965-019-0067-x.pdf
-% file:///Users/x/Downloads/637890.pdf
-% https://www.mdpi.com/2072-4292/13/8/1567
-% https://ieeexplore.ieee.org/abstract/document/4488511
-% 
-% QGIS oder GIS:
-% 
-% Web-Scraping:
-% https://www.researchgate.net/profile/Bo-Zhao-3/publication/317177787_Web_Scraping/links/5c293f85a6fdccfc7073192f/Web-Scraping.pdf
-% https://ieeexplore.ieee.org/abstract/document/8821809
-% 
-% 
-% Design-Ressourcen zur Benutzeroberflächenentwicklung:
-% https://dpunkt.de/produkt/laws-of-ux/ bzw. https://lawsofux.com/
-% https://m3.material.io/
-% https://developer.apple.com/design/
-% https://developer.apple.com/design/human-interface-guidelines

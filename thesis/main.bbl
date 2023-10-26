@@ -7,7 +7,8 @@
 \providecommand{\BIBentrySTDinterwordspacing}{\spaceskip=0pt\relax}
 \providecommand{\BIBentryALTinterwordstretchfactor}{4}
 \providecommand{\BIBentryALTinterwordspacing}{\spaceskip=\fontdimen2\font plus
-\BIBentryALTinterwordstretchfactor\fontdimen3\font minus \fontdimen4\font\relax}
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
 \providecommand{\BIBforeignlanguage}[2]{{%
 \expandafter\ifx\csname l@#1\endcsname\relax
 \typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
@@ -20,14 +21,20 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{FakePaper11}
-\BIBentryALTinterwordspacing
-Guttenberg, ``{Double Brackets WiLL preserve cApItAlIzAtIoN},'' \emph{Guttenberg Press}, 2011. [Online]. Available: \url{http://www.examplelink.de}
-\BIBentrySTDinterwordspacing
+\bibitem{272176}
+I.~Getting, ``Perspective/navigation-the global positioning system,''
+  \emph{IEEE Spectrum}, vol.~30, no.~12, pp. 36--38, 1993.
 
-\bibitem{FakeWebPage11}
+\bibitem{1013999415003}
+S.~Kumar and K.~B. Moore, ``The evolution of global positioning system gps
+  technology,'' \emph{Journal of Science Education and Technology}, vol.~11,
+  pp. 59--80, 2002.
+
+\bibitem{fused_location_api}
 \BIBentryALTinterwordspacing
-Guttenberg. (2011, 11) Video of chuck norris walking on water. [Online]. Available: \url{http://www.youtube.com/nonexistentlink}
+Google, ``Fused location provider api | google for developers,'' 2023.
+  [Online]. Available:
+  \url{https://developers.google.com/location-context/fused-location-provider?hl=de}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}
