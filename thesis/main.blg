@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2021/W32TeX)
+This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
@@ -8,51 +8,61 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliography.bib
+Warning--entry type for "fused_location_api" isn't style-file defined
+--line 22 of file bibliography.bib
+Warning--entry type for "core_location_framework" isn't style-file defined
+--line 30 of file bibliography.bib
+Warning--entry type for "openstreetmap_website" isn't style-file defined
+--line 102 of file bibliography.bib
+Warning--entry type for "openstreetmap_overpass_turbo" isn't style-file defined
+--line 111 of file bibliography.bib
+Warning--entry type for "is_osm_up_to_date" isn't style-file defined
+--line 129 of file bibliography.bib
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-Warning--empty journal in fused_location_api
+Warning--empty journal in visual_design_of_navigation_system
 
 Done.
-You've used 3 entries,
+You've used 11 entries,
             4023 wiz_defined-function locations,
-            828 strings with 7624 characters,
-and the built_in function-call counts, 1913 in all, are:
-= -- 159
-> -- 27
-< -- 15
-+ -- 16
-- -- 4
-* -- 103
-:= -- 338
-add.period$ -- 6
-call.type$ -- 3
-change.case$ -- 3
-chr.to.int$ -- 30
-cite$ -- 4
-duplicate$ -- 138
-empty$ -- 141
-format.name$ -- 5
-if$ -- 411
+            871 strings with 9032 characters,
+and the built_in function-call counts, 5960 in all, are:
+= -- 496
+> -- 95
+< -- 33
++ -- 54
+- -- 16
+* -- 292
+:= -- 1018
+add.period$ -- 22
+call.type$ -- 11
+change.case$ -- 15
+chr.to.int$ -- 66
+cite$ -- 12
+duplicate$ -- 463
+empty$ -- 487
+format.name$ -- 21
+if$ -- 1309
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 21
-newline$ -- 34
-num.names$ -- 3
-pop$ -- 41
+int.to.str$ -- 11
+missing$ -- 85
+newline$ -- 70
+num.names$ -- 7
+pop$ -- 207
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 146
+skip$ -- 457
 stack$ -- 0
-substring$ -- 73
-swap$ -- 106
-text.length$ -- 5
+substring$ -- 173
+swap$ -- 341
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 3
+type$ -- 11
 warning$ -- 1
-while$ -- 9
-width$ -- 4
-write$ -- 53
-(There was 1 warning)
+while$ -- 19
+width$ -- 13
+write$ -- 136
+(There were 6 warnings)

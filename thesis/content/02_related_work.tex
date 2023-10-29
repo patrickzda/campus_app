@@ -4,15 +4,60 @@
 \section{GPS}
 The global positioning system (GPS) as described in \cite{272176} and \cite{1013999415003} is the modern standard for determining the position of a user on Earth. It is widely used across several different domains including navigation, tracking functionalities, military usage and other location-based services. At least since the rise of mobile devices equipped with GPS capabilities, the majority of people regularly use GPS within several mobile apps and services.
 
-The basis of GPS technology consists of a synchronized satellite network, which constantly broadcasts status information about the respective position, orbit and time of its members. GPS devices calculate their latitude, longitude and altitude by receiving data from at least four satellites. After data is transmitted, the signal propagation time is used for lateriation, from which the position of the device can be determined. Since a correct measurement of signal runtime is essential (errors of 1 ms result in uncertainties of around 300 km \cite{1013999415003}) and consumer-friendly GPS devices usually only contain a simple quartz-based clock, error estimation and correction systems are needed to estimate the exact time.
+The basis of GPS technology consists of a synchronized satellite network, which constantly broadcasts status information about the respective position, orbit and time of its members. GPS devices calculate their latitude, longitude and altitude by receiving data from at least four satellites. After data is transmitted, the signal propagation time is used for lateration, from which the position of the device can be determined. Since a correct measurement of signal runtime is essential (errors of 1 ms result in uncertainties of around 300 km \cite{1013999415003}) and consumer-friendly GPS devices usually only contain a simple quartz-based clock, error estimation and correction systems are needed to estimate the exact time.
 
 Depending on the environment and scenario in which GPS is used, several optimizations and improvements can be made. Since this thesis implements a navigation system for mobile devices, smartphone-focused implementation and usage techniques are particularly interesting.
 
-One important example of such an improvement is the Google fused location provider API \cite{fused_location_api}. 
+One important example of such an improvement is the Google fused location provider API. This API is specifically designed for usage on mobile devices and improves the efficiency and accuracy of location retrieval by combining several internal smartphone sensors such as GPS and WiFi \cite{fused_location_api}.
 
 \section{OSM mapping service}
+OpenStreetMap (OSM) is a community-driven open-source mapping service that provides annotated digital maps for most of the countries in the world. It was initiated in 2004 and consists of a web application \cite{openstreetmap_website} that hosts a static map as well as the Overpass Turbo API \cite{openstreetmap_overpass_turbo} for data retrieval.
 
-\section{Navigation systems for mobile devices}
+One problem arising from the fact that OSM is community-based is the fact that it lacks quality assurance \cite{quality_of_openstreetmap}. OSM quality varies depending on the country and region \cite{quality_of_openstreetmap}: While rural areas often lack information, urban locations can often be found precisely represented and comparable to data provided by the respective government or commercial companies.
+
+\cite{quality_of_openstreetmap} with its implementation of the web app `Is OSM up-to-date?´ provides a systematic approach for measuring the OSM quality of an area. It presents how recently certain areas have been edited by the community and infers from that the need for revision on the map. In the case of TU Berlin's campus in Charlottenburg, the available data is well-maintained \cite{is_osm_up_to_date} and can be used as a starting point for this thesis.
+
+\section{Techniques used in navigation systems for mobile devices}
+Navigation systems for mobile devices are nowadays a crucial part of the landscape of available navigation solutions. Popular mobile apps, such as Google or Apple Maps, often provide users the ability to navigate, locate and explore the world around them. The core features of those systems and important aspects for this thesis are:
+
+\subsection{Routing}
+Routing through a network of streets and places is an important key functionality of every digital navigation system. The most popular techniques for routing all use an underlying graph representation of the street network \cite{google_maps}. With this technique, streets are represented as weighted nodes, which model the underlying cost of moving between different locations.
+
+One of the most popular algorithms to determine the fastest way between two nodes is Dijkstra's Algorithm. It greedily computes the shortest paths in the whole network to solve the routing problem. Despite its popularity and efficiency, the algorithm's runtime scales poorly for huge graphs, e.g., the underlying data of Google Maps \cite{google_maps}. This is the reason why most of the algorithms used for routing in a navigation environment use different heuristics to speed up calculation. One example of them is the A* algorithm: It works similarly to Dijkstra's algorithm but applies a heuristic to every node in the graph. By prioritizing the promising paths in the graph, A* usually finds the optimal routing solution faster than the basic Dijkstra implementation \cite{google_maps}.
+
+%Since this thesis only focuses on TU Berlin's campus Charlottenburg, the amount of data the routing system has to %work with is manageable and can be modeled with the basic Dijkstra implementation.
+
+\subsection{Location detection}
+The main system used for outdoor localization in Google Maps and other similar services is GPS \cite{google_maps}. During usage of the navigation app, the user gets the opportunity to activate it and give permission for its usage. While Google's fused location API is the default location provider for Android devices \cite{fused_location_api}, IOS devices use Apple's Core Location framework \cite{core_location_framework}.
+
+Although GPS is the standard system for localization, several other techniques are often used to improve pedestrian location detection on mobile devices. \cite{localization_techniques} describes an approach for merging data of the smartphone's built-in sensors with GPS functionality using a Kalman filter. The work states that such a technique can improve localization accuracy as well as energy-saving in a pedestrian position detection scenario.
+
+\subsection{Estimated time of arrival (ETA)}
+Providing an estimation of the time it takes to overcome the distance from start to destination is an important task for modern navigation systems. Google Maps calculates the estimated time of arrival (ETA) based on several different factors \cite{google_maps}, including:
+
+\begin{itemize}
+    \item Distance from start point to destination
+    \item Average speed of the user and its selected form of transportation
+    \item Current traffic situation on the chosen route
+    \item Official and recommended speed limits
+    \item Road types
+    \item Historical average speed data
+    \item Collected data from users who traveled similar routes
+\end{itemize}
+
+By collecting and merging this information, Google Maps manages it to provide its users with a precise ETA \cite{google_maps}.
+
+\subsection{Visual design}
+The next step after retrieving the user's location and calculating the best route as well as its ETA is the presentation of that information within the app. \cite{visual_design_of_navigation_system} provides an overview of different solutions for information presentation within a mobile navigation system. It compares auditory instructions with route presentation of a map, simple route presentation on a map, display of current location and direction as well as a list of textual descriptions.
+
+After evaluating all four different methods, \cite{visual_design_of_navigation_system} suggests the following aspects for a successful presentation of navigation data:
+
+\begin{itemize}
+    \item A map oriented in the current walking direction should show the user's current location as well as the taken route and information about the map (landmarks, street names)
+    \item The map should provide a zoom function
+    \item Textual instructions are the most inefficient way of communicating navigation information
+    \item Audio instruction can improve the map functionality, although GPS accuracy has to be taken into account when providing information about distance
+\end{itemize}
 
 \section{Location-based services and geofencing}
 
