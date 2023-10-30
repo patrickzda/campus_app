@@ -2,7 +2,7 @@
 \label{cha:relatedwork}
 
 \section{GPS}
-The global positioning system (GPS) as described in \cite{272176} and \cite{1013999415003} is the modern standard for determining the position of a user on Earth. It is widely used across several different domains including navigation, tracking functionalities, military usage and other location-based services. At least since the rise of mobile devices equipped with GPS capabilities, the majority of people regularly use GPS within several mobile apps and services.
+The global positioning system (GPS) as described in \cite{272176} and \cite{1013999415003} is the modern standard for determining the position of a user on Earth. It is widely used across several different domains including navigation, tracking functionalities, military usage and other location-based applications. At least since the rise of mobile devices equipped with GPS capabilities the majority of people regularly uses GPS within several mobile apps and services.
 
 The basis of GPS technology consists of a synchronized satellite network, which constantly broadcasts status information about the respective position, orbit and time of its members. GPS devices calculate their latitude, longitude and altitude by receiving data from at least four satellites. After data is transmitted, the signal propagation time is used for lateration, from which the position of the device can be determined. Since a correct measurement of signal runtime is essential (errors of 1 ms result in uncertainties of around 300 km \cite{1013999415003}) and consumer-friendly GPS devices usually only contain a simple quartz-based clock, error estimation and correction systems are needed to estimate the exact time.
 
@@ -13,12 +13,12 @@ One important example of such an improvement is the Google fused location provid
 \section{OSM mapping service}
 OpenStreetMap (OSM) is a community-driven open-source mapping service that provides annotated digital maps for most of the countries in the world. It was initiated in 2004 and consists of a web application \cite{openstreetmap_website} that hosts a static map as well as the Overpass Turbo API \cite{openstreetmap_overpass_turbo} for data retrieval.
 
-One problem arising from the fact that OSM is community-based is the fact that it lacks quality assurance \cite{quality_of_openstreetmap}. OSM quality varies depending on the country and region \cite{quality_of_openstreetmap}: While rural areas often lack information, urban locations can often be found precisely represented and comparable to data provided by the respective government or commercial companies.
+One problem arising from the fact that OSM is community-based is the fact that it lacks quality assurance \cite{quality_of_openstreetmap}. OSM quality varies depending on the country and region \cite{quality_of_openstreetmap}: While rural areas often lack information, urban locations are often precisely represented and contain information comparable to data provided by the respective government of the selected area or commercial companies.
 
-\cite{quality_of_openstreetmap} with its implementation of the web app `Is OSM up-to-date?´ provides a systematic approach for measuring the OSM quality of an area. It presents how recently certain areas have been edited by the community and infers from that the need for revision on the map. In the case of TU Berlin's campus in Charlottenburg, the available data is well-maintained \cite{is_osm_up_to_date} and can be used as a starting point for this thesis.
+\cite{quality_of_openstreetmap}, with its implementation of the web app `Is OSM up-to-date?´ provides a systematic approach for measuring the OSM quality of an area. It presents how recently certain areas have been edited by the community and infers from that the need for revision on the map. In the case of TU Berlin's campus in Charlottenburg, the available data is well-maintained \cite{is_osm_up_to_date} and can be used as a starting point for this thesis.
 
 \section{Techniques used in navigation systems for mobile devices}
-Navigation systems for mobile devices are nowadays a crucial part of the landscape of available navigation solutions. Popular mobile apps, such as Google or Apple Maps, often provide users the ability to navigate, locate and explore the world around them. The core features of those systems and important aspects for this thesis are:
+Navigation systems for mobile devices are nowadays a crucial part of the landscape of available navigation solutions. Popular mobile apps, such as Google \cite{google_maps_website} or Apple Maps \cite{apple_maps_website}, often provide users the ability to navigate, locate and explore the world around them. The core features of those systems and important aspects for this thesis are:
 
 \subsection{Routing}
 Routing through a network of streets and places is an important key functionality of every digital navigation system. The most popular techniques for routing all use an underlying graph representation of the street network \cite{google_maps}. With this technique, streets are represented as weighted nodes, which model the underlying cost of moving between different locations.
@@ -60,5 +60,15 @@ After evaluating all four different methods, \cite{visual_design_of_navigation_s
 \end{itemize}
 
 \section{Location-based services and geofencing}
+Location-based services are mobile applications/services, which utilize the ability to localize the user to provide customized information \cite{location_based_services}. By offering users information about nearby restaurants, supermarkets, shops, hotels and other POI, mobile navigation systems such as Google \cite{google_maps_website} or Apple Maps \cite{apple_maps_website} also fall into the category of such services. Other popular apps using location-based systems are emergency services, tour guides, delivery tracking systems, social-media platforms with location-sharing functionalities, weather apps and mobility or taxi apps \cite{geofencing_and_background_tracking} \cite{Sadhukhan2021}.
 
-\section{Collection of publicly available data from the web}
+Location-based mobile apps nowadays usually use the in-build GPS capabilities of mobile devices to provide their services in outdoor environments. Other techniques used for indoor environments are WiFI, RFID, ZigBee and Bluetooth \cite{Sadhukhan2021}.
+
+One important topic related to location-based services is the concept of geofencing.
+Geofencing describes a class of techniques used to automatically send notifications based on entering or leaving a specified geographic location \cite{geofencing}. These geographic areas are usually specified geometrically, by placing circles, polygons or polylines into specific locations, or symbolically by specifying a symbolic location such as a state, a country or an address \cite{geofencing}.
+
+One key enabler for geofencing is an extensive background tracking functionality \cite{geofencing_and_background_tracking}. In the case of modern mobile devices, smartphone apps with a geofencing functionality need the ability to constantly query the user's location, even if the app is in the background. Such systems can be combined with push notification techniques to deliver geofencing notifications when a certain area is entered or left.
+
+Since the core functionality of the software developed in this thesis is comparable to mobile navigation systems such as Google or Apple Maps, the goal of this thesis itself can be described as a location-based service.
+
+%\section{Collection of publicly available data from the web}

@@ -16,7 +16,6 @@
 \contentsline {subsection}{\numberline {2.3.3}Estimated time of arrival (ETA)}{5}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}Visual design}{5}{subsection.2.3.4}%
 \contentsline {section}{\numberline {2.4}Location-based services and geofencing}{5}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Collection of publicly available data from the web}{5}{section.2.5}%
 \contentsline {chapter}{\numberline {3}Concept and Design}{7}{chapter.3}%
 \contentsline {section}{\numberline {3.1}General concept and key features}{7}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Mobile app design}{7}{section.3.2}%
