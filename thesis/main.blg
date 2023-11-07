@@ -20,6 +20,10 @@ Warning--entry type for "is_osm_up_to_date" isn't style-file defined
 --line 129 of file bibliography.bib
 Warning--entry type for "google_maps_website" isn't style-file defined
 --line 163 of file bibliography.bib
+Warning--entry type for "flutter" isn't style-file defined
+--line 203 of file bibliography.bib
+Warning--entry type for "pub_dev" isn't style-file defined
+--line 211 of file bibliography.bib
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -27,45 +31,45 @@ Warning--empty journal in visual_design_of_navigation_system
 Warning--empty journal in geofencing
 
 Done.
-You've used 17 entries,
+You've used 19 entries,
             4023 wiz_defined-function locations,
-            910 strings with 10195 characters,
-and the built_in function-call counts, 8833 in all, are:
-= -- 736
-> -- 142
+            918 strings with 10339 characters,
+and the built_in function-call counts, 9543 in all, are:
+= -- 795
+> -- 144
 < -- 41
-+ -- 78
++ -- 80
 - -- 25
-* -- 412
-:= -- 1489
-add.period$ -- 34
-call.type$ -- 17
-change.case$ -- 21
+* -- 442
+:= -- 1615
+add.period$ -- 38
+call.type$ -- 19
+change.case$ -- 25
 chr.to.int$ -- 84
-cite$ -- 19
-duplicate$ -- 696
-empty$ -- 757
+cite$ -- 21
+duplicate$ -- 760
+empty$ -- 829
 format.name$ -- 33
-if$ -- 1963
+if$ -- 2116
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 126
-newline$ -- 96
+int.to.str$ -- 19
+missing$ -- 140
+newline$ -- 106
 num.names$ -- 11
-pop$ -- 327
+pop$ -- 369
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 692
+skip$ -- 746
 stack$ -- 0
-substring$ -- 241
-swap$ -- 496
+substring$ -- 247
+swap$ -- 534
 text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 17
+type$ -- 19
 warning$ -- 2
 while$ -- 28
-width$ -- 19
-write$ -- 193
-(There were 8 warnings)
+width$ -- 21
+write$ -- 213
+(There were 10 warnings)

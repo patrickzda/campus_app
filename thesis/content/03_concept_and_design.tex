@@ -1,13 +1,27 @@
 \chapter{Concept and Design}
 \label{cha:conceptanddesign}
-The goal of this bachelor's thesis is the development of an app for mobile devices, which provides students at TU Berlin the possibility to navigate and inform themselves about their campus in Charlottenburg. 
+The goal of this bachelor's thesis is the development of an app for mobile devices, which provides students at TU Berlin the possibility to navigate and inform themselves about their campus in Charlottenburg. The main concept of the mobile app is inspired by popular smartphone navigation systems such as Google or Apple Maps and focuses on mapping TU Berlin's main campus and the most important web resources connected to it onto a single digital map.
 
 \section{Key features and technologies}
 The following sections provide a detailed overview of the app's key features and the underlying technologies used in this thesis.
 
-\subsection{Digital offline map of campus Charlottenburg}
+\subsection{Digital map of campus Charlottenburg}
 \subsection{Navigation across the campus}
 \subsection{Information layer}
+\subsection{Searching functionality}
+\subsection{Alternative presentation of information}
+\subsection{Offline-first design}
+
+\section{App development framework}
+The choice of app development framework is an important step while conceptualizing and designing the product. It determines the programming language of the project, the built-in device- and system-specific capabilities that can be accessed during development as well as the performance of the app. It has to be selected in consideration of the project's requirements. The following enumeration presents the most important demands for this thesis:
+
+\begin{itemize}
+    \item Used technologies: Working with low-level hardware and operating system APIs is an important part of development. Technologies and systems used in the key features of the product (e.g., GPS capabilities) have to be accessible or implemented in the selected framework.
+    \item Cross-platform capabilities: Native app development is complex and time-consuming. Learning and especially working with two different codebases (Java / Kotlin for Android, Swift / Obj. C for IOS) is difficult and not possible within the scope of this thesis. Cross-platform frameworks solve this problem by providing the ability to work with a single codebase for different operating systems.
+    \item Execution speed: Regarding the fact that the whole navigation functionality has to take place locally on the phone, the speed with which the code of the mobile app gets executed is crucial to a responsive and fast user experience. Particularly the algorithms used for routing have to be reliably computable within seconds.
+\end{itemize}
+
+Based on the previously defined requirements, the Flutter framework \cite{flutter} is chosen for this work. In addition to its cross-platform capabilities, it also offers the ability to compile source code into platform-specific machine code for near-native execution performance. It further comes with access to thousands of packages through the dart package manager pub \cite{pub_dev}, an extensive set of pre-built components for user interfaces and the ability to write platform-specific code for low-level API access.
 
 \section{Mobile app design}
 \subsection{User experience design}
