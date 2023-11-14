@@ -37,6 +37,7 @@
 \contentsline {subsection}{\numberline {4.2.1}Merging geodata in QGIS}{10}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Map design}{10}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Offline integration within the mobile app}{10}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}3-dimensional presentation of university buildings}{10}{subsection.4.2.4}%
 \contentsline {section}{\numberline {4.3}Navigation system development}{10}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Representation of geodata for navigation}{10}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Routing across the campus}{10}{subsection.4.3.2}%
