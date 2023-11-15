@@ -6,15 +6,47 @@ The goal of this bachelor's thesis is the development of an app for mobile devic
 The following sections provide a detailed overview of the app's key features and the underlying technologies used in this thesis.
 
 \subsection{Digital map of campus Charlottenburg}
+The main element of the mobile app consists of a locally implemented map of TU Berlin's central campus in Charlottenburg. It provides the user a manageable overview of TU Berlin's buildings, pathways, green areas as well as its surrounding environment. The following table displays possible map features with a description of their relevance for the mobile app:\\
+
+\begin{longtable}{|p{1.0in}|p{5.0in}|}
+    \hline
+    Feature & Description and relevance \\
+    \hline
+    All buildings of TU Berlin & To provide the user the ability to easily locate the buildings of TU Berlin, all facilities connected to the university need to be specially highlighted on the map. The buildings of TU Berlin are therefore the most important map feature.\\
+    \hline
+    All pathways on campus & Footwalks and cycleways that lay on the campus are important for the navigation system of the mobile app. To prevent the map from being cluttered, a hierarchy must be established between important pathways and smaller routes. \\
+    \hline
+    All green areas on campus & Parks, trees and other green areas of TU Berlin need to be specially marked on the map. Combined with the buildings and pathways of TU Berlin, they provide the user reference points for manual localization. \\
+    \hline
+    External buildings & Buildings not connected to the TU Berlin do not contribute to the localization and navigation on campus. They can be nevertheless used as weakly informative reference points. A toned-down and subliminal representation on the map can be used in this case. \\
+    \hline
+    External pathways & All footwalks and cycleways that are outside of the campus do not provide any relevant information for the mobile app. They furthermore make the map appear more cluttered and are therefore not present on it. \\
+    \hline
+    External green areas & Green areas provide a source of orientation and are an important part of the map. \\
+    \hline
+    Main roads & Main roads surrounding TU Berlin's campus (e.g., Straße des 17. Juli) simplify the exploration and search process while interacting with the map. They provide an important source of guidance and must be prominently presented on the map. \\
+    \hline
+    Small roads & Small roads also support an organized map concept. Since they are less important than main roads, a more restrained manner of display is appropriate. \\
+    \hline
+    External POI & POI surrounding the campus (such as Ernst-Reuter-Platz) are heavily recognizable landmarks and support the user's orientation and localization on the map. They are therefore completely displayed on it. \\
+    \hline
+\end{longtable}
+
+All relevant features are retrieved via the Overpass-Turbo API from publicly available OpenStreetMap data. The data is then fed into the geographic information system QGIS, which is used for creation and export of the campus map. Finally, the xyz-tile format is chosen to be embedded locally for offline usage in the mobile app.
+
 \subsection{Navigation across the campus}
+Example text. 
 \subsection{Information layer}
+Example text.
 \subsection{Searching functionality}
+Example text.
 \subsection{Alternative presentation of information}
+Example text.
 \subsection{Offline-first design}
+Example text.
 
 \section{App development framework}
 The choice of app development framework is an important step while conceptualizing and designing the product. It determines the programming language of the project, the built-in device- and system-specific capabilities that can be accessed during development as well as the performance of the app. It has to be selected in consideration of the project's requirements. The following enumeration presents the most important demands for this thesis:
-
 \begin{itemize}
     \item Used technologies: Working with low-level hardware and operating system APIs is an important part of development. Technologies and systems used in the key features of the product (e.g., GPS capabilities) have to be accessible or implemented in the selected framework.
     \item Cross-platform capabilities: Native app development is complex and time-consuming. Learning and especially working with two different codebases (Java / Kotlin for Android, Swift / Obj. C for IOS) is difficult and not possible within the scope of this thesis. Cross-platform frameworks solve this problem by providing the ability to work with a single codebase for different operating systems.
