@@ -93,6 +93,21 @@ P.~Sadhukhan, N.~Mukherjee, and P.~K. Das, \emph{Location-Based Services for Sma
 S.~Rodriguez~Garzon and B.~Deva, ``Geofencing 2.0: Taking location-based notifications to the next level,'' p. 921–932, 2014. [Online]. Available: \url{https://doi.org/10.1145/2632048.2636093}
 \BIBentrySTDinterwordspacing
 
+\bibitem{tu_berlin_main}
+\BIBentryALTinterwordspacing
+``{Technische Universit{\ifmmode\ddot{a}\else\"{a}\fi}t Berlin},'' Nov. 2023, [Online; accessed 16. Nov. 2023]. [Online]. Available: \url{https://www.tu.berlin}
+\BIBentrySTDinterwordspacing
+
+\bibitem{tu_berlin_moses}
+\BIBentryALTinterwordspacing
+``{Moses - TU Berlin},'' Nov. 2023, [Online; accessed 16. Nov. 2023]. [Online]. Available: \url{https://moseskonto.tu-berlin.de/moses/index.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{studierendenwerk_berlin}
+\BIBentryALTinterwordspacing
+``{studierendenWERK BERLIN - Startseite},'' Nov. 2023, [Online; accessed 16. Nov. 2023]. [Online]. Available: \url{https://www.stw.berlin}
+\BIBentrySTDinterwordspacing
+
 \bibitem{flutter}
 \BIBentryALTinterwordspacing
 ``{Flutter - Build apps for any screen},'' Oct. 2023, [Online; accessed 7. Nov. 2023]. [Online]. Available: \url{https://flutter.dev}

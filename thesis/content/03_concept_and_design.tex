@@ -30,14 +30,44 @@ The main element of the mobile app consists of a locally implemented map of TU B
     \hline
     External POI & POI surrounding the campus (such as Ernst-Reuter-Platz) are heavily recognizable landmarks and support the user's orientation and localization on the map. They are therefore completely displayed on it. \\
     \hline
+    \caption {Overview of different map features}
 \end{longtable}
 
-All relevant features are retrieved via the Overpass-Turbo API from publicly available OpenStreetMap data. The data is then fed into the geographic information system QGIS, which is used for creation and export of the campus map. Finally, the xyz-tile format is chosen to be embedded locally for offline usage in the mobile app.
+All relevant features are retrieved via the Overpass-Turbo API from publicly available OpenStreetMap data. The data is then fed into the geographic information system QGIS, which is used for the creation and export of the campus map. Finally, the xyz-tile format is chosen to be embedded locally for offline usage in the mobile app.
 
 \subsection{Navigation across the campus}
-Example text. 
+The mobile app provides the user the ability to easily navigate across TU Berlin's main campus. The most important technological aspects to successfully achieve this task are routing, localization, geocoding, visual presentation of the current navigation state and calculation of estimated time of arrival (ETA).
+
+The underlying data structure used for the whole navigation process is a weighted graph. Its vertices represent collected geodata points and the respective weighted edges are the distances between the vertices. To account for the fact that, in some cases, the fastest route between two points leads through other buildings, the entrances of all facilities are included in the graph. An edge connecting every pair of different entrance nodes of the same building is further included. The following section provides an overview of the procedure for the complete navigation process:
+
+\begin{enumerate}
+    \item Geocoding is used to decode the user's human-readable destination input, e.g., "MAR-Gebäude" into its respective geo-coordinates and node in the graph.
+    \item To determine the starting point for the navigation, either another manually inserted location is geocoded or the current location of the user is determined using the built-in GPS module of the mobile phone. If the user selects the latter, the current location and heading are further tracked during the whole navigation process.
+    \item Considering the limited size of the graph, Dijkstra's algorithm is chosen to calculate the fastest route between the start and destination points. If the fastest route leads through other buildings, a live indoor navigation approach cannot be achieved due to imprecise GPS results. In this case, geofences are placed on the entrance and exit of the respective building. They detect when the user enters and leaves it and update the state of the navigation system accordingly.
+    \item The ETA is calculated based on the weights/distance of the fastest route and other factors (e.g., time of day, stoplights on the route, \ldots).
+    \item The navigation is presented visually on the campus map by drawing a polyline of the calculated route. If the user selects its location as a starting point, the current location as well as the heading retrieved from the device's magnetometer is displayed. When the user is located within a certain range of the polyline, its position and heading are mapped onto it.
+\end{enumerate}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.85\textwidth]{images/navigation_process.png}\\
+	\caption{Complete navigation system procedure}
+	\label{fig:introduction__loremipsum}
+\end{figure}
+
 \subsection{Information layer}
-Example text.
+An additional layer on top of the campus map consisting of location-based information is a natural addition to the feature set of the mobile app. It enhances the user experience, the relevance of the whole product and the overall digital information culture of TU Berlin by providing overlays, markers and labels filled with data about the campus.
+
+This section provides a brief overview of the underlying data and technology used to provide the information on the layer.
+
+There are three main sources, that are publicly available and relevant to the information layer. On the one hand, there is the official website of TU Berlin \cite{tu_berlin_main}, with sections for current events, the latest news, deadlines, etc. On the other hand, there is the MOSES system \cite{tu_berlin_moses} containing data about all the different courses, rooms and studies. A third relevant source of information is the website of Studierendenwerk Berlin \cite{studierendenwerk_berlin} with meal plans for its different canteens and a timetable for events.
+
+Information is collected by downloading and parsing the content of respective websites. The data is further categorized and -if possible- mapped onto different POIs on the campus map (e.g., a canteen gets its meal plan assigned). This helps to provide an intuitive and organized presentation and access to the user.
+
+The collected data can be categorized according to its timeliness and the intervals in which it has to be updated: General information about different fields of study, courses and rooms only changes by semester. The particular data can be retrieved once at the start of every semester and does not need daily live updates. It is also possible to supply the data via app updates, instead of providing a direct in-app functionality for data retrieval. The latter is the ???
+
+Data that gets updated regularly on the other hand, e.g., meal plans, events, news, etc. has to be always retrievable from the app. ???
+
 \subsection{Searching functionality}
 Example text.
 \subsection{Alternative presentation of information}
