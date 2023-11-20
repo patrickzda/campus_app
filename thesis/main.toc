@@ -1,5 +1,4 @@
-\babel@toc {english}{}\relax 
-\babel@toc {english}{}\relax 
+\babel@toc {english}{}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Context and background}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Motivation}{1}{section.1.2}%
@@ -24,7 +23,7 @@
 \contentsline {subsection}{\numberline {3.1.4}Searching functionality}{10}{subsection.3.1.4}%
 \contentsline {subsection}{\numberline {3.1.5}Alternative presentation of information}{10}{subsection.3.1.5}%
 \contentsline {subsection}{\numberline {3.1.6}Offline-first design}{10}{subsection.3.1.6}%
-\contentsline {section}{\numberline {3.2}App development framework}{10}{section.3.2}%
+\contentsline {section}{\numberline {3.2}App development framework}{11}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Mobile app design}{11}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}User experience design}{11}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}User interface design}{11}{subsection.3.3.2}%

@@ -7,7 +7,8 @@
 \providecommand{\BIBentrySTDinterwordspacing}{\spaceskip=0pt\relax}
 \providecommand{\BIBentryALTinterwordstretchfactor}{4}
 \providecommand{\BIBentryALTinterwordspacing}{\spaceskip=\fontdimen2\font plus
-\BIBentryALTinterwordstretchfactor\fontdimen3\font minus \fontdimen4\font\relax}
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
 \providecommand{\BIBforeignlanguage}[2]{{%
 \expandafter\ifx\csname l@#1\endcsname\relax
 \typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
@@ -21,101 +22,136 @@
 \BIBdecl
 
 \bibitem{272176}
-I.~Getting, ``Perspective/navigation-the global positioning system,'' \emph{IEEE Spectrum}, vol.~30, no.~12, pp. 36--38, 1993.
+I.~Getting, ``Perspective/navigation-the global positioning system,''
+  \emph{IEEE Spectrum}, vol.~30, no.~12, pp. 36--38, 1993.
 
 \bibitem{1013999415003}
-S.~Kumar and K.~B. Moore, ``The evolution of global positioning system gps technology,'' \emph{Journal of Science Education and Technology}, vol.~11, pp. 59--80, 2002.
+S.~Kumar and K.~B. Moore, ``The evolution of global positioning system gps
+  technology,'' \emph{Journal of Science Education and Technology}, vol.~11,
+  pp. 59--80, 2002.
 
 \bibitem{fused_location_api}
 \BIBentryALTinterwordspacing
-Google, ``Fused location provider api | google for developers,'' 2023. [Online]. Available: \url{https://developers.google.com/location-context/fused-location-provider?hl=de}
+Google, ``Fused location provider api | google for developers,'' 2023.
+  [Online]. Available:
+  \url{https://developers.google.com/location-context/fused-location-provider?hl=de}
 \BIBentrySTDinterwordspacing
 
 \bibitem{openstreetmap_website}
 \BIBentryALTinterwordspacing
-``{OpenStreetMap},'' Oct. 2023, [Online; accessed 29. Oct. 2023]. [Online]. Available: \url{https://www.openstreetmap.org/#map=14/53.3797/9.7587}
+``{OpenStreetMap},'' Oct. 2023, [Online; accessed 29. Oct. 2023]. [Online].
+  Available: \url{https://www.openstreetmap.org/#map=14/53.3797/9.7587}
 \BIBentrySTDinterwordspacing
 
 \bibitem{openstreetmap_overpass_turbo}
 \BIBentryALTinterwordspacing
-``{Overpass turbo {\textendash} OpenStreetMap Wiki},'' Sep. 2023, [Online; accessed 29. Oct. 2023]. [Online]. Available: \url{https://wiki.openstreetmap.org/wiki/Overpass_turbo}
+``{Overpass turbo {\textendash} OpenStreetMap Wiki},'' Sep. 2023, [Online;
+  accessed 29. Oct. 2023]. [Online]. Available:
+  \url{https://wiki.openstreetmap.org/wiki/Overpass_turbo}
 \BIBentrySTDinterwordspacing
 
 \bibitem{quality_of_openstreetmap}
 \BIBentryALTinterwordspacing
-M.~Minghini and F.~Frassinelli, ``Openstreetmap history for intrinsic quality assessment: Is osm up-to-date?'' \emph{Open Geospatial Data, Software and Standards}, vol.~4, 2019. [Online]. Available: \url{https://doi.org/10.1186/s40965-019-0067-x}
+M.~Minghini and F.~Frassinelli, ``Openstreetmap history for intrinsic quality
+  assessment: Is osm up-to-date?'' \emph{Open Geospatial Data, Software and
+  Standards}, vol.~4, 2019. [Online]. Available:
+  \url{https://doi.org/10.1186/s40965-019-0067-x}
 \BIBentrySTDinterwordspacing
 
 \bibitem{is_osm_up_to_date}
 \BIBentryALTinterwordspacing
-``{Is OSM up-to-date?}'' May 2022, [Online; accessed 29. Oct. 2023]. [Online]. Available: \url{https://is-osm-uptodate.frafra.eu/#17/52.51274/13.32600}
+``{Is OSM up-to-date?}'' May 2022, [Online; accessed 29. Oct. 2023]. [Online].
+  Available: \url{https://is-osm-uptodate.frafra.eu/#17/52.51274/13.32600}
 \BIBentrySTDinterwordspacing
 
 \bibitem{google_maps_website}
 \BIBentryALTinterwordspacing
-``{Google Maps Platform},'' Jun. 2023, [Online; accessed 30. Oct. 2023]. [Online]. Available: \url{https://developers.google.com/maps?hl=de}
+``{Google Maps Platform},'' Jun. 2023, [Online; accessed 30. Oct. 2023].
+  [Online]. Available: \url{https://developers.google.com/maps?hl=de}
 \BIBentrySTDinterwordspacing
 
 \bibitem{apple_maps_website}
 \BIBentryALTinterwordspacing
-``{Karten},'' Oct. 2023, [Online; accessed 30. Oct. 2023]. [Online]. Available: \url{https://www.apple.com/de/maps}
+``{Karten},'' Oct. 2023, [Online; accessed 30. Oct. 2023]. [Online]. Available:
+  \url{https://www.apple.com/de/maps}
 \BIBentrySTDinterwordspacing
 
 \bibitem{google_maps}
-H.~Mehta, P.~Kanani, and P.~Lande, ``Google maps,'' \emph{International Journal of Computer Applications}, vol. 178, pp. 41--46, 05 2019.
+H.~Mehta, P.~Kanani, and P.~Lande, ``Google maps,'' \emph{International Journal
+  of Computer Applications}, vol. 178, pp. 41--46, 05 2019.
 
 \bibitem{core_location_framework}
 \BIBentryALTinterwordspacing
-``{Core Location {$\vert$} Apple Developer Documentation},'' Oct. 2023, [Online; accessed 29. Oct. 2023]. [Online]. Available: \url{https://developer.apple.com/documentation/corelocation}
+``{Core Location {$\vert$} Apple Developer Documentation},'' Oct. 2023,
+  [Online; accessed 29. Oct. 2023]. [Online]. Available:
+  \url{https://developer.apple.com/documentation/corelocation}
 \BIBentrySTDinterwordspacing
 
 \bibitem{localization_techniques}
 \BIBentryALTinterwordspacing
-M.~Basso, A.~Martinelli, S.~Morosi, and F.~Sera, ``A real-time gnss/pdr navigation system for mobile devices,'' \emph{Remote Sensing}, vol.~13, no.~8, 2021. [Online]. Available: \url{https://www.mdpi.com/2072-4292/13/8/1567}
+M.~Basso, A.~Martinelli, S.~Morosi, and F.~Sera, ``A real-time gnss/pdr
+  navigation system for mobile devices,'' \emph{Remote Sensing}, vol.~13,
+  no.~8, 2021. [Online]. Available:
+  \url{https://www.mdpi.com/2072-4292/13/8/1567}
 \BIBentrySTDinterwordspacing
 
 \bibitem{visual_design_of_navigation_system}
-A.~Stark, M.~Riebeck, and J.~Kawalek, ``How to design an advanced pedestrian navigation system: Field trial results,'' pp. 690--694, Sep. 2007.
+A.~Stark, M.~Riebeck, and J.~Kawalek, ``How to design an advanced pedestrian
+  navigation system: Field trial results,'' pp. 690--694, Sep. 2007.
 
 \bibitem{location_based_services}
-A.~Küpper, \emph{Location-Based Services: Fundamentals and Operation}.\hskip 1em plus 0.5em minus 0.4em\relax John Wiley and Sons Ltd, 2005.
+A.~Küpper, \emph{Location-Based Services: Fundamentals and Operation}.\hskip
+  1em plus 0.5em minus 0.4em\relax John Wiley and Sons Ltd, 2005.
 
 \bibitem{geofencing_and_background_tracking}
-A.~Küpper, U.~Bareth, and B.~Freese, ``Geofencing and background tracking – the next features in lbss,'' \emph{INFORMATIK 2011 - Informatik schafft Communities}, 2011.
+A.~Küpper, U.~Bareth, and B.~Freese, ``Geofencing and background tracking –
+  the next features in lbss,'' \emph{INFORMATIK 2011 - Informatik schafft
+  Communities}, 2011.
 
 \bibitem{Sadhukhan2021}
 \BIBentryALTinterwordspacing
-P.~Sadhukhan, N.~Mukherjee, and P.~K. Das, \emph{Location-Based Services for Smart Living in Urban Areas}.\hskip 1em plus 0.5em minus 0.4em\relax Cham: Springer International Publishing, 2021, pp. 53--69. [Online]. Available: \url{https://doi.org/10.1007/978-3-030-71288-4_3}
+P.~Sadhukhan, N.~Mukherjee, and P.~K. Das, \emph{Location-Based Services for
+  Smart Living in Urban Areas}.\hskip 1em plus 0.5em minus 0.4em\relax Cham:
+  Springer International Publishing, 2021, pp. 53--69. [Online]. Available:
+  \url{https://doi.org/10.1007/978-3-030-71288-4_3}
 \BIBentrySTDinterwordspacing
 
 \bibitem{geofencing}
 \BIBentryALTinterwordspacing
-S.~Rodriguez~Garzon and B.~Deva, ``Geofencing 2.0: Taking location-based notifications to the next level,'' p. 921–932, 2014. [Online]. Available: \url{https://doi.org/10.1145/2632048.2636093}
+S.~Rodriguez~Garzon and B.~Deva, ``Geofencing 2.0: Taking location-based
+  notifications to the next level,'' p. 921–932, 2014. [Online]. Available:
+  \url{https://doi.org/10.1145/2632048.2636093}
 \BIBentrySTDinterwordspacing
 
 \bibitem{tu_berlin_main}
 \BIBentryALTinterwordspacing
-``{Technische Universit{\ifmmode\ddot{a}\else\"{a}\fi}t Berlin},'' Nov. 2023, [Online; accessed 16. Nov. 2023]. [Online]. Available: \url{https://www.tu.berlin}
+``{Technische Universit{\ifmmode\ddot{a}\else\"{a}\fi}t Berlin},'' Nov. 2023,
+  [Online; accessed 16. Nov. 2023]. [Online]. Available:
+  \url{https://www.tu.berlin}
 \BIBentrySTDinterwordspacing
 
 \bibitem{tu_berlin_moses}
 \BIBentryALTinterwordspacing
-``{Moses - TU Berlin},'' Nov. 2023, [Online; accessed 16. Nov. 2023]. [Online]. Available: \url{https://moseskonto.tu-berlin.de/moses/index.html}
+``{Moses - TU Berlin},'' Nov. 2023, [Online; accessed 16. Nov. 2023]. [Online].
+  Available: \url{https://moseskonto.tu-berlin.de/moses/index.html}
 \BIBentrySTDinterwordspacing
 
 \bibitem{studierendenwerk_berlin}
 \BIBentryALTinterwordspacing
-``{studierendenWERK BERLIN - Startseite},'' Nov. 2023, [Online; accessed 16. Nov. 2023]. [Online]. Available: \url{https://www.stw.berlin}
+``{studierendenWERK BERLIN - Startseite},'' Nov. 2023, [Online; accessed 16.
+  Nov. 2023]. [Online]. Available: \url{https://www.stw.berlin}
 \BIBentrySTDinterwordspacing
 
 \bibitem{flutter}
 \BIBentryALTinterwordspacing
-``{Flutter - Build apps for any screen},'' Oct. 2023, [Online; accessed 7. Nov. 2023]. [Online]. Available: \url{https://flutter.dev}
+``{Flutter - Build apps for any screen},'' Oct. 2023, [Online; accessed 7. Nov.
+  2023]. [Online]. Available: \url{https://flutter.dev}
 \BIBentrySTDinterwordspacing
 
 \bibitem{pub_dev}
 \BIBentryALTinterwordspacing
-``{Dart packages},'' Nov. 2023, [Online; accessed 7. Nov. 2023]. [Online]. Available: \url{https://pub.dev}
+``{Dart packages},'' Nov. 2023, [Online; accessed 7. Nov. 2023]. [Online].
+  Available: \url{https://pub.dev}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}
