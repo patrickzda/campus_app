@@ -52,7 +52,6 @@ The underlying data structure used for the whole navigation process is a weighte
 	\centering
 	\includegraphics[width=0.85\textwidth]{images/navigation_process.png}\\
 	\caption{Complete navigation system procedure}
-	\label{fig:introduction__loremipsum}
 \end{figure}
 
 \subsection{Information layer}
@@ -66,11 +65,17 @@ Information is collected by downloading and parsing the content of respective we
 
 The collected data can be categorized according to its timeliness and the intervals in which it has to be updated: General information about different fields of study, courses and rooms only changes by semester. This particular data can be retrieved once at the start of every semester and does not need daily live updates. It is also possible to supply it via app updates, instead of providing a direct in-app functionality for data retrieval. Data that gets updated regularly on the other hand, e.g., meal plans, events, news, etc. has to be always retrievable from the app.
 
-The proposed solution for data collection and provision runs on a web server and consists of a web crawler for information retrieval and parsing, a CSV generator to convert the crawled information into a standardized and simple-to-use format and a REST API, that provides the client/mobile device the ability to retrieve the CSV files. The web crawler and CSV generator are both triggered periodically by several CRON jobs, whose timings are dependent on the timeliness of the crawled data. Due to its simplicity and the fact that all room data from TU Berlin is provided in it, the CSV format is chosen as an alternative to a fully-fledged database system for data storage.
+The proposed solution for data collection and provision runs on a web server and consists of a web crawler for information retrieval, parsing and POI mapping, a CSV generator to convert the crawled information into a standardized and simple-to-use format and a REST API, that provides the client/mobile device the ability to retrieve the CSV files. The web crawler and CSV generator are both triggered periodically by several CRON jobs, whose timings are dependent on the timeliness of the crawled data. Due to its simplicity, the circumstance that there are no complex relations in the data and the fact that all room data from TU Berlin is provided in it, the CSV format is chosen as an alternative to a fully-fledged database system for data storage.
 
 By splitting the logic for crawling and provision, the workload that arises on TU Berlin's and Studierendenwerk's websites from retrieving data can be limited to a minimum: The server only crawls data when an update is needed (e.g., weekly for meal plans), instead of loading and parsing the web resources on client request. Another advantage is the fact that loading times for requests from clients are independent of TU Berlin's and Studierendenwerk's infrastructure.
 
-\subsection{Searching functionality}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.85\textwidth]{images/information_layer_backend.png}\\
+	\caption{Data retrieval process for the information layer}
+\end{figure}
+
+\subsection{Search functionality}
 Example text.
 \subsection{Alternative presentation of information}
 Example text.

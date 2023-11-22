@@ -1,4 +1,5 @@
-\babel@toc {english}{}
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Context and background}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Motivation}{1}{section.1.2}%
@@ -20,13 +21,13 @@
 \contentsline {subsection}{\numberline {3.1.1}Digital map of campus Charlottenburg}{7}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Navigation across the campus}{8}{subsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.1.3}Information layer}{9}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Searching functionality}{10}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}Alternative presentation of information}{10}{subsection.3.1.5}%
-\contentsline {subsection}{\numberline {3.1.6}Offline-first design}{10}{subsection.3.1.6}%
+\contentsline {subsection}{\numberline {3.1.4}Search functionality}{11}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Alternative presentation of information}{11}{subsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.1.6}Offline-first design}{11}{subsection.3.1.6}%
 \contentsline {section}{\numberline {3.2}App development framework}{11}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Mobile app design}{11}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}User experience design}{11}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}User interface design}{11}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.3}Mobile app design}{12}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}User experience design}{12}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}User interface design}{12}{subsection.3.3.2}%
 \contentsline {chapter}{\numberline {4}Implementation}{13}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Collection of geodata and POI}{14}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Overview of needed geodata}{14}{subsection.4.1.1}%
@@ -53,9 +54,9 @@
 \contentsline {section}{\numberline {5.1}Navigation system verification}{15}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Information layer verification}{15}{section.5.2}%
 \contentsline {chapter}{\numberline {6}Conclusion}{17}{chapter.6}%
-\contentsline {chapter}{\nonumberline List of Tables}{19}{chapter*.6}%
-\contentsline {chapter}{\nonumberline List of Figures}{21}{chapter*.7}%
-\contentsline {chapter}{\nonumberline Bibliography}{23}{chapter*.8}%
-\contentsline {chapter}{Appendices}{25}{section*.9}%
-\contentsline {chapter}{\nonumberline Appendix 1}{27}{chapter*.10}%
+\contentsline {chapter}{\nonumberline List of Tables}{19}{chapter*.7}%
+\contentsline {chapter}{\nonumberline List of Figures}{21}{chapter*.8}%
+\contentsline {chapter}{\nonumberline Bibliography}{23}{chapter*.9}%
+\contentsline {chapter}{Appendices}{25}{section*.10}%
+\contentsline {chapter}{\nonumberline Appendix 1}{27}{chapter*.11}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
