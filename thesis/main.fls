@@ -1584,6 +1584,11 @@ INPUT ./images/navigation_process.png
 INPUT images/navigation_process.png
 INPUT ./images/navigation_process.png
 INPUT ./images/navigation_process.png
+INPUT ./images/information_layer_backend.png
+INPUT ./images/information_layer_backend.png
+INPUT images/information_layer_backend.png
+INPUT ./images/information_layer_backend.png
+INPUT ./images/information_layer_backend.png
 INPUT ./images/snet/snet_footer.png
 INPUT ./images/snet/snet_footer.png
 INPUT images/snet/snet_footer.png
@@ -1595,6 +1600,10 @@ INPUT content/04_implementation.tex
 INPUT ./content/04_implementation.tex
 INPUT ./content/04_implementation.tex
 INPUT content/04_implementation.tex
+INPUT ./images/snet/snet_footer.png
+INPUT ./images/snet/snet_footer.png
+INPUT images/snet/snet_footer.png
+INPUT ./images/snet/snet_footer.png
 INPUT ./content/05_evaluation.tex
 INPUT ./content/05_evaluation.tex
 INPUT ./content/05_evaluation.tex

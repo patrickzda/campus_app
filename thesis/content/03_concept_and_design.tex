@@ -75,12 +75,18 @@ By splitting the logic for crawling and provision, the workload that arises on T
 	\caption{Data retrieval process for the information layer}
 \end{figure}
 
-\subsection{Search functionality}
-Example text.
-\subsection{Alternative presentation of information}
-Example text.
+%\subsection{Exploration vs. search}
+%\subsection{Search functionality}
+%\subsection{Alternative presentation of information}
+
 \subsection{Offline-first design}
-Example text.
+One important aspect of the app concept is an extensive focus on offline usability. The whole system is designed to allow the user (as far as possible) a network-connection-free app usage. This applies in particular to the navigation system, the campus map and the information layer of the app:
+
+Campus map: The campus map is locally implemented on the device. All necessary information can be therefore loaded and used without a network connection.
+
+Navigation system: Due to the comparatively small scope of the navigation system, the weighted graph for navigation as well as the system for routing can both be implemented and executed on-device. Only the navigation feature working with live user location updates relies on stable GPS functionality.
+
+Information layer: Loading and presenting information on TU Berlin's main campus requires access to the respected online resources and cannot be realized without a network connection. The need for network connectivity can be nevertheless reduced: Since no data requires real-time updates (the most critical data being meal plans that require weekly updates), the data for the information layer can be periodically preloaded and locally stored. This can be realized by sending silent push notifications at the start of every week. Devices that cannot receive the synchronizing push notification can download the data while being used. At best, this system allows the user to use the app throughout the week without going online.
 
 \section{App development framework}
 The choice of app development framework is an important step while conceptualizing and designing the product. It determines the programming language of the project, the built-in device- and system-specific capabilities that can be accessed during development as well as the performance of the app. It has to be selected in consideration of the project's requirements. The following enumeration presents the most important demands for this thesis:
@@ -92,6 +98,6 @@ The choice of app development framework is an important step while conceptualizi
 
 Based on the previously defined requirements, the Flutter framework \cite{flutter} is chosen for this work. In addition to its cross-platform capabilities, it also offers the ability to compile source code into platform-specific machine code for near-native execution performance. It further comes with access to thousands of packages through the dart package manager pub \cite{pub_dev}, an extensive set of pre-built components for user interfaces and the ability to write platform-specific code for low-level API access.
 
-\section{Mobile app design}
-\subsection{User experience design}
-\subsection{User interface design}
+\section{User experience design}
+
+\section{User interface design}
