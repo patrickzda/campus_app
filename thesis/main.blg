@@ -33,49 +33,50 @@ Warning--entry type for "studierendenwerk_berlin" isn't style-file defined
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in lateriation
 Warning--empty journal in visual_design_of_navigation_system
 Warning--empty journal in geofencing
 
 Done.
-You've used 22 entries,
+You've used 23 entries,
             4023 wiz_defined-function locations,
-            928 strings with 10632 characters,
-and the built_in function-call counts, 10605 in all, are:
-= -- 882
-> -- 147
-< -- 41
-+ -- 83
-- -- 25
-* -- 487
-:= -- 1804
-add.period$ -- 44
-call.type$ -- 22
-change.case$ -- 31
-chr.to.int$ -- 84
-cite$ -- 24
-duplicate$ -- 856
-empty$ -- 937
-format.name$ -- 33
-if$ -- 2344
+            937 strings with 10835 characters,
+and the built_in function-call counts, 11335 in all, are:
+= -- 944
+> -- 158
+< -- 49
++ -- 91
+- -- 26
+* -- 521
+:= -- 1919
+add.period$ -- 46
+call.type$ -- 23
+change.case$ -- 32
+chr.to.int$ -- 105
+cite$ -- 26
+duplicate$ -- 905
+empty$ -- 990
+format.name$ -- 34
+if$ -- 2511
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 161
-newline$ -- 121
-num.names$ -- 11
-pop$ -- 432
+int.to.str$ -- 23
+missing$ -- 167
+newline$ -- 126
+num.names$ -- 12
+pop$ -- 446
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 827
+skip$ -- 884
 stack$ -- 0
-substring$ -- 256
-swap$ -- 591
-text.length$ -- 13
+substring$ -- 306
+swap$ -- 632
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 22
-warning$ -- 2
-while$ -- 28
-width$ -- 24
-write$ -- 243
-(There were 13 warnings)
+type$ -- 23
+warning$ -- 3
+while$ -- 32
+width$ -- 25
+write$ -- 254
+(There were 14 warnings)

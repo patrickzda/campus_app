@@ -30,6 +30,13 @@ S.~Kumar and K.~B. Moore, ``The evolution of global positioning system gps
   technology,'' \emph{Journal of Science Education and Technology}, vol.~11,
   pp. 59--80, 2002.
 
+\bibitem{lateriation}
+\BIBentryALTinterwordspacing
+S.~Farahani, ``Chapter 7 - location estimation methods,'' pp. 225--246, 2008.
+  [Online]. Available:
+  \url{https://www.sciencedirect.com/science/article/pii/B9780750683937000078}
+\BIBentrySTDinterwordspacing
+
 \bibitem{fused_location_api}
 \BIBentryALTinterwordspacing
 Google, ``Fused location provider api | google for developers,'' 2023.
