@@ -25,7 +25,22 @@ Navigation systems for mobile devices are nowadays a crucial part of the landsca
 \subsection{Routing}
 Routing through a network of streets and places is an important key functionality of every digital navigation system. The most popular techniques for routing all use an underlying graph representation of the street network \cite{google_maps}. With this technique, streets are represented as weighted nodes, which model the underlying cost of moving between different locations.
 
-One of the most popular algorithms to determine the fastest way between two nodes is Dijkstra's Algorithm. It greedily computes the shortest paths in the whole network to solve the routing problem. Despite its popularity and efficiency, the algorithm's runtime scales poorly for huge graphs, e.g., the underlying data of Google Maps \cite{google_maps}. This is the reason why most of the algorithms used for routing in a navigation environment use different heuristics to speed up calculation. One example of them is the A* algorithm: It works similarly to Dijkstra's algorithm but applies a heuristic to every node in the graph. By prioritizing the promising paths in the graph, A* usually finds the optimal routing solution faster than the basic Dijkstra implementation \cite{google_maps}.
+One of the most popular algorithms to determine the fastest way between two nodes is Dijkstra's Algorithm. It greedily computes the shortest paths in the whole network and always returns the optimal solution (the fastest path). Despite its popularity and effectiveness, the algorithm's runtime scales poorly for huge graphs, e.g., the underlying data of Google Maps \cite{google_maps}. This is the reason why most of the algorithms used for routing in a navigation environment use different heuristics to speed up calculation. These algorithms usually trade off optimal route calculation for increased execution speed \cite{routing_algorithms}. The following table presents an overview of the basic Dijkstra implementation and other commonly used routing algorithms \cite{routing_algorithms}.
+
+\begin{longtable}{|p{1.0in}|p{3.75in}|p{1.0in}|}
+    \hline
+    Algorithm & Description & Use cases\\
+    \hline
+    Dijkstra & This algorithm starts at the start node and calculates the movement cost to all directly reachable nodes. It enqueues all visited nodes and repeats this process for the first node in the queue. Processed nodes get dequeued and costs for movement are updated when a shorter path is found. By calculating all possible paths in the graph, the algorithm is guaranteed to find the optimal solution. The main disadvantage of this approach is its runtime for huge graphs. & Use cases with small graphs, several internet routing protocols, educational purposes\\
+    \hline
+    A* & A* is a generalized version of the Dijkstra algorithm. The difference can be found in the cost function for movement between two nodes: Instead of only using the edge weight, A* applies a heuristic to the visited nodes. This heuristic usually consists of the airline between the current node and the destination and improves calculation speed by providing the algorithm an indication of nodes that can be prioritized in the search. A* also always finds the optimal solution, while being faster than Dijkstra in most cases. & Routing in bigger networks and educational purposes\\
+    \hline
+    Genetic algorithms & Genetic algorithms describe a class of techniques for routing based on evolutionary processes. These algorithms start by choosing a random path and treating it like a gene. Principles like genetic crossover and random mutations are applied to it and the paths with the least movement cost are used for creating new populations of genes. This evolutionary process often converges to an acceptable solution in an adequate time. Its biggest disadvantage is the fact that it does not necessarily provide an optimal solution. & Large graphs, scenarios that do not need an optimal solution\\
+    \hline
+    \caption {Overview of different routing algorithms}
+\end{longtable}
+
+%One example of them is the A* algorithm: It works similarly to Dijkstra's algorithm but applies a heuristic to every node in the graph. By prioritizing the promising paths in the graph, A* usually finds the optimal routing solution faster than the basic Dijkstra implementation \cite{google_maps}.
 
 %Since this thesis only focuses on TU Berlin's campus Charlottenburg, the amount of data the routing system has to %work with is manageable and can be modeled with the basic Dijkstra implementation.
 

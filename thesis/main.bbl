@@ -87,6 +87,10 @@ M.~Minghini and F.~Frassinelli, ``Openstreetmap history for intrinsic quality
 H.~Mehta, P.~Kanani, and P.~Lande, ``Google maps,'' \emph{International Journal
   of Computer Applications}, vol. 178, pp. 41--46, 05 2019.
 
+\bibitem{routing_algorithms}
+M.~Noto and H.~Sato, ``A method for the shortest path search by extended
+  dijkstra algorithm,'' vol.~3, pp. 2316--2320 vol.3, 2000.
+
 \bibitem{core_location_framework}
 \BIBentryALTinterwordspacing
 ``{Core Location {$\vert$} Apple Developer Documentation},'' Oct. 2023,
