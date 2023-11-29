@@ -47,7 +47,17 @@ One of the most popular algorithms to determine the fastest way between two node
 \subsection{Location detection}
 The main system used for outdoor localization in Google Maps and other similar services is GPS \cite{google_maps}. During usage of the navigation app, the user gets the opportunity to activate it and give permission for its usage. While Google's fused location API is the default location provider for Android devices \cite{fused_location_api}, IOS devices use Apple's Core Location framework \cite{core_location_framework}.
 
-Although GPS is the standard system for localization, several other techniques are often used to improve pedestrian location detection on mobile devices. \cite{localization_techniques} describes an approach for merging data of the smartphone's built-in sensors with GPS functionality using a Kalman filter. The work states that such a technique can improve localization accuracy as well as energy-saving in a pedestrian position detection scenario.
+Although GPS is the standard system for localization, several other techniques are often used to improve pedestrian location detection on mobile devices. One relevant for this thesis is pedestrian dead reckoning.
+
+Pedestrian dead reckoning localizes the user by tracking its steps and the movement direction. In a mobile scenario, this can be accomplished with the built-in device sensors. Steps can be detected with a distinct pattern in the retrieved acceleration, while the heading angle is read from the magnetometer \cite{PDR}. Additionally, the system needs a reference point for localization: Since only the distance of movement in a certain direction is tracked, the starting point has to be known. Another crucial factor for correct PDR is a precise estimation of step length \cite{PDR}. The following formula presents a standard way to calculate the current location in a 2-dimensional environment with step-count i, position (x, y), estimated step length L and heading $\phi$ \cite{PDR_2}.
+
+\begin{equation}
+    \begin{pmatrix}x_{i}\\y_{i}\end{pmatrix} = \begin{pmatrix}x_{i-1}\\y_{i-1}\end{pmatrix} + L * \begin{pmatrix}sin(\phi_{i-1})\\cos(\phi_{i-1})\end{pmatrix}
+\end{equation}
+
+One of the biggest disadvantages of PDR is the fact that errors accumulate during usage. Imprecisions in magnetometer, acceleration and step length values can result in incorrect PDR localization during long distance usage.
+
+\cite{localization_techniques} describes an approach for merging data of the smartphone's built-in sensors for PDR with GPS functionality using a Kalman filter. It tries to use pedestrian dead reckoning as a base for localization and corrects its error accumulation with additional position lookup through GPS. The work states that such a technique can improve localization accuracy as well as energy-saving in a pedestrian position detection scenario. This improvement is accomplished by using classical pedestrian dead reckoning techniques (PDR) and GPS capabilities for correction.
 
 \subsection{Estimated time of arrival (ETA)}
 Providing an estimation of the time it takes to overcome the distance from start to destination is an important task for modern navigation systems. Google Maps calculates the estimated time of arrival (ETA) based on several different factors \cite{google_maps}, including:
@@ -76,16 +86,18 @@ After evaluating all four different methods, \cite{visual_design_of_navigation_s
     \item Audio instruction can improve the map functionality, although GPS accuracy has to be taken into account when providing information about distance
 \end{itemize}
 
-\section{Location-based services and geofencing}
+\section{Location-based services}
 Location-based services are mobile applications/services, which utilize the ability to localize the user to provide customized information \cite{location_based_services}. By offering users information about nearby restaurants, supermarkets, shops, hotels and other POI, mobile navigation systems such as Google \cite{google_maps_website} or Apple Maps \cite{apple_maps_website} also fall into the category of such services. Other popular apps using location-based systems are emergency services, tour guides, delivery tracking systems, social-media platforms with location-sharing functionalities, weather apps and mobility or taxi apps \cite{geofencing_and_background_tracking} \cite{Sadhukhan2021}.
 
 Location-based mobile apps nowadays usually use the in-build GPS capabilities of mobile devices to provide their services in outdoor environments. Other techniques used for indoor environments are WiFI, RFID, ZigBee and Bluetooth \cite{Sadhukhan2021}.
 
-One important topic related to location-based services is the concept of geofencing.
-Geofencing describes a class of techniques used to automatically send notifications based on entering or leaving a specified geographic location \cite{geofencing}. These geographic areas are usually specified geometrically, by placing circles, polygons or polylines into specific locations, or symbolically by specifying a symbolic location such as a state, a country or an address \cite{geofencing}.
-
-One key enabler for geofencing is an extensive background tracking functionality \cite{geofencing_and_background_tracking}. In the case of modern mobile devices, smartphone apps with a geofencing functionality need the ability to constantly query the user's location, even if the app is in the background. Such systems can be combined with push notification techniques to deliver geofencing notifications when a certain area is entered or left.
-
 Since the core functionality of the software developed in this thesis is comparable to mobile navigation systems such as Google or Apple Maps, the goal of this thesis itself can be described as a location-based service.
+
+\subsection{Geofencing}
+Geofencing describes a class of techniques used to automatically send notifications based on entering or leaving a specified geographic location \cite{geofencing}. These geographic areas are usually specified geometrically, by placing circles, polygons or polylines into specific locations, or symbolically by specifying a location by name such as a state, a country or an address \cite{geofencing}.
+
+There are several use cases for geofencing including marketing systems that send promotional notifications when users enter defined areas, logistic systems, that track and detect when certain deliveries and vehicles enter destination locations, mobile apps for navigation and social networking, as well as safety applications for tracking and detecting dangerous areas. One of the most prominent examples of geofence usage in a mobile application for marketing purposes is Burger King's "Whopper detour" campaign launched in 2019 \cite{burger_king_whopper_detour}. The company sold a Whopper for one cent to every user who placed an order via the Burger King app within a McDonald's restaurant.
+
+One key enabler for geofencing is an extensive background tracking functionality \cite{geofencing_and_background_tracking}. In the case of modern mobile devices, smartphone apps with a geofencing functionality need the ability to constantly query the user's location, even if the app is in the background.
 
 %\section{Collection of publicly available data from the web}

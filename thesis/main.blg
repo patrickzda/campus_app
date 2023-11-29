@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2021/W32TeX)
+This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
@@ -9,27 +9,29 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliography.bib
 Warning--entry type for "fused_location_api" isn't style-file defined
---line 43 of file bibliography.bib
+--line 22 of file bibliography.bib
 Warning--entry type for "core_location_framework" isn't style-file defined
---line 59 of file bibliography.bib
+--line 30 of file bibliography.bib
 Warning--entry type for "openstreetmap_website" isn't style-file defined
---line 203 of file bibliography.bib
+--line 102 of file bibliography.bib
 Warning--entry type for "openstreetmap_overpass_turbo" isn't style-file defined
---line 221 of file bibliography.bib
+--line 111 of file bibliography.bib
 Warning--entry type for "is_osm_up_to_date" isn't style-file defined
---line 257 of file bibliography.bib
+--line 129 of file bibliography.bib
 Warning--entry type for "google_maps_website" isn't style-file defined
---line 325 of file bibliography.bib
+--line 163 of file bibliography.bib
 Warning--entry type for "flutter" isn't style-file defined
---line 405 of file bibliography.bib
+--line 203 of file bibliography.bib
 Warning--entry type for "pub_dev" isn't style-file defined
---line 421 of file bibliography.bib
+--line 211 of file bibliography.bib
 Warning--entry type for "tu_berlin_main" isn't style-file defined
---line 439 of file bibliography.bib
+--line 220 of file bibliography.bib
 Warning--entry type for "tu_berlin_moses" isn't style-file defined
---line 455 of file bibliography.bib
+--line 228 of file bibliography.bib
 Warning--entry type for "studierendenwerk_berlin" isn't style-file defined
---line 471 of file bibliography.bib
+--line 236 of file bibliography.bib
+Warning--entry type for "selenium" isn't style-file defined
+--line 301 of file bibliography.bib
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -37,47 +39,48 @@ Warning--empty journal in lateriation
 Warning--empty journal in routing_algorithms
 Warning--empty journal in visual_design_of_navigation_system
 Warning--empty journal in geofencing
+Warning--empty author in burger_king_whopper_detour
 
 Done.
-You've used 24 entries,
+You've used 29 entries,
             4023 wiz_defined-function locations,
-            943 strings with 11161 characters,
-and the built_in function-call counts, 12411 in all, are:
-= -- 1028
-> -- 182
-< -- 66
-+ -- 104
-- -- 28
-* -- 574
-:= -- 2062
-add.period$ -- 48
-call.type$ -- 24
-change.case$ -- 33
-chr.to.int$ -- 150
-cite$ -- 28
-duplicate$ -- 970
-empty$ -- 1063
-format.name$ -- 37
-if$ -- 2763
+            973 strings with 11894 characters,
+and the built_in function-call counts, 15077 in all, are:
+= -- 1258
+> -- 224
+< -- 80
++ -- 129
+- -- 35
+* -- 708
+:= -- 2515
+add.period$ -- 58
+call.type$ -- 29
+change.case$ -- 41
+chr.to.int$ -- 177
+cite$ -- 34
+duplicate$ -- 1182
+empty$ -- 1281
+format.name$ -- 46
+if$ -- 3354
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 175
-newline$ -- 129
-num.names$ -- 13
-pop$ -- 467
+int.to.str$ -- 29
+missing$ -- 214
+newline$ -- 152
+num.names$ -- 15
+pop$ -- 558
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 962
+skip$ -- 1171
 stack$ -- 0
-substring$ -- 406
-swap$ -- 698
-text.length$ -- 16
+substring$ -- 480
+swap$ -- 854
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 24
-warning$ -- 4
-while$ -- 36
-width$ -- 26
-write$ -- 263
-(There were 15 warnings)
+type$ -- 29
+warning$ -- 5
+while$ -- 41
+width$ -- 31
+write$ -- 318
+(There were 17 warnings)
