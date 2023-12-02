@@ -834,10 +834,8 @@ PlayerSettings:
   platformArchitecture: {}
   scriptingBackend:
     Android: 1
-  il2cppCompilerConfiguration:
-    Android: 0
-  il2cppCodeGeneration:
-    Android: 1
+  il2cppCompilerConfiguration: {}
+  il2cppCodeGeneration: {}
   managedStrippingLevel:
     EmbeddedLinux: 1
     GameCoreScarlett: 1
