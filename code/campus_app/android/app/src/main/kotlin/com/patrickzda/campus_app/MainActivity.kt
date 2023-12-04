@@ -1,4 +1,4 @@
-package com.patrickzda.campus_app.campus_app
+package com.patrickzda.campus_app
 
 import io.flutter.embedding.android.FlutterActivity
 
