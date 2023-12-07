@@ -15,7 +15,7 @@ void main(){
           ),
           GestureDetector(
             onTap: (){
-              sendToUnity("Cube", "SetCubeColor", "1.0");
+              //sendToUnity("Cube", "SetCubeColor", "1.0");
             },
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 25),
