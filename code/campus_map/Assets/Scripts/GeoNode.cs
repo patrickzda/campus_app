@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OsmNode
+public class GeoNode
 {
     private readonly float latitude, longitude, xCoordinate, zCoordinate;
     private readonly Vector3 position;
 
-    public OsmNode(float latitude, float longitude)
+    public GeoNode(float latitude, float longitude)
     {
         this.latitude = latitude;
         this.longitude = longitude;

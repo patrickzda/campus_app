@@ -96,7 +96,7 @@ public static class Poly2Mesh {
 	/// </summary>
 	/// <returns>The freshly minted mesh.</returns>
 	/// <param name="polygon">Polygon you want to triangulate.</param>
-	public static Mesh CreateMesh(Polygon polygon) {
+	public static Mesh CreateMesh(Polygon polygon, bool flipPolygon) {
 
 		// Ensure we have the rotation properly calculated
 		if (polygon.rotation == Quaternion.identity) polygon.CalcRotation();
@@ -137,9 +137,18 @@ public static class Poly2Mesh {
 		{
 			int i = 0;
 			foreach (DelaunayTriangle t in poly.Triangles) {
-				indices[i++] = codeToIndex[t.Points[0].VertexCode];
-				indices[i++] = codeToIndex[t.Points[1].VertexCode];
-				indices[i++] = codeToIndex[t.Points[2].VertexCode];
+				if (!flipPolygon)
+				{
+					indices[i++] = codeToIndex[t.Points[0].VertexCode];
+					indices[i++] = codeToIndex[t.Points[1].VertexCode];
+					indices[i++] = codeToIndex[t.Points[2].VertexCode];
+				}
+				else
+				{
+					indices[i++] = codeToIndex[t.Points[2].VertexCode];
+					indices[i++] = codeToIndex[t.Points[1].VertexCode];
+					indices[i++] = codeToIndex[t.Points[0].VertexCode];
+				}
 			}
 		}
 
@@ -151,14 +160,21 @@ public static class Poly2Mesh {
 		//		uv[i] = polygon.ClosestUV(vertexList[i]);
 		//	}
 		//}
+
+		Vector2[] uvs = new Vector2[vertexList.Count];
+		for (int i = 0; i < vertexList.Count; i++)
+		{
+			uvs[i] = new Vector2(vertexList[i].x, vertexList[i].z);
+		}
 		
 		// Create the mesh
 		Mesh msh = new Mesh();
 		msh.vertices = vertexList.ToArray();
 		msh.triangles = indices;
-		//msh.uv = uv;
+		msh.uv = uvs;
 		msh.RecalculateNormals();
 		msh.RecalculateBounds();
+
 		return msh;
 	}
 
@@ -175,7 +191,7 @@ public static class Poly2Mesh {
 		gob.name = name;
 		gob.AddComponent(typeof(MeshRenderer));
 		MeshFilter filter = gob.AddComponent(typeof(MeshFilter)) as MeshFilter;
-		filter.mesh = CreateMesh(polygon);
+		filter.mesh = CreateMesh(polygon, false);
 		return gob;
 	}
 }

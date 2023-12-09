@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OsmRoadController : MonoBehaviour
+public class RoadController : MonoBehaviour
 {
-    public void GenerateRoad(OsmNode[] nodes, float width)
+    public void GenerateRoad(GeoNode[] nodes, float width)
     {
         LineRenderer road = GetComponent<LineRenderer>();
 
