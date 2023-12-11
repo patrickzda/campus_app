@@ -14,8 +14,8 @@ public class MapGenerationController : MonoBehaviour
     
     void Start()
     {
-        GenerateRoads(mainRoadData.text, 0.2f);
-        GenerateRoads(mediumRoadData.text, 0.2f);
+        GenerateRoads(mainRoadData.text, 0.1f);
+        GenerateRoads(mediumRoadData.text, 0.1f);
         GenerateRoads(smallRoadData.text, 0.05f);
         GenerateBuildings(universityBuildingData.text);
         GenerateGreenAreas(greenAreaData.text);
