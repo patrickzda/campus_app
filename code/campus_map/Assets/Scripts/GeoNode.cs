@@ -11,8 +11,8 @@ public class GeoNode
     {
         this.latitude = latitude;
         this.longitude = longitude;
-        xCoordinate = (float) MercatorProjection.LonToX(longitude);
-        zCoordinate = (float) MercatorProjection.LatToY(latitude);
+        xCoordinate = (float) MercatorProjection.LonToX(longitude) / 100f;
+        zCoordinate = (float) MercatorProjection.LatToY(latitude) / 100f;
         position = new Vector3(xCoordinate, 0f, zCoordinate);
     }
 

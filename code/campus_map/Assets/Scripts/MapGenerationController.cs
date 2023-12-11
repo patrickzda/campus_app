@@ -14,9 +14,9 @@ public class MapGenerationController : MonoBehaviour
     
     void Start()
     {
-        GenerateRoads(mainRoadData.text, 12.0f);
-        GenerateRoads(mediumRoadData.text, 12.0f);
-        GenerateRoads(smallRoadData.text, 6.0f);
+        GenerateRoads(mainRoadData.text, 0.2f);
+        GenerateRoads(mediumRoadData.text, 0.2f);
+        GenerateRoads(smallRoadData.text, 0.05f);
         GenerateBuildings(universityBuildingData.text);
         GenerateGreenAreas(greenAreaData.text);
         GenerateWater(waterData.text);
@@ -39,7 +39,7 @@ public class MapGenerationController : MonoBehaviour
 
             GameObject currentBuilding = Instantiate(buildingPrefab);
             currentBuilding.name = buildings[i]["properties"]["name"];
-            currentBuilding.GetComponent<BuildingController>().GenerateBuilding(geoNodes, float.Parse(buildings[i]["properties"]["building:levels"]) * 6.0f, buildings[i]["generateFlippedRoof"]);
+            currentBuilding.GetComponent<BuildingController>().GenerateBuilding(geoNodes, float.Parse(buildings[i]["properties"]["building:levels"]) * 0.05f, buildings[i]["generateFlippedRoof"]);
         }
     }
     
