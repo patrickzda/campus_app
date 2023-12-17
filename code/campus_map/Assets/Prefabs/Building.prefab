@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5cef1d781f3488c98239db51828af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roofMaterial: {fileID: 2100000, guid: 6f7053cc9c449433da51419345d0ec34, type: 2}
+  roofMaterial: {fileID: 2100000, guid: c81b95ebd473f4d3aad86ed48952379b, type: 2}
   wallMaterial: {fileID: 2100000, guid: c81b95ebd473f4d3aad86ed48952379b, type: 2}

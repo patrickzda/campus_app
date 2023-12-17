@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Splines;
 
 public class RoadController : MonoBehaviour
 {
-    public void GenerateRoad(GeoNode[] nodes, float width)
+    public void GenerateRoad(GeoNode[] nodes, float width, string type, int index)
     {
         Vector3[] points = new Vector3[nodes.Length];
         for (int i = 0; i < nodes.Length; i++)
@@ -42,5 +43,21 @@ public class RoadController : MonoBehaviour
         mesh.vertices = roadVertices.ToArray();
         mesh.triangles = roadTriangles.ToArray();
         mesh.RecalculateNormals();
+        
+        Vector3[] meshVertices = GetComponent<MeshFilter>().mesh.vertices;
+        Vector2[] uvs = new Vector2[meshVertices.Length];
+        for (int i = 0; i < uvs.Length; i++)
+        {
+            uvs[i] = new Vector2(meshVertices[i].x, meshVertices[i].z);
+        }
+        
+        GetComponent<MeshFilter>().mesh.uv = uvs;
+        
+        //Mesh persistentMesh = new Mesh();
+        //persistentMesh.vertices = GetComponent<MeshFilter>().mesh.vertices;
+        //persistentMesh.triangles = GetComponent<MeshFilter>().mesh.triangles;
+        //persistentMesh.normals = GetComponent<MeshFilter>().mesh.normals;
+        //persistentMesh.uv = GetComponent<MeshFilter>().mesh.uv;
+        //AssetDatabase.CreateAsset(persistentMesh, "Assets/Meshes/Roads/" + type + " Road " + index + ".asset");
     }
 }

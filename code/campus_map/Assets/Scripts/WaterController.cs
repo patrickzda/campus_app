@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class WaterController : MonoBehaviour
 {
-    public void GenerateWater(GeoNode[] nodes, bool isFlippedWater)
+    public void GenerateWater(GeoNode[] nodes, bool isFlippedWater, int index)
     {
         List<Vector3> polygonVertices = new List<Vector3>();
         for (int i = 0; i < nodes.Length; i++)
@@ -16,5 +17,21 @@ public class WaterController : MonoBehaviour
         Poly2Mesh.Polygon polygon = new Poly2Mesh.Polygon {outside = polygonVertices};
         
         GetComponent<MeshFilter>().mesh = Poly2Mesh.CreateMesh(polygon, isFlippedWater);
+
+        Vector3[] meshVertices = GetComponent<MeshFilter>().mesh.vertices;
+        Vector2[] uvs = new Vector2[meshVertices.Length];
+        for (int i = 0; i < uvs.Length; i++)
+        {
+            uvs[i] = new Vector2(meshVertices[i].x, meshVertices[i].z);
+        }
+        
+        GetComponent<MeshFilter>().mesh.uv = uvs;
+
+        //Mesh persistentMesh = new Mesh();
+        //persistentMesh.vertices = GetComponent<MeshFilter>().mesh.vertices;
+        //persistentMesh.triangles = GetComponent<MeshFilter>().mesh.triangles;
+        //persistentMesh.normals = GetComponent<MeshFilter>().mesh.normals;
+        //persistentMesh.uv = GetComponent<MeshFilter>().mesh.uv;
+        //AssetDatabase.CreateAsset(persistentMesh, "Assets/Meshes/Water/" + "Water " + index + ".asset");
     }
 }

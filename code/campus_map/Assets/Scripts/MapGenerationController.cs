@@ -14,12 +14,13 @@ public class MapGenerationController : MonoBehaviour
     
     void Start()
     {
-        GenerateRoads(mainRoadData.text, 0.1f);
-        GenerateRoads(mediumRoadData.text, 0.1f);
-        GenerateRoads(smallRoadData.text, 0.05f);
+        GenerateRoads(mainRoadData.text, 0.1f, "Main");
+        GenerateRoads(mediumRoadData.text, 0.1f, "Medium");
+        GenerateRoads(smallRoadData.text, 0.025f, "Small");
         GenerateBuildings(universityBuildingData.text);
         GenerateGreenAreas(greenAreaData.text);
         GenerateWater(waterData.text);
+        FlutterCommunicationController.SendMapLoaded();
     }
 
     void GenerateBuildings(String buildingData)
@@ -39,11 +40,11 @@ public class MapGenerationController : MonoBehaviour
 
             GameObject currentBuilding = Instantiate(buildingPrefab);
             currentBuilding.name = buildings[i]["properties"]["name"];
-            currentBuilding.GetComponent<BuildingController>().GenerateBuilding(geoNodes, float.Parse(buildings[i]["properties"]["building:levels"]) * 0.05f, buildings[i]["generateFlippedRoof"]);
+            currentBuilding.GetComponent<BuildingController>().GenerateBuilding(geoNodes, float.Parse(buildings[i]["properties"]["building:levels"]) * 0.05f, buildings[i]["generateFlippedRoof"], buildings[i]["properties"]["name"]);
         }
     }
     
-    void GenerateRoads(String roadData, float roadWidth)
+    void GenerateRoads(String roadData, float roadWidth, string type)
     {
         JSONNode jsonData = JSON.Parse(roadData);
         JSONNode[] roads = jsonData["features"].Children.ToArray();
@@ -59,7 +60,7 @@ public class MapGenerationController : MonoBehaviour
             }
 
             GameObject currentRoad = Instantiate(roadPrefab);
-            currentRoad.GetComponent<RoadController>().GenerateRoad(geoNodes, roadWidth);
+            currentRoad.GetComponent<RoadController>().GenerateRoad(geoNodes, roadWidth, type, i);
         }
     }
 
@@ -79,7 +80,7 @@ public class MapGenerationController : MonoBehaviour
             }
 
             GameObject currentGreenArea = Instantiate(greenAreaPrefab);
-            currentGreenArea.GetComponent<GreenAreaController>().GenerateGreenArea(geoNodes, greenAreas[i]["generateFlippedGreenArea"]);
+            currentGreenArea.GetComponent<GreenAreaController>().GenerateGreenArea(geoNodes, greenAreas[i]["generateFlippedGreenArea"], i);
         }
     }
     
@@ -99,7 +100,7 @@ public class MapGenerationController : MonoBehaviour
             }
 
             GameObject currentWater = Instantiate(waterPrefab);
-            currentWater.GetComponent<WaterController>().GenerateWater(geoNodes, waterAreas[i]["generateFlippedWater"]);
+            currentWater.GetComponent<WaterController>().GenerateWater(geoNodes, waterAreas[i]["generateFlippedWater"], i);
         }
     }
     

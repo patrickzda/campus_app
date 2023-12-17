@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,7 +10,7 @@ public class BuildingController : MonoBehaviour
 {
     public Material roofMaterial, wallMaterial;
 
-    public void GenerateBuilding(GeoNode[] nodes, float height, bool isFlippedRoof)
+    public void GenerateBuilding(GeoNode[] nodes, float height, bool isFlippedRoof, string name)
     {
         List<Vector3> polygonVertices = new List<Vector3>();
         for (int i = 0; i < nodes.Length; i++)
@@ -25,6 +26,15 @@ public class BuildingController : MonoBehaviour
         MeshRenderer roofMeshRenderer = roof.AddComponent<MeshRenderer>();
         roofMeshFilter.mesh = Poly2Mesh.CreateMesh(polygon, isFlippedRoof);
         roofMeshRenderer.material = roofMaterial;
+        
+        Vector3[] roofMeshVertices = roofMeshFilter.mesh.vertices;
+        Vector2[] roofUvs = new Vector2[roofMeshVertices.Length];
+        for (int i = 0; i < roofUvs.Length; i++)
+        {
+            roofUvs[i] = new Vector2(roofMeshVertices[i].x, roofMeshVertices[i].z);
+        }
+        
+        roofMeshFilter.mesh.uv = roofUvs;
 
         List<Vector3> wallVertices = new List<Vector3>();
         for (int i = 0; i < polygonVertices.Count; i++)
@@ -57,6 +67,15 @@ public class BuildingController : MonoBehaviour
         frontWallMeshFilter.mesh.RecalculateNormals();
         fromWallMeshRenderer.material = wallMaterial;
         
+        Vector3[] frontMeshVertices = frontWallMeshFilter.mesh.vertices;
+        Vector2[] frontUvs = new Vector2[frontMeshVertices.Length];
+        for (int i = 0; i < frontUvs.Length; i++)
+        {
+            frontUvs[i] = new Vector2(frontMeshVertices[i].x, frontMeshVertices[i].z);
+        }
+        
+        frontWallMeshFilter.mesh.uv = frontUvs;
+        
         List<int> backWallTriangles = new List<int>();
         for (int i = 1; i < nodes.Length; i++)
         {
@@ -77,6 +96,19 @@ public class BuildingController : MonoBehaviour
         backWallMeshFilter.mesh.triangles = backWallTriangles.ToArray();
         backWallMeshFilter.mesh.RecalculateNormals();
         backWallMeshRenderer.material = wallMaterial;
+        
+        Vector3[] backMeshVertices = backWallMeshFilter.mesh.vertices;
+        Vector2[] backUvs = new Vector2[backMeshVertices.Length];
+        for (int i = 0; i < backUvs.Length; i++)
+        {
+            backUvs[i] = new Vector2(backMeshVertices[i].x, backMeshVertices[i].z);
+        }
+        
+        backWallMeshFilter.mesh.uv = backUvs;
+        
+        //AssetDatabase.CreateAsset(roofMeshFilter.mesh, "Assets/Meshes/Buildings/" + name + " Roof" + ".asset");
+        //AssetDatabase.CreateAsset(frontWallMeshFilter.mesh, "Assets/Meshes/Buildings/" + name + " Front" + ".asset");
+        //AssetDatabase.CreateAsset(backWallMeshFilter.mesh, "Assets/Meshes/Buildings/" + name + " Back" + ".asset");
     }
 
     private Vector3 GetCenter(GeoNode[] baseNodes)
