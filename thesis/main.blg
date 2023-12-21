@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2023)
+This is BibTeX, Version 0.99d (TeX Live 2021/W32TeX)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
@@ -9,29 +9,33 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliography.bib
 Warning--entry type for "fused_location_api" isn't style-file defined
---line 22 of file bibliography.bib
+--line 43 of file bibliography.bib
 Warning--entry type for "core_location_framework" isn't style-file defined
---line 30 of file bibliography.bib
+--line 59 of file bibliography.bib
 Warning--entry type for "openstreetmap_website" isn't style-file defined
---line 102 of file bibliography.bib
-Warning--entry type for "openstreetmap_overpass_turbo" isn't style-file defined
---line 111 of file bibliography.bib
-Warning--entry type for "is_osm_up_to_date" isn't style-file defined
---line 129 of file bibliography.bib
-Warning--entry type for "google_maps_website" isn't style-file defined
---line 163 of file bibliography.bib
-Warning--entry type for "flutter" isn't style-file defined
 --line 203 of file bibliography.bib
+Warning--entry type for "openstreetmap_overpass_turbo" isn't style-file defined
+--line 221 of file bibliography.bib
+Warning--entry type for "is_osm_up_to_date" isn't style-file defined
+--line 257 of file bibliography.bib
+Warning--entry type for "google_maps_website" isn't style-file defined
+--line 325 of file bibliography.bib
+Warning--entry type for "flutter" isn't style-file defined
+--line 405 of file bibliography.bib
 Warning--entry type for "pub_dev" isn't style-file defined
---line 211 of file bibliography.bib
+--line 421 of file bibliography.bib
 Warning--entry type for "tu_berlin_main" isn't style-file defined
---line 220 of file bibliography.bib
+--line 439 of file bibliography.bib
 Warning--entry type for "tu_berlin_moses" isn't style-file defined
---line 228 of file bibliography.bib
+--line 455 of file bibliography.bib
 Warning--entry type for "studierendenwerk_berlin" isn't style-file defined
---line 236 of file bibliography.bib
+--line 471 of file bibliography.bib
 Warning--entry type for "selenium" isn't style-file defined
---line 301 of file bibliography.bib
+--line 601 of file bibliography.bib
+Warning--entry type for "beautifulsoup4" isn't style-file defined
+--line 619 of file bibliography.bib
+Warning--entry type for "unity_engine" isn't style-file defined
+--line 637 of file bibliography.bib
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -42,45 +46,45 @@ Warning--empty journal in geofencing
 Warning--empty author in burger_king_whopper_detour
 
 Done.
-You've used 29 entries,
+You've used 30 entries,
             4023 wiz_defined-function locations,
-            973 strings with 11894 characters,
-and the built_in function-call counts, 15077 in all, are:
-= -- 1258
-> -- 224
+            978 strings with 12041 characters,
+and the built_in function-call counts, 15431 in all, are:
+= -- 1287
+> -- 225
 < -- 80
-+ -- 129
++ -- 130
 - -- 35
-* -- 708
-:= -- 2515
-add.period$ -- 58
-call.type$ -- 29
-change.case$ -- 41
+* -- 723
+:= -- 2578
+add.period$ -- 60
+call.type$ -- 30
+change.case$ -- 43
 chr.to.int$ -- 177
-cite$ -- 34
-duplicate$ -- 1182
-empty$ -- 1281
+cite$ -- 35
+duplicate$ -- 1214
+empty$ -- 1317
 format.name$ -- 46
-if$ -- 3354
+if$ -- 3430
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 214
-newline$ -- 152
+int.to.str$ -- 30
+missing$ -- 221
+newline$ -- 157
 num.names$ -- 15
-pop$ -- 558
+pop$ -- 579
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1171
+skip$ -- 1198
 stack$ -- 0
-substring$ -- 480
-swap$ -- 854
+substring$ -- 483
+swap$ -- 873
 text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 29
+type$ -- 30
 warning$ -- 5
 while$ -- 41
-width$ -- 31
-write$ -- 318
-(There were 17 warnings)
+width$ -- 32
+write$ -- 328
+(There were 19 warnings)
