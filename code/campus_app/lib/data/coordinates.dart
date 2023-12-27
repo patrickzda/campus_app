@@ -1,8 +1,8 @@
 
 class Coordinates{
-  double latitude, longitude;
+  final double latitude, longitude;
 
-  Coordinates({required this.latitude, required this.longitude});
+  const Coordinates({required this.latitude, required this.longitude});
 
   @override
   String toString() {

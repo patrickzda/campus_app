@@ -1,10 +1,13 @@
 import 'package:campus_app/data/coordinates.dart';
+import 'package:campus_app/services/navigation_service.dart';
 import 'package:campus_app/services/unity_communication_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_embed_unity/flutter_embed_unity.dart';
 
 void main(){
   int counter = 0;
+
+  NavigationService navigationService = NavigationService();
 
   runApp(MaterialApp(
     home: Scaffold(
