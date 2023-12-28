@@ -1,4 +1,5 @@
 import 'package:campus_app/data/coordinates.dart';
+import 'package:campus_app/data/navigation_node.dart';
 import 'package:campus_app/services/navigation_service.dart';
 import 'package:campus_app/services/unity_communication_service.dart';
 import 'package:flutter/material.dart';
@@ -6,8 +7,6 @@ import 'package:flutter_embed_unity/flutter_embed_unity.dart';
 
 void main(){
   int counter = 0;
-
-  NavigationService navigationService = NavigationService();
 
   runApp(MaterialApp(
     home: Scaffold(
@@ -23,20 +22,22 @@ void main(){
           GestureDetector(
             onTap: (){
               //UnityCommunicationService.toggle3dView();
-              if(counter == 0){
-                UnityCommunicationService.createPolyline([
-                  Coordinates(latitude: 52.512009981475174, longitude: 13.322146506341582),
-                  Coordinates(latitude: 52.51223198449646, longitude: 13.322704405801074),
-                  Coordinates(latitude: 52.512617222371794, longitude: 13.323262305260563),
-                  Coordinates(latitude: 52.51306122115756, longitude: 13.330675930770342),
-                ]);
-              }else if(counter == 1){
-                UnityCommunicationService.setPolylineProgress(Coordinates(latitude: 52.51223198449646, longitude: 13.322704405801074));
-              }else if(counter == 2){
-                UnityCommunicationService.deletePolyline();
-              }
-              counter++;
-              counter = counter % 3;
+              List<NavigationNode> route;
+              NavigationService service = NavigationService();
+              Coordinates start = const Coordinates(latitude: 52.51066732441862, longitude: 13.327159187237413);
+              Coordinates end = const Coordinates(latitude: 52.51658837236144, longitude: 13.323546307383321);
+              NavigationNode startNode = service.getClosestNodeToCoordinates(start);
+              NavigationNode endNode = service.getClosestNodeToCoordinates(end);
+
+              print(startNode.id);
+              print(endNode.id);
+
+              route = service.calculateRoute(startNode, endNode);
+              List<Coordinates> routeCoordinates = List.generate(route.length, (int index){
+                return route[index].coordinates;
+              });
+
+              UnityCommunicationService.createPolyline(routeCoordinates);
             },
             child: Container(
               alignment: Alignment.center,
@@ -48,7 +49,7 @@ void main(){
                 color: Colors.blue
               ),
               child: const Text(
-                "Toggle 3d view",
+                "Display fastest route",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 15

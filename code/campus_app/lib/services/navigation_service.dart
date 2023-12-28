@@ -12,7 +12,6 @@ class NavigationService{
     buildings = List.filled(buildingData.length, Building(id: 0, shortName: "", names: [], entryNodes: []));
     navigationNodes = List.filled(navigationNodeData.length, NavigationNode(id: 0, coordinates: const Coordinates(latitude: 0, longitude: 0)));
 
-    //Buildings are parsed from building_data
     List<String> buildingDataKeys = buildingData.keys.toList();
     for(int i = 0; i < buildingDataKeys.length; i++){
       String currentKey = buildingDataKeys[i];
@@ -29,7 +28,6 @@ class NavigationService{
       buildings[currentBuilding.id] = currentBuilding;
     }
 
-    //NavigationNodes are parsed from navigation_node_data
     List<String> navigationNodeKeys = navigationNodeData.keys.toList();
     for(int i = 0; i < navigationNodeKeys.length; i++){
       String currentKey = navigationNodeKeys[i];
@@ -46,7 +44,6 @@ class NavigationService{
       navigationNodes[currentNavigationNode.id] = currentNavigationNode;
     }
 
-    //Entry nodes are assigned to buildings
     for(int i = 0; i < buildingDataKeys.length; i++){
       String currentKey = buildingDataKeys[i];
       buildings[int.parse(currentKey)].entryNodes = List.generate(buildingData[currentKey]["entryNodeIds"].length, (int index){
@@ -54,13 +51,70 @@ class NavigationService{
       });
     }
 
-    //Connected nodes are assigned to navigationNodes
     for(int i = 0; i < navigationNodeKeys.length; i++){
       String currentKey = navigationNodeKeys[i];
       navigationNodes[int.parse(currentKey)].connectedNodes = List.generate(navigationNodeData[currentKey]["connections"].length, (int index){
         return navigationNodes[navigationNodeData[currentKey]["connections"][index]];
       });
     }
+  }
+
+  List<NavigationNode> calculateRoute(NavigationNode start, NavigationNode end){
+    List<double> minDistancesFromStart = List.filled(navigationNodes.length, double.infinity);
+    List<bool> isVisited = List.filled(navigationNodes.length, false);
+    List<List<int>> shortestRoutesFromStart = List.filled(navigationNodes.length, []);
+
+    minDistancesFromStart[start.id] = 0;
+    shortestRoutesFromStart[start.id] = [start.id];
+
+    for(int i = 0; i < navigationNodes.length; i++){
+      NavigationNode currentNode = navigationNodes[_getNextMinDistanceVertex(minDistancesFromStart, isVisited)];
+
+      for(int j = 0; j < currentNode.connectedNodes.length; j++){
+        double totalDistance = minDistancesFromStart[currentNode.id] + currentNode.coordinates.distanceTo(currentNode.connectedNodes[j].coordinates);
+
+        if(!isVisited[currentNode.connectedNodes[j].id] && minDistancesFromStart[currentNode.connectedNodes[j].id] > totalDistance){
+          minDistancesFromStart[currentNode.connectedNodes[j].id] = totalDistance;
+          shortestRoutesFromStart[currentNode.connectedNodes[j].id] = List.from(shortestRoutesFromStart[currentNode.id])..add(currentNode.connectedNodes[j].id);
+        }
+      }
+
+      isVisited[currentNode.id] = true;
+      print("VISITED NODE ${currentNode.id}");
+    }
+
+    return List.generate(shortestRoutesFromStart[end.id].length, (int index){
+      return navigationNodes[shortestRoutesFromStart[end.id][index]];
+    });
+  }
+
+  NavigationNode getClosestNodeToCoordinates(Coordinates coordinates){
+    int closestNodeIndex = 0;
+    double minDistance = double.infinity;
+
+    for(int i = 0; i < navigationNodes.length; i++){
+      double currentDistance = coordinates.distanceTo(navigationNodes[i].coordinates);
+      if(navigationNodes[i].connectedNodes.isNotEmpty && currentDistance < minDistance){
+        minDistance = currentDistance;
+        closestNodeIndex = i;
+      }
+    }
+
+    return navigationNodes[closestNodeIndex];
+  }
+
+  int _getNextMinDistanceVertex(List<double> minDistances, List<bool> isVisited){
+    int minIndex = 0;
+    double minDistance = double.infinity;
+
+    for(int i = 0; i < navigationNodes.length; i++){
+      if(!isVisited[i] && minDistances[i] <= minDistance){
+        minDistance = minDistances[i];
+        minIndex = i;
+      }
+    }
+
+    return minIndex;
   }
 
 }

@@ -9,6 +9,10 @@ class NavigationNode{
 
   NavigationNode({required this.id, required this.coordinates, this.connectedNodes = const [], this.building});
 
+  double etaTo(NavigationNode other){
+    return 0;
+  }
+
   bool isEntrance(){
     return building != null;
   }
