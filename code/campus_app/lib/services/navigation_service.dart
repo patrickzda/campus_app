@@ -80,7 +80,6 @@ class NavigationService{
       }
 
       isVisited[currentNode.id] = true;
-      print("VISITED NODE ${currentNode.id}");
     }
 
     return List.generate(shortestRoutesFromStart[end.id].length, (int index){

@@ -29,9 +29,6 @@ void main(){
               NavigationNode startNode = service.getClosestNodeToCoordinates(start);
               NavigationNode endNode = service.getClosestNodeToCoordinates(end);
 
-              print(startNode.id);
-              print(endNode.id);
-
               route = service.calculateRoute(startNode, endNode);
               List<Coordinates> routeCoordinates = List.generate(route.length, (int index){
                 return route[index].coordinates;
