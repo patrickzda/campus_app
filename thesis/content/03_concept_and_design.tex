@@ -96,5 +96,50 @@ The choice of app development framework is an important step while conceptualizi
 Based on the previously defined requirements, the Flutter framework \cite{flutter} is chosen for this work. In addition to its cross-platform capabilities, it also offers the ability to compile source code into platform-specific machine code for near-native execution performance. It further comes with access to thousands of packages through the dart package manager pub \cite{pub_dev}, an extensive set of pre-built components for user interfaces and the ability to write platform-specific code for low-level API access. Since Flutter lacks 3d rendering capabilities, the Unity engine \cite{unity_engine} is additionally used to create and display the campus map. It gets included in the Flutter build and is responsible for rendering and interacting with the 3d campus map.
 
 \section{User experience design}
+The following sections provide an overview of the whole user experience (UX) design for the campus app. In the scope of this thesis, the complete process is broken down into UX research and wireframe design.
+
+UX research is a process where the main goals and tasks associated with the app are identified and broken down into its most relevant UX aspects. This helps to find out the key usability requirements for the visual user interface design, consisting of wireframes and high-fidelity mockups (user interface design).
+
+Wireframes, on the other hand, form the first visual version of the app design. They determine the basic structure of the app, its layout, the placement of basic user interface elements as well as their hierarchy. Wireframes are based on the previously defined usability requirements in the UX research process.
+
+The next paragraphs describe a set of important usability requirements that are then further incorporated into the wireframe design.
+
+%Usability goals: Search versus exploration
+\subsection{Search versus exploration}
+One of the most important usability requirements for the app results from the clash of two important user needs, namely search and exploration. These needs result from the fact that users may use the app for different purposes and with different expectations.\\
+
+Search, on the one hand, describes a scenario, in which the user tries to find or locate a specific piece of information within the app. This search for information can be expressed with concrete questions, e.g.:
+
+\begin{itemize}
+    \item What is the fastest way between MAR and TEL buildings?
+    \item What are the opening times of the TU library?
+    \item What food can I get tomorrow at the main cafeteria?
+    \item Where does course App-Entwicklung take place?
+    \item In which building is the SNET department located?
+\end{itemize}
+
+One main requirement for the user experience of the app is therefore the possibility for fast, easy and structured access to important key information about TU Berlin's campus. All search-task-related user interface elements should be easily identifiable as such, prominently positioned and accessible to the user. Additionally, to reduce the search time for the seeking person, the design should also provide multiple ways to access the most important information. Important user interface elements in this case are search bars, descriptive icons and textual hints as well as an adequately chunked information hierarchy in the whole app.\\
+
+Exploration, on the other hand, is an app use case, in which the user "just browses around" in search of nothing particular. The seeking person either wants to learn, find out or experience something new or uses the app with an open question in mind. In this scenario, the user does not seek a specific piece of information but rather expects the app to provide the possibility, to easily navigate and view through structured content without the need for a concrete search.
+
+Examples of goals and questions for exploration use cases can be the following:
+
+\begin{itemize}
+    \item Are there any interesting places on TU Berlin's campus that I could visit?
+    \item Which cafeteria has the best food today?
+    \item Are there any appealing courses, outside of the scope of my studies, that I can attend this semester?
+    \item Search for upcoming events by TU Berlin or Studierendenwerk
+    \item Search for learning spaces at TU Berlin
+\end{itemize}
+
+In these use cases, the outcome of the exploration action is often determined by the subjective preferences of the users. The app therefore cannot give an optimal final solution to the search but rather present a set of information, from which the user can select or find the most suitable one.
+
+This results in two important requirements for the app design. Firstly, visual elements for the structured presentation of information need to be used. Examples of that can be tables, scrollable lists, clearly designed information cards and different kinds of markers on the campus map. These elements help the user by giving hints about existing information in the app and by structuring related information, which then can be easily overviewed and potentially compared while exploring.
+
+Secondly, the choice of which information is portrayed in the app is important. Since too much information provision risks a bloating of the app (and therefore a reduced user experience), the final campus data needs to be carefully selected and filtered for in-app display. The establishment of a clear hierarchy between important, frequently used data and less important information also contributes to this.
+
+\subsection{Designing a user-friendly campus map}
+
+\subsection{Chunking of information within the app}
 
 \section{User interface design}
