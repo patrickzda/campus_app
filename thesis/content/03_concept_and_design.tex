@@ -5,26 +5,20 @@ The goal of this bachelor's thesis is the development of an app for mobile devic
 \section{Key features and technologies}
 The following sections provide a detailed overview of the app's key features and the underlying technologies used in this thesis.
 
-\subsection{Digital map of campus Charlottenburg}
+\subsection{Digital map of campus Charlottenburg} \label{campus_map_1}
 The main element of the mobile app consists of a locally implemented map of TU Berlin's central campus in Charlottenburg. It provides the user a manageable overview of TU Berlin's buildings, pathways, green areas as well as its surrounding environment. The following list displays possible map features with a description of their relevance for the mobile app:\\
 
-All buildings of TU Berlin: To provide the user the ability to easily locate the buildings of TU Berlin, all facilities connected to the university need to be specially highlighted on the map. The buildings of TU Berlin are therefore the most important map feature.
-
-All pathways on campus: Footwalks and cycleways that lay on the campus are important for the navigation system of the mobile app. To prevent the map from being cluttered, a hierarchy must be established between important pathways and smaller routes.
-
-All green areas on campus: Parks, trees and other green areas of TU Berlin need to be specially marked on the map. Combined with the buildings and pathways of TU Berlin, they provide the user reference points for manual localization.
-
-External buildings: Buildings not connected to the TU Berlin do not contribute to the localization and navigation on campus. They can be nevertheless used as weakly informative reference points. A toned-down and subliminal representation on the map can be used in this case.
-
-External pathways: All footwalks and cycleways that are outside of the campus do not provide any relevant information for the mobile app. They furthermore make the map appear more cluttered and are therefore not present on it.
-
-External green areas: Green areas provide a source of orientation and are an important part of the map.
-
-Main roads: Main roads surrounding TU Berlin's campus (e.g., Straße des 17. Juli) simplify the exploration and search process while interacting with the map. They provide an important source of guidance and must be prominently presented on the map.
-
-Small roads: Small roads also support an organized map concept. Since they are less important than main roads, a more restrained manner of display is appropriate.
-
-External POI: The POI surrounding the campus (such as Ernst-Reuter-Platz) are heavily recognizable landmarks and support the user's orientation and localization on the map. They are therefore completely displayed on it.
+\begin{itemize}
+    \item All buildings of TU Berlin: To provide the user the ability to easily locate the buildings of TU Berlin, all facilities connected to the university need to be specially highlighted on the map. The buildings of TU Berlin are therefore the most important map feature.
+    \item All pathways on campus: Footwalks and cycleways that lay on the campus are important for the navigation system of the mobile app. To prevent the map from being cluttered, a hierarchy must be established between important pathways and smaller routes.
+    \item All green areas on campus: Parks, trees and other green areas of TU Berlin need to be specially marked on the map. Combined with the buildings and pathways of TU Berlin, they provide the user reference points for manual localization.
+    \item External buildings: Buildings not connected to the TU Berlin do not contribute to the localization and navigation on campus. They can be nevertheless used as weakly informative reference points. A toned-down and subliminal representation on the map can be used in this case.
+    \item External pathways: All footwalks and cycleways that are outside of the campus do not provide any relevant information for the mobile app. They furthermore make the map appear more cluttered and are therefore not present on it.
+    \item External green areas: Green areas provide a source of orientation and are an important part of the map.
+    \item Main roads: Main roads surrounding TU Berlin's campus (e.g., Straße des 17. Juli) simplify the exploration and search process while interacting with the map. They provide an important source of guidance and must be prominently presented on the map.
+    \item Small roads: Small roads also support an organized map concept. Since they are less important than main roads, a more restrained manner of display is appropriate.
+    \item External POI: The POI surrounding the campus (such as Ernst-Reuter-Platz) are heavily recognizable landmarks and support the user's orientation and localization on the map. They are therefore completely displayed on it.
+\end{itemize}
 
 All relevant features are retrieved via the Overpass-Turbo API from publicly available OpenStreetMap data. The data is then fed into the geographic information system QGIS, which is used for the creation and export of the campus map as well as manual annotation and correction of the downloaded data. Finally, the exported data is converted into a 3d model of the campus which is displayed in a respective rendering environment inside the app.
 
@@ -102,9 +96,10 @@ UX research is a process where the main goals and tasks associated with the app 
 
 Wireframes, on the other hand, form the first visual version of the app design. They determine the basic structure of the app, its layout, the placement of basic user interface elements as well as their hierarchy. Wireframes are based on the previously defined usability requirements in the UX research process.
 
+It is important to notice that all these design choices are not chosen arbitrarily, but rather based on previous research in the studies of user experience design. Important work was contributed over the years by psychologists and researchers like Dr. Jakob Nielsen \cite{jakob_nielsen}, Dr. Paul Fitts \cite{paul_fitts}, Jon Postel and research conducted at IBM and Xerox Corporation. An overview of the most important research and its consequences for user experience design can be found in Jon Yablonski's book "Laws of UX" \cite{yablonski2020laws} (web-version \cite{yablonski_web}).
+
 The next paragraphs describe a set of important usability requirements that are then further incorporated into the wireframe design.
 
-%Usability goals: Search versus exploration
 \subsection{Search versus exploration}
 One of the most important usability requirements for the app results from the clash of two important user needs, namely search and exploration. These needs result from the fact that users may use the app for different purposes and with different expectations.\\
 
@@ -118,7 +113,7 @@ Search, on the one hand, describes a scenario, in which the user tries to find o
     \item In which building is the SNET department located?
 \end{itemize}
 
-One main requirement for the user experience of the app is therefore the possibility for fast, easy and structured access to important key information about TU Berlin's campus. All search-task-related user interface elements should be easily identifiable as such, prominently positioned and accessible to the user. Additionally, to reduce the search time for the seeking person, the design should also provide multiple ways to access the most important information. Important user interface elements in this case are search bars, descriptive icons and textual hints as well as an adequately chunked information hierarchy in the whole app.\\
+One main requirement for the user experience of the app is therefore the possibility for fast, easy and structured access to important key information about TU Berlin's campus. Based on \cite{fitts_law} and \cite{jakobs_law}, all search-task-related user interface elements should be easily identifiable as such, prominently positioned and accessible to the user. Additionally, to reduce the search time for the seeking person, the design should also provide multiple ways to access the most important information. Important user interface elements in this case are search bars, descriptive icons and textual hints as well as an adequately chunked information hierarchy in the whole app. This usage of commonly used user interface elements also supports \cite{jakobs_law}.\\
 
 Exploration, on the other hand, is an app use case, in which the user "just browses around" in search of nothing particular. The seeking person either wants to learn, find out or experience something new or uses the app with an open question in mind. In this scenario, the user does not seek a specific piece of information but rather expects the app to provide the possibility, to easily navigate and view through structured content without the need for a concrete search.
 
@@ -134,12 +129,62 @@ Examples of goals and questions for exploration use cases can be the following:
 
 In these use cases, the outcome of the exploration action is often determined by the subjective preferences of the users. The app therefore cannot give an optimal final solution to the search but rather present a set of information, from which the user can select or find the most suitable one.
 
-This results in two important requirements for the app design. Firstly, visual elements for the structured presentation of information need to be used. Examples of that can be tables, scrollable lists, clearly designed information cards and different kinds of markers on the campus map. These elements help the user by giving hints about existing information in the app and by structuring related information, which then can be easily overviewed and potentially compared while exploring.
+This results in two important requirements for the app design. Firstly, visual elements for the structured presentation of information need to be used. These elements help the user by giving hints about existing information in the app and by structuring related information, which then can be easily overviewed and potentially compared while exploring. Further motivation for this can be found in principles \cite{jakobs_law}, \cite{law_of_common_region}, \cite{hicks_law} and \cite{millers_law}. Examples of such elements can be tables, scrollable lists, clearly designed information cards and different kinds of markers on the campus map.
 
-Secondly, the choice of which information is portrayed in the app is important. Since too much information provision risks a bloating of the app (and therefore a reduced user experience), the final campus data needs to be carefully selected and filtered for in-app display. The establishment of a clear hierarchy between important, frequently used data and less important information also contributes to this.
+Secondly, the choice of which information is portrayed in the app is important. Since too much information provision risks a bloating of the app (and therefore leads to a reduced user experience) \cite{hicks_law}, the final campus data needs to be carefully selected and filtered for in-app usage. The establishment of a clear hierarchy between important, frequently used data and less important information also contributes to this.
 
 \subsection{Designing a user-friendly campus map}
+A precise and clear map of TU Berlin's main campus in Charlottenburg is the most important user interface element in the app. Accordingly, special emphasis should be placed on the design of it. This section describes possible requirements for the map element and the resulting implications for its appearance and implementation in the app.
+
+There are two intended ways how the users should interact with the map: Interaction for exploration/search tasks and interaction for navigation purposes. Both these tasks come with separate design requirements.
+
+Exploration and search tasks, mainly interacting with POI and buildings on TU Berlin's campus, have a strong focus on its entities. A straightforward map design with a focus on the recognizability of buildings, pathways, natural areas and POI is important. This supports the user's need for orientation and simplifies the process of matching real-life buildings with their counterparts on the digital map, which is proven to enhance the user experience \cite{jakobs_law}.
+
+This mostly differs from popular available mobile navigation services since their primary tasks are navigation and orientation of the user. They are also laid out for presenting huge areas, e.g., districts or even complete cities. A detailed portrayal of a specific area is therefore not feasible, perfomant or necessary.
+
+The campus map only deals with a pre-defined and small area. This provides the possibility for the creation of a detailed and complex map, with a pleasing aesthetic (based on \cite{aesthetic_usability_effect}) and a strong focus on TU Berlin's entities on campus Charlottenburg. To achieve maximum recognition value for the buildings, parks and pathways on the campus, a 3D overview, similar to TU Berlin's campus plan \cite{campus_plan}, is used for portrayal. This is especially beneficial for users who are familiar with the official campus plan of TU Berlin, who can transfer their learning from the manual map onto the digital one, which plays well with \cite{jakobs_law}. The 3D perspective also lays out a clear emphasis on buildings, which are the most important entities on the campus and prominently stick out on the map. It is nevertheless also beneficial for other entities, which can be more easily localized with the buildings.
+
+To direct the focus even more onto TU Berlin's campus, all of its surroundings are not used in the 3D view (based on \cite{law_of_common_region}). Furthermore, all important buildings are labeled with their respective abbreviations through markers on the map. Lastly, the user also gets the possibility to alter the map view between 2D and 3D modes, so that the preferred style of view can be selected.
+
+Another important aspect is the zoom range the user can utilize while interacting. Considering that the campus area is small and that the app wants to focus on its details, a close zoom, with a little room maneuver should be appropriate.
+
+Navigation tasks, namely interacting with / following a polyline route and working with a marker that displays the current user location, have a strong focus on pathways and routes on TU Berlin's main campus. It is therefore important to highlight these routes in the design accordingly. Other entities like buildings, natural areas (green areas, water) and POI have a lower priority in this case but are nevertheless important for orientation purposes. To design for this use case one can take inspiration from already established mobile map services like Google Maps \cite{google_maps_website} and Apple Maps \cite{apple_maps_website}. These apps mainly display the road network, important markers and POI while in navigation mode and only present low-priority entities (e.g., outlines of buildings) on a close zoom level.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.85\textwidth]{images/map_design_google_apple.png}\\
+	\caption{Different styles of map presentation in Google Maps and Apple Maps}
+\end{figure}
+
+Based on the fact, that common usability patterns are already established by the user base of such popular mobile navigation services, the approach is adopted in this thesis (enhancement of user experience based on \cite{jakobs_law}): The user's focus is directed to the road network during the navigation phase, unimportant markers are discarded, roads are highlighted and the map's camera is adjusted to display a 2D perspective from the top.
+
+\subsection{Designing a good user experience for navigation}
+Creating a robust and easy-to-use digital navigation system is a challenging task since it consists of digital instructions resulting in real-life actions.
+
+Based on \cite{jakobs_law}, it is beneficial for the user experience to orientate the design to industry standards. In this case, a polyline is usually used for the display of the calculated route, a round marker stands for the user's position and a change in color of the polyline tracks the already traveled path segment. The location marker is further mapped onto the polyline during navigation, as it marks the point between the traveled and preceding route.
+
+Nevertheless, one important difference between established navigation systems and campus navigation is the fact that the latter can also lead through buildings of TU Berlin. Since the app only detects whether (and where) the user enters or leaves a building (the traditional polyline approach is therefore not feasible) and the user base is likely not familiar with a switch from outdoor to indoor navigation, a robust and clear user experience has to be provided during this phase.
+
+To specify the design requirements for this section of the navigation process, the outdoor indoor switch can be broken down into a set of phases, each with its demands:
+
+%The app should be designed in a way that ...
+
+\begin{enumerate}
+    \item The user is outdoors during the navigation phase or examines a precalculated route and sees an (upcoming) segment that leads through a building: In this case, the user must understand that a segment leads through a building. It should be furthermore clear which entrance has to be used. The latter can be achieved by marking the entrance position on the map, either with a model of a door (3D perspective) \cite{jakobs_law} or a marker containing an appropriate icon (2D perspective). To clarify the indoor section even more, the polyline of the route should be connected to the entrance and a descriptive marker (e.g., "upcoming indoor section") or other indication should be next to the indoor segment. This repetitive "announcing" of an upcoming indoor section is strongly connected to \cite{teslers_law} and \cite{law_of_proximity} and an enhancement of user experience can be therefore expected. It is important to notice that due to \cite{postels_law}, the user should not be punished in a scenario, where a wrong entrance is taken into the correct building. The app should simply continue the navigation in this case.
+    \item The user walks into the marked entrance of the building and is now indoors, the app registers this: In this phase, the biggest explanation part is fulfilled, the user has understood that the next segment is indoors and has entered the building successfully. It is now important to provide the user a visual feedback, that strengthens his correct choice of entering the building ("Great, you have found your way into the building!"), updates the progress on the route accordingly (due to \cite{goal_gradient_effect}) and explains that there is no indoor localization available. The use of animation is a great tool to indicate a change in the state of a user interface. In this case, the map moves and zooms to the entered building and a non-moving marker appears, indicating that the user is inside of the building. A pop-up appears, explaining the location of the user and its goal to find a specific exit of the building.
+    \item The user is inside of the building: No specific changes to the user interface need to be made, the app waits till the user has found the exit. In an optimized scenario, an additional pop-up could be triggered if the user spends too long inside the building and searching for the exit. This pop-up would display additional information for finding the desired exit (enhances the UX according to \cite{teslers_law}).
+    \item The user walks out of the building and is now outdoors, the app registers this: This phase should reverse the changes made when entering the building. The navigation continues on the polyline with a reappearing location marker, the map unlocks the focus on the exited building, and all markers and pop-ups for indoor navigation disappear. The user gets the feeling that he has successfully made it through the indoor section and can now continue his journey outdoors. Just like in the entering phase and according to \cite{postels_law} the user should also not be punished when taking the wrong exit in the building. In this case, the app should simply detect the wrong exit, recalculate the route from the new user position and display this in the user interface.
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.85\textwidth]{images/indoor_navigation_phases.png}\\
+	\caption{UX design for outdoor-indoor-outdoor transition}
+\end{figure}
 
 \subsection{Chunking of information within the app}
+
+\subsection{Wireframes}
+Based on the previously defined requirements, wireframes outlining the basic design concept of the app are created. This section displays the most important pages and provides a brief overview of their features.
 
 \section{User interface design}
