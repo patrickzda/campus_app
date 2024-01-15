@@ -64,6 +64,8 @@ Warning--entry type for "goal_gradient_effect" isn't style-file defined
 --line 453 of file bibliography.bib
 Warning--entry type for "postels_law" isn't style-file defined
 --line 463 of file bibliography.bib
+Warning--entry type for "law_of_similarity" isn't style-file defined
+--line 473 of file bibliography.bib
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -74,45 +76,45 @@ Warning--empty journal in geofencing
 Warning--empty author in burger_king_whopper_detour
 
 Done.
-You've used 45 entries,
+You've used 46 entries,
             4023 wiz_defined-function locations,
-            1025 strings with 13328 characters,
-and the built_in function-call counts, 21392 in all, are:
-= -- 1797
-> -- 276
+            1029 strings with 13455 characters,
+and the built_in function-call counts, 21804 in all, are:
+= -- 1833
+> -- 280
 < -- 80
-+ -- 157
-- -- 47
-* -- 969
-:= -- 3709
-add.period$ -- 90
-call.type$ -- 45
-change.case$ -- 71
++ -- 159
+- -- 48
+* -- 986
+:= -- 3788
+add.period$ -- 92
+call.type$ -- 46
+change.case$ -- 73
 chr.to.int$ -- 177
-cite$ -- 50
-duplicate$ -- 1711
-empty$ -- 1889
-format.name$ -- 58
-if$ -- 4707
+cite$ -- 51
+duplicate$ -- 1745
+empty$ -- 1927
+format.name$ -- 59
+if$ -- 4795
 int.to.chr$ -- 0
-int.to.str$ -- 45
-missing$ -- 335
-newline$ -- 232
-num.names$ -- 27
-pop$ -- 888
+int.to.str$ -- 46
+missing$ -- 343
+newline$ -- 237
+num.names$ -- 28
+pop$ -- 909
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1653
+skip$ -- 1684
 stack$ -- 0
-substring$ -- 525
-swap$ -- 1186
+substring$ -- 528
+swap$ -- 1208
 text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 45
+type$ -- 46
 warning$ -- 5
-while$ -- 53
-width$ -- 47
-write$ -- 489
-(There were 33 warnings)
+while$ -- 54
+width$ -- 48
+write$ -- 500
+(There were 34 warnings)

@@ -1,6 +1,10 @@
 \chapter{Implementation}
+This chapter deals with the implementation details of the campus app. It starts by describing the collection and processing of geodata and explains how the campus map and the navigation system are derived from it. It further showcases the procedure for collecting campus-relevant data from publicly available web sources and concludes with a description of the implementation process for the user interface, which finally merges the campus map, navigation and information layers.
+
 \label{cha:implementation}
 \section{Collection of geodata and POI}
+Geodata refers to all data about geographic information. In the case of this thesis, it mainly consists of coordinate points, which describe certain campus-relevant entities, such as outlines of buildings, the street network, pathways as well as boundaries of green areas and water. Except for single-point usage, multiple coordinate points can be grouped as polygons, representing the closed outline of an entity and polylines, mainly used to describe lines, streets and paths.
+
 \subsection{Overview of needed geodata}
 \subsection{Collection data from OSM via Overpass Turbo API}
 \subsection{Enhancing OSM data manually in QGIS}
