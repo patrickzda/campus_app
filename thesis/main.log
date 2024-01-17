@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.27)  14 JAN 2024 19:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.27)  16 JAN 2024 17:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1206,25 +1206,61 @@ Package pdftex.def Info: images/snet/snet_footer.png  used on input line 1.
 
 ]
 chapter 4.
-) (./content/05_evaluation.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23]
+Overfull \hbox (2.20804pt too wide) in paragraph at lines 12--13
+[]\T1/ppl/m/n/10.95 Buildings: The out-lines of build-ings are poly-gons con-sist-ing of mul-ti-ple co-or-di-nate points.
+ []
+
+[23]
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 25.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 25.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 25.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 25.
+<images/preparing_buildings.png, id=470, 1369.115pt x 634.37pt>
+File: images/preparing_buildings.png Graphic file (type png)
+<use images/preparing_buildings.png>
+Package pdftex.def Info: images/preparing_buildings.png  used on input line 54.
+(pdftex.def)             Requested size: 295.90588pt x 137.10318pt.
+<images/preparing_streets.png, id=471, 1369.115pt x 634.37pt>
+File: images/preparing_streets.png Graphic file (type png)
+<use images/preparing_streets.png>
+Package pdftex.def Info: images/preparing_streets.png  used on input line 60.
+(pdftex.def)             Requested size: 295.90588pt x 137.10318pt.
+File: images/snet/snet_footer.png Graphic file (type png)
+<use images/snet/snet_footer.png>
+Package pdftex.def Info: images/snet/snet_footer.png  used on input line 63.
+(pdftex.def)             Requested size: 54.629pt x 25.15543pt.
+ [24 <./images/preparing_buildings.png>]
+<images/preparing_green_areas.png, id=486, 1369.115pt x 634.37pt>
+File: images/preparing_green_areas.png Graphic file (type png)
+<use images/preparing_green_areas.png>
+Package pdftex.def Info: images/preparing_green_areas.png  used on input line 66.
+(pdftex.def)             Requested size: 295.90588pt x 137.10318pt.
+<images/preparing_entrances.png, id=487, 1369.115pt x 634.37pt>
+File: images/preparing_entrances.png Graphic file (type png)
+<use images/preparing_entrances.png>
+Package pdftex.def Info: images/preparing_entrances.png  used on input line 72.
+(pdftex.def)             Requested size: 295.90588pt x 137.10318pt.
+ [25 <./images/preparing_streets.png> <./images/preparing_green_areas.png> <./images/preparing_entrances.png>]) (./content/05_evaluation.tex
 File: images/snet/snet_footer.png Graphic file (type png)
 <use images/snet/snet_footer.png>
 Package pdftex.def Info: images/snet/snet_footer.png  used on input line 1.
 (pdftex.def)             Requested size: 54.629pt x 25.15543pt.
- [24]
+ [26]
 chapter 5.
-) (./content/06_conclusion.tex [25
+) (./content/06_conclusion.tex [27
 
 
-] [26
+] [28
 
 
 ]
 chapter 6.
-) [27] [28
+) [29] [30
 
 
 ]
@@ -1233,10 +1269,10 @@ chapter without number
 \tf@lot=\write6
 \openout6 = `main.lot'.
 
- [29
+ [31
 
 
-] [30
+] [32
 
 
 ]
@@ -1245,7 +1281,7 @@ chapter without number
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [31]
+ [33]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1278,7 +1314,7 @@ chapter without number
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- (./main.bbl [32
+ (./main.bbl [34
 
 
 
@@ -1287,41 +1323,47 @@ chapter without number
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33]
+ [35]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: images/snet/snet_footer.png Graphic file (type png)
 <use images/snet/snet_footer.png>
 Package pdftex.def Info: images/snet/snet_footer.png  used on input line 182.
 (pdftex.def)             Requested size: 58.04332pt x 26.72874pt.
- [34]) [35] [36
+ [36]) [37] [38
 
 
-] [37
+] [39
 
 
-] [38] (./content/99_appendices/a01_listings.tex
+] [40] (./content/99_appendices/a01_listings.tex
 chapter without number
-) [39
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 5.
+[41
 
 
-] (./main.aux)
+])
+File: images/snet/snet_footer.png Graphic file (type png)
+<use images/snet/snet_footer.png>
+Package pdftex.def Info: images/snet/snet_footer.png  used on input line 85.
+(pdftex.def)             Requested size: 58.04332pt x 26.72874pt.
+ [42] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 32275 strings out of 476025
- 603725 string characters out of 5790017
- 1867388 words of memory out of 5000000
- 51893 multiletter control sequences out of 15000+600000
- 556631 words of font info for 107 fonts, out of 8000000 for 9000
+ 32397 strings out of 476025
+ 606110 string characters out of 5790017
+ 1948388 words of memory out of 5000000
+ 51948 multiletter control sequences out of 15000+600000
+ 561902 words of font info for 122 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 108i,16n,106p,10651b,1362s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,16n,106p,10651b,2302s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (51 pages, 6821160 bytes).
+Output written on main.pdf (54 pages, 9653985 bytes).
 PDF statistics:
- 877 PDF objects out of 1000 (max. 8388607)
- 776 compressed objects within 8 object streams
- 185 named destinations out of 1000 (max. 500000)
- 568 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 984 PDF objects out of 1000 (max. 8388607)
+ 871 compressed objects within 9 object streams
+ 247 named destinations out of 1000 (max. 500000)
+ 588 words of extra memory for PDF output out of 10000 (max. 10000000)
 

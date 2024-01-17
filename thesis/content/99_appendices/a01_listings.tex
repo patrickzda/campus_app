@@ -1,10 +1,76 @@
 \chapter{Appendix 1}
 \label{appendix:listing1}
 
-\lstset{language=PHP}
-\begin{lstlisting}
-for($i=1; $i<123; $i++)
-{
-    echo "work harder! ;)";
-}
+\lstset{language=SQL}
+\begin{lstlisting}[caption={Overpass Turbo query for all of TU Berlin's buildings}, label={buildings}]
+[bbox:52.49993096650543, 13.307022255971093, 52.52269751545147, 13.341918533901309];
+(
+        way["building"="university"];>;
+        way(456211792);>;
+        way(358373103);>;
+        way(104507902);>;
+        way(290166587);>;
+        way(172802144);>;
+        way(262367508);>;
+        way(48793247);>;
+        way(50557514);>;
+        way(993968604);>;
+        way(993968602);>;
+);
+out meta;
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Overpass Turbo query for all main roads next to the campus}, label={main_roads}]
+[bbox:52.49993096650543, 13.307022255971093, 52.52269751545147, 13.341918533901309];
+(
+    way["highway"="primary"];>;
+    way["highway"="secondary"];>;
+);
+out meta;
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Overpass Turbo query for all small roads next to the campus}, label={small_roads}]
+[bbox:52.49993096650543, 13.307022255971093, 52.52269751545147, 13.341918533901309];
+(
+    way["highway"="residential"];>;
+    way["highway"="tertiary"];>;
+);
+out meta;
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Overpass Turbo query for all pathways and sidewalks next to the campus}, label={pathways}]
+[bbox:52.49993096650543, 13.307022255971093, 52.52269751545147, 13.341918533901309];
+(
+    way["highway"]["highway"!="primary"]["highway"!="secondary"]["highway"!="residential"]["highway"!="tertiary"][!"footway"];>;
+);
+out meta;
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Overpass Turbo query for all water green next to the campus}, label={green_areas}]
+[bbox:52.49993096650543, 13.307022255971093, 52.52269751545147, 13.341918533901309];
+(
+    way["landuse"="grass"];>; 
+    way["leisure"="park"];>;
+    way["leisure"="garden"];>; 
+    way["natural"="scrub"];>; 
+    way(314528756);>; 
+    way(104712588);>;
+    way(531886237);>;
+    way(531886252);>;
+);
+out meta;
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Overpass Turbo query for water areas next to the campus}, label={water}]
+[bbox:52.49993096650543, 13.307022255971093, 52.52269751545147, 13.341918533901309];
+(
+    way["natural"="water"];>;
+);
+out meta;
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Overpass Turbo query for all entrances to buildings on the campus}, label={entrances}]
+[bbox:52.49993096650543, 13.307022255971093, 52.52269751545147, 13.341918533901309];
+node["entrance"];
+out meta;
 \end{lstlisting}

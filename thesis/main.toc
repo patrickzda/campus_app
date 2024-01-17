@@ -35,34 +35,34 @@
 \contentsline {subsection}{\numberline {3.4.2}Final design}{21}{subsection.3.4.2}%
 \contentsline {chapter}{\numberline {4}Implementation}{23}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Collection of geodata and POI}{23}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Overview of needed geodata}{24}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.1}Overview of needed geodata}{23}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Collection data from OSM via Overpass Turbo API}{24}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Enhancing OSM data manually in QGIS}{24}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Export of geodata}{24}{subsection.4.1.4}%
-\contentsline {section}{\numberline {4.2}Generation of digital campus map}{24}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Data import and conversion in Unity}{24}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Mesh generation for streets, green areas, water and 3d buildings}{24}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Map design}{24}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Integration into the Flutter app}{24}{subsection.4.2.4}%
-\contentsline {section}{\numberline {4.3}Navigation system development}{24}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Representation of geodata for navigation}{24}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Routing across the campus}{24}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Time estimation for routes}{24}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Embedding the current user location via GPS}{24}{subsection.4.3.4}%
-\contentsline {section}{\numberline {4.4}Interactive information layer development}{24}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Collection of campus relevant information from the web}{24}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Processing of information and internal representation}{24}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}User interface development}{24}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Navigation system}{24}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Information layer}{24}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Enhancing the user experience with additional screens and features}{24}{subsection.4.5.3}%
-\contentsline {chapter}{\numberline {5}Evaluation}{25}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Navigation system verification}{25}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Information layer verification}{25}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Conclusion}{27}{chapter.6}%
-\contentsline {chapter}{\nonumberline List of Tables}{29}{chapter*.10}%
-\contentsline {chapter}{\nonumberline List of Figures}{31}{chapter*.11}%
-\contentsline {chapter}{\nonumberline Bibliography}{33}{chapter*.12}%
-\contentsline {chapter}{Appendices}{37}{section*.13}%
-\contentsline {chapter}{\nonumberline Appendix 1}{39}{chapter*.14}%
+\contentsline {subsection}{\numberline {4.1.3}Correction of OSM data for map generation in QGIS}{24}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Generation of digital campus map}{26}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Data import and conversion in Unity}{26}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Mesh generation for streets, green areas, water and 3d buildings}{26}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Map design}{26}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Integration into the Flutter app}{26}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Navigation system development}{26}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Representation of geodata for navigation}{26}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Manual generation of TU Berlin's street network}{26}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Routing across the campus}{26}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Time estimation for routes}{26}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Embedding the current user location via GPS}{26}{subsection.4.3.5}%
+\contentsline {section}{\numberline {4.4}Interactive information layer development}{26}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Collection of campus relevant information from the web}{26}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Processing of information and internal representation}{26}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}User interface development}{26}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Navigation system}{26}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Information layer}{26}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Enhancing the user experience with additional screens and features}{26}{subsection.4.5.3}%
+\contentsline {chapter}{\numberline {5}Evaluation}{27}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Navigation system verification}{27}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Information layer verification}{27}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Conclusion}{29}{chapter.6}%
+\contentsline {chapter}{\nonumberline List of Tables}{31}{chapter*.15}%
+\contentsline {chapter}{\nonumberline List of Figures}{33}{chapter*.16}%
+\contentsline {chapter}{\nonumberline Bibliography}{35}{chapter*.17}%
+\contentsline {chapter}{Appendices}{39}{section*.18}%
+\contentsline {chapter}{\nonumberline Appendix 1}{41}{chapter*.19}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
