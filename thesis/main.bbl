@@ -234,4 +234,32 @@ J.~Yablonski, ``{Home {$\vert$} Laws of UX},'' Jan. 2024, [Online; accessed 13. 
 ------, ``{Law of Similarity {$\vert$} Laws of UX},'' Jan. 2024, [Online; accessed 14. Jan. 2024]. [Online]. Available: \url{https://lawsofux.com/law-of-similarity}
 \BIBentrySTDinterwordspacing
 
+\bibitem{geoJSON}
+\BIBentryALTinterwordspacing
+``{RFC 7946: The GeoJSON Format},'' Jan. 2024, [Online; accessed 21. Jan. 2024]. [Online]. Available: \url{https://datatracker.ietf.org/doc/html/rfc7946}
+\BIBentrySTDinterwordspacing
+
+\bibitem{pseudo_mercator_1}
+\BIBentryALTinterwordspacing
+``{Wayback Machine},'' Jan. 2024, [Online; accessed 21. Jan. 2024]. [Online]. Available: \url{https://web.archive.org/web/20141009142830/http://earth-info.nga.mil/GandG/wgs84/web_mercator/(U)%20NGA_SIG_0011_1.0.0_WEBMERC.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{pseudo_mercator_2}
+\BIBentryALTinterwordspacing
+``{Wayback Machine},'' Jan. 2024, [Online; accessed 21. Jan. 2024]. [Online]. Available: \url{https://web.archive.org/web/20150215113220/http://cegis.usgs.gov/projection/pdf/Battersby_Implications%20of%20Web%20Mecator%20and%20Its%20Use%20in%20Online%20Mapping.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{mercator_projection_implementation}
+\BIBentryALTinterwordspacing
+``{Mercator {\textendash} OpenStreetMap Wiki},'' Nov. 2023, [Online; accessed 21. Jan. 2024]. [Online]. Available: \url{https://wiki.openstreetmap.org/wiki/Mercator}
+\BIBentrySTDinterwordspacing
+
+\bibitem{triangulation_by_ear_clipping}
+M.~Held, ``Efficient and reliable triangulation of polygons,'' pp. 633--643, 1998.
+
+\bibitem{triangulation_unity_library}
+\BIBentryALTinterwordspacing
+``{Luminary Apps : Blog},'' Dec. 2022, [Online; accessed 23. Jan. 2024]. [Online]. Available: \url{https://luminaryapps.com/blog/triangulating-3d-polygons-in-unity/index.html}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}

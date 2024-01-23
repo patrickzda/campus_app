@@ -196,9 +196,40 @@ Based on connection count and data, the "Building" and "Course" clusters can be 
 According to \cite{law_of_common_region} and \cite{law_of_similarity}, it is advisable to display information related to one common cluster next to each other and similarly. This improves the user experience by emphasizing associated information. The comprehensibility of the visual design is also important: The user should directly understand the meaning of the portrayed data, which can be mainly achieved with descriptive texts and iconography.
 
 \subsection{Wireframes}
-Based on the previously defined requirements, wireframes outlining the basic design concept of the app are created. This section displays the most important pages and provides a brief overview of their features.
+Based on the previously defined requirements, wireframes outlining the basic design concept of the app are created. This section displays the most important pages and provides a brief enumerated overview of their features. (Note that not all wireframes are presented and that certain design and layout changes occur between UX and UI design.)
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{images/wireframes_1.png}\\
+\end{figure}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{images/wireframes_2.png}\\
+	\caption{Most important wireframes with annotations}
+\end{figure}
+
+\begin{enumerate}
+    \item Search bars are prominently placed on the main and search pages. The positioning is inspired by already established apps and enhances the UX due to \cite{jakobs_law}.
+    \item To speed up the search process for certain entities, filter options are placed beneath the search bars.
+    \item A button, that toggles whether the information cards are visible or not. This gives the user the decision whether to explore TU Belin's campus with the help of cards or directly by moving the map. This element also breaks down the number of choices by grouping entities by category, which, due to \cite{hicks_law}, also improves usability.
+    \item Markers are placed on buildings with their respective abbreviations, the main communication symbol for buildings on TU Berlin's campus. A detailed information page is opened when clicked. They provide a sense of familiarity from other navigation services \cite{jakobs_law}.
+    \item Information cards are displayed for every entity on the campus. They present the most important data of a landmark and, when in focus, move the map to the selected place and highlight it. The cards are positioned prominently on the button, to strengthen the interactivity \cite{fitts_law}.
+    \item A button that toggles between 3d and 2d map perspective.
+    \item A button that detects the GPS position of the user and moves the map to it.
+    \item Result cards that contain different base information about the searched entities. They are sorted by category for easier search and chunking \cite{hicks_law}. A detailed information page is opened when clicked on a card.
+    \item A doubled search bar, inspired by common navigation apps \cite{jakobs_law} for start and destination input.
+    \item A special marker, which represents the current GPS position of the user.
+    \item An overview of the calculated route, which pops up after inputting the start and the destination. It presents the most important information for the route as well as an opportunity to start the navigation. Placed on the bottom for easier access \cite{fitts_law}.
+    \item Tags with the most important key facts on the detail pages for certain entities. The detail pages as well as the tags are all designed in a similar way to provide the user a structured, well-organized experience.
+    \item A small pager displaying the courses, that currently take place, on the detail page for a building. They are linked to the respective course detail pages.
+    \item A primary action button, prominently placed to guide the user to the navigation functionality of the app. When clicked, the app switches into navigation mode with the current building selected as the destination.
+    \item A list of rooms, that can be found inside of the selected building. All cards are linked to the respective room detail pages.
+    \item A timetable displaying all the courses, that take place in the selected room. It is sorted by dates. All cards are linked to the course information pages.
+    \item Description and other key information on the detail page for a selected course.
+    \item Further details about the course.
+    \item Button options, that link to the ISIS and MOSES pages of the respective course. They are prominently placed on the bottom to allow for easy access \cite{fitts_law}.
+\end{enumerate}
 
 \section{User interface design}
 

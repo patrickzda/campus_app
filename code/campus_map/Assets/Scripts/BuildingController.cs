@@ -17,7 +17,7 @@ public class BuildingController : MonoBehaviour
         {
             polygonVertices.Add(new Vector3(nodes[i].GetPosition().x, height, nodes[i].GetPosition().z));
         }
-
+        
         polygonVertices.Reverse();
         Poly2Mesh.Polygon polygon = new Poly2Mesh.Polygon {outside = polygonVertices};
         GameObject roof = new GameObject("Roof");
