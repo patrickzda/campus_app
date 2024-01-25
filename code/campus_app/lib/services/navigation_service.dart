@@ -71,6 +71,7 @@ class NavigationService{
       NavigationNode currentNode = navigationNodes[_getNextMinDistanceVertex(minDistancesFromStart, isVisited)];
 
       for(int j = 0; j < currentNode.connectedNodes.length; j++){
+        //TODO: HIER DIE DISTANCETO FUNKTION MIT ETA BERECHNUNG ERSETZEN!
         double totalDistance = minDistancesFromStart[currentNode.id] + currentNode.coordinates.distanceTo(currentNode.connectedNodes[j].coordinates);
 
         if(!isVisited[currentNode.connectedNodes[j].id] && minDistancesFromStart[currentNode.connectedNodes[j].id] > totalDistance){

@@ -31,7 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_embed_unity: ^1.0.1
-
+  location: ^5.0.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

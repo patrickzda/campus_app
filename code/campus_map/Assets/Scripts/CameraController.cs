@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
     private Quaternion cameraTargetRotation;
     private bool is3d = true;
 
-    private float minZoom = 3f, maxZoom = 7.5f;
+    private float minZoom = 2f, maxZoom = 8f;
     private float minX = -5f, maxX = 15f;
     private float minZ = -9f, maxZ = 16f;
     
@@ -46,11 +46,6 @@ public class CameraController : MonoBehaviour
         //transform.position = targetPosition;
         //transform.rotation = targetRotation;
         //cameraTransform.localPosition = targetZoom;
-        
-        //SmoothDamp approach
-        //transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref positionVelocity, 0.3f);
-        //transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * actionSpeed);
-        //cameraTransform.localPosition = Vector3.SmoothDamp(cameraTransform.localPosition, targetZoom, ref zoomVelocity, 0.3f);
     }
 
     //AUS FLUTTER
@@ -91,7 +86,7 @@ public class CameraController : MonoBehaviour
                 if(plane.Raycast(ray, out entry)){
                     dragCurrentPosition = ray.GetPoint(entry);
 
-                    targetPosition = transform.position + (dragStartPosition - dragCurrentPosition) * 1.5f;
+                    targetPosition = transform.position + (dragStartPosition - dragCurrentPosition) * 5f;
                     targetPosition = new Vector3(Mathf.Clamp(targetPosition.x, minX, maxX), targetPosition.y,Mathf.Clamp(targetPosition.z, minZ, maxZ));
                 }
             }
