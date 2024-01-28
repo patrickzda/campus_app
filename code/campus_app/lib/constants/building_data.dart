@@ -6,6 +6,8 @@ Map<String, dynamic> buildingData = {
     "Ackerstraße",
       "ACK"
     ],
+    "latitude":52.53855655317352,
+    "longitude":13.384474278919745,
     "entryNodeIds":[
 
     ]
@@ -16,6 +18,8 @@ Map<String, dynamic> buildingData = {
       "Alte Mineralogie",
       "AM"
     ],
+    "latitude":52.51127634474006,
+    "longitude":13.324101861235581,
     "entryNodeIds":[
 
     ]
@@ -26,6 +30,8 @@ Map<String, dynamic> buildingData = {
       "Angewandte Botanik",
       "AB"
     ],
+    "latitude":52.45694876132018,
+    "longitude":13.3161166181538,
     "entryNodeIds":[
 
     ]
@@ -36,6 +42,8 @@ Map<String, dynamic> buildingData = {
       "Anwendungszentrum Mikroproduktionstechnik",
       "AMP"
     ],
+    "latitude":52.52319012849551,
+    "longitude":13.323624657420533,
     "entryNodeIds":[
 
     ]
@@ -46,6 +54,8 @@ Map<String, dynamic> buildingData = {
       "Architekturgebäude",
       "A"
     ],
+    "latitude":52.513996691134444,
+    "longitude":13.323049557233212,
     "entryNodeIds":[
       1601
     ]
@@ -57,6 +67,8 @@ Map<String, dynamic> buildingData = {
       "A-F",
       "AF"
     ],
+    "latitude":52.51358174617423,
+    "longitude":13.323912910678022,
     "entryNodeIds":[
       1599,
       1664,
@@ -69,6 +81,8 @@ Map<String, dynamic> buildingData = {
       "Bauingenieurgebäude",
       "B"
     ],
+    "latitude":52.511531779717544,
+    "longitude":13.324298176998985,
     "entryNodeIds":[
       1159
     ]
@@ -79,6 +93,8 @@ Map<String, dynamic> buildingData = {
       "Bauingenieurgebäude, alter Flügel",
       "BA"
     ],
+    "latitude":52.51117213620244,
+    "longitude":13.324611230578439,
     "entryNodeIds":[
       1623
     ]
@@ -89,6 +105,8 @@ Map<String, dynamic> buildingData = {
       "Bell-Villa",
       "BEL"
     ],
+    "latitude":52.514508895001754,
+    "longitude":13.325289702098825,
     "entryNodeIds":[
       1665,
       1666
@@ -101,6 +119,8 @@ Map<String, dynamic> buildingData = {
       "BH-A",
       "BHA"
     ],
+    "latitude":52.511637578276876,
+    "longitude":13.323674229035104,
     "entryNodeIds":[
       1663,
       1683,
@@ -114,6 +134,8 @@ Map<String, dynamic> buildingData = {
       "BH-N",
       "BHN"
     ],
+    "latitude":52.5118940242744,
+    "longitude":13.323126412282498,
     "entryNodeIds":[
       1411
     ]
@@ -124,6 +146,8 @@ Map<String, dynamic> buildingData = {
       "Bibliothek",
       "BIB"
     ],
+    "latitude":52.51048170207661,
+    "longitude":13.330740951905712,
     "entryNodeIds":[
       1618,
       1645
@@ -135,6 +159,8 @@ Map<String, dynamic> buildingData = {
       "Carnotstraße",
       "CAR"
     ],
+    "latitude":52.52273943986856,
+    "longitude":13.320388491898306,
     "entryNodeIds":[
 
     ]
@@ -145,6 +171,8 @@ Map<String, dynamic> buildingData = {
       "Chemiegebäude",
       "C"
     ],
+    "latitude":52.512308820088045,
+    "longitude":13.329580361455703,
     "entryNodeIds":[
       1610,
       1662
@@ -156,6 +184,8 @@ Map<String, dynamic> buildingData = {
       "Elektromaschinen und Hochspannungstechnik",
       "EMH"
     ],
+    "latitude":52.51455744880349,
+    "longitude":13.327327935085874,
     "entryNodeIds":[
       1672,
       1048
@@ -167,6 +197,8 @@ Map<String, dynamic> buildingData = {
       "Elektrotechnik, Hörsaalgebäude",
       "HE"
     ],
+    "latitude":52.51417070594077,
+    "longitude":13.32571518751696,
     "entryNodeIds":[
       1602,
       1613
@@ -178,6 +210,8 @@ Map<String, dynamic> buildingData = {
       "Elektrotechnische Institute, Altbau",
       "E"
     ],
+    "latitude":52.51480086325284,
+    "longitude":13.326178623391277,
     "entryNodeIds":[
       1639
     ]
@@ -189,6 +223,8 @@ Map<String, dynamic> buildingData = {
       "E-N",
       "EN"
     ],
+    "latitude":52.51507688075438,
+    "longitude":13.326852983826978,
     "entryNodeIds":[
       1603,
       1625,
@@ -203,6 +239,8 @@ Map<String, dynamic> buildingData = {
       "Ernst-Ruska-Gebäude",
       "ER"
     ],
+    "latitude":52.510969581944515,
+    "longitude":13.325586252556642,
     "entryNodeIds":[
       1623,
       1612,
@@ -215,6 +253,8 @@ Map<String, dynamic> buildingData = {
       "Erweiterungsbau",
       "EB"
     ],
+    "latitude":52.5121169811534,
+    "longitude":13.324395195859646,
     "entryNodeIds":[
       1616,
       1607,
@@ -227,6 +267,8 @@ Map<String, dynamic> buildingData = {
       "Eugene-Paul-Wigner-Gebäude",
       "EW"
     ],
+    "latitude":52.510544779507974,
+    "longitude":13.324670311226066,
     "entryNodeIds":[
       1651,
       1629,
@@ -242,6 +284,8 @@ Map<String, dynamic> buildingData = {
       "Flugtechnische Institute",
       "F"
     ],
+    "latitude":52.51491403240332,
+    "longitude":13.323625377269236,
     "entryNodeIds":[
       1609,
       1647,
@@ -256,6 +300,8 @@ Map<String, dynamic> buildingData = {
       "Fraunhoferstraße",
       "FH"
     ],
+    "latitude":52.51446657452854,
+    "longitude":13.321316886475833,
     "entryNodeIds":[
       1671,
       1701
@@ -268,6 +314,8 @@ Map<String, dynamic> buildingData = {
       "GG-B",
       "GGB"
     ],
+    "latitude":52.54569764328021,
+    "longitude":13.34370843221151,
     "entryNodeIds":[
 
     ]
@@ -278,6 +326,8 @@ Map<String, dynamic> buildingData = {
       "Getreideverarbeitung",
       "GV"
     ],
+    "latitude":52.54381046004911,
+    "longitude":13.341340881443672,
     "entryNodeIds":[
 
     ]
@@ -288,6 +338,8 @@ Map<String, dynamic> buildingData = {
       "Hardenbergstraße",
       "HBS"
     ],
+    "latitude":52.507438626031465,
+    "longitude":13.328873328484534,
     "entryNodeIds":[
       1135
     ]
@@ -298,6 +350,8 @@ Map<String, dynamic> buildingData = {
       "Hauptgebäude",
       "H"
     ],
+    "latitude":52.51205930536006,
+    "longitude":13.327023817697699,
     "entryNodeIds":[
       1640,
       1641,
@@ -321,6 +375,8 @@ Map<String, dynamic> buildingData = {
       "Hermann-Föttinger-Gebäude",
       "HF"
     ],
+    "latitude":52.51154756152158,
+    "longitude":13.332765987267676,
     "entryNodeIds":[
       1789
     ]
@@ -332,6 +388,8 @@ Map<String, dynamic> buildingData = {
       "HF-LA",
       "HFLA"
     ],
+    "latitude":52.51155410387751,
+    "longitude":13.332765217680905,
     "entryNodeIds":[
       1798
     ]
@@ -342,6 +400,8 @@ Map<String, dynamic> buildingData = {
       "Heizung und Lüftung",
       "HL"
     ],
+    "latitude":52.51436591224626,
+    "longitude":13.323853581651615,
     "entryNodeIds":[
 
     ]
@@ -352,6 +412,8 @@ Map<String, dynamic> buildingData = {
       "Hochfrequenztechnik",
       "HFT"
     ],
+    "latitude":52.51571290196854,
+    "longitude":13.325803217506826,
     "entryNodeIds":[
       261
     ]
@@ -362,6 +424,8 @@ Map<String, dynamic> buildingData = {
       "Kaiserin-Augusta-Allee",
       "KAI"
     ],
+    "latitude":52.52532599386665,
+    "longitude":13.320797764107732,
     "entryNodeIds":[
 
     ]
@@ -372,6 +436,8 @@ Map<String, dynamic> buildingData = {
       "Kerntechnik",
       "KT"
     ],
+    "latitude":52.515941849036956,
+    "longitude":13.324303737775113,
     "entryNodeIds":[
       1615,
       1595
@@ -383,6 +449,8 @@ Map<String, dynamic> buildingData = {
       "Königin-Luise-Straße",
       "KL"
     ],
+    "latitude":52.45671767919014,
+    "longitude":13.299432425319994,
     "entryNodeIds":[
 
     ]
@@ -393,6 +461,8 @@ Map<String, dynamic> buildingData = {
       "Kraft- und Fernheizwerk",
       "KF"
     ],
+    "latitude":52.510595486568306,
+    "longitude":13.329193635677132,
     "entryNodeIds":[
       498
     ]
@@ -403,6 +473,8 @@ Map<String, dynamic> buildingData = {
       "Kraftfahrzeuge",
       "K"
     ],
+    "latitude":52.51082720375109,
+    "longitude":13.32957707322891,
     "entryNodeIds":[
       72
     ]
@@ -413,6 +485,8 @@ Map<String, dynamic> buildingData = {
       "Kraftwerkstechnik und Apparatebau",
       "KWT"
     ],
+    "latitude":52.511344327374374,
+    "longitude":13.330280423813381,
     "entryNodeIds":[
       1815
     ]
@@ -423,6 +497,8 @@ Map<String, dynamic> buildingData = {
       "Lebensmittelchemie",
       "L"
     ],
+    "latitude":52.51144006864567,
+    "longitude":13.333280242203223,
     "entryNodeIds":[
       1790
     ]
@@ -433,6 +509,8 @@ Map<String, dynamic> buildingData = {
       "Marchstraße",
       "MAR"
     ],
+    "latitude":52.516606394932744,
+    "longitude":13.323524307502508,
     "entryNodeIds":[
       1631
     ]
@@ -443,6 +521,8 @@ Map<String, dynamic> buildingData = {
       "Mathematikgebäude",
       "MA"
     ],
+    "latitude":52.51381768363269,
+    "longitude":13.325939275313768,
     "entryNodeIds":[
       1597,
       1596,
@@ -457,6 +537,8 @@ Map<String, dynamic> buildingData = {
       "Mechanik",
       "M"
     ],
+    "latitude":52.5112208578954,
+    "longitude":13.329829449851076,
     "entryNodeIds":[
       1157
     ]
@@ -467,6 +549,8 @@ Map<String, dynamic> buildingData = {
       "Mechanische Schwingungslehre",
       "MS"
     ],
+    "latitude":52.514124554919626,
+    "longitude":13.328364907498623,
     "entryNodeIds":[
       1636
     ]
@@ -477,6 +561,8 @@ Map<String, dynamic> buildingData = {
       "Physikalische Chemie",
       "PC"
     ],
+    "latitude":52.511676660249314,
+    "longitude":13.329533924546663,
     "entryNodeIds":[
       1817
     ]
@@ -487,6 +573,8 @@ Map<String, dynamic> buildingData = {
       "Produktionstechnisches Zentrum",
       "PTZ"
     ],
+    "latitude":52.523967822547775,
+    "longitude":13.323579102328134,
     "entryNodeIds":[
 
     ]
@@ -498,6 +586,8 @@ Map<String, dynamic> buildingData = {
       "SE-RH",
       "SERH"
     ],
+    "latitude":52.51115314668488,
+    "longitude":13.32892989473013,
     "entryNodeIds":[
       1818
     ]
@@ -519,6 +609,8 @@ Map<String, dynamic> buildingData = {
       "SG5",
       "SG 5"
     ],
+    "latitude":52.51960489985846,
+    "longitude":13.320797368881559,
     "entryNodeIds":[
       1804
     ]
@@ -546,6 +638,8 @@ Map<String, dynamic> buildingData = {
       "SG13",
       "SG 13"
     ],
+    "latitude":52.5202949537905,
+    "longitude":13.321988444515524,
     "entryNodeIds":[
 
     ]
@@ -556,6 +650,8 @@ Map<String, dynamic> buildingData = {
       "Sportzentrum der TU Berlin",
       "SPW"
     ],
+    "latitude":52.50135137580789,
+    "longitude":13.26020041153604,
     "entryNodeIds":[
       1814
     ]
@@ -566,6 +662,8 @@ Map<String, dynamic> buildingData = {
       "Steinplatz",
       "ST"
     ],
+    "latitude":52.50832106555259,
+    "longitude":13.325100464432747,
     "entryNodeIds":[
       1797
     ]
@@ -576,6 +674,8 @@ Map<String, dynamic> buildingData = {
       "Technische Akustik",
       "TA"
     ],
+    "latitude":52.51573428176408,
+    "longitude":13.325243350570066,
     "entryNodeIds":[
       261
     ]
@@ -586,6 +686,8 @@ Map<String, dynamic> buildingData = {
       "Technische Akustik, Prüfhalle",
       "TAP"
     ],
+    "latitude":52.51605262107681,
+    "longitude":13.32553035865148,
     "entryNodeIds":[
       974
     ]
@@ -596,6 +698,8 @@ Map<String, dynamic> buildingData = {
       "Technische Chemie",
       "TC"
     ],
+    "latitude":52.51365612415516,
+    "longitude":13.32754177430259,
     "entryNodeIds":[
       1675,
       1674,
@@ -608,6 +712,8 @@ Map<String, dynamic> buildingData = {
       "Thermodynamik und Kältetechnik",
       "TK"
     ],
+    "latitude":52.51081428566287,
+    "longitude":13.328050646087672,
     "entryNodeIds":[
       733,
       735,
@@ -620,6 +726,8 @@ Map<String, dynamic> buildingData = {
       "TIB Geländekomplex Humboldthain",
       "TIB"
     ],
+    "latitude":52.540968472743195,
+    "longitude":13.386899797107498,
     "entryNodeIds":[
 
     ]
@@ -630,6 +738,8 @@ Map<String, dynamic> buildingData = {
       "Transmissionselektronenmikroskopie",
       "TEM"
     ],
+    "latitude":52.514723165025735,
+    "longitude":13.324632869840737,
     "entryNodeIds":[
 
     ]
@@ -640,6 +750,8 @@ Map<String, dynamic> buildingData = {
       "TU-Hochhaus (ehem. Telefunken-Hochhaus)",
       "TEL"
     ],
+    "latitude":52.5129678121188,
+    "longitude":13.320041081636075,
     "entryNodeIds":[
       1592,
       1635,
@@ -652,6 +764,8 @@ Map<String, dynamic> buildingData = {
       "Verformungskunde, Zentraleinrichtung Hochschulsport",
       "V"
     ],
+    "latitude":52.511065323728054,
+    "longitude":13.329241698489266,
     "entryNodeIds":[
       1819
     ]
@@ -662,6 +776,8 @@ Map<String, dynamic> buildingData = {
       "Versuchsanstalt für Wasserbau und Schiffbau (ehem.), Zentralwerkstatt",
       "VWS"
     ],
+    "latitude":52.51230231728046,
+    "longitude":13.333897358644268,
     "entryNodeIds":[
       1791
     ]
@@ -672,6 +788,8 @@ Map<String, dynamic> buildingData = {
       "Wasserbau und Wasserwirtschaft",
       "W"
     ],
+    "latitude":52.51361352736991,
+    "longitude":13.325068360991144,
     "entryNodeIds":[
       1632,
       1633,
@@ -684,6 +802,8 @@ Map<String, dynamic> buildingData = {
       "Z-Gebäude",
       "Z"
     ],
+    "latitude":52.511698985106264,
+    "longitude":13.330182503988633,
     "entryNodeIds":[
       1816
     ]
@@ -694,6 +814,8 @@ Map<String, dynamic> buildingData = {
       "Zuckerindustrie",
       "ZI"
     ],
+    "latitude":52.54560740762416,
+    "longitude":13.345465424180432,
     "entryNodeIds":[
 
     ]
@@ -704,6 +826,8 @@ Map<String, dynamic> buildingData = {
       "Studierendenwerk",
       "STW"
     ],
+    "latitude":52.51004910707742,
+    "longitude":13.32556703263024,
     "entryNodeIds":[
       1617
     ]
@@ -715,6 +839,8 @@ Map<String, dynamic> buildingData = {
       "Mensa Hardenbergstraße",
       "HM"
     ],
+    "latitude":52.50979302417846,
+    "longitude":13.326105143783437,
     "entryNodeIds":[
       1637,
       1630,

@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     public float movementStrength;
     public float rotationStrength;
     public Vector3 zoomStrength;
+    public NavigationController navigationController;
 
     private Vector3 targetPosition;
     private Quaternion targetRotation;
@@ -17,12 +18,12 @@ public class CameraController : MonoBehaviour
     private Vector3 dragCurrentPosition;
     private Quaternion cameraTargetRotation;
     private bool is3d = true;
+    private bool isInitialized = false;
 
     private float minZoom = 2f, maxZoom = 8f;
     private float minX = -5f, maxX = 15f;
     private float minZ = -9f, maxZ = 16f;
-    
-    
+
     void Start()
     {
         targetPosition = transform.position;
@@ -30,6 +31,7 @@ public class CameraController : MonoBehaviour
         cameraTransform = transform.GetChild(0);
         targetZoom = cameraTransform.localPosition;
         cameraTargetRotation = cameraTransform.localRotation;
+        isInitialized = true;
     }
 
     void FixedUpdate()
@@ -41,11 +43,6 @@ public class CameraController : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * actionSpeed);
         cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, targetZoom, Time.deltaTime * actionSpeed);
         cameraTransform.localRotation = Quaternion.Lerp(cameraTransform.localRotation, cameraTargetRotation, Time.deltaTime * actionSpeed);
-        
-        //Direct approach
-        //transform.position = targetPosition;
-        //transform.rotation = targetRotation;
-        //cameraTransform.localPosition = targetZoom;
     }
 
     //AUS FLUTTER
@@ -65,7 +62,37 @@ public class CameraController : MonoBehaviour
             targetZoom = new Vector3(0f, cameraTransform.position.y, 0f);
         }
     }
+
+    //AUS FLUTTER, Parameter: Koordinaten des Zielstandortes der Kamera im Format lat, lon
+    public void MoveToFromString(string coordinates)
+    {
+        string[] coordinateData = coordinates.Replace(" ", "").Split(",");
+        targetPosition = NavigationController.CoordinatesToVector3(NavigationController.ParseFloat(coordinateData[0]), NavigationController.ParseFloat(coordinateData[1]));
+    }
+
+    public void MoveTo(Vector3 position)
+    {
+        targetPosition = position;
+    }
+
+    //AUS FLUTTER, Parameter: Zoomlevel als float im String-Format
+    public void ZoomToFromString(string zoomLevelString)
+    {
+        float zoomLevel = Mathf.Clamp(NavigationController.ParseFloat(zoomLevelString), minZoom, maxZoom);
+        targetZoom = new Vector3(targetZoom.x, zoomLevel,is3d ? -zoomLevel : 0f);
+    }
     
+    public void ZoomTo(float zoomLevel)
+    {
+        zoomLevel = Mathf.Clamp(zoomLevel, minZoom, maxZoom);
+        targetZoom = new Vector3(targetZoom.x, zoomLevel,is3d ? -zoomLevel : 0f);
+    }
+
+    public void RotateTo(float rotationAngle)
+    {
+        targetRotation = Quaternion.Euler(Vector3.up * -rotationAngle);
+    }
+
     void HandleGestureInput(){
         if (Input.touchCount == 1)
         {
@@ -77,6 +104,8 @@ public class CameraController : MonoBehaviour
                 if(plane.Raycast(ray, out entry)){
                     dragStartPosition = ray.GetPoint(entry);
                 }
+                
+                navigationController.SetFocusOnUserPosition(false);
             }
             if(Input.GetTouch(0).phase == TouchPhase.Moved){
                 Plane plane = new Plane(Vector3.up, Vector3.zero);
@@ -89,6 +118,8 @@ public class CameraController : MonoBehaviour
                     targetPosition = transform.position + (dragStartPosition - dragCurrentPosition) * 5f;
                     targetPosition = new Vector3(Mathf.Clamp(targetPosition.x, minX, maxX), targetPosition.y,Mathf.Clamp(targetPosition.z, minZ, maxZ));
                 }
+                
+                navigationController.SetFocusOnUserPosition(false);
             }
         }
         else if(Input.touchCount == 2)
@@ -111,6 +142,8 @@ public class CameraController : MonoBehaviour
 
             float angle = Vector2.SignedAngle(lastPositionDifference, currentPositionDifference);
             targetRotation *= Quaternion.Euler(Vector3.up * (angle * 0.5f));
+            
+            navigationController.SetFocusOnUserPosition(false);
         }
     }
     
@@ -152,7 +185,16 @@ public class CameraController : MonoBehaviour
             targetZoom -= zoomStrength;
             targetZoom = new Vector3(targetZoom.x, Mathf.Clamp(targetZoom.y, minZoom, maxZoom),is3d ? Mathf.Clamp(targetZoom.z, -maxZoom, -minZoom) : 0f);
         }
-        
+    }
+
+    public bool Is3d()
+    {
+        return is3d;
+    }
+
+    public bool IsInitialized()
+    {
+        return isInitialized;
     }
     
 }

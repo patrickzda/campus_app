@@ -9,7 +9,7 @@ class NavigationService{
   late List<NavigationNode> navigationNodes;
 
   NavigationService(){
-    buildings = List.filled(buildingData.length, Building(id: 0, shortName: "", names: [], entryNodes: []));
+    buildings = List.filled(buildingData.length, Building(id: 0, shortName: "", names: [], position: const Coordinates(latitude: 0, longitude: 0), entryNodes: []));
     navigationNodes = List.filled(navigationNodeData.length, NavigationNode(id: 0, coordinates: const Coordinates(latitude: 0, longitude: 0)));
 
     List<String> buildingDataKeys = buildingData.keys.toList();
@@ -19,6 +19,7 @@ class NavigationService{
 
       Building currentBuilding = Building(
         id: int.parse(currentKey),
+        position: Coordinates(latitude: currentData["latitude"], longitude: currentData["longitude"]),
         shortName: currentData["shortName"],
         names: List.generate(currentData["names"].length, (int index){
           return currentData["names"][index].toString();
