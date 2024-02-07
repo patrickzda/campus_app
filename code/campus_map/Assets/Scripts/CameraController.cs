@@ -63,6 +63,22 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    //AUS FLUTTER
+    public void Set3dView(string value)
+    {
+        if (is3d != (value == "true"))
+        {
+            Toggle3dView();
+        }
+    }
+
+    //AUS FLUTTER
+    public void ResetCamera()
+    {
+        MoveTo(new Vector3(2f, targetPosition.y, 0f));
+        ZoomTo(5);
+    }
+
     //AUS FLUTTER, Parameter: Koordinaten des Zielstandortes der Kamera im Format lat, lon
     public void MoveToFromString(string coordinates)
     {
@@ -186,7 +202,7 @@ public class CameraController : MonoBehaviour
             targetZoom = new Vector3(targetZoom.x, Mathf.Clamp(targetZoom.y, minZoom, maxZoom),is3d ? Mathf.Clamp(targetZoom.z, -maxZoom, -minZoom) : 0f);
         }
     }
-
+    
     public bool Is3d()
     {
         return is3d;

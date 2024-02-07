@@ -10,11 +10,14 @@ public class UserMarkerController : MonoBehaviour
     private Vector3 targetPosition;
     private Quaternion targetRotation;
     private bool isLocationMode = true;
+    private bool isInitialized = false;
 
     private void Start()
     {
         transform.GetChild(0).gameObject.SetActive(isLocationMode);
         transform.GetChild(1).gameObject.SetActive(!isLocationMode);
+        targetPosition = transform.position;
+        isInitialized = true;
     }
 
     void FixedUpdate()
@@ -27,7 +30,8 @@ public class UserMarkerController : MonoBehaviour
     public void SetUserLocationFromString(string userCoordinates)
     {
         string[] coordinateData = userCoordinates.Replace(" ", "").Split(",");
-        transform.position = NavigationController.CoordinatesToVector3(NavigationController.ParseFloat(coordinateData[0]), NavigationController.ParseFloat(coordinateData[1]));
+        targetPosition = NavigationController.CoordinatesToVector3(NavigationController.ParseFloat(coordinateData[0]), NavigationController.ParseFloat(coordinateData[1]));
+        transform.position = targetPosition;
     }
     
     //AUS FLUTTER, Parameter: Koordinaten des Zielstandortes der Kamera im Format lat, lon
@@ -65,6 +69,11 @@ public class UserMarkerController : MonoBehaviour
     private bool StringToBool(string value)
     {
         return value == "true";
+    }
+    
+    public bool IsInitialized()
+    {
+        return isInitialized;
     }
 
 }

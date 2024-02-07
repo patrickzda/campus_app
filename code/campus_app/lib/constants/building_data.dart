@@ -1,9 +1,17 @@
 
-Map<String, dynamic> buildingData = {
+const Map<String, dynamic> buildingData = {
   "0":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": false,
+    "canteenIds":[
+    
+    ],
     "shortName":"ACK",
     "names":[
-    "Ackerstraße",
+      "Ackerstraße",
       "ACK"
     ],
     "latitude":52.53855655317352,
@@ -13,6 +21,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "1":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"AM",
     "names":[
       "Alte Mineralogie",
@@ -25,6 +41,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "2":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": false,
+    "canteenIds":[
+    
+    ],
     "shortName":"AB",
     "names":[
       "Angewandte Botanik",
@@ -37,6 +61,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "3":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": false,
+    "canteenIds":[
+    
+    ],
     "shortName":"AMP",
     "names":[
       "Anwendungszentrum Mikroproduktionstechnik",
@@ -49,6 +81,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "4":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+      3
+    ],
     "shortName":"A",
     "names":[
       "Architekturgebäude",
@@ -61,6 +101,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "5":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"A-F",
     "names":[
       "Architekturgebäude, Flachbau",
@@ -76,6 +124,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "6":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"B",
     "names":[
       "Bauingenieurgebäude",
@@ -88,6 +144,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "7":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"BA",
     "names":[
       "Bauingenieurgebäude, alter Flügel",
@@ -100,6 +164,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "8":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"BEL",
     "names":[
       "Bell-Villa",
@@ -113,6 +185,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "9":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"BH-A",
     "names":[
       "Bergbau und Hüttenwesen, Altbau",
@@ -128,6 +208,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "10":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"BH-N",
     "names":[
       "Bergbau und Hüttenwesen, Neubau",
@@ -141,6 +229,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "11":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"BIB",
     "names":[
       "Bibliothek",
@@ -154,6 +250,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "12":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": false,
+    "canteenIds":[
+    
+    ],
     "shortName":"CAR",
     "names":[
       "Carnotstraße",
@@ -166,6 +270,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "13":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"C",
     "names":[
       "Chemiegebäude",
@@ -179,6 +291,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "14":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"EMH",
     "names":[
       "Elektromaschinen und Hochspannungstechnik",
@@ -192,6 +312,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "15":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"HE",
     "names":[
       "Elektrotechnik, Hörsaalgebäude",
@@ -205,6 +333,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "16":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"E",
     "names":[
       "Elektrotechnische Institute, Altbau",
@@ -217,6 +353,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "17":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"E-N",
     "names":[
       "Elektrotechnische Institute, Neubau",
@@ -234,6 +378,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "18":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"ER",
     "names":[
       "Ernst-Ruska-Gebäude",
@@ -248,6 +400,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "19":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"EB",
     "names":[
       "Erweiterungsbau",
@@ -262,6 +422,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "20":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"EW",
     "names":[
       "Eugene-Paul-Wigner-Gebäude",
@@ -279,6 +447,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "21":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"F",
     "names":[
       "Flugtechnische Institute",
@@ -295,6 +471,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "22":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"FH",
     "names":[
       "Fraunhoferstraße",
@@ -308,6 +492,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "23":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": false,
+    "canteenIds":[
+    
+    ],
     "shortName":"GG-B",
     "names":[
       "Gärungsgewerbe",
@@ -321,6 +513,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "24":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": false,
+    "canteenIds":[
+    
+    ],
     "shortName":"GV",
     "names":[
       "Getreideverarbeitung",
@@ -333,6 +533,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "25":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"HBS",
     "names":[
       "Hardenbergstraße",
@@ -345,6 +553,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "26":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+      6
+    ],
     "shortName":"H",
     "names":[
       "Hauptgebäude",
@@ -370,6 +586,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "27":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"HF",
     "names":[
       "Hermann-Föttinger-Gebäude",
@@ -382,6 +606,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "28":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"HF-LA",
     "names":[
       "Hermann-Föttinger-Gebäude, Energielabor",
@@ -395,6 +627,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "29":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"HL",
     "names":[
       "Heizung und Lüftung",
@@ -407,6 +647,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "30":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"HFT",
     "names":[
       "Hochfrequenztechnik",
@@ -419,6 +667,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "31":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": false,
+    "canteenIds":[
+    
+    ],
     "shortName":"KAI",
     "names":[
       "Kaiserin-Augusta-Allee",
@@ -431,6 +687,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "32":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"KT",
     "names":[
       "Kerntechnik",
@@ -444,6 +708,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "33":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": false,
+    "canteenIds":[
+    
+    ],
     "shortName":"KL",
     "names":[
       "Königin-Luise-Straße",
@@ -456,6 +728,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "34":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"KF",
     "names":[
       "Kraft- und Fernheizwerk",
@@ -468,6 +748,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "35":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"K",
     "names":[
       "Kraftfahrzeuge",
@@ -480,6 +768,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "36":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"KWT",
     "names":[
       "Kraftwerkstechnik und Apparatebau",
@@ -492,6 +788,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "37":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"L",
     "names":[
       "Lebensmittelchemie",
@@ -504,6 +808,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "38":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+      4
+    ],
     "shortName":"MAR",
     "names":[
       "Marchstraße",
@@ -516,6 +828,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "39":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"MA",
     "names":[
       "Mathematikgebäude",
@@ -532,6 +852,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "40":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"M",
     "names":[
       "Mechanik",
@@ -544,6 +872,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "41":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"MS",
     "names":[
       "Mechanische Schwingungslehre",
@@ -556,6 +892,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "42":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"PC",
     "names":[
       "Physikalische Chemie",
@@ -568,6 +912,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "43":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": false,
+    "canteenIds":[
+    
+    ],
     "shortName":"PTZ",
     "names":[
       "Produktionstechnisches Zentrum",
@@ -580,6 +932,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "44":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"SE-RH",
     "names":[
       "Reuleaux-Haus, Eisenbahnlehranlage",
@@ -593,6 +953,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "45":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"SG 1-5",
     "names":[
       "Severin-Gelände 1-5",
@@ -616,6 +984,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "46":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"SG 6-13",
     "names":[
       "Severin-Gelände 6-13",
@@ -645,6 +1021,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "47":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": false,
+    "canteenIds":[
+    
+    ],
     "shortName":"SPW",
     "names":[
       "Sportzentrum der TU Berlin",
@@ -657,6 +1041,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "48":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"ST",
     "names":[
       "Steinplatz",
@@ -669,6 +1061,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "49":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"TA",
     "names":[
       "Technische Akustik",
@@ -681,6 +1081,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "50":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"TAP",
     "names":[
       "Technische Akustik, Prüfhalle",
@@ -693,6 +1101,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "51":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"TC",
     "names":[
       "Technische Chemie",
@@ -707,6 +1123,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "52":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"TK",
     "names":[
       "Thermodynamik und Kältetechnik",
@@ -721,6 +1145,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "53":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": false,
+    "canteenIds":[
+    
+    ],
     "shortName":"TIB",
     "names":[
       "TIB Geländekomplex Humboldthain",
@@ -733,6 +1165,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "54":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"TEM",
     "names":[
       "Transmissionselektronenmikroskopie",
@@ -745,6 +1185,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "55":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+      2
+    ],
     "shortName":"TEL",
     "names":[
       "TU-Hochhaus (ehem. Telefunken-Hochhaus)",
@@ -759,9 +1207,17 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "56":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"V",
     "names":[
-      "Verformungskunde, Zentraleinrichtung Hochschulsport",
+      "Verformungskunde",
       "V"
     ],
     "latitude":52.511065323728054,
@@ -771,9 +1227,17 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "57":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"VWS",
     "names":[
-      "Versuchsanstalt für Wasserbau und Schiffbau (ehem.), Zentralwerkstatt",
+      "Versuchsanstalt für Wasser- und Schiffbau",
       "VWS"
     ],
     "latitude":52.51230231728046,
@@ -783,6 +1247,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "58":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"W",
     "names":[
       "Wasserbau und Wasserwirtschaft",
@@ -797,6 +1269,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "59":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"Z",
     "names":[
       "Z-Gebäude",
@@ -809,6 +1289,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "60":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": false,
+    "canteenIds":[
+    
+    ],
     "shortName":"ZI",
     "names":[
       "Zuckerindustrie",
@@ -821,6 +1309,14 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "61":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+    
+    ],
     "shortName":"STW",
     "names":[
       "Studierendenwerk",
@@ -833,6 +1329,16 @@ Map<String, dynamic> buildingData = {
     ]
   },
   "62":{
+    "openingHour": 6,
+    "openingMinute": 0,
+    "closingHour": 21,
+    "closingMinute": 0,
+    "isOnMainCampus": true,
+    "canteenIds":[
+      0,
+      1,
+      5
+    ],
     "shortName":"HM",
     "names":[
       "Hauptmensa",

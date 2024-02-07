@@ -1,5 +1,5 @@
 
-Map<String, dynamic> navigationNodeData = {
+const Map<String, dynamic> navigationNodeData = {
   "0":{
     "coordinates":[
       52.5127034,

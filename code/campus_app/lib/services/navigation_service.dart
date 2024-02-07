@@ -1,16 +1,40 @@
 import 'package:campus_app/constants/building_data.dart';
+import 'package:campus_app/constants/canteen_data.dart';
+import 'package:campus_app/constants/constants.dart';
 import 'package:campus_app/constants/navigation_node_data.dart';
+import 'package:campus_app/data/canteen.dart';
 import 'package:campus_app/data/coordinates.dart';
+import 'package:campus_app/data/geofence.dart';
+import 'package:campus_app/services/unity_communication_service.dart';
+import 'package:campus_app/services/user_location_service.dart';
+import 'package:location/location.dart';
 import '../data/building.dart';
 import '../data/navigation_node.dart';
 
+enum NavigationState{
+  initialized,
+  active,
+  finished,
+}
+
 class NavigationService{
   late List<Building> buildings;
+  late List<Canteen> canteens;
   late List<NavigationNode> navigationNodes;
+  late UserLocationService userLocationService;
+
+  List<NavigationNode> currentRoute = [];
+  NavigationState state = NavigationState.finished;
+  List<Building> buildingsAlongTheRoute = [];
+  List<Geofence> geofenceList = [];
+  Geofence? targetGeofence;
+  Building? currentBuilding;
+  double routeLengthInMeters = 0, walkingTimeInMinutes = 0;
 
   NavigationService(){
-    buildings = List.filled(buildingData.length, Building(id: 0, shortName: "", names: [], position: const Coordinates(latitude: 0, longitude: 0), entryNodes: []));
+    buildings = List.filled(buildingData.length, Building(id: 0, shortName: "", names: [], position: const Coordinates(latitude: 0, longitude: 0), entryNodes: [], openingHour: 0, openingMinute: 0, closingHour: 0, closingMinute: 0, isOnMainCampus: true));
     navigationNodes = List.filled(navigationNodeData.length, NavigationNode(id: 0, coordinates: const Coordinates(latitude: 0, longitude: 0)));
+    canteens = [];
 
     List<String> buildingDataKeys = buildingData.keys.toList();
     for(int i = 0; i < buildingDataKeys.length; i++){
@@ -24,9 +48,29 @@ class NavigationService{
         names: List.generate(currentData["names"].length, (int index){
           return currentData["names"][index].toString();
         }),
-        entryNodes: []
+        entryNodes: [],
+        openingHour: currentData["openingHour"],
+        openingMinute: currentData["openingMinute"],
+        closingHour: currentData["closingHour"],
+        closingMinute: currentData["closingMinute"],
+        isOnMainCampus: currentData["isOnMainCampus"]
       );
       buildings[currentBuilding.id] = currentBuilding;
+    }
+
+    for(int i = 0; i < canteenData.keys.length; i++){
+      Map<String, dynamic> currentData = canteenData[canteenData.keys.toList()[i]];
+
+      canteens.add(Canteen(
+        id: int.parse(canteenData.keys.toList()[i]),
+        name: currentData["name"],
+        position: Coordinates(latitude: currentData["latitude"], longitude: currentData["longitude"]),
+        building: buildings[currentData["buildingId"]],
+        openingHour: currentData["openingHour"],
+        openingMinute: currentData["openingMinute"],
+        closingHour: currentData["closingHour"],
+        closingMinute: currentData["closingMinute"],
+      ));
     }
 
     List<String> navigationNodeKeys = navigationNodeData.keys.toList();
@@ -50,6 +94,9 @@ class NavigationService{
       buildings[int.parse(currentKey)].entryNodes = List.generate(buildingData[currentKey]["entryNodeIds"].length, (int index){
         return navigationNodes[buildingData[currentKey]["entryNodeIds"][index]];
       });
+      buildings[int.parse(currentKey)].canteens = List.generate(buildingData[currentKey]["canteenIds"].length, (int index){
+        return canteens[buildingData[currentKey]["canteenIds"][index]];
+      });
     }
 
     for(int i = 0; i < navigationNodeKeys.length; i++){
@@ -58,9 +105,117 @@ class NavigationService{
         return navigationNodes[navigationNodeData[currentKey]["connections"][index]];
       });
     }
+
+    userLocationService = UserLocationService(
+      onFenceEnter: (int fenceId){
+        //Gebäude wird während der Navigation betreten, die Kamera fokussiert sich auf das Gebäude
+        if(state == NavigationState.active){
+          for(int i = 0; i < geofenceList.length; i++){
+            if(geofenceList[i].id == fenceId){
+              currentBuilding = geofenceList[i].associatedBuilding;
+              UnityCommunicationService.moveCameraTo(currentBuilding!.position);
+              UnityCommunicationService.zoomCameraTo(4);
+            }
+          }
+        }
+      },
+      onFenceExit: (int fenceId){
+        if(state == NavigationState.active){
+          currentBuilding = null;
+        }
+      }
+    );
+
+    userLocationService.locationStream.listen((Coordinates userPosition) {
+      if(state == NavigationState.active){
+        _updateNavigation(userPosition);
+      }
+    });
+
   }
 
-  List<NavigationNode> calculateRoute(NavigationNode start, NavigationNode end){
+  void initNavigation(NavigationNode start, NavigationNode end) async{
+    currentRoute = _calculateRoute(start, end);
+    UnityCommunicationService.createPolyline(List.generate(currentRoute.length, (int index){
+      return currentRoute[index].coordinates;
+    }));
+
+    for(int i = 1; i < currentRoute.length; i++){
+      routeLengthInMeters = routeLengthInMeters +  currentRoute[i - 1].coordinates.distanceTo(currentRoute[i].coordinates);
+    }
+
+    //TODO: BESSERE BERECHNUNG DER ETA
+    walkingTimeInMinutes = (routeLengthInMeters / averageWalkingSpeedInMetersPerSecond) / 60.0;
+
+    state = NavigationState.initialized;
+  }
+
+  Future<bool> startNavigation() async{
+    if(state != NavigationState.initialized){
+      return false;
+    }
+
+    await userLocationService.getLocationUpdates();
+    if((await userLocationService.location.hasPermission()) == PermissionStatus.granted && await userLocationService.location.serviceEnabled()){
+      List<int> buildingIds = [];
+
+      targetGeofence = Geofence(id: -1, position: currentRoute.last.coordinates, distance: geofenceRadiusInMeters);
+      UnityCommunicationService.setMarkerAppearance(MarkerAppearance.navigation);
+
+      for(int i = 0; i < currentRoute.length; i++){
+        if(currentRoute[i].isEntrance() && !buildingIds.contains(currentRoute[i].building!.id)){
+          buildingIds.add(currentRoute[i].building!.id);
+          buildingsAlongTheRoute.add(currentRoute[i].building!);
+
+          List<Geofence> entranceGeofenceList = currentRoute[i].building!.getGeofenceList();
+          geofenceList.addAll(entranceGeofenceList);
+          for(int j = 0; j < entranceGeofenceList.length; j++){
+            userLocationService.addGeofence(entranceGeofenceList[j]);
+          }
+        }
+      }
+
+      state = NavigationState.active;
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  void _updateNavigation(Coordinates currentUserPosition){
+    if(currentBuilding != null){
+      //Der Nutzer befindet sich in einem Gebäude, warten, bis das Gebäude verlassen wird
+      return;
+    }
+
+    if(targetGeofence!.isInside(currentUserPosition)){
+      //Der Nutzer ist am Ziel angekommen, die Polylinie der Route wird gelöscht und der Marker wird in den Location-Modus gesetzt
+      UnityCommunicationService.deletePolyline();
+      UnityCommunicationService.resetCamera();
+      UnityCommunicationService.set3dView(true);
+      UnityCommunicationService.setMarkerAppearance(MarkerAppearance.location);
+      state = NavigationState.finished;
+      return;
+    }
+
+    UnityCommunicationService.setPolylineProgress(currentUserPosition);
+  }
+
+  void stopNavigation(){
+    currentRoute = [];
+    UnityCommunicationService.deletePolyline();
+    UnityCommunicationService.resetCamera();
+    UnityCommunicationService.set3dView(true);
+    state = NavigationState.finished;
+    targetGeofence = null;
+    buildingsAlongTheRoute = [];
+    geofenceList = [];
+    currentBuilding = null;
+    routeLengthInMeters = 0;
+    walkingTimeInMinutes = 0;
+  }
+
+  List<NavigationNode> _calculateRoute(NavigationNode start, NavigationNode end){
     List<double> minDistancesFromStart = List.filled(navigationNodes.length, double.infinity);
     List<bool> isVisited = List.filled(navigationNodes.length, false);
     List<List<int>> shortestRoutesFromStart = List.filled(navigationNodes.length, []);

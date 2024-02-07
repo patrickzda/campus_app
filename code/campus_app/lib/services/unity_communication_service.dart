@@ -24,11 +24,27 @@ class UnityCommunicationService{
     );
   }
 
+  static void resetCamera(){
+    sendToUnity(
+      "Camera Rig",
+      "ResetCamera",
+      "",
+    );
+  }
+
   static void toggle3dView(){
     sendToUnity(
       "Camera Rig",
       "Toggle3dView",
       "",
+    );
+  }
+
+  static void set3dView(bool is3d){
+    sendToUnity(
+      "Camera Rig",
+      "Set3dView",
+      is3d ? "true" : "false",
     );
   }
 
@@ -92,6 +108,14 @@ class UnityCommunicationService{
       "Navigation",
       "SetFocusOnUserPositionFromString",
       isFocussedOnUserPosition ? "true" : "false"
+    );
+  }
+
+  static void sendMapLoadedCheck(){
+    sendToUnity(
+      "Navigation",
+      "IsMapLoaded",
+      ""
     );
   }
 
