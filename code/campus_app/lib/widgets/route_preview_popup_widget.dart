@@ -6,15 +6,26 @@ import 'package:campus_app/pages/search_page.dart';
 import 'package:campus_app/utils/AppUtils.dart';
 import 'package:campus_app/widgets/text_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_scale_tap/flutter_scale_tap.dart';
 import 'package:remix_flutter/remix_flutter.dart';
+
+import '../data/coordinates.dart';
+import '../services/unity_communication_service.dart';
 
 typedef VoidCallback = void Function();
 
-class RoutePreviewPopupWidget extends StatelessWidget {
+class RoutePreviewPopupWidget extends StatefulWidget {
   final NavigationJob navigationJob;
   final void Function() onClose;
 
   const RoutePreviewPopupWidget({super.key, required this.navigationJob, required this.onClose});
+
+  @override
+  State<RoutePreviewPopupWidget> createState() => _RoutePreviewPopupWidgetState();
+}
+
+class _RoutePreviewPopupWidgetState extends State<RoutePreviewPopupWidget> {
+  bool showStartButton = true;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +57,7 @@ class RoutePreviewPopupWidget extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: (){
-                    onClose();
+                    widget.onClose();
                   },
                   child: Container(
                     decoration: const BoxDecoration(
@@ -73,7 +84,7 @@ class RoutePreviewPopupWidget extends StatelessWidget {
                   alignment: Alignment.center,
                   padding: EdgeInsets.all(Sizes.paddingSmall),
                   child: DMSansRegularText(
-                    text: navigationJob.isUserLocationBased ? "My location" : navigationJob.startEntity!.getShortName(),
+                    text: widget.navigationJob.isUserLocationBased ? "My location" : widget.navigationJob.startEntity!.getShortName(),
                     color: black,
                     size: Sizes.textSizeSmall,
                   ),
@@ -97,7 +108,7 @@ class RoutePreviewPopupWidget extends StatelessWidget {
                   alignment: Alignment.center,
                   padding: EdgeInsets.all(Sizes.paddingSmall),
                   child: DMSansRegularText(
-                    text: navigationJob.destinationEntity.getShortName(),
+                    text: widget.navigationJob.destinationEntity.getShortName(),
                     color: black,
                     size: Sizes.textSizeSmall,
                   ),
@@ -138,9 +149,21 @@ class RoutePreviewPopupWidget extends StatelessWidget {
               ],
             ),
           ),
-          navigationJob.isUserLocationBased ? GestureDetector(
-            onTap: (){
-              navigationService.startNavigation();
+          widget.navigationJob.isUserLocationBased && showStartButton ? ScaleTap(
+            duration: animationDuration,
+            scaleCurve: animationCurve,
+            scaleMinValue: 0.75,
+            onPressed: () async{
+              Coordinates? userLocation = await navigationService.userLocationService.getLocation();
+              if(userLocation != null){
+                UnityCommunicationService.setMarkerPosition(userLocation);
+                UnityCommunicationService.moveCameraTo(userLocation);
+                UnityCommunicationService.zoomCameraTo(2.5);
+                navigationService.startNavigation();
+              }
+              setState(() {
+                showStartButton = false;
+              });
             },
             child: Container(
               decoration: BoxDecoration(

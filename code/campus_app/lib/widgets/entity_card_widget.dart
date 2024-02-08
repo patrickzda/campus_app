@@ -3,10 +3,11 @@ import 'package:campus_app/widgets/text_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_scale_tap/flutter_scale_tap.dart';
 import 'package:remix_flutter/remix_flutter.dart';
-
 import '../constants/Constants.dart';
 import '../constants/Sizes.dart';
 import '../data/building.dart';
+import '../pages/search_page.dart';
+import '../utils/AppUtils.dart';
 
 class EntityCardWidget extends StatelessWidget {
   final CampusEntity entity;
@@ -60,9 +61,11 @@ class EntityCardWidget extends StatelessWidget {
           ScaleTap(
             duration: animationDuration,
             scaleCurve: animationCurve,
-            scaleMinValue: 0.75,
+            scaleMinValue: !(entity is Building && !(entity as Building).isOnMainCampus) ? 0.75 : 1,
             onPressed: (){
-
+              if(!(entity is Building && !(entity as Building).isOnMainCampus)){
+                AppUtils.switchPage(context, SearchPage(destinationEntity: entity));
+              }
             },
             child: Container(
               decoration: BoxDecoration(

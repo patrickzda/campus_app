@@ -152,6 +152,12 @@ class _MainPageState extends State<MainPage> {
                           entities.addAll(navigationService.canteens);
                         }
 
+                        selectedCardIndex = 0;
+
+                        if(expandedCards){
+                          pageController.jumpToPage(0);
+                        }
+
                         if(entities.isNotEmpty && expandedCards){
                           if(!(entities[0] is Building && !(entities[0] as Building).isOnMainCampus)){
                             UnityCommunicationService.moveCameraTo(entities[0].getPosition());

@@ -20,8 +20,9 @@ import '../data/campus_entity.dart';
 import '../widgets/text_widgets.dart';
 
 class SearchPage extends StatefulWidget {
+  final CampusEntity? destinationEntity;
 
-  const SearchPage({super.key});
+  const SearchPage({super.key, this.destinationEntity});
 
   @override
   State<SearchPage> createState() => _SearchPageState();
@@ -39,9 +40,13 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   void initState() {
-    Future.delayed(animationDuration).then((_){
-      focusNode.requestFocus();
-    });
+    if(widget.destinationEntity != null){
+      selectEntity(widget.destinationEntity!);
+    }else{
+      Future.delayed(animationDuration).then((_){
+        focusNode.requestFocus();
+      });
+    }
 
     entities.addAll(navigationService.buildings);
     entities.addAll(navigationService.canteens);
