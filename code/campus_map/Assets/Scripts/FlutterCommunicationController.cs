@@ -8,5 +8,5 @@ public static class FlutterCommunicationController
     {
         SendToFlutter.Send("MAP_LOADED");
     }
-    
+
 }

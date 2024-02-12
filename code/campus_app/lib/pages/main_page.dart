@@ -251,7 +251,7 @@ class _MainPageState extends State<MainPage> {
 
                       if(!(entities[selectedCardIndex] is Building && !(entities[selectedCardIndex] as Building).isOnMainCampus)){
                         UnityCommunicationService.moveCameraTo(entities[selectedCardIndex].getPosition());
-                        UnityCommunicationService.zoomCameraTo(4);
+                        UnityCommunicationService.zoomCameraTo(3);
                       }else{
                         UnityCommunicationService.resetCamera();
                       }
