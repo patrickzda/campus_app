@@ -234,6 +234,26 @@ J.~Yablonski, ``{Home {$\vert$} Laws of UX},'' Jan. 2024, [Online; accessed 13. 
 ------, ``{Law of Similarity {$\vert$} Laws of UX},'' Jan. 2024, [Online; accessed 14. Jan. 2024]. [Online]. Available: \url{https://lawsofux.com/law-of-similarity}
 \BIBentrySTDinterwordspacing
 
+\bibitem{dm_sans}
+\BIBentryALTinterwordspacing
+``{Browse Fonts - Google Fonts},'' Feb. 2024, [Online; accessed 12. Feb. 2024]. [Online]. Available: \url{https://fonts.google.com/specimen/DM+Sans?query=DM+Sans}
+\BIBentrySTDinterwordspacing
+
+\bibitem{remix_icons}
+\BIBentryALTinterwordspacing
+``{Remix Icon - Open source icon library},'' Jan. 2024, [Online; accessed 12. Feb. 2024]. [Online]. Available: \url{https://remixicon.com}
+\BIBentrySTDinterwordspacing
+
+\bibitem{remix_icons_flutter}
+\BIBentryALTinterwordspacing
+``{remix{$\_$}flutter {$\vert$} Flutter package},'' Feb. 2024, [Online; accessed 12. Feb. 2024]. [Online]. Available: \url{https://pub.dev/packages/remix_flutter}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ease_curve}
+\BIBentryALTinterwordspacing
+``{ease constant - Curves class - animation library - Dart API},'' Jan. 2024, [Online; accessed 12. Feb. 2024]. [Online]. Available: \url{https://api.flutter.dev/flutter/animation/Curves/ease-constant.html}
+\BIBentrySTDinterwordspacing
+
 \bibitem{geoJSON}
 \BIBentryALTinterwordspacing
 ``{RFC 7946: The GeoJSON Format},'' Jan. 2024, [Online; accessed 21. Jan. 2024]. [Online]. Available: \url{https://datatracker.ietf.org/doc/html/rfc7946}

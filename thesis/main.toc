@@ -30,9 +30,7 @@
 \contentsline {subsection}{\numberline {3.3.3}Designing a good user experience for navigation}{18}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4}Chunking of information within the app}{19}{subsection.3.3.4}%
 \contentsline {subsection}{\numberline {3.3.5}Wireframes}{20}{subsection.3.3.5}%
-\contentsline {section}{\numberline {3.4}User interface design}{23}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Styleguide}{23}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Final design}{23}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.4}User interface design}{22}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Implementation}{25}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Collection of geodata and POI}{25}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Overview of needed geodata}{25}{subsection.4.1.1}%
@@ -60,9 +58,9 @@
 \contentsline {section}{\numberline {5.1}Navigation system verification}{33}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Information layer verification}{33}{section.5.2}%
 \contentsline {chapter}{\numberline {6}Conclusion}{35}{chapter.6}%
-\contentsline {chapter}{\nonumberline List of Tables}{37}{chapter*.20}%
-\contentsline {chapter}{\nonumberline List of Figures}{39}{chapter*.21}%
-\contentsline {chapter}{\nonumberline Bibliography}{41}{chapter*.22}%
-\contentsline {chapter}{Appendices}{45}{section*.23}%
-\contentsline {chapter}{\nonumberline Appendix 1}{47}{chapter*.24}%
+\contentsline {chapter}{\nonumberline List of Tables}{37}{chapter*.22}%
+\contentsline {chapter}{\nonumberline List of Figures}{39}{chapter*.23}%
+\contentsline {chapter}{\nonumberline Bibliography}{41}{chapter*.24}%
+\contentsline {chapter}{Appendices}{45}{section*.25}%
+\contentsline {chapter}{\nonumberline Appendix 1}{47}{chapter*.26}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

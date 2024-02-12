@@ -232,6 +232,28 @@ Based on the previously defined requirements, wireframes outlining the basic des
 \end{enumerate}
 
 \section{User interface design}
+The next step in the design process of the app is the user interface (UI) design. This procedure takes the already elaborated wireframes from the UX design phase and applies a consistent design language to it. One main outcome of this design step should be an identifiable corporate design of the digital product. Due to \cite{aesthetic_usability_effect}, which states that a beautifully designed user interface is perceived as a more useful one, user interface design can be seen as a subset of UX design.
 
-\subsection{Styleguide}
-\subsection{Final design}
+Concepts to which particular attention is paid in UI design are choice of color, typography, iconography, shape-language, animation as well as usage of media, e.g., photos, videos or text. The following section and figure provide a brief specification of those parameters (often called "Styleguide") for the app design.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.85\textwidth]{images/styleguide.png}\\
+	\caption{Styleguide with colors, typography and iconography}
+\end{figure}
+
+\begin{itemize}
+    \item DM Sans \cite{dm_sans} is chosen as the main font for the app, it is usually written in real black (HEX \#000000) and is used in its regular, medium and bold variations throughout the app. It occurs in font sizes 12px, 16px and 32px.
+    \item The open-source Remix-Icon \cite{remix_icons} icon set with its respective Flutter package \cite{remix_icons_flutter}. The icons are used in their not-filled versions and set a basis for a slightly rounded design language for the entire app. Icons are consistently 20px * 20px sized and colored in HEX \#000000 black.
+    \item The main color of the app is the green tone HEX \#47C083, which is supported by real black \#000000 for icons and text and real white \#FFFFFF for backgrounds and areas. Additionally, several colors representing the individual campus entities are selected: HEX \#BCC4FF (blue) for buildings, HEX \#FFBBF5 (pink) for courses, \#FAF268 (yellow) for canteens as well as HEX \#E8D4C7 (beige) for events. Furthermore, to color bigger areas inside of the white layout, two grey tones are introduced: HEX \#F1F1F1 (light grey) and HEX \#BBBBBB (dark grey) are used e.g., in a search bar, where light grey colors the element and dark grey the overlaying hint text.
+    \item Animations are all 250ms long and consist of two different curves: While all map-related camera animations in Unity use a linear curve to present animation progress (camera movement over the map), the animations in the remaining user interface are based on Flutter's "Ease" curve \cite{ease_curve}, which consists of a cubic curve mapping from [0, 1] to [0, 1] parametrized by two control points (0.25, 0.1) and (0.25, 1.0). By mimicking physical movement (which is often based on constant acceleration, e.g., gravity), the latter animation curve provides a sense of naturalness to the user while the first linear animation style makes it easier to follow the camera across the map.
+    \item Usage of media: Images of TU Berlin's buildings are presented on the respective pages to provide the user with another possibility for visual reference while browsing through the app.
+\end{itemize}
+
+The following figure provides an overview of the most important screens of the final user interface design of the app.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.85\textwidth]{images/ui_design.png}\\
+	\caption{UI-Design}
+\end{figure}

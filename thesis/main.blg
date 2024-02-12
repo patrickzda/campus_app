@@ -72,6 +72,14 @@ Warning--entry type for "mercator_projection_implementation" isn't style-file de
 --line 508 of file bibliography.bib
 Warning--entry type for "triangulation_unity_library" isn't style-file defined
 --line 527 of file bibliography.bib
+Warning--entry type for "dm_sans" isn't style-file defined
+--line 535 of file bibliography.bib
+Warning--entry type for "remix_icons" isn't style-file defined
+--line 544 of file bibliography.bib
+Warning--entry type for "remix_icons_flutter" isn't style-file defined
+--line 552 of file bibliography.bib
+Warning--entry type for "ease_curve" isn't style-file defined
+--line 561 of file bibliography.bib
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -87,45 +95,45 @@ Warning--empty journal in pseudo_mercator_2
 Warning--empty journal in triangulation_by_ear_clipping
 
 Done.
-You've used 52 entries,
+You've used 56 entries,
             4023 wiz_defined-function locations,
-            1053 strings with 14377 characters,
-and the built_in function-call counts, 24247 in all, are:
-= -- 2035
-> -- 296
+            1067 strings with 14824 characters,
+and the built_in function-call counts, 25663 in all, are:
+= -- 2151
+> -- 300
 < -- 88
-+ -- 172
++ -- 176
 - -- 49
-* -- 1102
-:= -- 4212
-add.period$ -- 104
-call.type$ -- 52
-change.case$ -- 84
+* -- 1162
+:= -- 4464
+add.period$ -- 112
+call.type$ -- 56
+change.case$ -- 92
 chr.to.int$ -- 198
-cite$ -- 62
-duplicate$ -- 1954
-empty$ -- 2150
+cite$ -- 66
+duplicate$ -- 2082
+empty$ -- 2294
 format.name$ -- 60
-if$ -- 5325
+if$ -- 5629
 int.to.chr$ -- 0
-int.to.str$ -- 52
-missing$ -- 380
-newline$ -- 265
+int.to.str$ -- 56
+missing$ -- 408
+newline$ -- 285
 num.names$ -- 29
-pop$ -- 1013
+pop$ -- 1097
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1871
+skip$ -- 1979
 stack$ -- 0
-substring$ -- 593
-swap$ -- 1339
+substring$ -- 605
+swap$ -- 1415
 text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 52
+type$ -- 56
 warning$ -- 10
 while$ -- 58
-width$ -- 54
-write$ -- 558
-(There were 42 warnings)
+width$ -- 58
+write$ -- 598
+(There were 46 warnings)
