@@ -146,13 +146,70 @@ On the other hand is the triangulation process for the ceiling tile. In this cas
 
 Mesh generation for green areas and water: Since green areas and water both consist of flat and concave polygons, the same procedure can be used for generating both respective meshes. The outlining vertices are in this case simply the predefined GeoNode coordinates and can be triangulated in the same manner as the ceiling of a building.
 
-\subsection{Map design}
-Test.
+\subsection{Camera setup}
+One main component for the 3d rendering of the campus map is a virtual camera, that can be regarded as a viewport through which the user looks at the scene. Its transform (the set of values that determines the camera's position, rotation and scale) as well as several other parameters specifying how the scene is rendered can be manipulated to achieve a specific look of the scene.
+
+To easily control the camera for movement, zoom and rotation, an empty and transparent object with position $\overrightarrow{p}$ is placed on the ground of the map. This focus point object is furthermore declared as the parent of the camera, which results in the fact that all camera transformations are now relative to the focus point's transform. This means, that $\overrightarrow{p}$ now serves as the camera's world origin and that the camera furthermore has two different transforms: The global transform GC, which reflects the actual position, rotation and scale of the camera in the scene and the local transform LC, which consists of the camera's position, rotation and scale relative to its parental focus point. To make it more comprehensible one can look at an example regarding the positioning of the camera: If the local position of the camera $\overrightarrow{lc}$ is at $(0, 0, 0)$ (and neither a rotation nor a scaling is anywhere applied), the camera's true global position in the scene $\overrightarrow{gc}$ is the focus point's position $\overrightarrow{p}$. In general (without rotation or scaling) $\overrightarrow{gc} = \overrightarrow{p} + \overrightarrow{lc}$, which means that the camera now "follows" the focus point object with offset $\overrightarrow{lc}$ whenever its position changes.
+
+The camera is now locally transformed such that the focus point object always lies in the center of its viewport. In principle, this can be done arbitrarily, but to mimic the perspective of TU Berlin's official campus map \cite{campus_plan}, a setup is chosen where the camera is rotated 45 degrees down (x-axis) and $\overrightarrow{lc} = (0, z, -z), z \geq 0$ (x-axis, y-axis, z-axis). An alternative setup for top-down view (called "2d" mode inside the app) is also provided, which positions the camera directly above the focus point with a rotation of 90 degrees downwards and $\overrightarrow{lc}$ = $(0, z, 0)$. The following figure presents the setup for both cases.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/camera_setup.png}\\
+	\caption{Camera setups for "3d" and top-down "2d" view}
+\end{figure}
+
+With this setup as a prerequisite, all map-relevant camera transformations can be defined with the parameters $\overrightarrow{p}$ (position of the focus point object), which is responsible for the camera movement, $\varphi$ (rotation of the focus point object around the y-axis), which represents the camera rotation and $z$ (parameter of the local position of the camera), which is the camera's zoom amount.
+
+Besides the transform parameters of the camera, two other important render settings need to be considered for the campus map: On the one hand, there is the projection mode, which determines how the 3d environment is projected onto the 2d screen. Here the perspective projection is chosen since it resembles the real-world projection of the human eye and therefore creates an intuitive feeling of depth inside the scene. On the other hand, the field-of-view (FOV) value, which determines the opening angle of the camera viewport is set to 55 degrees. 
+
 \subsection{Implementing common interaction gestures}
-Test.
+Touch gestures are an established way of controlling the previously defined parameters for movement, rotation and camera zoom. This section explains which gestures are chosen and how they are implemented for this thesis.
+
+One prerequisite for a smooth and robust interaction experience is the use of animation when moving, rotating and zooming on the map. A parameter is therefore not directly set, but rather linearly interpolated over time between its current value and a desired target value. From a programming perspective, the system constantly tries to perform such an interpolation and only stops, when the actual parameter is equal to the target one. Therefore the only parameters that need to be set while interacting with the map are the target values, which are hereafter denoted as $\overrightarrow{p_{t}}$, $\varphi_{t}$ and $z_{t}$.\\
+
+Map movement: The user can move the camera on the campus map by dragging a finger over the touchscreen. The internal evaluation of this process can be broken down into multiple steps:
+
+\begin{enumerate}
+	\item The user's finger touches the screen for the first time (touch start): The initial touch position $\overrightarrow{t_{start}}$ is detected.
+	\item The user slides the finger over the touchscreen (touch moved): The current touch position $\overrightarrow{t_{cur}}$ is detected and the desired camera position is calculated as $\overrightarrow{p_{t}} = \overrightarrow{p} + (\overrightarrow{t_{start}} - \overrightarrow{t_{cur}}) * \alpha$, where $\alpha$ determines the drag speed of the campus map and is chosen as 5.
+\end{enumerate}
+
+Pinch-to-zoom: Pinching is a type of gesture where the user positions two fingers on the touchscreen and an action is triggered when the distance between both touchpoints changes. In this case, the camera should zoom in when the user brings the fingers closer together and vice versa. The following steps are necessary to implement this functionality:
+
+\begin{enumerate}
+	\item Two fingers touch the screen simultaneously for the first time (touch start): Both touch start positions are retrieved and their distance $d_{start}$ is calculated.
+	\item The user moves one or more fingers (touch move): The current distance $d_{cur}$ between both fingers is calculated. The target zoom is set as $z_{t} = z_{t} + (d_{cur} - d_{start}) * s$, where $s$ is the strength of the zoom and is selected as 0,1.
+\end{enumerate}
+
+Rotation of the map: The gesture for map rotation is similar to the pinch gesture from the zoom functionality, but rather takes the rotation angle between the start- and end position of both fingers into account, instead of their distance. This can be also realized in two different steps:
+
+\begin{enumerate}
+	\item Two fingers touch the screen simultaneously for the first time (touch start): The difference between both touch positions is stored as a 2-dimensional vector $\overrightarrow{t_{sdiff}}$.
+	\item  The user moves one or more fingers (touch move): The current difference of touch positions is also stored as a 2-dimensional vector $\overrightarrow{t_{cdiff}}$. The camera rotation is updated with $\varphi_{t} = \varphi + singedAngle(\overrightarrow{t_{sdiff}}, \overrightarrow{t_{cdiff}}) * \beta$, where $singleAngle(a, b)$ is a function that returns the signed angle between two 2-dimensional vectors and $\beta$ is a parameter for the rotational strength and practically set to 0,5.
+\end{enumerate}
+
+\subsection{Map design}
+The last step in the campus map generation process is the elaboration of a conceptually fitting design. The requirements for such a design mainly consist of the fact that all important landmarks should be easily identifiable and explorable by the user as well as that the map should fit into the already created UI design.
+
+For the color scheme of the map, inspiration can be taken from already established map services \cite{google_maps_website} \cite{apple_maps_website} and the real-world counterparts of the presented entities. Green areas are displayed in a green tone (HEX \#71C79D), water is displayed in blue (HEX \#90CEFF), the street network is white (HEX \#FFFFFF) and buildings are presented in a neutral grey tone (HEX \#E6E6E6).
+
+In Unity3d, colors are applied through so-called material objects, which further also contain parameters for lighting calculations. One material is chosen per entity. The only rendering parameters, that are modified for every material, are the ones that define the light calculation model as well as shadow casting options. The latter one is turned on, which results in the fact that in contrast to \cite{google_maps_website} and \cite{apple_maps_website}, all entities on the map cast and receive shadows. The light rendering mode, on the other hand, is set to the metallic workflow mode, which offers specular reflections based on predefined "metallic" and "smoothness" values. These values are set individually for every material type.
+
+To emphasize the 3d environment as well as to form additional reference points for orientation, tree models are placed in the green areas on the north- and south sections of the campus. Furthermore, additional building structures are manually applied onto certain buildings (e.g., Hauptgebäude and Mathematikgebäude), to more closely resemble their respective real-world shapes.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/generated_campus_map.png}\\
+	\caption{Mesh generation process for a building}
+\end{figure}
 
 \section{Navigation system development}
+Test.
+
 \subsection{Representation of geodata for navigation}
+Test.
+
 \subsection{Manual generation of TU Berlin's street network}
 \subsection{Routing across the campus}
 \subsection{Time estimation for routes}
