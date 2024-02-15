@@ -205,12 +205,47 @@ To emphasize the 3d environment as well as to form additional reference points f
 \end{figure}
 
 \section{Navigation system development}
-Test.
+The mobile navigation system for TU Berlin's main campus forms the most important key feature of this thesis. It provides its users the ability to navigate and localize themselves on campus Charlottenburg and utilizes the already developed campus map and its underlying street network for routing and guidance.
+
+The following sections provide a chronological overview of the necessary steps performed to develop such a system.
 
 \subsection{Representation of geodata for navigation}
-Test.
+The main building block of the navigation system is the underlying data of TU Berlin's street network and its relation to the entities on TU Berlin's campus. For this thesis, the most important data is stored in the so-called NavigationNode class. This class represents, when instantiated, a single node in the weighted graph, that is used in the latter routing system. It defines the connections between individual nodes as well as their relation to TU Berlin's buildings. The following table presents an overview of the attributes of the NavigationNode:
+
+\begin{table}[!ht]
+	\small
+	\centering
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		Name                	& Datatype       		& Is required?       			& Default value 	\\
+		\hline
+        id               		& int	              	& yes                          	& - 				\\
+		\hline
+        latitude                & double              	& yes                          	& - 				\\
+		\hline
+		longitude               & double              	& yes                          	& - 				\\
+		\hline
+		associatedBuildingId    & int              		& no                          	& null 				\\
+		\hline
+		connections    			& int[]              	& no                          	& [] 				\\
+		\hline
+	\end{tabular}
+	\caption{NavigationNode class diagram}
+\end{table}
+
+Further attributes of a NavigationNode are its unique identifier and its position, which is specified as a pair of (latitude, longitude) doubles. The associatedBuildingId attribute states whether the node is an entrance of a specific building.
 
 \subsection{Manual generation of TU Berlin's street network}
+One main problem with the street network provided by OSM is the fact that the queried data is not completely suitable for navigation. The underlying issue is that certain connections between streets are missing in the dataset, which results in problems when trying to calculate the fastest way during routing. This problem especially applies to transitions between different street types (e.g., a footway merging into a small street) and small pathways on the campus, the latter making up the biggest part of the street network used in this thesis. Another important point is the fact that there are no connections between different, sometimes completely missing, entrances of a building, which disables the possibility of including indoor segments when routing.
+
+To improve the quality of the street network for routing, a small computer app is developed that presents the queried nodes from OSM as small dots on a map (green dots are basic nodes, red dots are nodes connected to an entrance of a building). The tool provides the possibility to add additional nodes to the network as well as to create and edit connections (represented in blue) between them. The manually annotated street network can be furthermore exported into a JSON file, which is implemented into the app and deserialized into NavigationNodes during runtime. The following figure provides an overview of the manually annotated street network for navigation.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/street_network_for_navigation.jpeg}\\
+	\caption{Manually annotated street network of campus Charlottenburg}
+\end{figure}
+
 \subsection{Routing across the campus}
 \subsection{Time estimation for routes}
 \subsection{Embedding the current user location via GPS}
