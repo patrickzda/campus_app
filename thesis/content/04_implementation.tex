@@ -210,7 +210,9 @@ The mobile navigation system for TU Berlin's main campus forms the most importan
 The following sections provide a chronological overview of the necessary steps performed to develop such a system.
 
 \subsection{Representation of geodata for navigation}
-The main building block of the navigation system is the underlying data of TU Berlin's street network and its relation to the entities on TU Berlin's campus. For this thesis, the most important data is stored in the so-called NavigationNode class. This class represents, when instantiated, a single node in the weighted graph, that is used in the latter routing system. It defines the connections between individual nodes as well as their relation to TU Berlin's buildings. The following table presents an overview of the attributes of the NavigationNode:
+The main building block of the navigation system is the underlying data of TU Berlin's street network and its relation to the entities on the campus. The street network is stored as a weighted graph, with individual nodes representing building entrances and control points on a path as well as edges (connections) between those nodes, describing the actual underlying street sections.
+
+For this thesis, the graph is constructed with the so-called NavigationNode class. This class represents, when instantiated, a single node in the weighted graph, that is used in the latter routing system. It furthermore defines the connections between individual nodes as well as their relation to TU Berlin's buildings. The following table presents an overview of the attributes of the NavigationNode:
 
 \begin{table}[!ht]
 	\small
@@ -233,12 +235,10 @@ The main building block of the navigation system is the underlying data of TU Be
 	\caption{NavigationNode class diagram}
 \end{table}
 
-Further attributes of a NavigationNode are its unique identifier and its position, which is specified as a pair of (latitude, longitude) doubles. The associatedBuildingId attribute states whether the node is an entrance of a specific building.
-
 \subsection{Manual generation of TU Berlin's street network}
-One main problem with the street network provided by OSM is the fact that the queried data is not completely suitable for navigation. The underlying issue is that certain connections between streets are missing in the dataset, which results in problems when trying to calculate the fastest way during routing. This problem especially applies to transitions between different street types (e.g., a footway merging into a small street) and small pathways on the campus, the latter making up the biggest part of the street network used in this thesis. Another important point is the fact that there are no connections between different, sometimes completely missing, entrances of a building, which disables the possibility of including indoor segments when routing.
+One main problem with the street network provided by OSM is the fact that the queried data is not completely suitable for navigation. The underlying issue is that certain connections between streets are missing in the dataset, which results in problems when trying to calculate the fastest way during routing. This problem especially applies to transitions between different street types (e.g., a footway merging into a small street) and small pathways on the campus, the latter making up the biggest part of the street network used in this thesis. Another important point is the fact that there are no connections between different, sometimes completely missing, entrances of a building. This disables the possibility of including indoor segments when routing.
 
-To improve the quality of the street network for routing, a small computer app is developed that presents the queried nodes from OSM as small dots on a map (green dots are basic nodes, red dots are nodes connected to an entrance of a building). The tool provides the possibility to add additional nodes to the network as well as to create and edit connections (represented in blue) between them. The manually annotated street network can be furthermore exported into a JSON file, which is implemented into the app and deserialized into NavigationNodes during runtime. The following figure provides an overview of the manually annotated street network for navigation.
+To improve the quality of the street network for routing, a small computer app is developed that presents the queried nodes from OSM as small dots on a map (green dots are basic nodes, red dots are nodes related to an entrance of a building). The tool provides the possibility to add additional nodes to the network as well as to create and edit connections (edges) between them (represented in blue). The manually annotated street network can be furthermore exported into a JSON file, which is stored locally in the app and deserialized into NavigationNodes during runtime. The following figure provides an overview of the manually annotated street network for navigation.
 
 \begin{figure}[H]
 	\centering
@@ -246,8 +246,11 @@ To improve the quality of the street network for routing, a small computer app i
 	\caption{Manually annotated street network of campus Charlottenburg}
 \end{figure}
 
+\subsection{Defining weights and calculating ETA}
+
 \subsection{Routing across the campus}
-\subsection{Time estimation for routes}
+After defining the weighted graph for TU Berlin's street network, the fastest routes between two nodes can be calculated using a routing algorithm. For this thesis, a simple implementation of Dijkstra's algorithm for finding the shortest paths in a graph is used.
+
 \subsection{Embedding the current user location via GPS}
 
 \section{Interactive information layer development}

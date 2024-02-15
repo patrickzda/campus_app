@@ -45,8 +45,8 @@
 \contentsline {section}{\numberline {4.3}Navigation system development}{34}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Representation of geodata for navigation}{35}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Manual generation of TU Berlin's street network}{35}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Routing across the campus}{36}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Time estimation for routes}{36}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.3}Defining weights and calculating ETA}{36}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Routing across the campus}{36}{subsection.4.3.4}%
 \contentsline {subsection}{\numberline {4.3.5}Embedding the current user location via GPS}{36}{subsection.4.3.5}%
 \contentsline {section}{\numberline {4.4}Interactive information layer development}{36}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Collection of campus relevant information from the web}{36}{subsection.4.4.1}%
