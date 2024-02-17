@@ -1,5 +1,4 @@
-\babel@toc {english}{}\relax 
-\babel@toc {english}{}\relax 
+\babel@toc {english}{}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Context and background}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Motivation}{1}{section.1.2}%
@@ -46,22 +45,22 @@
 \contentsline {subsection}{\numberline {4.3.1}Representation of geodata for navigation}{35}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Manual generation of TU Berlin's street network}{35}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}Defining weights and calculating ETA}{36}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Routing across the campus}{36}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Embedding the current user location via GPS}{36}{subsection.4.3.5}%
-\contentsline {section}{\numberline {4.4}Interactive information layer development}{36}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Collection of campus relevant information from the web}{36}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Processing of information and internal representation}{36}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}User interface development}{36}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Navigation system}{36}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Information layer}{36}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Enhancing the user experience with additional screens and features}{36}{subsection.4.5.3}%
-\contentsline {chapter}{\numberline {5}Evaluation}{37}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Navigation system verification}{37}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Information layer verification}{37}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Conclusion}{39}{chapter.6}%
-\contentsline {chapter}{\nonumberline List of Tables}{41}{chapter*.26}%
-\contentsline {chapter}{\nonumberline List of Figures}{43}{chapter*.27}%
-\contentsline {chapter}{\nonumberline Bibliography}{45}{chapter*.28}%
-\contentsline {chapter}{Appendices}{49}{section*.29}%
-\contentsline {chapter}{\nonumberline Appendix 1}{51}{chapter*.30}%
+\contentsline {subsection}{\numberline {4.3.4}Routing across the campus}{37}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Embedding the current user location via GPS}{37}{subsection.4.3.5}%
+\contentsline {section}{\numberline {4.4}Interactive information layer development}{37}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Collection of campus relevant information from the web}{37}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Processing of information and internal representation}{37}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}User interface development}{37}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Navigation system}{37}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Information layer}{37}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Enhancing the user experience with additional screens and features}{37}{subsection.4.5.3}%
+\contentsline {chapter}{\numberline {5}Evaluation}{39}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Navigation system verification}{39}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Information layer verification}{39}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Conclusion}{41}{chapter.6}%
+\contentsline {chapter}{\nonumberline List of Tables}{43}{chapter*.26}%
+\contentsline {chapter}{\nonumberline List of Figures}{45}{chapter*.27}%
+\contentsline {chapter}{\nonumberline Bibliography}{47}{chapter*.28}%
+\contentsline {chapter}{Appendices}{51}{section*.29}%
+\contentsline {chapter}{\nonumberline Appendix 1}{53}{chapter*.30}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

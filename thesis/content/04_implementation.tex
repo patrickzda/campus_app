@@ -247,6 +247,21 @@ To improve the quality of the street network for routing, a small computer app i
 \end{figure}
 
 \subsection{Defining weights and calculating ETA}
+Weights are values assigned to edges in a graph, that represent a certain cost metric. When used in a graph for navigation purposes, they usually define how efficiently and fast a route section, defined as the edge between two nodes, can be traveled. Well-chosen weights are therefore a fundamental component for routing through a road network. This section presents the function used for determining the weight of an edge for the already previously defined graph.
+
+A weight in this thesis is defined as the (estimated) seconds needed to walk the route section defined by an edge. The following parameters are considered when choosing a weight for an edge:
+
+\begin{itemize}
+	\item Distance $d$ between both nodes that define the edge
+	\item Walking speed $v$ of a human
+	\item Whether traffic lights need to be passed when walking the route section
+	\item Whether the edge leads through a building
+	\item In case of an indoor section: Size and complexity of the respective building
+\end{itemize}
+
+The base for the weight calculation forms the time it takes an average walking person to travel the distance of the respective route section. This can be calculated as $d / v$, while $d$, according to values for younger persons (students on campus) from \cite{average_walking_speed}, is chosen as approximately 1,4 meters per second.
+
+
 
 \subsection{Routing across the campus}
 After defining the weighted graph for TU Berlin's street network, the fastest routes between two nodes can be calculated using a routing algorithm. For this thesis, a simple implementation of Dijkstra's algorithm for finding the shortest paths in a graph is used.
