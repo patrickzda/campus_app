@@ -97,45 +97,45 @@ Warning--empty journal in pseudo_mercator_2
 Warning--empty journal in triangulation_by_ear_clipping
 
 Done.
-You've used 57 entries,
+You've used 58 entries,
             4023 wiz_defined-function locations,
-            1071 strings with 14987 characters,
-and the built_in function-call counts, 26017 in all, are:
-= -- 2180
-> -- 301
-< -- 88
-+ -- 177
-- -- 49
-* -- 1177
-:= -- 4527
-add.period$ -- 114
-call.type$ -- 57
-change.case$ -- 94
+            1077 strings with 15152 characters,
+and the built_in function-call counts, 26504 in all, are:
+= -- 2226
+> -- 305
+< -- 90
++ -- 179
+- -- 50
+* -- 1198
+:= -- 4618
+add.period$ -- 116
+call.type$ -- 58
+change.case$ -- 95
 chr.to.int$ -- 198
-cite$ -- 67
-duplicate$ -- 2114
-empty$ -- 2330
-format.name$ -- 60
-if$ -- 5705
+cite$ -- 68
+duplicate$ -- 2159
+empty$ -- 2371
+format.name$ -- 61
+if$ -- 5814
 int.to.chr$ -- 0
-int.to.str$ -- 57
-missing$ -- 415
-newline$ -- 290
-num.names$ -- 29
-pop$ -- 1118
+int.to.str$ -- 58
+missing$ -- 422
+newline$ -- 293
+num.names$ -- 30
+pop$ -- 1130
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2006
+skip$ -- 2047
 stack$ -- 0
-substring$ -- 608
-swap$ -- 1434
-text.length$ -- 22
+substring$ -- 613
+swap$ -- 1467
+text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 57
+type$ -- 58
 warning$ -- 10
-while$ -- 58
-width$ -- 59
-write$ -- 608
+while$ -- 60
+width$ -- 60
+write$ -- 618
 (There were 47 warnings)

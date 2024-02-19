@@ -381,4 +381,9 @@ M.~Held, ``Efficient and reliable triangulation of polygons,'' pp. 633--643,
   \url{https://www.westernite.org/datacollectionfund/2005/psu_ped_summary.pdf}
 \BIBentrySTDinterwordspacing
 
+\bibitem{traffic_light_waiting_time}
+{Zafri, Niaz and Rony, Atikul and Adri,}, ``Analysis of pedestrian crossing
+  speed and waiting time at intersections in dhaka,'' \emph{Infrastructures},
+  vol.~4, p.~39, 07 2019.
+
 \end{thebibliography}
