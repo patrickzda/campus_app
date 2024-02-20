@@ -261,12 +261,29 @@ A weight in this thesis is defined as the (estimated) seconds needed to walk the
 
 The base for the weight calculation is formed by the time it takes to walk the distance of the respective route section. This can be calculated with $d / v$. Since the largest part of the users consists of younger students, the average walking speed for this age group is selected from \cite{average_walking_speed} as $v = 1,4 m/s$.
 
-Due to the way the nodes and edges were chosen when the street network was constructed, an edge can maximally contain one pair of traffic lights on its route section. For each edge to which this applies, an additional traffic light bonus time $c_{tf}$ is added to the weight. Study \cite{traffic_light_waiting_time} portrays that $c_{tf} = 40 s$ can be chosen as an upper bound for the waiting time at a traffic light.
+Due to the way the nodes and edges were chosen when the street network was constructed, an edge can maximally contain one pair of traffic lights on its route section. For each edge to which this applies, an additional traffic light bonus time $c_{tl}$ is added to the weight. Study \cite{traffic_light_waiting_time} portrays that $c_{tl} = 40 s$ can be chosen as an upper bound for the waiting time at a traffic light.
 
-The last important factor that needs to be considered is the adjustment of weights for indoor route sections: Since every edge in the graph either entirely lies outdoors or completely leads through a building, the length of an indoor edge can be used as a metric to indicate the complexity and size of its respective building (longer indoor sections indicate more complex buildings, which in turn, lead are regarded as responsible for longer walking times). To adjust for this, the distance $d$ of the route section of an edge is multiplied by an environment factor $e$, which is either set to $e_{o} = 1$ for outdoor sections or $e_{i} = 1.05$ for indoor sections. This approximates that an indoor section takes 5\% percent longer than its equivalent outdoor section.
+The last important factor that needs to be considered is the adjustment of weights for indoor route sections: Since every edge in the graph either entirely lies outdoors or completely leads through a building, the length of an indoor edge can be used as a metric to indicate the complexity and size of its respective building (longer indoor sections indicate more complex buildings, which in turn, are regarded as responsible for longer walking times). To adjust for this, the distance $d$ of the route section of an edge is multiplied by an environment factor $f$, which is either set to $f_{o} = 1$ for outdoor sections or $f_{i} = 1.05$ for indoor sections. This approximates that an indoor section takes 5\% percent longer than its equivalent outdoor section.
+
+This results in the following equation for a weight $w$ as a function of an edge $e$ and its corresponding distance $d_{e}$:
+
+\[
+	w_{e}=\left\{
+	\begin{array}{ll}
+		(v * f_{o}) / d_{e} 			& \mbox{for an outdoor edge without traffic light} 	\\
+		(v * f_{o}) / d_{e} + c_{tl} 	& \mbox{for an outdoor edge with traffic light} 	\\
+		(v * f_{i}) / d_{e} 			& \mbox{for an indoor edge}
+	\end{array}\right.
+ \]
+
+To further calculate the estimated total walking time t of a route consisting of edges 0 \ldots n, their respective weights need to be summed:
+
+\[
+	t = \sum_{i=0}^{n} w_{e_{i}}
+\]
 
 \subsection{Routing across the campus}
-After defining the weighted graph for TU Berlin's street network, the fastest routes between two nodes can be calculated using a routing algorithm. For this thesis, a simple implementation of Dijkstra's algorithm for finding the shortest paths in a graph is used.
+After defining the weighted graph for TU Berlin's street network, the fastest routes between two nodes can be calculated using a routing algorithm. For this thesis, a simple implementation of Dijkstra's algorithm for finding the shortest paths in a graph \cite{dijkstras_algorithm} is used.
 
 \subsection{Embedding the current user location via GPS}
 

@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2021/W32TeX)
+This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
@@ -9,79 +9,79 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliography.bib
 Warning--entry type for "fused_location_api" isn't style-file defined
---line 43 of file bibliography.bib
+--line 22 of file bibliography.bib
 Warning--entry type for "core_location_framework" isn't style-file defined
---line 59 of file bibliography.bib
+--line 30 of file bibliography.bib
 Warning--entry type for "openstreetmap_website" isn't style-file defined
---line 203 of file bibliography.bib
+--line 102 of file bibliography.bib
 Warning--entry type for "openstreetmap_overpass_turbo" isn't style-file defined
---line 221 of file bibliography.bib
+--line 111 of file bibliography.bib
 Warning--entry type for "is_osm_up_to_date" isn't style-file defined
---line 257 of file bibliography.bib
+--line 129 of file bibliography.bib
 Warning--entry type for "google_maps_website" isn't style-file defined
---line 325 of file bibliography.bib
+--line 163 of file bibliography.bib
 Warning--entry type for "flutter" isn't style-file defined
---line 405 of file bibliography.bib
+--line 203 of file bibliography.bib
 Warning--entry type for "pub_dev" isn't style-file defined
---line 421 of file bibliography.bib
+--line 211 of file bibliography.bib
 Warning--entry type for "tu_berlin_main" isn't style-file defined
---line 439 of file bibliography.bib
+--line 220 of file bibliography.bib
 Warning--entry type for "tu_berlin_moses" isn't style-file defined
---line 455 of file bibliography.bib
+--line 228 of file bibliography.bib
 Warning--entry type for "studierendenwerk_berlin" isn't style-file defined
---line 471 of file bibliography.bib
+--line 236 of file bibliography.bib
 Warning--entry type for "selenium" isn't style-file defined
---line 601 of file bibliography.bib
+--line 301 of file bibliography.bib
 Warning--entry type for "beautifulsoup4" isn't style-file defined
---line 619 of file bibliography.bib
+--line 310 of file bibliography.bib
 Warning--entry type for "unity_engine" isn't style-file defined
---line 637 of file bibliography.bib
+--line 319 of file bibliography.bib
 Warning--entry type for "campus_plan" isn't style-file defined
---line 655 of file bibliography.bib
+--line 328 of file bibliography.bib
 Warning--entry type for "jakob_nielsen" isn't style-file defined
---line 671 of file bibliography.bib
+--line 336 of file bibliography.bib
 Warning--entry type for "paul_fitts" isn't style-file defined
---line 689 of file bibliography.bib
+--line 345 of file bibliography.bib
 Warning--entry type for "yablonski_web" isn't style-file defined
---line 725 of file bibliography.bib
+--line 363 of file bibliography.bib
 Warning--entry type for "fitts_law" isn't style-file defined
---line 745 of file bibliography.bib
+--line 373 of file bibliography.bib
 Warning--entry type for "jakobs_law" isn't style-file defined
---line 765 of file bibliography.bib
+--line 383 of file bibliography.bib
 Warning--entry type for "law_of_common_region" isn't style-file defined
---line 785 of file bibliography.bib
+--line 393 of file bibliography.bib
 Warning--entry type for "hicks_law" isn't style-file defined
---line 805 of file bibliography.bib
+--line 403 of file bibliography.bib
 Warning--entry type for "millers_law" isn't style-file defined
---line 825 of file bibliography.bib
+--line 413 of file bibliography.bib
 Warning--entry type for "aesthetic_usability_effect" isn't style-file defined
---line 845 of file bibliography.bib
+--line 423 of file bibliography.bib
 Warning--entry type for "teslers_law" isn't style-file defined
---line 865 of file bibliography.bib
+--line 433 of file bibliography.bib
 Warning--entry type for "law_of_proximity" isn't style-file defined
---line 885 of file bibliography.bib
+--line 443 of file bibliography.bib
 Warning--entry type for "goal_gradient_effect" isn't style-file defined
---line 905 of file bibliography.bib
+--line 453 of file bibliography.bib
 Warning--entry type for "postels_law" isn't style-file defined
---line 925 of file bibliography.bib
+--line 463 of file bibliography.bib
 Warning--entry type for "law_of_similarity" isn't style-file defined
---line 945 of file bibliography.bib
+--line 473 of file bibliography.bib
 Warning--entry type for "geoJSON" isn't style-file defined
---line 965 of file bibliography.bib
+--line 483 of file bibliography.bib
 Warning--entry type for "mercator_projection_implementation" isn't style-file defined
---line 1015 of file bibliography.bib
+--line 508 of file bibliography.bib
 Warning--entry type for "triangulation_unity_library" isn't style-file defined
---line 1053 of file bibliography.bib
+--line 527 of file bibliography.bib
 Warning--entry type for "dm_sans" isn't style-file defined
---line 1069 of file bibliography.bib
+--line 535 of file bibliography.bib
 Warning--entry type for "remix_icons" isn't style-file defined
---line 1087 of file bibliography.bib
+--line 544 of file bibliography.bib
 Warning--entry type for "remix_icons_flutter" isn't style-file defined
---line 1103 of file bibliography.bib
+--line 552 of file bibliography.bib
 Warning--entry type for "ease_curve" isn't style-file defined
---line 1121 of file bibliography.bib
+--line 561 of file bibliography.bib
 Warning--entry type for "average_walking_speed" isn't style-file defined
---line 1137 of file bibliography.bib
+--line 569 of file bibliography.bib
 -- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -95,47 +95,48 @@ Warning--empty journal in pseudo_mercator_1
 Warning--empty author in pseudo_mercator_2
 Warning--empty journal in pseudo_mercator_2
 Warning--empty journal in triangulation_by_ear_clipping
+Warning--empty journal in dijkstras_algorithm
 
 Done.
-You've used 58 entries,
+You've used 59 entries,
             4023 wiz_defined-function locations,
-            1077 strings with 15152 characters,
-and the built_in function-call counts, 26504 in all, are:
-= -- 2226
-> -- 305
+            1082 strings with 15271 characters,
+and the built_in function-call counts, 26850 in all, are:
+= -- 2255
+> -- 309
 < -- 90
-+ -- 179
-- -- 50
-* -- 1198
-:= -- 4618
-add.period$ -- 116
-call.type$ -- 58
-change.case$ -- 95
++ -- 181
+- -- 51
+* -- 1214
+:= -- 4692
+add.period$ -- 118
+call.type$ -- 59
+change.case$ -- 96
 chr.to.int$ -- 198
-cite$ -- 68
-duplicate$ -- 2159
-empty$ -- 2371
-format.name$ -- 61
-if$ -- 5814
+cite$ -- 70
+duplicate$ -- 2189
+empty$ -- 2402
+format.name$ -- 62
+if$ -- 5884
 int.to.chr$ -- 0
-int.to.str$ -- 58
-missing$ -- 422
-newline$ -- 293
-num.names$ -- 30
-pop$ -- 1130
+int.to.str$ -- 59
+missing$ -- 427
+newline$ -- 298
+num.names$ -- 31
+pop$ -- 1144
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2047
+skip$ -- 2074
 stack$ -- 0
-substring$ -- 613
-swap$ -- 1467
+substring$ -- 614
+swap$ -- 1481
 text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 58
-warning$ -- 10
-while$ -- 60
-width$ -- 60
-write$ -- 618
-(There were 47 warnings)
+type$ -- 59
+warning$ -- 11
+while$ -- 61
+width$ -- 61
+write$ -- 628
+(There were 48 warnings)
