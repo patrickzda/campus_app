@@ -40,6 +40,7 @@ class EntityCardWidget extends StatelessWidget {
                     text: entity.getShortName(),
                     size: Sizes.textSizeSmall,
                     color: black,
+                    charLimit: 8,
                   ),
                   DMSansMediumText(
                     text: entity.getDescription().contains("OPEN") ? "Open" : "Closed",
@@ -54,6 +55,7 @@ class EntityCardWidget extends StatelessWidget {
                   text: entity.getTitle(),
                   size: Sizes.textSizeRegular,
                   color: black,
+                  charLimit: 55,
                 ),
               )
             ],
@@ -63,25 +65,25 @@ class EntityCardWidget extends StatelessWidget {
             scaleCurve: animationCurve,
             scaleMinValue: !(entity is Building && !(entity as Building).isOnMainCampus) ? 0.75 : 1,
             onPressed: (){
-              if(!(entity is Building && !(entity as Building).isOnMainCampus)){
+              if(!(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0){
                 AppUtils.switchPage(context, SearchPage(destinationEntity: entity));
               }
             },
             child: Container(
               decoration: BoxDecoration(
-                color: !(entity is Building && !(entity as Building).isOnMainCampus) ? green : lightGrey,
+                color: !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? green : lightGrey,
                 borderRadius: BorderRadius.circular(Sizes.borderRadius)
               ),
               padding: EdgeInsets.all(Sizes.paddingSmall),
               child: Row(
-                mainAxisAlignment: !(entity is Building && !(entity as Building).isOnMainCampus) ? MainAxisAlignment.spaceBetween : MainAxisAlignment.center,
+                mainAxisAlignment: !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? MainAxisAlignment.spaceBetween : MainAxisAlignment.center,
                 children: [
                   DMSansMediumText(
-                    text: !(entity is Building && !(entity as Building).isOnMainCampus) ? "Start navigation" : "Building not on campus",
+                    text: !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? "Start navigation" : "Building not on campus",
                     color: black,
                     size: Sizes.textSizeSmall,
                   ),
-                  !(entity is Building && !(entity as Building).isOnMainCampus) ? Icon(
+                  !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? Icon(
                     RemixIcon.arrow_right_line,
                     size: Sizes.iconSize,
                     color: black,

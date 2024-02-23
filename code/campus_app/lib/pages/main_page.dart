@@ -1,4 +1,5 @@
 import 'package:campus_app/constants/constants.dart';
+import 'package:campus_app/constants/data/course_data.dart';
 import 'package:campus_app/data/building.dart';
 import 'package:campus_app/data/coordinates.dart';
 import 'package:campus_app/data/navigation_job.dart';
@@ -47,8 +48,15 @@ class _MainPageState extends State<MainPage> {
     }else{
       navigationService.stopNavigation();
     }
+
     entities.addAll(navigationService.buildings);
     entities.addAll(navigationService.canteens);
+    for(int i = 0; i < navigationService.courses.length; i++){
+      if(navigationService.courses[i].isCurrent()){
+        entities.add(navigationService.courses[i]);
+      }
+    }
+
     super.initState();
   }
 
@@ -150,6 +158,12 @@ class _MainPageState extends State<MainPage> {
                           entities.addAll(navigationService.buildings);
                         }else if(index == 2){
                           entities.addAll(navigationService.canteens);
+                        }else if(index == 3){
+                          for(int i = 0; i < navigationService.courses.length; i++){
+                            if(navigationService.courses[i].isCurrent()){
+                              entities.add(navigationService.courses[i]);
+                            }
+                          }
                         }
 
                         selectedCardIndex = 0;
@@ -249,7 +263,7 @@ class _MainPageState extends State<MainPage> {
                         selectedCardIndex = pageIndex;
                       });
 
-                      if(!(entities[selectedCardIndex] is Building && !(entities[selectedCardIndex] as Building).isOnMainCampus)){
+                      if(!(entities[selectedCardIndex] is Building && !(entities[selectedCardIndex] as Building).isOnMainCampus) && entities[selectedCardIndex].getPosition().latitude != 0 && entities[selectedCardIndex].getPosition().longitude != 0){
                         UnityCommunicationService.moveCameraTo(entities[selectedCardIndex].getPosition());
                         UnityCommunicationService.zoomCameraTo(3);
                       }else{

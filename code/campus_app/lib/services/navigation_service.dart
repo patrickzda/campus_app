@@ -1,8 +1,10 @@
 import 'package:campus_app/constants/data/building_data.dart';
 import 'package:campus_app/constants/constants.dart';
+import 'package:campus_app/constants/data/course_data.dart';
 import 'package:campus_app/constants/data/room_data.dart';
 import 'package:campus_app/data/canteen.dart';
 import 'package:campus_app/data/coordinates.dart';
+import 'package:campus_app/data/course.dart';
 import 'package:campus_app/data/geofence.dart';
 import 'package:campus_app/services/unity_communication_service.dart';
 import 'package:campus_app/services/user_location_service.dart';
@@ -24,6 +26,7 @@ class NavigationService{
   late List<Canteen> canteens;
   late List<NavigationNode> navigationNodes;
   late List<Room> rooms;
+  late List<Course> courses;
   late UserLocationService userLocationService;
 
   List<NavigationNode> currentRoute = [];
@@ -73,6 +76,11 @@ class NavigationService{
       return Room.fromJson(roomData[currentKey], int.parse(currentKey), Building.findBuildingByShortName(buildings, roomData[currentKey]["name"].split(" ")[0]));
     });
 
+    List<String> courseDataKeys = courseData.keys.toList();
+    courses = List.generate(courseDataKeys.length, (int index){
+      return Course.fromJson(courseData[courseDataKeys[index]]);
+    });
+
     //TODO: Bugfix: Warum wird ein Gebäude während der Navigation nicht fokussiert wenn es betreten wird?
 
     userLocationService = UserLocationService(
@@ -110,11 +118,12 @@ class NavigationService{
     }));
 
     for(int i = 1; i < currentRoute.length; i++){
-      routeLengthInMeters = routeLengthInMeters +  currentRoute[i - 1].coordinates.distanceTo(currentRoute[i].coordinates);
+      routeLengthInMeters = routeLengthInMeters + currentRoute[i - 1].coordinates.distanceTo(currentRoute[i].coordinates);
+      walkingTimeInMinutes = walkingTimeInMinutes + estimateWalkingTime(currentRoute[i - 1], currentRoute[i]);
     }
 
     //TODO: BESSERE BERECHNUNG DER ETA
-    walkingTimeInMinutes = (routeLengthInMeters / averageWalkingSpeedInMetersPerSecond) / 60.0;
+    //walkingTimeInMinutes = (routeLengthInMeters / averageWalkingSpeedInMetersPerSecond) / 60.0;
 
     state = NavigationState.initialized;
   }
@@ -197,7 +206,7 @@ class NavigationService{
 
       for(int j = 0; j < currentNode.connectedNodes.length; j++){
         //TODO: HIER DIE DISTANCETO FUNKTION MIT ETA BERECHNUNG ERSETZEN!
-        double totalDistance = minDistancesFromStart[currentNode.id] + currentNode.coordinates.distanceTo(currentNode.connectedNodes[j].coordinates);
+        double totalDistance = minDistancesFromStart[currentNode.id] + estimateWalkingTime(currentNode, currentNode.connectedNodes[j]);
 
         if(!isVisited[currentNode.connectedNodes[j].id] && minDistancesFromStart[currentNode.connectedNodes[j].id] > totalDistance){
           minDistancesFromStart[currentNode.connectedNodes[j].id] = totalDistance;
@@ -240,6 +249,22 @@ class NavigationService{
     }
 
     return minIndex;
+  }
+
+  double estimateWalkingTime(NavigationNode first, NavigationNode second){
+    double distance = first.coordinates.distanceTo(second.coordinates);
+
+    if(first.isEntrance() && second.isEntrance()){
+      distance = distance * indoorDistanceFactor;
+    }
+
+    double eta = distance / averageWalkingSpeedInMetersPerSecond;
+    if(trafficLightNodeIds.contains(first.id) || trafficLightNodeIds.contains(second.id)){
+      eta = eta + trafficLightWaitingTimeInSeconds;
+      print("FOUND TRAFFIC LIGHTS!");
+    }
+
+    return eta / 60.0;
   }
 
 }
