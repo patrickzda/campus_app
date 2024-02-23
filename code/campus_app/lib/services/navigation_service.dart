@@ -1,15 +1,17 @@
-import 'package:campus_app/constants/building_data.dart';
-import 'package:campus_app/constants/canteen_data.dart';
+import 'package:campus_app/constants/data/building_data.dart';
 import 'package:campus_app/constants/constants.dart';
-import 'package:campus_app/constants/navigation_node_data.dart';
+import 'package:campus_app/constants/data/room_data.dart';
 import 'package:campus_app/data/canteen.dart';
 import 'package:campus_app/data/coordinates.dart';
 import 'package:campus_app/data/geofence.dart';
 import 'package:campus_app/services/unity_communication_service.dart';
 import 'package:campus_app/services/user_location_service.dart';
 import 'package:location/location.dart';
+import '../constants/data/canteen_data.dart';
+import '../constants/data/navigation_node_data.dart';
 import '../data/building.dart';
 import '../data/navigation_node.dart';
+import '../data/room.dart';
 
 enum NavigationState{
   initialized,
@@ -21,6 +23,7 @@ class NavigationService{
   late List<Building> buildings;
   late List<Canteen> canteens;
   late List<NavigationNode> navigationNodes;
+  late List<Room> rooms;
   late UserLocationService userLocationService;
 
   List<NavigationNode> currentRoute = [];
@@ -32,79 +35,45 @@ class NavigationService{
   double routeLengthInMeters = 0, walkingTimeInMinutes = 0;
 
   NavigationService(){
-    buildings = List.filled(buildingData.length, Building(id: 0, shortName: "", names: [], position: const Coordinates(latitude: 0, longitude: 0), entryNodes: [], openingHour: 0, openingMinute: 0, closingHour: 0, closingMinute: 0, isOnMainCampus: true));
-    navigationNodes = List.filled(navigationNodeData.length, NavigationNode(id: 0, coordinates: const Coordinates(latitude: 0, longitude: 0)));
-    canteens = [];
+    buildings = List.generate(buildingData.keys.length, (int index){
+      String currentKey = buildingData.keys.toList()[index];
+      return Building.fromJson(buildingData[currentKey], int.parse(currentKey));
+    });
 
-    List<String> buildingDataKeys = buildingData.keys.toList();
-    for(int i = 0; i < buildingDataKeys.length; i++){
-      String currentKey = buildingDataKeys[i];
-      Map<String, dynamic> currentData = buildingData[currentKey];
+    canteens = List.generate(canteenData.keys.length, (int index){
+      String currentKey = canteenData.keys.toList()[index];
+      return Canteen.fromJson(canteenData[currentKey], int.parse(currentKey), Building.findBuildingById(buildings, canteenData[currentKey]["buildingId"])!);
+    });
 
-      Building currentBuilding = Building(
-        id: int.parse(currentKey),
-        position: Coordinates(latitude: currentData["latitude"], longitude: currentData["longitude"]),
-        shortName: currentData["shortName"],
-        names: List.generate(currentData["names"].length, (int index){
-          return currentData["names"][index].toString();
-        }),
-        entryNodes: [],
-        openingHour: currentData["openingHour"],
-        openingMinute: currentData["openingMinute"],
-        closingHour: currentData["closingHour"],
-        closingMinute: currentData["closingMinute"],
-        isOnMainCampus: currentData["isOnMainCampus"]
-      );
-      buildings[currentBuilding.id] = currentBuilding;
-    }
+    navigationNodes = List.generate(navigationNodeData.keys.length, (int index){
+      String currentKey = navigationNodeData.keys.toList()[index];
+      return NavigationNode.fromJson(navigationNodeData[currentKey], int.parse(currentKey), navigationNodeData[currentKey]["associatedBuildingId"] != null ? Building.findBuildingById(buildings, navigationNodeData[currentKey]["associatedBuildingId"]) : null);
+    });
 
-    for(int i = 0; i < canteenData.keys.length; i++){
-      Map<String, dynamic> currentData = canteenData[canteenData.keys.toList()[i]];
-
-      canteens.add(Canteen(
-        id: int.parse(canteenData.keys.toList()[i]),
-        name: currentData["name"],
-        position: Coordinates(latitude: currentData["latitude"], longitude: currentData["longitude"]),
-        building: buildings[currentData["buildingId"]],
-        openingHour: currentData["openingHour"],
-        openingMinute: currentData["openingMinute"],
-        closingHour: currentData["closingHour"],
-        closingMinute: currentData["closingMinute"],
-      ));
-    }
-
-    List<String> navigationNodeKeys = navigationNodeData.keys.toList();
-    for(int i = 0; i < navigationNodeKeys.length; i++){
-      String currentKey = navigationNodeKeys[i];
-      Map<String, dynamic> currentData = navigationNodeData[currentKey];
-
-      NavigationNode currentNavigationNode = NavigationNode(
-        id: int.parse(currentKey),
-        coordinates: Coordinates(
-          latitude: currentData["coordinates"][0],
-          longitude: currentData["coordinates"][1]
-        ),
-        building: currentData["associatedBuildingId"] != null ? buildings[currentData["associatedBuildingId"]] : null
-      );
-      navigationNodes[currentNavigationNode.id] = currentNavigationNode;
-    }
-
-    for(int i = 0; i < buildingDataKeys.length; i++){
-      String currentKey = buildingDataKeys[i];
-      buildings[int.parse(currentKey)].entryNodes = List.generate(buildingData[currentKey]["entryNodeIds"].length, (int index){
-        return navigationNodes[buildingData[currentKey]["entryNodeIds"][index]];
+    for(int i = 0; i < buildingData.keys.length; i++){
+      String currentKey = buildingData.keys.toList()[i];
+      buildings[i].entryNodes = List.generate(buildingData[currentKey]["entryNodeIds"].length, (int index){
+        return NavigationNode.findNavigationNodeById(navigationNodes, buildingData[currentKey]["entryNodeIds"][index])!;
       });
-      buildings[int.parse(currentKey)].canteens = List.generate(buildingData[currentKey]["canteenIds"].length, (int index){
-        return canteens[buildingData[currentKey]["canteenIds"][index]];
+
+      buildings[i].canteens = List.generate(buildingData[currentKey]["canteenIds"].length, (int index){
+        return Canteen.findCanteenById(canteens, buildingData[currentKey]["canteenIds"][index])!;
       });
     }
 
-    for(int i = 0; i < navigationNodeKeys.length; i++){
-      String currentKey = navigationNodeKeys[i];
-      navigationNodes[int.parse(currentKey)].connectedNodes = List.generate(navigationNodeData[currentKey]["connections"].length, (int index){
-        return navigationNodes[navigationNodeData[currentKey]["connections"][index]];
+    for(int i = 0; i < navigationNodeData.keys.length; i++){
+      String currentKey = navigationNodeData.keys.toList()[i];
+      navigationNodes[i].connectedNodes = List.generate(navigationNodeData[currentKey]["connections"].length, (int index){
+        return NavigationNode.findNavigationNodeById(navigationNodes, navigationNodeData[currentKey]["connections"][index])!;
       });
     }
+
+    rooms = List.generate(roomData.keys.length, (int index){
+      String currentKey = roomData.keys.toList()[index];
+      return Room.fromJson(roomData[currentKey], int.parse(currentKey), Building.findBuildingByShortName(buildings, roomData[currentKey]["name"].split(" ")[0]));
+    });
+
+    //TODO: Bugfix: Warum wird ein Gebäude während der Navigation nicht fokussiert wenn es betreten wird?
 
     userLocationService = UserLocationService(
       onFenceEnter: (int fenceId){

@@ -16,4 +16,26 @@ class NavigationNode{
   bool isEntrance(){
     return building != null;
   }
+
+  static NavigationNode fromJson(Map<String, dynamic> jsonData, int id, Building? building){
+    return NavigationNode(
+      id: id,
+      coordinates: Coordinates(
+        latitude: jsonData["coordinates"][0],
+        longitude: jsonData["coordinates"][1]
+      ),
+      building: building,
+      connectedNodes: []
+    );
+  }
+
+  static NavigationNode? findNavigationNodeById(List<NavigationNode> navigationNodes, int id){
+    for(int i = 0; i < navigationNodes.length; i++){
+      if(navigationNodes[i].id == id){
+        return navigationNodes[i];
+      }
+    }
+    return null;
+  }
+
 }

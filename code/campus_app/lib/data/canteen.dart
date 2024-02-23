@@ -43,4 +43,27 @@ class Canteen extends CampusEntity{
   String getShortName() {
     return building.shortName;
   }
+
+  static Canteen fromJson(Map<String, dynamic> jsonData, int id, Building building){
+    return Canteen(
+      id: id,
+      name: jsonData["name"],
+      position: Coordinates(latitude: jsonData["latitude"], longitude: jsonData["longitude"]),
+      building: building,
+      openingHour: jsonData["openingHour"],
+      openingMinute: jsonData["openingMinute"],
+      closingHour: jsonData["closingHour"],
+      closingMinute: jsonData["closingMinute"]
+    );
+  }
+
+  static Canteen? findCanteenById(List<Canteen> canteens, int id){
+    for(int i = 0; i < canteens.length; i++){
+      if(canteens[i].id == id){
+        return canteens[i];
+      }
+    }
+    return null;
+  }
+
 }
