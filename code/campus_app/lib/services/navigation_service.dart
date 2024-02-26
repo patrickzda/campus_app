@@ -71,15 +71,45 @@ class NavigationService{
       });
     }
 
-    rooms = List.generate(roomData.keys.length, (int index){
-      String currentKey = roomData.keys.toList()[index];
-      return Room.fromJson(roomData[currentKey], int.parse(currentKey), Building.findBuildingByShortName(buildings, roomData[currentKey]["name"].split(" ")[0]));
-    });
+    Map<int, Room> roomMap = {};
+    for(int i = 0; i < roomData.keys.length; i++){
+      String currentKey = roomData.keys.toList()[i];
+      Building? building = Building.findBuildingByShortName(buildings, roomData[currentKey]["name"].split(" ")[0]);
+
+      roomMap[int.parse(currentKey)] = Room.fromJson(roomData[currentKey], int.parse(currentKey), building);
+
+      if(building != null){
+        building.rooms.add(roomMap[int.parse(currentKey)]!);
+      }
+    }
 
     List<String> courseDataKeys = courseData.keys.toList();
     courses = List.generate(courseDataKeys.length, (int index){
-      return Course.fromJson(courseData[courseDataKeys[index]]);
+      Course currentCourse = Course.fromJson(courseData[courseDataKeys[index]], int.parse(courseDataKeys[index]));
+
+      List<int> roomIds = [];
+      for(int i = 0; i < currentCourse.events.length; i++){
+        for(int j = 0; j < currentCourse.events[i].roomIds.length; j++){
+          roomIds.add(currentCourse.events[i].roomIds[j]);
+        }
+      }
+      roomIds = roomIds.toSet().toList();
+
+      for(int i = 0; i < roomIds.length; i++){
+        roomMap[roomIds[i]]!.courses.add(currentCourse);
+      }
+
+      return currentCourse;
     });
+
+    rooms = List.generate(roomMap.keys.length, (int index){
+      return roomMap[roomMap.keys.toList()[index]]!;
+    });
+
+    for(int i = 0; i < rooms.length; i++){
+      print("${rooms[i].name}: ${rooms[i].courses.length}");
+
+    }
 
     //TODO: Bugfix: Warum wird ein Gebäude während der Navigation nicht fokussiert wenn es betreten wird?
 
@@ -121,9 +151,6 @@ class NavigationService{
       routeLengthInMeters = routeLengthInMeters + currentRoute[i - 1].coordinates.distanceTo(currentRoute[i].coordinates);
       walkingTimeInMinutes = walkingTimeInMinutes + estimateWalkingTime(currentRoute[i - 1], currentRoute[i]);
     }
-
-    //TODO: BESSERE BERECHNUNG DER ETA
-    //walkingTimeInMinutes = (routeLengthInMeters / averageWalkingSpeedInMetersPerSecond) / 60.0;
 
     state = NavigationState.initialized;
   }
@@ -205,7 +232,6 @@ class NavigationService{
       NavigationNode currentNode = navigationNodes[_getNextMinDistanceVertex(minDistancesFromStart, isVisited)];
 
       for(int j = 0; j < currentNode.connectedNodes.length; j++){
-        //TODO: HIER DIE DISTANCETO FUNKTION MIT ETA BERECHNUNG ERSETZEN!
         double totalDistance = minDistancesFromStart[currentNode.id] + estimateWalkingTime(currentNode, currentNode.connectedNodes[j]);
 
         if(!isVisited[currentNode.connectedNodes[j].id] && minDistancesFromStart[currentNode.connectedNodes[j].id] > totalDistance){
@@ -261,7 +287,6 @@ class NavigationService{
     double eta = distance / averageWalkingSpeedInMetersPerSecond;
     if(trafficLightNodeIds.contains(first.id) || trafficLightNodeIds.contains(second.id)){
       eta = eta + trafficLightWaitingTimeInSeconds;
-      print("FOUND TRAFFIC LIGHTS!");
     }
 
     return eta / 60.0;

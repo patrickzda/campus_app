@@ -4,8 +4,11 @@ import 'package:campus_app/utils/AppUtils.dart';
 import 'package:campus_app/widgets/text_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_scale_tap/flutter_scale_tap.dart';
 import 'package:remix_flutter/remix_flutter.dart';
 import '../constants/Sizes.dart';
+import '../data/building.dart';
+import '../pages/detail_pages/building_page.dart';
 
 typedef VoidCallback = void Function();
 
@@ -19,12 +22,17 @@ class SearchCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: (){
+    return ScaleTap(
+      duration: animationDuration,
+      scaleCurve: animationCurve,
+      scaleMinValue: 0.75,
+      onPressed: (){
         if(currentLocationCard){
           onUserLocationSelected();
         }else{
-          onNavigationClicked(campusEntity);
+          if(campusEntity is Building){
+            AppUtils.switchPage(context, BuildingPage(building: campusEntity as Building));
+          }
         }
       },
       child: Container(

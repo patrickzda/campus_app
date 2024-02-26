@@ -5,6 +5,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Ackerstraße 71-76, 13355 Berlin",
     "isOnMainCampus": false,
     "canteenIds":[
     
@@ -25,6 +26,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Hardenbergstraße 38, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -45,6 +47,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Rothenburgstraße 12, 12165 Berlin",
     "isOnMainCampus": false,
     "canteenIds":[
     
@@ -65,6 +68,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Pascalstraße 13-14, 10587 Berlin",
     "isOnMainCampus": false,
     "canteenIds":[
     
@@ -85,6 +89,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Marchstraße 12B, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
       3
@@ -105,6 +110,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Str. des 17. Juni 150, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -128,6 +134,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Hardenbergstraße 40A, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -148,6 +155,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Hardenbergstraße 40, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -168,6 +176,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Marchstraße 8, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -189,6 +198,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Hardenbergstraße 40A, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -212,6 +222,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Ernst-Reuter-Platz 1, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -233,6 +244,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Fasanenstraße 89, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -254,6 +266,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Fachgebiet Verbrennungskraftmaschinen, 10587 Berlin",
     "isOnMainCampus": false,
     "canteenIds":[
     
@@ -274,6 +287,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Str. des 17. Juni 115, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -295,6 +309,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Elektromaschinen Hochspannungstechnik, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -316,6 +331,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Marchstraße 6, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -337,6 +353,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Einsteinufer 19, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -357,6 +374,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Einsteinufer 17, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -382,6 +400,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Hardenbergstraße 36A, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -404,6 +423,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Erweiterungsbau der Technischen Universität Berlin, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -426,6 +446,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Hardenbergstraße 36, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -451,6 +472,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Institut für Luft- und Raumfahrt, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -475,6 +497,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Fraunhoferstraße 33-36, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -496,6 +519,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Seestraße 12, 13353 Berlin",
     "isOnMainCampus": false,
     "canteenIds":[
     
@@ -517,6 +541,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Seestraße 11, 13353 Berlin",
     "isOnMainCampus": false,
     "canteenIds":[
     
@@ -537,6 +562,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Hardenbergstraße 16, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -557,6 +583,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Bundesstraße 5 135, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
       6
@@ -590,6 +617,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Hermann-Föttinger-Gebäude, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -610,6 +638,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Hermann-Föttinger-Gebäude, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -631,6 +660,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Heizung und Lüftung, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -651,6 +681,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Einsteinufer 25, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -671,6 +702,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Kaiserin-Augusta-Allee 104, 10553 Berlin",
     "isOnMainCampus": false,
     "canteenIds":[
     
@@ -691,6 +723,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Kerntechnik, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -712,6 +745,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Königin-Luise-Straße 22, 14195 Berlin",
     "isOnMainCampus": false,
     "canteenIds":[
     
@@ -732,6 +766,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Fasanenstraße 1A, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -752,6 +787,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Str. des 17. Juni 135, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -772,6 +808,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Fasanenstraße 1, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -792,6 +829,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Lebensmittelchemie, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -812,6 +850,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Marchstraße 23, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
       4
@@ -832,6 +871,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Str. des 17. Juni 136, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -856,6 +896,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Mechanik, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -876,6 +917,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Mechanische Schwingungslehre, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -896,6 +938,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Physikalische Chemie, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -916,6 +959,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Pascalstraße 8-9, 10587 Berlin",
     "isOnMainCampus": false,
     "canteenIds":[
     
@@ -936,6 +980,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Str. des 17. Juni 135, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -957,6 +1002,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Salzufer 21, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -988,6 +1034,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Dovestraße 6, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -1025,6 +1072,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Waldschulallee 71, 14055 Berlin",
     "isOnMainCampus": false,
     "canteenIds":[
     
@@ -1045,6 +1093,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Steinpl. 2, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -1065,6 +1114,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Einsteinufer 25, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -1085,6 +1135,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Technische Akustik Prüfhalle, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -1105,6 +1156,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Str. des 17. Juni 124, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -1127,6 +1179,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Str. des 17. Juni 135, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -1149,6 +1202,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Gustav-Meyer-Allee 25, 13355 Berlin",
     "isOnMainCampus": false,
     "canteenIds":[
     
@@ -1169,6 +1223,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Marchstraße 10, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -1189,6 +1244,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "TEL Gebäude, 10587 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
       2
@@ -1211,6 +1267,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Str. des 17. Juni 135, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -1231,6 +1288,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Zentralwerkstatt, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -1251,6 +1309,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Str. des 17. Juni 144, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -1273,6 +1332,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Secreteriat Z 1 (Z-Building, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -1293,6 +1353,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Amrumer Str. 32, 13353 Berlin",
     "isOnMainCampus": false,
     "canteenIds":[
     
@@ -1313,6 +1374,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Hardenbergstraße 35, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
     
@@ -1333,6 +1395,7 @@ const Map<String, dynamic> buildingData = {
     "openingMinute": 0,
     "closingHour": 21,
     "closingMinute": 0,
+    "address": "Hardenbergstraße 34, 10623 Berlin",
     "isOnMainCampus": true,
     "canteenIds":[
       0,

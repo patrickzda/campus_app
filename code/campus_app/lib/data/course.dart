@@ -1,15 +1,18 @@
 import 'package:campus_app/constants/Constants.dart';
 import 'package:campus_app/data/campus_entity.dart';
 import 'package:campus_app/data/coordinates.dart';
+import 'package:campus_app/data/room.dart';
+import 'building.dart';
 import 'course_event.dart';
 
 class Course extends CampusEntity{
   final String name, fullName, type, supervisor, faculty, institute, department, email, learningOutcomes, description, examType, language, grading, mosesLink, isisLink;
   final List<String> relatedStudies;
-  final int ects;
+  final int id, ects;
   final List<CourseEvent> events;
 
   Course({
+    required this.id,
     required this.name,
     required this.fullName,
     required this.type,
@@ -30,8 +33,9 @@ class Course extends CampusEntity{
     required this.events
   });
 
-  static Course fromJson(Map<String, dynamic> jsonData){
+  static Course fromJson(Map<String, dynamic> jsonData, int id){
     return Course(
+      id: id,
       name: jsonData["name"],
       fullName: jsonData["full_name"],
       type: jsonData["type"],
@@ -48,7 +52,7 @@ class Course extends CampusEntity{
       mosesLink: jsonData["moses_link"],
       isisLink: jsonData["isis_link"],
       relatedStudies: List.generate(jsonData["studies"].length, (int index){
-        return jsonData["studies"].toString();
+        return jsonData["studies"][index].toString();
       }),
       ects: jsonData["ects"],
       events: List.generate(jsonData["events"].length, (int index){
@@ -58,9 +62,8 @@ class Course extends CampusEntity{
   }
 
   bool isCurrent(){
-    DateTime current = DateTime.now();
     for(int i = 0; i < events.length; i++){
-      if(events[i].start.isBefore(current) && events[i].end.isAfter(current)){
+      if(events[i].isCurrent()){
         return true;
       }
     }
@@ -90,7 +93,7 @@ class Course extends CampusEntity{
 
     if(currentEventIndex != -1){
       for(int i = 0; i < navigationService.rooms.length; i++){
-        if(events[currentEventIndex].rooms.join(" ").contains(navigationService.rooms[i].name)){
+        if(events[currentEventIndex].roomNames.join(" ").contains(navigationService.rooms[i].name)){
           return navigationService.rooms[i].getPosition();
         }
       }
@@ -110,7 +113,7 @@ class Course extends CampusEntity{
     }
 
     if(currentEventIndex != -1){
-      return events[currentEventIndex].rooms[0];
+      return events[currentEventIndex].roomNames[0];
     }
     return "Course";
   }
@@ -118,6 +121,15 @@ class Course extends CampusEntity{
   @override
   String getTitle() {
     return name;
+  }
+
+  CourseEvent? getCurrentEvent(){
+    for(int i = 0; i < events.length; i++){
+      if(events[i].isCurrent()){
+        return events[i];
+      }
+    }
+    return null;
   }
 
 }

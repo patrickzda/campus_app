@@ -10,7 +10,7 @@ import 'geofence.dart';
 
 class Building extends CampusEntity{
   final int id, openingHour, openingMinute, closingHour, closingMinute;
-  final String shortName;
+  final String shortName, address;
   final List<String> names;
   final Coordinates position;
   final bool isOnMainCampus;
@@ -18,7 +18,7 @@ class Building extends CampusEntity{
   List<Canteen> canteens;
   List<Room> rooms;
 
-  Building({required this.id, required this.shortName, required this.names, required this.position, required this.entryNodes, this.canteens = const [], this.rooms = const [], required this.openingHour, required this.openingMinute, required this.closingHour, required this.closingMinute, required this.isOnMainCampus});
+  Building({required this.id, required this.shortName, required this.address, required this.names, required this.position, required this.entryNodes, this.canteens = const [], this.rooms = const [], required this.openingHour, required this.openingMinute, required this.closingHour, required this.closingMinute, required this.isOnMainCampus});
 
   List<Geofence> getGeofenceList(){
     return List.generate(entryNodes.length, (int index){
@@ -62,6 +62,7 @@ class Building extends CampusEntity{
     return Building(
       id: id,
       shortName: jsonData["shortName"],
+      address: jsonData["address"],
       names: List.generate(jsonData["names"].length, (int index){
         return jsonData["names"][index].toString();
       }),

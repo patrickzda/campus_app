@@ -43,6 +43,7 @@ class _MainPageState extends State<MainPage> {
 
   @override
   void initState() {
+    resumeUnity();    //???
     if(widget.navigationJob != null){
       navigationService.initNavigation(widget.navigationJob!.startNode, widget.navigationJob!.destinationNode);
     }else{
@@ -257,6 +258,7 @@ class _MainPageState extends State<MainPage> {
                     onPageChanged: (int pageIndex){
                       if(pageIndex == entities.length){
                         pageController.animateToPage(entities.length - 1, duration: animationDuration, curve: animationCurve);
+                        return;
                       }
 
                       setState(() {

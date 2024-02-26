@@ -24,7 +24,7 @@ class Sizes {
     textSizeSmall = width / 25;
     textSizePageTitle = textSizeSmall * 1.1;
     textSizeRegular = width / 18.75;
-    textSizeBig = width / 15;
+    textSizeBig = width / 12.5;
 
     borderRadius = widthPercent * 3;
     borderRadiusBig = borderRadius * 2;

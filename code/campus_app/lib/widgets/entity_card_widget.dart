@@ -1,4 +1,6 @@
 import 'package:campus_app/data/campus_entity.dart';
+import 'package:campus_app/pages/detail_pages/building_page.dart';
+import 'package:campus_app/pages/detail_pages/course_page.dart';
 import 'package:campus_app/widgets/text_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_scale_tap/flutter_scale_tap.dart';
@@ -6,6 +8,7 @@ import 'package:remix_flutter/remix_flutter.dart';
 import '../constants/Constants.dart';
 import '../constants/Sizes.dart';
 import '../data/building.dart';
+import '../data/course.dart';
 import '../pages/search_page.dart';
 import '../utils/AppUtils.dart';
 
@@ -16,83 +19,95 @@ class EntityCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
+    return ScaleTap(
       duration: animationDuration,
-      curve: animationCurve,
-      decoration: BoxDecoration(
-        color: white,
-        borderRadius: BorderRadius.circular(Sizes.borderRadius)
-      ),
-      width: Sizes.widthPercent * 30,
-      height: Sizes.heightPercent * 40,
-      margin: EdgeInsets.only(top: isSelected ? 0 : Sizes.paddingBig * 1.5, left: Sizes.paddingRegular, bottom: Sizes.paddingRegular),
-      padding: EdgeInsets.all(Sizes.paddingRegular),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  DMSansBoldText(
-                    text: entity.getShortName(),
-                    size: Sizes.textSizeSmall,
-                    color: black,
-                    charLimit: 8,
-                  ),
-                  DMSansMediumText(
-                    text: entity.getDescription().contains("OPEN") ? "Open" : "Closed",
-                    size: Sizes.textSizeSmall,
-                    color: green,
-                  ),
-                ],
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: Sizes.paddingRegular),
-                child: DMSansBoldText(
-                  text: entity.getTitle(),
-                  size: Sizes.textSizeRegular,
-                  color: black,
-                  charLimit: 55,
+      scaleCurve: animationCurve,
+      scaleMinValue: 0.75,
+      onPressed: (){
+        if(entity is Building){
+          AppUtils.switchPage(context, BuildingPage(building: entity as Building));
+        }else if(entity is Course){
+          AppUtils.switchPage(context, CoursePage(course: entity as Course));
+        }
+      },
+      child: AnimatedContainer(
+        duration: animationDuration,
+        curve: animationCurve,
+        decoration: BoxDecoration(
+          color: white,
+          borderRadius: BorderRadius.circular(Sizes.borderRadius)
+        ),
+        width: Sizes.widthPercent * 30,
+        height: Sizes.heightPercent * 40,
+        margin: EdgeInsets.only(top: isSelected ? 0 : Sizes.paddingBig * 1.5, left: Sizes.paddingRegular, bottom: Sizes.paddingRegular),
+        padding: EdgeInsets.all(Sizes.paddingRegular),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    DMSansBoldText(
+                      text: entity.getShortName(),
+                      size: Sizes.textSizeSmall,
+                      color: black,
+                      charLimit: 8,
+                    ),
+                    DMSansMediumText(
+                      text: entity is Course ? "" : entity.getDescription().contains("OPEN") ? "Open" : "Closed",
+                      size: Sizes.textSizeSmall,
+                      color: green,
+                    ),
+                  ],
                 ),
-              )
-            ],
-          ),
-          ScaleTap(
-            duration: animationDuration,
-            scaleCurve: animationCurve,
-            scaleMinValue: !(entity is Building && !(entity as Building).isOnMainCampus) ? 0.75 : 1,
-            onPressed: (){
-              if(!(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0){
-                AppUtils.switchPage(context, SearchPage(destinationEntity: entity));
-              }
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                color: !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? green : lightGrey,
-                borderRadius: BorderRadius.circular(Sizes.borderRadius)
-              ),
-              padding: EdgeInsets.all(Sizes.paddingSmall),
-              child: Row(
-                mainAxisAlignment: !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? MainAxisAlignment.spaceBetween : MainAxisAlignment.center,
-                children: [
-                  DMSansMediumText(
-                    text: !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? "Start navigation" : "Building not on campus",
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: Sizes.paddingRegular),
+                  child: DMSansBoldText(
+                    text: entity.getTitle(),
+                    size: Sizes.textSizeRegular,
                     color: black,
-                    size: Sizes.textSizeSmall,
+                    charLimit: 55,
                   ),
-                  !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? Icon(
-                    RemixIcon.arrow_right_line,
-                    size: Sizes.iconSize,
-                    color: black,
-                  ) : const SizedBox(),
-                ],
-              ),
+                )
+              ],
             ),
-          )
-        ],
+            ScaleTap(
+              duration: animationDuration,
+              scaleCurve: animationCurve,
+              scaleMinValue: !(entity is Building && !(entity as Building).isOnMainCampus) ? 0.75 : 1,
+              onPressed: (){
+                if(!(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0){
+                  AppUtils.switchPage(context, SearchPage(destinationEntity: entity));
+                }
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? green : lightGrey,
+                  borderRadius: BorderRadius.circular(Sizes.borderRadius)
+                ),
+                padding: EdgeInsets.all(Sizes.paddingSmall),
+                child: Row(
+                  mainAxisAlignment: !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? MainAxisAlignment.spaceBetween : MainAxisAlignment.center,
+                  children: [
+                    DMSansMediumText(
+                      text: !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? "Start navigation" : "Building not on campus",
+                      color: black,
+                      size: Sizes.textSizeSmall,
+                    ),
+                    !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? Icon(
+                      RemixIcon.arrow_right_line,
+                      size: Sizes.iconSize,
+                      color: black,
+                    ) : const SizedBox(),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

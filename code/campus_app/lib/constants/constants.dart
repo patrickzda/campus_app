@@ -13,7 +13,7 @@ const Color yellow = Color.fromARGB(255, 250, 242, 104);
 const Color pink = Color.fromARGB(255, 255, 187, 245);
 const Color beige = Color.fromARGB(255, 232, 212, 199);
 
-const List<String> tagNames = ["All", "Buildings", "Canteens", "Courses", "Events"];
+const List<String> tagNames = ["All", "Buildings", "Canteens", "Current courses", "Events"];
 const List<Color> tagColors = [green, blue, yellow, pink, beige];
 const List<IconData> tagIcons = [RemixIcon.function_line, RemixIcon.community_line, RemixIcon.restaurant_line, RemixIcon.presentation_line, RemixIcon.calendar_event_line];
 
@@ -25,6 +25,7 @@ const double averageWalkingSpeedInMetersPerSecond = 1.42;
 const double indoorDistanceFactor = 1.05;
 const double trafficLightWaitingTimeInSeconds = 20;
 const List<int> trafficLightNodeIds = [1579, 184, 146, 147, 188, 187, 185, 186, 1380, 1381, 353, 352, 1389, 1390, 1401, 1395, 1403, 1408, 1418, 1420, 758, 759, 1344, 1785, 1712, 237, 1726, 1729, 1451, 1450];
+const List<String> weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
 const String mapLoadedIdentifier = "MAP_LOADED";
 
