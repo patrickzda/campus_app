@@ -1,5 +1,4 @@
-\babel@toc {english}{}\relax 
-\babel@toc {english}{}\relax 
+\babel@toc {english}{}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Context and background}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Motivation}{1}{section.1.2}%
@@ -48,13 +47,13 @@
 \contentsline {subsection}{\numberline {4.3.3}Defining weights and calculating ETA}{36}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}Routing across the campus}{37}{subsection.4.3.4}%
 \contentsline {subsection}{\numberline {4.3.5}Embedding the current user location via GPS}{37}{subsection.4.3.5}%
-\contentsline {section}{\numberline {4.4}Interactive information layer development}{37}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Collection of campus relevant information from the web}{37}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Processing of information and internal representation}{37}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}User interface development}{37}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Navigation system}{37}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Information layer}{37}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Enhancing the user experience with additional screens and features}{37}{subsection.4.5.3}%
+\contentsline {section}{\numberline {4.4}Interactive information layer development}{38}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Collection of campus relevant information from the web}{38}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Processing of information and internal representation}{38}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}User interface development}{38}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Navigation system}{38}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Information layer}{38}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Enhancing the user experience with additional screens and features}{38}{subsection.4.5.3}%
 \contentsline {chapter}{\numberline {5}Evaluation}{39}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Navigation system verification}{39}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Information layer verification}{39}{section.5.2}%

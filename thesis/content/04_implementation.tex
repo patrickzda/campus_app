@@ -286,6 +286,9 @@ To further calculate the estimated total walking time t of a route consisting of
 After defining the weighted graph for TU Berlin's street network, the fastest routes between two nodes can be calculated using a routing algorithm. For this thesis, a simple implementation of Dijkstra's algorithm for finding the shortest paths in a graph \cite{dijkstras_algorithm} is used.
 
 \subsection{Embedding the current user location via GPS}
+There are two different use case scenarios for navigation system usage: On the one hand, users can search for two different POIs on the campus and display the fastest route between them. On the other hand, a user searches for a specific destination and expects the system to directly calculate and display the route between its current location and the selected destination point. The latter scenario needs the capability to detect the user's current location, which is realized with the help of the built-in GPS module of the mobile device.
+
+To achieve this, two different methods for resolving the GPS position are used: Firstly, to determine the starting point of the route calculation, the current position is detected with a one-shot query. After the respective route is then calculated and the live navigation functionality is initiated by the user, the GPS API is queried with a stream, continuously providing the current device position by firing a callback. This behavior can be modeled as a loop which serves as the foundation for the procedure described by \ref{fig:navigation_system}.
 
 \section{Interactive information layer development}
 \subsection{Collection of campus relevant information from the web}
