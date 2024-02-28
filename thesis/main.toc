@@ -55,8 +55,11 @@
 \contentsline {subsection}{\numberline {4.5.2}Information layer}{38}{subsection.4.5.2}%
 \contentsline {subsection}{\numberline {4.5.3}Enhancing the user experience with additional screens and features}{38}{subsection.4.5.3}%
 \contentsline {chapter}{\numberline {5}Evaluation}{39}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Navigation system verification}{39}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Information layer verification}{39}{section.5.2}%
+\contentsline {section}{\numberline {5.1}Campus map verfication}{39}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Campus coverage}{39}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Geocoding capabilities}{39}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Navigation system verification}{39}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Information layer verification}{39}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Conclusion}{41}{chapter.6}%
 \contentsline {chapter}{\nonumberline List of Tables}{43}{chapter*.26}%
 \contentsline {chapter}{\nonumberline List of Figures}{45}{chapter*.27}%

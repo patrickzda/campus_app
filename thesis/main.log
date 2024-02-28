@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.5.31)  27 FEB 2024 13:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.5.31)  28 FEB 2024 14:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1112,7 +1112,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
-<images/snet/snet_footer.png, id=168, 623.64026pt x 287.21095pt>
+<images/snet/snet_footer.png, id=171, 623.64026pt x 287.21095pt>
 File: images/snet/snet_footer.png Graphic file (type png)
 <use images/snet/snet_footer.png>
 Package pdftex.def Info: images/snet/snet_footer.png  used on input line 49.
@@ -1187,7 +1187,7 @@ File: images/snet/snet_footer.png Graphic file (type png)
 Package pdftex.def Info: images/snet/snet_footer.png  used on input line 36.
 (pdftex.def)             Requested size: 54.629pt x 25.15543pt.
  [10]
-<images/navigation_process.png, id=319, 1461.46pt x 1254.18562pt>
+<images/navigation_process.png, id=325, 1461.46pt x 1254.18562pt>
 File: images/navigation_process.png Graphic file (type png)
 <use images/navigation_process.png>
 Package pdftex.def Info: images/navigation_process.png  used on input line 40.
@@ -1197,7 +1197,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 9.49997pt on input line 41.
  [11 <./images/navigation_process.png>]
-<images/information_layer_backend.png, id=336, 1670.24pt x 1076.02pt>
+<images/information_layer_backend.png, id=342, 1670.24pt x 1076.02pt>
 File: images/information_layer_backend.png Graphic file (type png)
 <use images/information_layer_backend.png>
 Package pdftex.def Info: images/information_layer_backend.png  used on input line 62.
@@ -1232,7 +1232,7 @@ File: images/snet/snet_footer.png Graphic file (type png)
 Package pdftex.def Info: images/snet/snet_footer.png  used on input line 147.
 (pdftex.def)             Requested size: 54.629pt x 25.15543pt.
  [16]
-<images/map_design_google_apple.png, id=398, 3868.4525pt x 2055.68pt>
+<images/map_design_google_apple.png, id=404, 3868.4525pt x 2055.68pt>
 File: images/map_design_google_apple.png Graphic file (type png)
 <use images/map_design_google_apple.png>
 Package pdftex.def Info: images/map_design_google_apple.png  used on input line 156.
@@ -1243,12 +1243,12 @@ File: images/snet/snet_footer.png Graphic file (type png)
 Package pdftex.def Info: images/snet/snet_footer.png  used on input line 176.
 (pdftex.def)             Requested size: 54.629pt x 25.15543pt.
  [18]
-<images/indoor_navigation_phases.png, id=425, 1504.62125pt x 855.195pt>
+<images/indoor_navigation_phases.png, id=431, 1504.62125pt x 855.195pt>
 File: images/indoor_navigation_phases.png Graphic file (type png)
 <use images/indoor_navigation_phases.png>
 Package pdftex.def Info: images/indoor_navigation_phases.png  used on input line 182.
 (pdftex.def)             Requested size: 386.96027pt x 219.93135pt.
-<images/information_clustering.png, id=428, 2875.74374pt x 2208.25pt>
+<images/information_clustering.png, id=434, 2875.74374pt x 2208.25pt>
 File: images/information_clustering.png Graphic file (type png)
 <use images/information_clustering.png>
 Package pdftex.def Info: images/information_clustering.png  used on input line 191.
@@ -1257,7 +1257,7 @@ Package pdftex.def Info: images/information_clustering.png  used on input line 1
 Underfull \vbox (badness 2653) has occurred while \output is active []
 
  [19 <./images/indoor_navigation_phases.png>]
-<images/wireframes_1.png, id=440, 1549.79pt x 855.195pt>
+<images/wireframes_1.png, id=446, 1549.79pt x 855.195pt>
 File: images/wireframes_1.png Graphic file (type png)
 <use images/wireframes_1.png>
 Package pdftex.def Info: images/wireframes_1.png  used on input line 204.
@@ -1270,7 +1270,7 @@ File: images/snet/snet_footer.png Graphic file (type png)
 Package pdftex.def Info: images/snet/snet_footer.png  used on input line 206.
 (pdftex.def)             Requested size: 54.629pt x 25.15543pt.
  [20 <./images/information_clustering.png>]
-<images/wireframes_2.png, id=448, 1569.865pt x 855.195pt>
+<images/wireframes_2.png, id=454, 1569.865pt x 855.195pt>
 File: images/wireframes_2.png Graphic file (type png)
 <use images/wireframes_2.png>
 Package pdftex.def Info: images/wireframes_2.png  used on input line 209.
@@ -1283,13 +1283,13 @@ File: images/snet/snet_footer.png Graphic file (type png)
 Package pdftex.def Info: images/snet/snet_footer.png  used on input line 237.
 (pdftex.def)             Requested size: 54.629pt x 25.15543pt.
  [22]
-<images/styleguide.png, id=490, 1027.84pt x 513.92pt>
+<images/styleguide.png, id=496, 1027.84pt x 513.92pt>
 File: images/styleguide.png Graphic file (type png)
 <use images/styleguide.png>
 Package pdftex.def Info: images/styleguide.png  used on input line 242.
 (pdftex.def)             Requested size: 386.96027pt x 193.48016pt.
  [23 <./images/styleguide.png>]
-<images/ui_design.png, id=505, 1698.345pt x 855.195pt>
+<images/ui_design.png, id=511, 1698.345pt x 855.195pt>
 File: images/ui_design.png Graphic file (type png)
 <use images/ui_design.png>
 Package pdftex.def Info: images/ui_design.png  used on input line 258.
@@ -1318,12 +1318,12 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 10.42007pt on input line 25.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.91925pt on input line 25.
-<images/preparing_buildings.png, id=525, 1369.115pt x 634.37pt>
+<images/preparing_buildings.png, id=531, 1369.115pt x 634.37pt>
 File: images/preparing_buildings.png Graphic file (type png)
 <use images/preparing_buildings.png>
 Package pdftex.def Info: images/preparing_buildings.png  used on input line 54.
 (pdftex.def)             Requested size: 295.90588pt x 137.10318pt.
-<images/preparing_streets.png, id=526, 1369.115pt x 634.37pt>
+<images/preparing_streets.png, id=532, 1369.115pt x 634.37pt>
 File: images/preparing_streets.png Graphic file (type png)
 <use images/preparing_streets.png>
 Package pdftex.def Info: images/preparing_streets.png  used on input line 60.
@@ -1333,12 +1333,12 @@ File: images/snet/snet_footer.png Graphic file (type png)
 Package pdftex.def Info: images/snet/snet_footer.png  used on input line 63.
 (pdftex.def)             Requested size: 54.629pt x 25.15543pt.
  [26 <./images/preparing_buildings.png>]
-<images/preparing_green_areas.png, id=541, 1369.115pt x 634.37pt>
+<images/preparing_green_areas.png, id=547, 1369.115pt x 634.37pt>
 File: images/preparing_green_areas.png Graphic file (type png)
 <use images/preparing_green_areas.png>
 Package pdftex.def Info: images/preparing_green_areas.png  used on input line 66.
 (pdftex.def)             Requested size: 295.90588pt x 137.10318pt.
-<images/preparing_entrances.png, id=542, 1369.115pt x 634.37pt>
+<images/preparing_entrances.png, id=548, 1369.115pt x 634.37pt>
 File: images/preparing_entrances.png Graphic file (type png)
 <use images/preparing_entrances.png>
 Package pdftex.def Info: images/preparing_entrances.png  used on input line 72.
@@ -1349,13 +1349,13 @@ File: images/snet/snet_footer.png Graphic file (type png)
 Package pdftex.def Info: images/snet/snet_footer.png  used on input line 98.
 (pdftex.def)             Requested size: 54.629pt x 25.15543pt.
  [28]
-<images/mesh_generation_process.png, id=565, 2358.8125pt x 513.92pt>
+<images/mesh_generation_process.png, id=571, 2358.8125pt x 513.92pt>
 File: images/mesh_generation_process.png Graphic file (type png)
 <use images/mesh_generation_process.png>
 Package pdftex.def Info: images/mesh_generation_process.png  used on input line 111.
 (pdftex.def)             Requested size: 364.19667pt x 79.3431pt.
  [29 <./images/mesh_generation_process.png>]
-<images/street_mesh_generation.png, id=576, 1631.09375pt x 738.76pt>
+<images/street_mesh_generation.png, id=582, 1631.09375pt x 738.76pt>
 File: images/street_mesh_generation.png Graphic file (type png)
 <use images/street_mesh_generation.png>
 Package pdftex.def Info: images/street_mesh_generation.png  used on input line 129.
@@ -1365,13 +1365,13 @@ File: images/snet/snet_footer.png Graphic file (type png)
 Package pdftex.def Info: images/snet/snet_footer.png  used on input line 138.
 (pdftex.def)             Requested size: 54.629pt x 25.15543pt.
  [30 <./images/street_mesh_generation.png>]
-<images/building_mesh_generation.png, id=586, 2663.9525pt x 602.25pt>
+<images/building_mesh_generation.png, id=592, 2663.9525pt x 602.25pt>
 File: images/building_mesh_generation.png Graphic file (type png)
 <use images/building_mesh_generation.png>
 Package pdftex.def Info: images/building_mesh_generation.png  used on input line 143.
 (pdftex.def)             Requested size: 364.19667pt x 82.32947pt.
  [31 <./images/building_mesh_generation.png>]
-<images/camera_setup.png, id=597, 914.41624pt x 497.86pt>
+<images/camera_setup.png, id=604, 914.41624pt x 497.86pt>
 File: images/camera_setup.png Graphic file (type png)
 <use images/camera_setup.png>
 Package pdftex.def Info: images/camera_setup.png  used on input line 158.
@@ -1386,7 +1386,7 @@ File: images/snet/snet_footer.png Graphic file (type png)
 Package pdftex.def Info: images/snet/snet_footer.png  used on input line 170.
 (pdftex.def)             Requested size: 54.629pt x 25.15543pt.
 [32 <./images/camera_setup.png>] [33]
-<images/generated_campus_map.png, id=619, 805.0075pt x 534.99875pt>
+<images/generated_campus_map.png, id=625, 805.0075pt x 534.99875pt>
 File: images/generated_campus_map.png Graphic file (type png)
 <use images/generated_campus_map.png>
 Package pdftex.def Info: images/generated_campus_map.png  used on input line 203.
@@ -1396,7 +1396,7 @@ File: images/snet/snet_footer.png Graphic file (type png)
 Package pdftex.def Info: images/snet/snet_footer.png  used on input line 210.
 (pdftex.def)             Requested size: 54.629pt x 25.15543pt.
  [34 <./images/generated_campus_map.png>]
-<images/street_network_for_navigation.jpeg, id=626, 1058.45438pt x 687.31781pt>
+<images/street_network_for_navigation.jpeg, id=632, 1058.45438pt x 687.31781pt>
 File: images/street_network_for_navigation.jpeg Graphic file (type jpg)
 <use images/street_network_for_navigation.jpeg>
 Package pdftex.def Info: images/street_network_for_navigation.jpeg  used on input line 245.
@@ -1527,18 +1527,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31085 strings out of 478754
- 558047 string characters out of 5858221
+ 31091 strings out of 478754
+ 558108 string characters out of 5858221
  1120199 words of memory out of 5000000
- 47822 multiletter control sequences out of 15000+600000
+ 47825 multiletter control sequences out of 15000+600000
  454630 words of font info for 121 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,17n,108p,10657b,2179s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (66 pages, 12190025 bytes).
+Output written on main.pdf (66 pages, 12191892 bytes).
 PDF statistics:
- 1169 PDF objects out of 1200 (max. 8388607)
- 1033 compressed objects within 11 object streams
- 311 named destinations out of 1000 (max. 500000)
- 630 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1185 PDF objects out of 1200 (max. 8388607)
+ 1049 compressed objects within 11 object streams
+ 314 named destinations out of 1000 (max. 500000)
+ 654 words of extra memory for PDF output out of 10000 (max. 10000000)
 
