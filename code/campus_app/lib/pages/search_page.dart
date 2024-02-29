@@ -366,10 +366,46 @@ class _SearchPageState extends State<SearchPage> {
     if(startEntity != null){
       NavigationNode startNode = navigationService.getClosestNodeToCoordinates(startEntity!.getPosition());
       NavigationNode destinationNode = navigationService.getClosestNodeToCoordinates(destinationEntity!.getPosition());
+
+      if(startEntity is Building && destinationEntity is Building){
+        Building startBuilding = startEntity as Building;
+        Building destinationBuilding = destinationEntity as Building;
+        double minDistance = double.infinity;
+        int startIndex = 0, destinationIndex = 0;
+
+        for(int i = 0; i < startBuilding.entryNodes.length; i++){
+          for(int j = 0; j < destinationBuilding.entryNodes.length; j++){
+            if(startBuilding.entryNodes[i].coordinates.distanceTo(destinationBuilding.entryNodes[j].coordinates) < minDistance){
+              minDistance = startBuilding.entryNodes[i].coordinates.distanceTo(destinationBuilding.entryNodes[j].coordinates);
+              startIndex = i;
+              destinationIndex = j;
+            }
+          }
+        }
+
+        startNode = startBuilding.entryNodes[startIndex];
+        destinationNode = destinationBuilding.entryNodes[destinationIndex];
+      }
+
       return NavigationJob(startEntity: startEntity!, destinationEntity: destinationEntity!, startNode: startNode, destinationNode: destinationNode, isUserLocationBased: false);
     }else{
       NavigationNode startNode = navigationService.getClosestNodeToCoordinates(userLocation!);
       NavigationNode destinationNode = navigationService.getClosestNodeToCoordinates(destinationEntity!.getPosition());
+      double minDistance = double.infinity;
+      int destinationIndex = 0;
+
+      if(destinationEntity is Building){
+        Building destinationBuilding = destinationEntity as Building;
+        for(int i = 0; i < destinationBuilding.entryNodes.length; i++){
+          if(destinationBuilding.entryNodes[i].coordinates.distanceTo(startNode.coordinates) < minDistance){
+            minDistance = destinationBuilding.entryNodes[i].coordinates.distanceTo(startNode.coordinates);
+            destinationIndex = i;
+          }
+        }
+
+        destinationNode = destinationBuilding.entryNodes[destinationIndex];
+      }
+
       return NavigationJob(destinationEntity: destinationEntity!, startNode: startNode, destinationNode: destinationNode, isUserLocationBased: true);
     }
   }

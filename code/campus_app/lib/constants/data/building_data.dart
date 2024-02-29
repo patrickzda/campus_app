@@ -39,7 +39,7 @@ const Map<String, dynamic> buildingData = {
     "latitude":52.51127634474006,
     "longitude":13.324101861235581,
     "entryNodeIds":[
-
+      987
     ]
   },
   "2":{
@@ -673,7 +673,7 @@ const Map<String, dynamic> buildingData = {
     "latitude":52.51436591224626,
     "longitude":13.323853581651615,
     "entryNodeIds":[
-
+      110
     ]
   },
   "30":{
@@ -1064,7 +1064,7 @@ const Map<String, dynamic> buildingData = {
     "latitude":52.5202949537905,
     "longitude":13.321988444515524,
     "entryNodeIds":[
-
+      1804
     ]
   },
   "47":{
@@ -1236,7 +1236,7 @@ const Map<String, dynamic> buildingData = {
     "latitude":52.514723165025735,
     "longitude":13.324632869840737,
     "entryNodeIds":[
-
+      1667
     ]
   },
   "55":{

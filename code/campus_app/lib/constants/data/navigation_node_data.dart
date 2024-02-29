@@ -1560,7 +1560,8 @@ const Map<String, dynamic> navigationNodeData = {
     ],
     "associatedBuildingId":null,
     "connections":[
-
+      1137,
+      1763
     ]
   },
   "149":{
@@ -11121,7 +11122,8 @@ const Map<String, dynamic> navigationNodeData = {
     "connections":[
       1040,
       1037,
-      1464
+      1464,
+      1755
     ]
   },
   "1042":{
@@ -12132,7 +12134,8 @@ const Map<String, dynamic> navigationNodeData = {
     ],
     "associatedBuildingId":null,
     "connections":[
-      1135
+      1135,
+      1787
     ]
   },
   "1137":{
@@ -12144,7 +12147,8 @@ const Map<String, dynamic> navigationNodeData = {
     "connections":[
       1734,
       853,
-      1735
+      1735,
+      148
     ]
   },
   "1138":{
@@ -15628,7 +15632,8 @@ const Map<String, dynamic> navigationNodeData = {
       1041,
       1302,
       1463,
-      1734
+      1734,
+      1755
     ]
   },
   "1465":{
@@ -18747,7 +18752,8 @@ const Map<String, dynamic> navigationNodeData = {
     "connections":[
       1268,
       672,
-      1788
+      1788,
+      1732
     ]
   },
   "1731":{
@@ -18770,7 +18776,8 @@ const Map<String, dynamic> navigationNodeData = {
     "associatedBuildingId":null,
     "connections":[
       546,
-      1733
+      1733,
+      1730
     ]
   },
   "1733":{
@@ -19036,7 +19043,8 @@ const Map<String, dynamic> navigationNodeData = {
     ],
     "associatedBuildingId":null,
     "connections":[
-
+      1041,
+      1464
     ]
   },
   "1756":{
@@ -19132,7 +19140,8 @@ const Map<String, dynamic> navigationNodeData = {
     "associatedBuildingId":null,
     "connections":[
       149,
-      1762
+      1762,
+      148
     ]
   },
   "1764":{

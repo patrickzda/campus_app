@@ -106,11 +106,6 @@ class NavigationService{
       return roomMap[roomMap.keys.toList()[index]]!;
     });
 
-    for(int i = 0; i < rooms.length; i++){
-      print("${rooms[i].name}: ${rooms[i].courses.length}");
-
-    }
-
     //TODO: Bugfix: Warum wird ein Gebäude während der Navigation nicht fokussiert wenn es betreten wird?
 
     userLocationService = UserLocationService(
@@ -143,6 +138,7 @@ class NavigationService{
 
   void initNavigation(NavigationNode start, NavigationNode end) async{
     currentRoute = _calculateRoute(start, end);
+
     UnityCommunicationService.createPolyline(List.generate(currentRoute.length, (int index){
       return currentRoute[index].coordinates;
     }));
@@ -246,6 +242,21 @@ class NavigationService{
     return List.generate(shortestRoutesFromStart[end.id].length, (int index){
       return navigationNodes[shortestRoutesFromStart[end.id][index]];
     });
+  }
+
+  Map<String, dynamic> calculateRouteForEvaluation(NavigationNode start, NavigationNode end){
+    List<NavigationNode> route = _calculateRoute(start, end);
+    double t = 0, d = 0;
+
+    for(int i = 1; i < route.length; i++){
+      d = d + route[i - 1].coordinates.distanceTo(route[i].coordinates);
+      t = t + estimateWalkingTime(route[i - 1], route[i]);
+    }
+
+    return {
+      "walking_time": "$t min",
+      "walking_distance": "$d m"
+    };
   }
 
   NavigationNode getClosestNodeToCoordinates(Coordinates coordinates){
