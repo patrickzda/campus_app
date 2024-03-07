@@ -24,7 +24,7 @@ OpenStreetMap (OSM) is a free mapping service, that allows its users to access, 
 	\centering
 	\begin{tabular}{|l|l|l|l|}
 		\hline
-		Entities                & Type of geodata       & Number of queried nodes       & Overpass Turbo query \\
+		\textbf{Entities}       & \textbf{Type of geodata}       & \textbf{Number of queried nodes}       & \textbf{Overpass Turbo query} \\
 		\hline
         Buildings               & Polygons              & 1949                          & \ref{buildings} \\
 		\hline
@@ -136,7 +136,7 @@ Mesh generation for buildings: Buildings consist of a ceiling tile and a set of 
 
 The triangulation process for the resulting set of vertices can be broken down into two separate procedures for the ceiling and the walls. On the one hand, a routine similar to the street triangulation process can be applied to create the walls. A single wall is here defined by two consecutive GeoNode coordinates $\vec{g_{i}}$ and $\vec{g_{i + 1}}$ and their corresponding shifted coordinates $\vec{c_{i}}$ and $\vec{c_{i + 1}}$. The surface area between these four points is then exactly triangulated like a piece of street defined by four points (see the previous section).
 
-On the other hand is the triangulation process for the ceiling tile. In this case, a standard algorithm for the triangulation of concave polygons can be applied. The "Triangulation by Ear Clipping" \cite{triangulation_by_ear_clipping} algorithm is used with a C\# implementation for Unity derived from \cite{triangulation_unity_library}. To avoid backface culling problems and for simplicity, all triangles are generated double-sided, with vertices specified in both orderings.
+On the other hand is the triangulation process for the ceiling tile. In this case, a standard algorithm for the triangulation of concave polygons can be applied. The "Triangulation by Ear Clipping" \cite{triangulation_by_ear_clipping} algorithm is used with a C\# implementation for Unity derived from \footnote{https://luminaryapps.com/blog/triangulating-3d-polygons-in-unity/index.html}. To avoid backface culling problems and for simplicity, all triangles are generated double-sided, with vertices specified in both orderings.
 
 \begin{figure}[H]
 	\centering
@@ -219,7 +219,7 @@ For this thesis, the graph is constructed with the so-called NavigationNode clas
 	\centering
 	\begin{tabular}{|l|l|l|l|}
 		\hline
-		Name                	& Datatype       		& Is required?       			& Default value 	\\
+		\textbf{Name}           & \textbf{Datatype}     & \textbf{Is required?}       	& \textbf{Default value} 	\\
 		\hline
         id               		& int	              	& yes                          	& - 				\\
 		\hline
@@ -235,7 +235,7 @@ For this thesis, the graph is constructed with the so-called NavigationNode clas
 	\caption{NavigationNode class diagram}
 \end{table}
 
-\subsection{Manual generation of TU Berlin's street network}
+\subsection{Manual generation of TU Berlin's street network} \label{sub_sec:street_network_generation}
 One main problem with the street network provided by OSM is the fact that the queried data is not completely suitable for navigation. The underlying issue is that certain connections between streets are missing in the dataset, which results in problems when trying to calculate the fastest way during routing. This problem especially applies to transitions between different street types (e.g., a footway merging into a small street) and small pathways on the campus, the latter making up the biggest part of the street network used in this thesis. Another important point is the fact that there are no connections between different, sometimes completely missing, entrances of a building. This disables the possibility of including indoor segments when routing.
 
 To improve the quality of the street network for routing, a small computer app is developed that presents the queried nodes from OSM as small dots on a map (green dots are basic nodes, red dots are nodes related to an entrance of a building). The tool provides the possibility to add additional nodes to the network as well as to create and edit connections (edges) between them (represented in blue). The manually annotated street network can be furthermore exported into a JSON file, which is stored locally in the app and deserialized into NavigationNodes during runtime. The following figure provides an overview of the manually annotated street network for navigation.
@@ -291,8 +291,94 @@ There are two different use case scenarios for navigation system usage: On the o
 To achieve this, two different methods for resolving the GPS position are used: Firstly, to determine the starting point of the route calculation, the current position is detected with a one-shot query. After the respective route is then calculated and the live navigation functionality is initiated by the user, the GPS API is queried with a stream, continuously providing the current device position by firing a callback. This behavior can be modeled as a loop which serves as the foundation for the procedure described by \ref{fig:navigation_system}.
 
 \section{Interactive information layer development}
+The second component of the app consists of an interactive information layer that acts as a location-based service and provides the user with detailed information about TU Berlin's campus. The following sections describe the implementation details, dealing with the data model, its partition into offline and online categories and the related acquisition process from TU Berlin's and Studierendenwerk's web resources. 
+
+\subsection{Underlying data model}
+To create a foundation for the development process of the information layer, the needed data must be specified. This is done in the form of a relational database schema, consisting of all entities, their attributes and the relations between them. The fact whether a specific dataset is stored locally on the device (offline) or a web server (online) as well as the publicly available web resources, from which the data is queried are also specified in this process. The following table provides an overview of the relevant actors in this dataset:
+
+\begin{table}[!ht]
+	\small
+	\centering
+	\begin{tabular}{|p{3cm}|p{1cm}|p{3.5cm}|p{2cm}|p{3.5cm}|}
+		\hline
+		\textbf{Entity}         & \textbf{Storage type} & \textbf{Update interval}      & \textbf{Type of update} 	& \textbf{Source}					 \\
+		\hline
+		Building	            & offline	            & Infrastructural changes       & App update 		& TU Berlin's website		 \\
+		\hline
+        NavigationNode          & offline	            & Infrastructural changes       & App update 		& OpenStreetMap  			 \\
+		\hline
+        Canteen                 & offline              	& Infrastructural changes       & App update 	    & Studierendenwerk's website \\
+		\hline
+		Room               		& offline              	& Infrastructural changes       & App update 		& MOSES			      		 \\
+		\hline
+		Course				    & offline              	& By semester                   & App update 		& MOSES	and ISIS		     \\
+		\hline
+		CourseEvent	    		& offline              	& By semester                   & App update 		& MOSES			             \\
+		\hline
+		Event		    		& online              	& Daily                         & via REST-API 	    & TU Berlin's website		 \\
+		\hline
+		Meal		    		& online              	& Daily                         & via REST-API 		& Studierendenwerk's website \\
+		\hline
+	\end{tabular}
+	\caption{Overview of information layer entities}
+\end{table}
+
+As displayed in the table, all data with low timeliness regarding the update interval is stored locally on the client device. This provides the user the possibility to access it without the need for a network connection. It nevertheless comes with the drawback that an update of the data can only take place with a complete app update, which would need to be downloaded from the respective app stores in a production use case. Online storage of the respective data with a semester-wise in-app synchronization system should be therefore taken into consideration in a real-world usage scenario. The latter point mainly applies to the course timetables ("Course" and "CourseEvent" entities), which changed by semester.
+
+Since daily changes can occur in the meal and event datasets, both information endpoints are constantly provided via REST-API from a web server and therefore only available when a network connection can be established. To obtain a more precise overview of the individual attributes and relations of the entities, the complete database schema is provided in the following figure. Green tables represent locally stored (offline) entities.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{images/database_schema.png}\\
+	\caption{Database schema of the campus app}
+	\label{fig:database_schema}
+\end{figure}
+
 \subsection{Collection of campus relevant information from the web}
-\subsection{Processing of information and internal representation}
+The foundation for every data collection operation consists of a Python script, mainly dependent on the Beatfulsoup \footnote{https://pypi.org/project/beautifulsoup4/} package, which provides the possibility to parse HTML files and search for specific elements and their attributes in them. These scripts are then, according to the category of their dataset (offline vs. online), deployed either on a web server or used locally for data collection. This section provides a short overview of the different scripts, their deployment and the resulting data formats they produce.
+
+NavigationNode: Data for NavigatonNodes creates the building block for the navigation system and is therefore implemented locally on the device. It is furthermore only updated when a breaking infrastructural change occurs on TU Berlin's campus. The respective acquisition script for the data is intended for manual usage and downloads the relevant information via Overpass Turbo API from OpenStreetMap. Since the downloaded data needs heavy manual annotation, the rest of the collection process is done manually with the street network tool described in the \hyperref[sub_sec:street_network_generation]{subsection for street network genetation}.
+
+Building: Buildings are also part of TU Berlin's campus infrastructure and therefore rarely need updates. Since no central online resource contains all the data to fully describe the set of them and the amount of buildings is small compared to the size of the other datasets, the scraping process is done manually. Similar to the NavigationNode dataset, all data is locally stored on the client's device in a JSON file.
+
+Room: Rooms are downloaded from TU Berlin's MOSES system \footnote{https://moseskonto.tu-berlin.de/moses/verzeichnis/raeume/gebaeude.html} where all rooms are provided and categorized by their respective building. The script starts by loading the provided website and then further proceeds to retrieve the room information by building from all the linked subsites. After completion, the dataset is exported in JSON format for local embedding. Room data is the third dataset connected to TU Berlin's infrastructure and therefore also only needs occasional updates.
+
+Course and CourseEvent: The obtaining process for the course and CourseEvent datasets consists of several different steps: Firstly, all timetables containing the relevant information for the upcoming semester are downloaded from MOSES' room occupancy website \footnote{https://moseskonto.tu-berlin.de/moses/verzeichnis/veranstaltungen/raum.html?raumgruppe=31\&search=true} in CSV format. After completion, the script categorizes the different timetable data by course. This step results in the course name and its room occupancies, which are assigned to the course in the form of the CourseEvent data type. To find out all further required attributes of a course, its name is used to query the MOSES course database \footnote{https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/suchen.html}. If a fitting course is found on that page, the course's MOSES description is opened and all relevant attributes are extracted. It can be assumed that every course without a respective MOSES description is not relevant to the dataset and therefore can rejected from the dataset. To complete the data collection process, the course name is also queried against the ISIS course search \footnote{https://isis.tu-berlin.de/}, from where, if possible, a link leading to the course's ISIS page is taken. The data is finally also exported in JSON format for offline usage and is updated by semester.
+
+Canteen: Canteens are the fourth and last entity which is usually not subject to change. This point together with the fact that TU Berlin's campus only consists of 7 different canteen leads to a manual data collection approach for this datatype. This data is also exported into a JSON file for local offline storage.
+
+Meal: Meal plans are updated weekly (sometimes daily) on the websites of Studierendenwerk Berlin \footnote{https://www.stw.berlin/mensen/einrichtungen/technische-universit\%C3\%A4t-berlin/mensa-tu-hardenbergstra\%C3\%9Fe.html}. This means, that the data needs to be collected daily and cannot be stored locally on the client's mobile device. For the meal collection process to work, the meal table presented in \hyperref[fig:database_schema]{the database schema} is modeled into a database system running on a web server. The Python script for meal data collection is deployed as a cloud function and a CRON job, adjusted to fire daily at 00:00 o'clock, is set up to trigger the system. The cloud function then removes all the meal data stored in the database, downloads the new meals from Studierendenwerk's website and inserts them back into the online storage. A REST API connected to the database is used to provide the data to the mobile client.
+
+Event: Events make up the second dataset that needs daily updates. They are queried from TU Berlin's online event calendar \footnote{https://www.tu.berlin/veranstaltungsdetails} and are collected in a similar way to the meal plans.
+
+%Hier nochmal die Größe aller Daten auflisten, Anzahl Objekte, Größe der JSON-Datei, usw.
+
+\begin{table}[!ht]
+	\small
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{Data}           & \textbf{Number of queried objects}     	& \textbf{Size on disk} 		\\
+		\hline
+        NavigationNode          & 1820	              					 	& 279 KB                        \\
+		\hline
+        Building                & 63              							& 29 KB                         \\
+		\hline
+		Room               		& 559              							& 53 KB                         \\
+		\hline
+		Course and CourseEvent 	& 1942, 31583              					& 13,9 MB                      	\\
+		\hline
+		Canteen    				& 7              							& 4 KB                          \\
+		\hline
+		Meal    				& avg. 70              						& approx. 30 KB                 \\
+		\hline
+		Event    				& avg. 50              						& approx. 25 KB               	\\
+		\hline
+	\end{tabular}
+	\caption{NavigationNode class diagram}
+\end{table}
+
+The upper table presents the object count as well as the disk size of the queried data. One thing that stands out is the enormous size of the "Course and CourseEvent" data when compared to the other datasets. This aspect together with an efficient loading and processing system for this dataset, could be a possible task for future work.
 
 \section{User interface development}
 \subsection{Navigation system}

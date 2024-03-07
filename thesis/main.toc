@@ -23,14 +23,14 @@
 \contentsline {subsection}{\numberline {3.1.2}Navigation across the campus}{10}{subsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.1.3}Information layer}{11}{subsection.3.1.3}%
 \contentsline {subsection}{\numberline {3.1.4}Offline-first design}{13}{subsection.3.1.4}%
-\contentsline {section}{\numberline {3.2}App development framework}{13}{section.3.2}%
+\contentsline {section}{\numberline {3.2}App development framework}{14}{section.3.2}%
 \contentsline {section}{\numberline {3.3}User experience design}{14}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Search versus exploration}{15}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Designing a user-friendly campus map}{16}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Designing a good user experience for navigation}{18}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Chunking of information within the app}{19}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Wireframes}{20}{subsection.3.3.5}%
-\contentsline {section}{\numberline {3.4}User interface design}{22}{section.3.4}%
+\contentsline {subsection}{\numberline {3.3.4}Chunking of information within the app}{20}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Wireframes}{21}{subsection.3.3.5}%
+\contentsline {section}{\numberline {3.4}User interface design}{23}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Implementation}{25}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Collection of geodata and POI}{25}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Overview of needed geodata}{25}{subsection.4.1.1}%
@@ -42,29 +42,29 @@
 \contentsline {subsection}{\numberline {4.2.3}Camera setup}{31}{subsection.4.2.3}%
 \contentsline {subsection}{\numberline {4.2.4}Implementing common interaction gestures}{32}{subsection.4.2.4}%
 \contentsline {subsection}{\numberline {4.2.5}Map design}{33}{subsection.4.2.5}%
-\contentsline {section}{\numberline {4.3}Navigation system development}{34}{section.4.3}%
+\contentsline {section}{\numberline {4.3}Navigation system development}{35}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Representation of geodata for navigation}{35}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Manual generation of TU Berlin's street network}{35}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}Defining weights and calculating ETA}{36}{subsection.4.3.3}%
 \contentsline {subsection}{\numberline {4.3.4}Routing across the campus}{37}{subsection.4.3.4}%
 \contentsline {subsection}{\numberline {4.3.5}Embedding the current user location via GPS}{37}{subsection.4.3.5}%
 \contentsline {section}{\numberline {4.4}Interactive information layer development}{38}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Collection of campus relevant information from the web}{38}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Processing of information and internal representation}{38}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}User interface development}{38}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Navigation system}{38}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Information layer}{38}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Enhancing the user experience with additional screens and features}{38}{subsection.4.5.3}%
-\contentsline {chapter}{\numberline {5}Evaluation}{39}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Campus map verfication}{39}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Campus coverage}{39}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Geocoding capabilities}{39}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Navigation system verification}{39}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Information layer verification}{39}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Conclusion}{41}{chapter.6}%
-\contentsline {chapter}{\nonumberline List of Tables}{43}{chapter*.26}%
-\contentsline {chapter}{\nonumberline List of Figures}{45}{chapter*.27}%
-\contentsline {chapter}{\nonumberline Bibliography}{47}{chapter*.28}%
-\contentsline {chapter}{Appendices}{51}{section*.29}%
-\contentsline {chapter}{\nonumberline Appendix 1}{53}{chapter*.30}%
+\contentsline {subsection}{\numberline {4.4.1}Underlying data model}{38}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Collection of campus relevant information from the web}{39}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}User interface development}{41}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Navigation system}{41}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Information layer}{41}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Enhancing the user experience with additional screens and features}{41}{subsection.4.5.3}%
+\contentsline {chapter}{\numberline {5}Evaluation}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Campus map verfication}{43}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Comparison of map resolution}{43}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Comparison of geocoding capabilities for campus-specific names and identifiers}{45}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Navigation system verification}{46}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Information layer verification}{48}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Conclusion}{49}{chapter.6}%
+\contentsline {chapter}{\nonumberline List of Tables}{51}{chapter*.34}%
+\contentsline {chapter}{\nonumberline List of Figures}{53}{chapter*.35}%
+\contentsline {chapter}{\nonumberline Bibliography}{55}{chapter*.36}%
+\contentsline {chapter}{Appendices}{59}{section*.37}%
+\contentsline {chapter}{\nonumberline Appendix 1}{61}{chapter*.38}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

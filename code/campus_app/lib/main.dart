@@ -74,12 +74,12 @@ class _EvaluationPageState extends State<EvaluationPage> {
     );
   }
 
-  void evaluateRoutes(){
+  Future<void> evaluateRoutes() async{
     Map<String, dynamic> routeData = {};
 
     for(int i = 0; i < navigationService.buildings.length; i++){
       Building startBuilding = navigationService.buildings[i];
-      if(startBuilding.isOnMainCampus && startBuilding.shortName == "HBS"){
+      if(startBuilding.isOnMainCampus){
         for(int j = 0; j < navigationService.buildings.length; j++){
           Building destinationBuilding = navigationService.buildings[j];
           if(destinationBuilding.isOnMainCampus && startBuilding != destinationBuilding && !finishedBuildingIndices.contains(destinationBuilding.id)){
@@ -111,6 +111,13 @@ class _EvaluationPageState extends State<EvaluationPage> {
               "walking_distance": result["walking_distance"]
             };
 
+            if(result["walking_distance"] == "0.0 m"){
+              print("0 METER GEFUNDEN!");
+              print("${startBuilding.shortName} -> ${destinationBuilding.shortName}");
+            }
+
+            await Future.delayed(const Duration(milliseconds: 25));
+
             setState(() {
               counter++;
               progress = counter / 1275;
@@ -118,6 +125,7 @@ class _EvaluationPageState extends State<EvaluationPage> {
           }
         }
       }
+      finishedBuildingIndices.add(startBuilding.id);
     }
 
     for(int i = 0; i < routeData.keys.length; i++){

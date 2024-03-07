@@ -137,6 +137,10 @@ class NavigationService{
   }
 
   void initNavigation(NavigationNode start, NavigationNode end) async{
+    print("HIER DIE NODE IDS:");
+    print(start.id);
+    print(end.id);
+
     currentRoute = _calculateRoute(start, end);
 
     UnityCommunicationService.createPolyline(List.generate(currentRoute.length, (int index){

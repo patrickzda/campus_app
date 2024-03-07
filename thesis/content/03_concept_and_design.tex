@@ -10,11 +10,10 @@ The main element of the mobile app consists of a locally implemented map of TU B
 
 \begin{itemize}
     \item All buildings of TU Berlin: To provide the user the ability to easily locate the buildings of TU Berlin, all facilities connected to the university need to be specially highlighted on the map. The buildings of TU Berlin are therefore the most important map feature.
-    \item All pathways on campus: Footwalks and cycleways that lay on the campus are important for the navigation system of the mobile app. To prevent the map from being cluttered, a hierarchy must be established between important pathways and smaller routes.
-    \item All green areas on campus: Parks, trees and other green areas of TU Berlin need to be specially marked on the map. Combined with the buildings and pathways of TU Berlin, they provide the user reference points for manual localization.
-    \item External buildings: Buildings not connected to the TU Berlin do not contribute to the localization and navigation on campus. They can be nevertheless used as weakly informative reference points. A toned-down and subliminal representation on the map can be used in this case.
+    \item All pathways on campus: Footwalks and cycleways that lie on the campus are important for the navigation system of the mobile app. To prevent the map from being cluttered, a hierarchy must be established between important pathways and smaller routes.
+    \item All green areas: Parks, trees and other green areas of TU Berlin and its surroundings need to be specially marked on the map. Combined with the buildings and pathways of TU Berlin, they provide the user reference points for manual localization.
+    \item External buildings: Buildings not connected to the TU Berlin do not contribute to the localization and navigation on campus. They can be nevertheless used as weak informative reference points. A toned-down and subliminal representation on the map can be used in this case.
     \item External pathways: All footwalks and cycleways that are outside of the campus do not provide any relevant information for the mobile app. They furthermore make the map appear more cluttered and are therefore not present on it.
-    \item External green areas: Green areas provide a source of orientation and are an important part of the map.
     \item Main roads: Main roads surrounding TU Berlin's campus (e.g., Straße des 17. Juli) simplify the exploration and search process while interacting with the map. They provide an important source of guidance and must be prominently presented on the map.
     \item Small roads: Small roads also support an organized map concept. Since they are less important than main roads, a more restrained manner of display is appropriate.
     \item External POI: The POI surrounding the campus (such as Ernst-Reuter-Platz) are heavily recognizable landmarks and support the user's orientation and localization on the map. They are therefore completely displayed on it.
@@ -37,7 +36,7 @@ The underlying data structure used for the whole navigation process is a weighte
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.85\textwidth]{images/navigation_process.png}\\
+	\includegraphics[width=0.9\textwidth]{images/navigation_process.png}\\
 	\caption{Complete navigation system procedure}
     \label{fig:navigation_system}
 \end{figure}
@@ -47,19 +46,21 @@ An additional layer on top of the campus map consisting of location-based inform
 
 This section provides a brief overview of the underlying data and technology used to provide the information on the layer.
 
-There are three main sources, that are publicly available and relevant to the information layer. On the one hand, there is the official website of TU Berlin \cite{tu_berlin_main}, with sections for current events, the latest news, deadlines, etc. On the other hand, there is the MOSES system \cite{tu_berlin_moses} containing data about all the different courses, rooms and studies. A third relevant source of information is the website of Studierendenwerk Berlin \cite{studierendenwerk_berlin} with meal plans for its different canteens and a timetable for events.
+There are three main sources, that are publicly available and relevant to the information layer. On the one hand, there is the official website of TU Berlin \footnote{https://www.tu.berlin}, with sections for current events, the latest news, deadlines, etc. On the other hand, there is the MOSES system \footnote{https://moseskonto.tu-berlin.de/moses/index.html} containing data about all the different courses, rooms and studies. A third relevant source of information is the website of Studierendenwerk Berlin \footnote{https://www.stw.berlin} with meal plans for its different canteens and a timetable for events.
 
 Information is collected by downloading and parsing the content of respective websites. The data is further categorized and -if possible- mapped onto different POIs on the campus map (e.g., a canteen gets its meal plan assigned). This helps to provide an intuitive and organized presentation and access to the user.
 
 The collected data can be categorized according to its timeliness and the intervals in which it has to be updated: General information about different fields of study, courses and rooms only changes by semester. This particular data can be retrieved once at the start of every semester and does not need daily live updates. It is also possible to supply it via app updates, instead of providing a direct in-app functionality for data retrieval. Data that gets updated regularly on the other hand, e.g., meal plans, events, news, etc. has to be always retrievable from the app.
 
-The proposed solution for data collection and provision runs on a web server and consists of a web crawler for information retrieval, parsing and POI mapping, a CSV generator to convert the crawled information into a standardized and simple-to-use format and a REST API, that provides the client/mobile device the ability to retrieve the CSV files. The web crawler and CSV generator are both triggered periodically by several CRON jobs, whose timings are dependent on the timeliness of the crawled data. Due to its simplicity, the circumstance that there are no complex relations in the data and the fact that all room data from TU Berlin is provided in it, the CSV format is chosen as an alternative to a fully-fledged database system for data storage.
+The proposed solution for timely data (meals, events, \ldots) collection and provision runs on a web server and consists of a web crawler for information retrieval, parsing and POI mapping, a database to store the crawled information in a standardized and simple-to-use format and a REST API, that provides the client/mobile device the ability to retrieve the information. The web crawler is triggered periodically by several CRON jobs, whose timings are dependent on the timeliness of the crawled data.
 
-By splitting the logic for crawling and provision, the workload that arises on TU Berlin's and Studierendenwerk's websites from retrieving data can be limited to a minimum: The server only crawls data when an update is needed (e.g., weekly for meal plans), instead of loading and parsing the web resources on client request. Further advantages are the fact that loading times for requests from clients are independent of TU Berlin's and Studierendenwerk's infrastructure, that the language for web crawling can be chosen independently from the programming framework (in this case Python with its Selenium \cite{selenium} and BeautifulSoup \cite{beautifulsoup4} libraries are used) and that the web crawling logic can be changed without updating the app.
+Web crawlers dealing with data that needs rare updates (rooms, buildings, courses, \ldots) on the other hand, are not deployed on a web server. These programs are designed for manual usage at the beginning of a semester and provide their scraped data in JSON format, which can be directly included in the mobile app. This results in the fact that all data falling under this category can be used on the client side without the need for a network connection. It also means that some sort of deployment system needs to be included in the app for this data: Either the information is stored on a web server and gets automatically downloaded and stored on the client's device at the beginning of a semester or a complete app update from the respective app stores is rolled out.
+
+By splitting the logic for crawling and provision, the workload that arises on TU Berlin's and Studierendenwerk's websites from retrieving data can be limited to a minimum: The server only crawls data when an update is needed (e.g., weekly for meal plans), instead of loading and parsing the web resources on client request. Further advantages are the fact that loading times for requests from clients are independent of TU Berlin's and Studierendenwerk's infrastructure, that the language for web crawling can be chosen independently from the programming framework (in this case Python with its Selenium \footnote{https://www.selenium.dev} and BeautifulSoup \footnote{https://pypi.org/project/beautifulsoup4} libraries are used) and that the web crawling logic can be changed without updating the app.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.85\textwidth]{images/information_layer_backend.png}\\
+	\includegraphics[width=0.9\textwidth]{images/data_retrieval_process.png}\\
 	\caption{Data retrieval process for the information layer}
 \end{figure}
 
@@ -78,6 +79,8 @@ Information layer: Loading and presenting information on TU Berlin's main campus
 
 %This can be realized by sending silent push notifications at the start of every week. Devices that cannot receive the synchronizing push notification can download the data while being used. At best, this system allows the user to use the app throughout the week without going online.
 
+\newpage
+
 \section{App development framework}
 The choice of app development framework is an important step while conceptualizing and designing the product. It determines the programming language of the project, the built-in device- and system-specific capabilities that can be accessed during development as well as the performance of the app. It has to be selected in consideration of the project's requirements. The following enumeration presents the most important demands for this thesis:
 \begin{itemize}
@@ -88,7 +91,7 @@ The choice of app development framework is an important step while conceptualizi
     \item 3d rendering capabilities: The framework needs to provide a way to render and interact with the created 3d model of campus Charlottenburg. Further built-in systems such as an extensive linear algebra toolkit, a lighting engine and other real-time rendering capabilities also need to be taken into account.
 \end{itemize}
 
-Based on the previously defined requirements, the Flutter framework \cite{flutter} is chosen for this work. In addition to its cross-platform capabilities, it also offers the ability to compile source code into platform-specific machine code for near-native execution performance. It further comes with access to thousands of packages through the dart package manager pub \cite{pub_dev}, an extensive set of pre-built components for user interfaces and the ability to write platform-specific code for low-level API access. Since Flutter lacks 3d rendering capabilities, the Unity engine \cite{unity_engine} is additionally used to create and display the campus map. It gets included in the Flutter build and is responsible for rendering and interacting with the 3d campus map.
+Based on the previously defined requirements, the Flutter framework \footnote{https://flutter.dev} is chosen for this work. In addition to its cross-platform capabilities, it also offers the ability to compile source code into platform-specific machine code for near-native execution performance. It further comes with access to thousands of packages through the dart package manager pub \footnote{https://pub.dev}, an extensive set of pre-built components for user interfaces and the ability to write platform-specific code for low-level API access. Since Flutter lacks 3d rendering capabilities, the Unity engine \footnote{https://unity.com/de} is additionally used to create and display the campus map. It gets included in the Flutter build and is responsible for rendering and interacting with the 3d campus map.
 
 \section{User experience design}
 The following sections provide an overview of the whole user experience (UX) design for the campus app. In the scope of this thesis, the complete process is broken down into UX research and wireframe design.
@@ -149,7 +152,7 @@ To direct the focus even more onto TU Berlin's campus, all of its surroundings a
 
 Another important aspect is the zoom range the user can utilize while interacting. Considering that the campus area is small and that the app wants to focus on its details, a close zoom, with a little room maneuver should be appropriate.
 
-Navigation tasks, namely interacting with / following a polyline route and working with a marker that displays the current user location, have a strong focus on pathways and routes on TU Berlin's main campus. It is therefore important to highlight these routes in the design accordingly. Other entities like buildings, natural areas (green areas, water) and POI have a lower priority in this case but are nevertheless important for orientation purposes. To design for this use case one can take inspiration from already established mobile map services like Google Maps \cite{google_maps_website} and Apple Maps \cite{apple_maps_website}. These apps mainly display the road network, important markers and POI while in navigation mode and only present low-priority entities (e.g., outlines of buildings) on a close zoom level.
+Navigation tasks, namely interacting with / following a polyline route and working with a marker that displays the current user location, have a strong focus on pathways and routes on TU Berlin's main campus. It is therefore important to highlight these routes in the design accordingly. Other entities like buildings, natural areas (green areas, water) and POI have a lower priority in this case but are nevertheless important for orientation purposes. To design for this use case one can take inspiration from already established mobile map services like Google Maps \footnote{https://developers.google.com/maps?hl=de} and Apple Maps \footnote{https://www.apple.com/de/maps}. These apps mainly display the road network, important markers and POI while in navigation mode and only present low-priority entities (e.g., outlines of buildings) on a close zoom level.
 
 \begin{figure}[H]
 	\centering
@@ -177,18 +180,20 @@ To specify the design requirements for this section of the navigation process, t
     \item The user walks out of the building and is now outdoors, the app registers this: This phase should reverse the changes made when entering the building. The navigation continues on the polyline with a reappearing location marker, the map unlocks the focus on the exited building, and all markers and pop-ups for indoor navigation disappear. The user gets the feeling that he has successfully made it through the indoor section and can now continue his journey outdoors. Just like in the entering phase and according to \cite{postels_law} the user should also not be punished when taking the wrong exit in the building. In this case, the app should simply detect the wrong exit, recalculate the route from the new user position and display this in the user interface.
 \end{enumerate}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.85\textwidth]{images/indoor_navigation_phases.png}\\
-	\caption{UX design for outdoor-indoor-outdoor transition}
-\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=0.35\textwidth]{images/indoor_navigation_phases.png}\\
+%	\caption{UX design for outdoor-indoor-outdoor transition}
+%\end{figure}
+
+\newpage
 
 \subsection{Chunking of information within the app}
 According to \cite{millers_law}, an organized visual information structure is key to providing a good user experience. Especially concerning the fact that a huge amount of campus data is available and exploration tasks are key activities in the app. Chunking is the task of grouping related information visually together and is a key enabler for an organized layout \cite{millers_law}. The following figure provides a clustered overview of the available data connected to TU Berlin's main campus:
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.85\textwidth]{images/information_clustering.png}\\
+	\includegraphics[width=0.85\textwidth]{images/information_cluster.png}\\
 	\caption{Clustered data of TU Berlin with arrows between related groups}
 \end{figure}
 
@@ -244,10 +249,10 @@ Concepts to which particular attention is paid in UI design are choice of color,
 \end{figure}
 
 \begin{itemize}
-    \item DM Sans \cite{dm_sans} is chosen as the main font for the app, it is usually written in real black (HEX \#000000) and is used in its regular, medium and bold variations throughout the app. It occurs in font sizes 12px, 16px and 32px.
-    \item The open-source Remix-Icon \cite{remix_icons} icon set with its respective Flutter package \cite{remix_icons_flutter}. The icons are used in their not-filled versions and set a basis for a slightly rounded design language for the entire app. Icons are consistently 20px * 20px sized and colored in HEX \#000000 black.
+    \item DM Sans \footnote{https://fonts.google.com/specimen/DM+Sans?query=DM+Sans} is chosen as the main font for the app, it is usually written in real black (HEX \#000000) and is used in its regular, medium and bold variations throughout the app. It occurs in font sizes 12px, 16px and 32px.
+    \item The open-source Remix-Icon \footnote{https://remixicon.com} icon set with its respective Flutter package. The icons are used in their not-filled versions and set a basis for a slightly rounded design language for the entire app. Icons are consistently 20px * 20px sized and colored in HEX \#000000 black.
     \item The main color of the app is the green tone HEX \#47C083, which is supported by real black \#000000 for icons and text and real white \#FFFFFF for backgrounds and areas. Additionally, several colors representing the individual campus entities are selected: HEX \#BCC4FF (blue) for buildings, HEX \#FFBBF5 (pink) for courses, \#FAF268 (yellow) for canteens as well as HEX \#E8D4C7 (beige) for events. Furthermore, to color bigger areas inside of the white layout, two grey tones are introduced: HEX \#F1F1F1 (light grey) and HEX \#BBBBBB (dark grey) are used e.g., in a search bar, where light grey colors the element and dark grey the overlaying hint text.
-    \item Animations are all 250ms long and consist of two different curves: While all map-related camera animations in Unity use a linear curve to present animation progress (camera movement over the map), the animations in the remaining user interface are based on Flutter's "Ease" curve \cite{ease_curve}, which consists of a cubic curve mapping from [0, 1] to [0, 1] parametrized by two control points (0.25, 0.1) and (0.25, 1.0). By mimicking physical movement (which is often based on constant acceleration, e.g., gravity), the latter animation curve provides a sense of naturalness to the user while the first linear animation style makes it easier to follow the camera across the map.
+    \item Animations are all 250ms long and consist of two different curves: While all map-related camera animations in Unity use a linear curve to present animation progress (camera movement over the map), the animations in the remaining user interface are based on Flutter's "Ease" curve \footnote{https://api.flutter.dev/flutter/animation/Curves/ease-constant.html}, which consists of a cubic curve mapping from [0, 1] to [0, 1] parametrized by two control points (0.25, 0.1) and (0.25, 1.0). By mimicking physical movement (which is often based on constant acceleration, e.g., gravity), the latter animation curve provides a sense of naturalness to the user while the first linear animation style makes it easier to follow the camera across the map.
     \item Usage of media: Images of TU Berlin's buildings are presented on the respective pages to provide the user with another possibility for visual reference while browsing through the app.
 \end{itemize}
 
