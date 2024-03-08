@@ -2,7 +2,7 @@
 \label{cha:evaluation}
 This section provides an overview of a set of metrics established to compare the developed campus app to already established routing solutions for mobile devices (Google Maps and Apple Maps), highlight the benefits of the campus app over the manual campus map provided by TU Berlin and measure the improvement of usability when compared to TU Berlin's online web resources. Furthermore, all steps regarding implementation, data acquisition and measurement as well as the resulting consequences for the respective metric are presented.
 
-\section{Campus map verfication}
+\section{Campus map verfication} \label{sec:campus_map_verification}
 The digital campus map of TU Berlin forms the app's most important element. It is therefore essential to evaluate and compare its implementation to other digital maps. This section presents an overview of different metrics that can be evaluated quantitatively for map verification and compares the actual measurements to the geolocation services of Android and IOS.
 
 To verify the campus map, an important emphasis must be laid on the correctness and quality of the underlying geodata. To achieve this, two different benchmarks, one for measuring the geographical resolution of a map and one for measuring its geocoding capabilities, are introduced in the following sections.
@@ -68,7 +68,7 @@ To perform such a benchmark, a dataset is established, containing the entirety o
 
 The campus app surpasses the geocoding capabilities of Google and Apple in terms of knowledge of entity abbreviations and names. Furthermore, Google outperforms Apple throughout all categories, but both systems struggle to detect an adequate amount of abbreviations. The name metrics are in the midfield, while the systems tend to perform better when resolving direct building addresses.
 
-\section{Navigation system verification}
+\section{Navigation system verification} \label{sec:navigation_system_verification}
 One important criterion for navigation system verification lies in the quality of the routes suggested by it. A route is thereby defined as the suggested path between a specified start and destination point, which, in the case of this thesis, are both part of TU Berlin's main campus in Charlottenburg. To analyze named quality for a specific route, the estimated time it takes to walk as well as its length are both measured. Lower walking times, as well as shorter route lengths, are thereby both regarded as preferable.
 
 To perform a comparison between different navigation systems, a set of predefined start and destination points is established. The route calculation process of each navigation system is then applied to the defined reference points and the route metrics of the suggested routes are collected respectively. The navigation systems can be then compared for a specific pair of start and destination points as well as for the average metrics of the whole dataset. 

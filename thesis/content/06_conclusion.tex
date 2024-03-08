@@ -1,2 +1,35 @@
 \chapter{Conclusion}
 \label{cha:conclusion}
+
+This section portrays the features of the developed campus app and discusses their impact on the introductory problems regarding TU Berlin's digital information culture as well as the limited navigation capabilities across the campus. It furthermore provides an overview of possible starting points and aspects for future work. The conclusion thereby constantly focuses on the results of the quantitative evaluations performed in the previous chapter and tries to provide additional resources and ideas for performing a qualitative verification, which is expected to be a natural continuation of the evaluation regarding the campus app's impacts on usability and user experience.
+
+\section{Campus app and its impact on introductory problems}
+The two main problems formulated in the introduction lie in the complicated and overwhelming digital information culture of TU Berlin, which distributes campus information across multiple web resources and in the insufficient provision of navigation and orientation possibilities for students and teaching staff of campus Charlottenburg. Both problems are tackled by the two main features of the campus app:
+
+On the one hand, a digital navigation system for routing and localizing on campus Charlottenburg tries to solve the orientation weaknesses of TU Berlin's current manual campus map and the broadly used location-based mobile navigation systems Google and Apple Maps. It offers the ability to calculate the fastest route between different POIs or to navigate the user from the current position to an entity on the campus. This system is thereby designed in a way that adapts to the common needs of students and teachers of TU Berlin by e.g., including campus-specific pathways and buildings for fast and direct navigation.
+
+The most influential comparison point between the campus app's navigation system and already established providers (Google and Apple Maps) are the lengths and walking times of suggested routes. As portrayed in the evaluation benchmark presented at \hyperref[sec:navigation_system_verification]{"Navigation system verification" section}, the campus app's routing system with its underlying street network graph outperforms the two other solutions by 30\% in terms of average route time savings and by 23\% (Google Maps) / 20\% (Apple Maps) in terms of average walking distance saved per route. Based on these figures, the underlying work can be considered a successful improvement of the navigation situation on TU Berlin's main campus and therefore solves the related problem formulated in the introduction.
+
+% Hier die Ergebnisse der Evaluation des Navigationssystem einfügen
+
+On the other hand, an interactive information layer inside the app tries to simplify the handling of the information provided by TU Berlin and Studierendenwerk. This layer presents different information about buildings, canteens, rooms, events and course timetables while trying to enhance the user experience by providing different ways for exploring and searching through the data. Since the major contribution of this system lies in the provision of better usability, direct qualitative analysis is in this case mostly not feasible for evaluation (see section \hyperref[sec:future_work]{"Future work"}).
+
+% When compared to ...
+
+One important element contained in the campus app is a 3-dimensional map of campus Charlottenburg, which serves as a building block for both the navigation system as well as the information layer and can be therefore considered another important feature of the app. Apart from providing the underlying layer for the other features, the campus map also serves as a digital reference environment in which campus Charlottenburg can be explored by the user digitally. A high priority is thereby placed on the usability of the map, with a strong emphasis on the recognizability of buildings, pathways and green areas on the campus and a form factor inspired by the already familiar official campus map of TU Berlin.
+
+To achieve the described set of features, the campus map is powered by the app's geocoding services which connect the geodata to their respective POIs in human-readable format (names and abbreviations of buildings, addresses, \ldots).
+
+To evaluate the quality of the campus map and its underlying geodata, two distinct benchmarks are presented in the \hyperref[sec:campus_map_verification]{"Campus map verification" section}. The provided data shows that, on average, the density of geodata points on the campus present in the developed solution is higher than in the compared mobile map services Google Maps (by factor 2) and Apple Maps (by factor 5). Furthermore, it can be shown that the campus app outperforms both other systems in terms of knowledge of campus-specific identifiers, abbreviations and names of TU Berlin's entities. When compared, both systems could only correctly allocate 21\% (Google Maps) / 2\% (Apple Maps) of the officially used abbreviations and 49 \% (Google Maps) / 17\% (Apple Maps) of the building names on campus. The campus app thereby scored 100\% in both categories respectively.
+
+It can be therefore concluded that the goal of creating a more detailed and adapted campus map of TU Berlin's campus could be achieved during development.
+
+\section{Future work} \label{sec:future_work}
+
+% Verbesserung der Performance (Optimierung der Campus-Karte, Verbesserung der Ladezeiten für offline Daten, vor allem die Stundenpläne von Kursen)
+% Automatisierung des Systems zur Generation von Stundenplänen und Raumbelegungen (Automatisches Generieren -> Bereitsstellen der Dateien auf einem Server -> System, mit welchem die App die Daten zu Beginn des Semesters herunterlädt und offline für den Rest des Semesters bereitstellen kann)
+% Einbeziehen von weiteren öffentlichen Online-Daten der TU Berlin und des Studierendenwerks (ggf. noch weiterer Parteien?)
+% Entwicklung weiterer Features
+% Wissenschaftliche Analyse von campus-spezifischen Datensätzen, welche mit einem möglichen Release der App generiert werden könnten
+% Verwendung der im Rahmen dieser Bachelorarbeit gesammelten Daten zu TU Berlin's Gebäuden, dem Straßennetzwerk der Uni, ...
+% Qualitative Tests zum Messen der User-Experience / zum Vergleichen der App und der digitalen Web-Resourcen der TU Berlin
