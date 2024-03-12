@@ -1,5 +1,4 @@
-\babel@toc {english}{}\relax 
-\babel@toc {english}{}\relax 
+\babel@toc {english}{}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Context and background}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Motivation}{1}{section.1.2}%
@@ -51,22 +50,17 @@
 \contentsline {section}{\numberline {4.4}Interactive information layer development}{38}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Underlying data model}{38}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Collection of campus relevant information from the web}{39}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}User interface development}{41}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Navigation system}{41}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Information layer}{41}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Enhancing the user experience with additional screens and features}{41}{subsection.4.5.3}%
 \contentsline {chapter}{\numberline {5}Evaluation}{43}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Campus map verfication}{43}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Comparison of map resolution}{43}{subsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.1.2}Comparison of geocoding capabilities for campus-specific names and identifiers}{45}{subsection.5.1.2}%
 \contentsline {section}{\numberline {5.2}Navigation system verification}{46}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Information layer verification}{48}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Conclusion}{49}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Campus app and its impact on introductory problems}{49}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Future work}{50}{section.6.2}%
-\contentsline {chapter}{\nonumberline List of Tables}{51}{chapter*.34}%
-\contentsline {chapter}{\nonumberline List of Figures}{53}{chapter*.35}%
-\contentsline {chapter}{\nonumberline Bibliography}{55}{chapter*.36}%
-\contentsline {chapter}{Appendices}{59}{section*.37}%
-\contentsline {chapter}{\nonumberline Appendix 1}{61}{chapter*.38}%
+\contentsline {chapter}{\nonumberline List of Tables}{53}{chapter*.34}%
+\contentsline {chapter}{\nonumberline List of Figures}{55}{chapter*.35}%
+\contentsline {chapter}{\nonumberline Bibliography}{57}{chapter*.36}%
+\contentsline {chapter}{Appendices}{61}{section*.37}%
+\contentsline {chapter}{\nonumberline Appendix 1}{63}{chapter*.38}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
