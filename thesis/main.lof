@@ -1,32 +1,33 @@
-\babel@toc {english}{}
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Complete navigation system procedure\relax }}{11}{figure.caption.5}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Data retrieval process for the information layer\relax }}{13}{figure.caption.6}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Different styles of map presentation in Google Maps and Apple Maps\relax }}{18}{figure.caption.7}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Clustered data of TU Berlin with arrows between related groups\relax }}{20}{figure.caption.8}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Most important wireframes with annotations\relax }}{21}{figure.caption.10}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Styleguide with colors, typography and iconography\relax }}{23}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces UI-Design\relax }}{24}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Complete navigation system procedure\relax }}{13}{figure.caption.5}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Data retrieval process for the information layer\relax }}{15}{figure.caption.6}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Different styles of map presentation in Google Maps and Apple Maps\relax }}{20}{figure.caption.7}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Clustered data of TU Berlin with their relationships\relax }}{22}{figure.caption.8}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Most important wireframes with annotations\relax }}{23}{figure.caption.10}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Styleguide with colors, typography and iconography\relax }}{25}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces UI-Design\relax }}{26}{figure.caption.12}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Correction of TU Berlin's building data\relax }}{26}{figure.caption.14}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Correction of TU Berlin's street network data\relax }}{27}{figure.caption.15}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Correction of TU Berlin's green area data\relax }}{27}{figure.caption.16}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Correction of TU Berlin's entrance data\relax }}{27}{figure.caption.17}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Mesh generation process for a cube\relax }}{29}{figure.caption.18}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Mesh generation process for a street\relax }}{30}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Mesh generation process for a building\relax }}{31}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Camera setups for "3d" and top-down "2d" view\relax }}{32}{figure.caption.21}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Overview of the generated campus map\relax }}{34}{figure.caption.22}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Manually annotated street network of campus Charlottenburg\relax }}{36}{figure.caption.24}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Database schema of the campus app\relax }}{39}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Correction of TU Berlin's building data\relax }}{28}{figure.caption.14}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Correction of TU Berlin's street network data\relax }}{29}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Correction of TU Berlin's green area data\relax }}{29}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Correction of TU Berlin's entrance data\relax }}{29}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Mesh generation process for a cube\relax }}{31}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Mesh generation process for a street\relax }}{32}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Mesh generation process for a building\relax }}{33}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Camera setups for "3d" and top-down "2d" view\relax }}{34}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Overview of the generated campus map\relax }}{36}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Manually annotated street network of campus Charlottenburg\relax }}{38}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Database schema of the campus app\relax }}{41}{figure.caption.26}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Average distance between campus point and suggested point\relax }}{44}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Heatmaps for campus map coverage by average point distance\relax }}{45}{figure.caption.29}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Average distance between campus point and suggested point\relax }}{46}{figure.caption.30}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Average percentual time savings for different route lengths\relax }}{47}{figure.caption.32}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Average percentual distance savings for different route lengths\relax }}{48}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Average distance between campus point and suggested point\relax }}{46}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Heatmaps for campus map coverage by average point distance\relax }}{47}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Average distance between campus point and suggested point\relax }}{48}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Average percentual time savings for different route lengths\relax }}{49}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Average percentual distance savings for different route lengths\relax }}{50}{figure.caption.33}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
