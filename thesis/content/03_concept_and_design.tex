@@ -3,36 +3,38 @@
 The goal of this bachelor's thesis is the development of an app for mobile devices, which provides students at TU Berlin the possibility to navigate and inform themselves about their campus in Charlottenburg. The main concept of the mobile app is inspired by popular smartphone navigation systems such as Google or Apple Maps and focuses on mapping TU Berlin's main campus and the most important web resources connected to it onto a single digital map.
 
 \section{Key features and technologies}
-The following sections provide a detailed overview of the app's key features and the underlying technologies used in this thesis.
+The following sections provide a detailed overview of the app's key features (campus map, navigation system and information layer). They furthermore portray the underlying technologies used to develop the mobile application, to query the needed data for the system as well as to perform routing for navigation purposes.
 
 \subsection{Digital map of campus Charlottenburg} \label{campus_map_1}
-The main element of the mobile app consists of a locally implemented map of TU Berlin's central campus in Charlottenburg. It provides the user a manageable overview of TU Berlin's buildings, pathways, green areas as well as its surrounding environment. The following list displays possible map features with a description of their relevance for the mobile app:\\
+The main element of the mobile app consists of a locally implemented map of TU Berlin's central campus in Charlottenburg. It provides the user a manageable overview of TU Berlin's buildings, pathways, green areas as well as its surrounding environment. The following list displays possible map features with a description of their relevance for the mobile app:
 
 \begin{itemize}
     \item All buildings of TU Berlin: To provide the user the ability to easily locate the buildings of TU Berlin, all facilities connected to the university need to be specially highlighted on the map. The buildings of TU Berlin are therefore the most important map feature.
     \item All pathways on campus: Footwalks and cycleways that lie on the campus are important for the navigation system of the mobile app. To prevent the map from being cluttered, a hierarchy must be established between important pathways and smaller routes.
     \item All green areas: Parks, trees and other green areas of TU Berlin and its surroundings need to be specially marked on the map. Combined with the buildings and pathways of TU Berlin, they provide the user reference points for manual localization.
-    \item External buildings: Buildings not connected to the TU Berlin do not contribute to the localization and navigation on campus. They can be nevertheless used as weak informative reference points. A toned-down and subliminal representation on the map can be used in this case.
+    \item External buildings: Buildings not connected to the TU Berlin do not contribute to the localization and navigation on campus. They furthermore take the focus of TU Berlin's campus and are therefore discarded. %They can be nevertheless used as weak informative reference points. A toned-down and subliminal representation on the map can be used in this case.
     \item External pathways: All footwalks and cycleways that are outside of the campus do not provide any relevant information for the mobile app. They furthermore make the map appear more cluttered and are therefore not present on it.
     \item Main roads: Main roads surrounding TU Berlin's campus (e.g., Straße des 17. Juli) simplify the exploration and search process while interacting with the map. They provide an important source of guidance and must be prominently presented on the map.
-    \item Small roads: Small roads also support an organized map concept. Since they are less important than main roads, a more restrained manner of display is appropriate.
-    \item External POI: The POI surrounding the campus (such as Ernst-Reuter-Platz) are heavily recognizable landmarks and support the user's orientation and localization on the map. They are therefore completely displayed on it.
+    \item Small roads: Small roads also support an organized map concept. Since they are less important than main roads, a more restrained manner of display is appropriate. One possibility to achieve this is the usage of toned-down colors combined with a thinner linewidth.
+    \item External POI: The POI surrounding the campus (such as Ernst-Reuter-Platz) are heavily recognizable landmarks and support the user's orientation and localization on the map. They are therefore completely included on the map.
 \end{itemize}
 
-All relevant features are retrieved via the Overpass-Turbo API from publicly available OpenStreetMap data. The data is then fed into the geographic information system QGIS, which is used for the creation and export of the campus map as well as manual annotation and correction of the downloaded data. Finally, the exported data is converted into a 3d model of the campus which is displayed in a respective rendering environment inside the app.
+All relevant features are retrieved via the Overpass-Turbo API from publicly available OpenStreetMap data. The data is then fed into the geographic information system QGIS, which is used for the creation and export of the campus map as well as manual annotation and correction of the downloaded data. Finally, the exported data is converted into a 3d model of the campus which is displayed in a respective rendering environment inside the app (see \hyperref[sub:campus_user_experience]{"Designing a user-friendly campus map"} for more details on the 3d environment).
 
 \subsection{Navigation across the campus}
-The mobile app provides the user the ability to easily navigate across TU Berlin's main campus. The most important technological aspects to successfully achieve this task are routing, localization, geocoding, visual presentation of the current navigation state and calculation of estimated time of arrival (ETA).
+The mobile app provides the user the ability to easily navigate across TU Berlin's main campus. The most important technological aspects to successfully achieve this task are routing, localization, geocoding, visual presentation of the current navigation state and calculation of estimated time of arrival (ETA). The following sections describe these building blocks in more detail:
 
-The underlying data structure used for the whole navigation process is a weighted graph. Its vertices represent collected geodata points and the respective weighted edges are the distances between the vertices. To account for the fact that, in some cases, the fastest route between two points leads through other buildings, the entrances of all facilities are included in the graph. An edge connecting every pair of different entrance nodes of the same building is further included. The following section provides an overview of the procedure for the complete navigation process:
+Street network graph: The underlying data structure used for the whole navigation process is a weighted graph. Its vertices represent collected geodata points and the respective weighted edges are the distances between the vertices. To account for the fact that, in some cases, the fastest route between two points leads through other buildings, the entrances of all facilities are included in the graph. Every edge connecting a pair of different entrance nodes of the same building is therefore inserted into the graph.
 
-\begin{enumerate}
-    \item Geocoding is used to decode the user's human-readable destination input, e.g., "MAR-Gebäude" into its respective geo-coordinates and node in the graph.
-    \item To determine the starting point for the navigation, either another manually inserted location is geocoded or the current location of the user is determined using the built-in GPS module of the mobile phone. If the user selects the latter, the current location and heading are further tracked during the whole navigation process.
-    \item Considering the limited size of the graph, Dijkstra's algorithm is chosen to calculate the fastest route between the start and destination points. If the fastest route leads through other buildings, a live indoor navigation approach cannot be achieved due to imprecise GPS results. In this case, geofences are placed on the entrance and exit of the respective building. They detect when the user enters and leaves it and update the state of the navigation system accordingly.
-    \item The ETA is calculated based on the weights/distance of the fastest route and other factors (e.g., time of day, stoplights on the route, \ldots).
-    \item The navigation is presented visually on the campus map by drawing a polyline of the calculated route. If the user selects its location as a starting point, the current location as well as the heading retrieved from the device's magnetometer is displayed. When the user is located within a certain range of the polyline, its position and heading are mapped onto it.
-\end{enumerate}
+Geocoding: The app's built-in geocoding system provides the ability to convert human-readable input into geocoordinates. This is especially useful when searching for a specific entity on campus by its name or abbreviation. The opposite process is called reverse geocoding. In this case, a set of geocoordinates is taken as input and the closest known entity is returned by the system. This can be for example used to find the closest node in the underlying navigation graph from the user's position.
+
+Localization: The user has two different options when trying to localize himself or a specific entity on the campus. On the one hand, the geocoding provider of the campus app can be used to convert human-readable input into the respective geocoordinates. On the other hand, the user can localize himself with the help of the built-in GPS module of the mobile device. This can be used to determine the user's current position as a starting point for a navigation task.
+
+\newpage
+
+Visual presentation of the navigation process: Similar to already established digital navigation services, a polyline displaying the suggested route is used to visually present the navigation state. It updates accordingly to the user's location and navigation progress (see \hyperref[sub:campus_user_experience]{"Designing a user-friendly campus map"} for further information). Several other user interface elements presenting the total distance and time for the route as well as the ETA support this procedure.
+
+The following figure and sequence present an overview of how the different components work together in the system to provide the navigation functionality of the app:
 
 \begin{figure}[!ht]
 	\centering
@@ -41,27 +43,36 @@ The underlying data structure used for the whole navigation process is a weighte
     \label{fig:navigation_system}
 \end{figure}
 
+\begin{enumerate}
+    \item Geocoding is used to decode the user's human-readable destination input, e.g., "MAR-Gebäude" into its respective geo-coordinates and node in the graph.
+    \item To determine the starting point for the navigation, either another manually inserted location is geocoded or the current location of the user is determined using the built-in GPS module of the mobile phone. If the user selects the latter, the current location and heading are further tracked during the whole navigation process.
+    \item Considering the limited size of the graph, Dijkstra's algorithm is chosen to calculate the fastest route between the start and destination points. If the fastest route leads through other buildings, a live indoor navigation approach cannot be achieved due to imprecise GPS results. In this case, geofences are placed on the entrance and exit of the respective building. They detect when the user enters and leaves it and update the state of the navigation system accordingly (see \hyperref[sub:navigation_user_experience]{"Designing a good user experience for navigation"}).
+    \item The ETA is calculated based on the weights or distance of the calculated route and other factors (e.g., time of day, stoplights on the route, \ldots).
+    \item The navigation is presented visually on the campus map by drawing a polyline of the calculated route. If the user selects its location as a starting point, the current location as well as the heading retrieved from the device's magnetometer is displayed. When the user is located within a certain range of the polyline, its position and heading are mapped onto it.
+\end{enumerate}
+
 \subsection{Information layer}
 An additional layer on top of the campus map consisting of location-based information is a natural addition to the feature set of the mobile app. It enhances the user experience, the relevance of the whole product and the overall digital information culture of TU Berlin by providing overlays, markers and labels filled with data about the campus.
 
 This section provides a brief overview of the underlying data and technology used to provide the information on the layer.
 
-There are three main sources, that are publicly available and relevant to the information layer. On the one hand, there is the official website of TU Berlin \footnote{https://www.tu.berlin}, with sections for current events, the latest news, deadlines, etc. On the other hand, there is the MOSES system \footnote{https://moseskonto.tu-berlin.de/moses/index.html} containing data about all the different courses, rooms and studies. A third relevant source of information is the website of Studierendenwerk Berlin \footnote{https://www.stw.berlin} with meal plans for its different canteens and a timetable for events.
+There are three main sources, that are publicly available and relevant to the information layer. On the one hand, there is the official website of TU Berlin \footnote{https://www.tu.berlin}, with sections for current events, the latest news, deadlines, etc. On the other hand, there is the MOSES system \footnote{https://moseskonto.tu-berlin.de/moses/index.html} containing data about all the different courses, rooms and studies. Lastly, the website of Studierendenwerk Berlin \footnote{https://www.stw.berlin} with meal plans for its different canteens and a timetable for events can be seen as a third important source of information.
 
-Information is collected by downloading and parsing the content of respective websites. The data is further categorized and -if possible- mapped onto different POIs on the campus map (e.g., a canteen gets its meal plan assigned). This helps to provide an intuitive and organized presentation and access to the user.
+Information is collected by downloading and parsing the content of respective websites. The data is further categorized and -if possible- mapped onto different POIs on the campus map (e.g., a canteen gets its meal plan assigned), which provides an intuitive and organized way for information access and display.
 
 The collected data can be categorized according to its timeliness and the intervals in which it has to be updated: General information about different fields of study, courses and rooms only changes by semester. This particular data can be retrieved once at the start of every semester and does not need daily live updates. It is also possible to supply it via app updates, instead of providing a direct in-app functionality for data retrieval. Data that gets updated regularly on the other hand, e.g., meal plans, events, news, etc. has to be always retrievable from the app.
 
-The proposed solution for timely data (meals, events, \ldots) collection and provision runs on a web server and consists of a web crawler for information retrieval, parsing and POI mapping, a database to store the crawled information in a standardized and simple-to-use format and a REST API, that provides the client/mobile device the ability to retrieve the information. The web crawler is triggered periodically by several CRON jobs, whose timings are dependent on the timeliness of the crawled data.
+The proposed solution for timely data (meals, events, \ldots) collection and provision runs on a web server and consists of a web crawler for information retrieval, parsing and POI mapping, a database to store the crawled information in a standardized and simple-to-use format and a REST API, that provides the client/mobile device the ability to retrieve the information. One web crawler is used per data category and is triggered periodically by a respective CRON job, whose timing is dependent on the timeliness of the crawled data (see figure \ref{fig:summary_data_retrieval} for summary).
 
 Web crawlers dealing with data that needs rare updates (rooms, buildings, courses, \ldots) on the other hand, are not deployed on a web server. These programs are designed for manual usage at the beginning of a semester and provide their scraped data in JSON format, which can be directly included in the mobile app. This results in the fact that all data falling under this category can be used on the client side without the need for a network connection. It also means that some sort of deployment system needs to be included in the app for this data: Either the information is stored on a web server and gets automatically downloaded and stored on the client's device at the beginning of a semester or a complete app update from the respective app stores is rolled out.
 
-By splitting the logic for crawling and provision, the workload that arises on TU Berlin's and Studierendenwerk's websites from retrieving data can be limited to a minimum: The server only crawls data when an update is needed (e.g., weekly for meal plans), instead of loading and parsing the web resources on client request. Further advantages are the fact that loading times for requests from clients are independent of TU Berlin's and Studierendenwerk's infrastructure, that the language for web crawling can be chosen independently from the programming framework (in this case Python with its Selenium \footnote{https://www.selenium.dev} and BeautifulSoup \footnote{https://pypi.org/project/beautifulsoup4} libraries are used) and that the web crawling logic can be changed without updating the app.
+By splitting the logic for crawling and provision, the workload that arises on TU Berlin's and Studierendenwerk's websites from retrieving data can be limited to a minimum: The server only crawls data when an update is needed (e.g., daily for meal plans), instead of loading and parsing the web resources on client request. Further advantages are the fact that loading times for requests from clients are independent of TU Berlin's and Studierendenwerk's infrastructure, that the language for web crawling can be chosen independently from the programming framework (in this case Python with its Selenium \footnote{https://www.selenium.dev} and BeautifulSoup \footnote{https://pypi.org/project/beautifulsoup4} libraries are used) and that the web crawling logic can be changed without updating the app.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.0\textwidth]{images/data_retrieval_process.png}\\
 	\caption{Data retrieval process for the information layer}
+    \label{fig:summary_data_retrieval}
 \end{figure}
 
 %\subsection{Exploration vs. search}
@@ -69,25 +80,23 @@ By splitting the logic for crawling and provision, the workload that arises on T
 %\subsection{Alternative presentation of information}
 
 \subsection{Offline-first design}
-One important aspect of the app concept is an extensive focus on offline usability. The whole system is designed to allow the user (as far as possible) a network-connection-free app usage. This applies in particular to the navigation system, the campus map and the information layer of the app:
+One important aspect of the app concept is an extensive focus on offline usability. The whole system is designed to allow the user (as far as possible) app usage without the need for a network connection. This applies in particular to the navigation system, the campus map and the information layer of the app:
 
 Campus map: The campus map is locally implemented on the device. All necessary information can be therefore loaded and used without a network connection.
 
 Navigation system: Due to the comparatively small scope of the navigation system, the weighted graph for navigation as well as the system for routing can both be implemented and executed on-device. Only the navigation feature working with live user location updates relies on stable GPS functionality.
 
-Information layer: Loading and presenting information on TU Berlin's main campus requires access to the respected online resources and cannot be realized without a network connection. The need for network connectivity can be nevertheless reduced: Since no data requires real-time updates (the most critical data being meal plans that require weekly updates), the data for the information layer can be stored locally after download and loaded from memory for the remaining week. This approach reduces the need for internet connectivity to a minimum.
+Information layer: Loading and presenting information on TU Berlin's main campus requires access to the respected online resources and cannot be realized without a network connection. The need for network connectivity can be nevertheless reduced: Since most of the data does not require real-time updates (the most critical data being meal plans that require daily updates), the data for the information layer can be stored locally after download and loaded from memory for the remaining day. This approach reduces the need for internet connectivity to a minimum.
 
 %This can be realized by sending silent push notifications at the start of every week. Devices that cannot receive the synchronizing push notification can download the data while being used. At best, this system allows the user to use the app throughout the week without going online.
-
-\newpage
 
 \section{App development framework}
 The choice of app development framework is an important step while conceptualizing and designing the product. It determines the programming language of the project, the built-in device- and system-specific capabilities that can be accessed during development as well as the performance of the app. It has to be selected in consideration of the project's requirements. The following enumeration presents the most important demands for this thesis:
 \begin{itemize}
     \item Used technologies: Working with low-level hardware and operating system APIs is an important part of development. Technologies and systems used in the key features of the product (e.g., GPS capabilities) have to be accessible or implemented in the selected framework.
     \item Cross-platform capabilities: Native app development is complex and time-consuming. Learning and especially working with two different codebases (Java / Kotlin for Android, Swift / Obj. C for IOS) is difficult and not possible within the scope of this thesis. Cross-platform frameworks solve this problem by providing the ability to work with a single codebase for different operating systems.
-    \item Focus on high-quality user interfaces: One of the most important requirements of the app development framework is the availability to easily build high-quality and modern user interfaces with it. 
-    \item Execution speed: Regarding the fact that the whole navigation functionality has to take place locally on the phone, the speed with which the code of the mobile app gets executed is crucial to a responsive and fast user experience. Particularly the algorithms used for routing have to be reliably computable within seconds.
+    \item Focus on high-quality user interfaces: A clear, modern and responsive user interface is a key factor for shipping a high-quality user experience. The availability to easily build such user interfaces is therefore an important requirement for the app development framework. 
+    \item Execution speed: Regarding the fact that the whole navigation functionality has to take place locally on the phone, the speed with which the code of the mobile app gets executed is crucial to a responsive and fast user experience. Particularly the algorithms used for routing have to be reliably computable within fractions of a second.
     \item 3d rendering capabilities: The framework needs to provide a way to render and interact with the created 3d model of campus Charlottenburg. Further built-in systems such as an extensive linear algebra toolkit, a lighting engine and other real-time rendering capabilities also need to be taken into account.
 \end{itemize}
 
@@ -137,7 +146,7 @@ This results in two important requirements for the app design. Firstly, visual e
 
 Secondly, the choice of which information is portrayed in the app is important. Since too much information provision risks a bloating of the app (and therefore leads to a reduced user experience) \cite{hicks_law}, the final campus data needs to be carefully selected and filtered for in-app usage. The establishment of a clear hierarchy between important, frequently used data and less important information also contributes to this.
 
-\subsection{Designing a user-friendly campus map}
+\subsection{Designing a user-friendly campus map} \label{sub:campus_user_experience}
 A precise and clear map of TU Berlin's main campus in Charlottenburg is the most important user interface element in the app. Accordingly, special emphasis should be placed on the design of it. This section describes possible requirements for the map element and the resulting implications for its appearance and implementation in the app.
 
 There are two intended ways how the users should interact with the map: Interaction for exploration/search tasks and interaction for navigation purposes. Both these tasks come with separate design requirements.
@@ -162,7 +171,7 @@ Navigation tasks, namely interacting with / following a polyline route and worki
 
 Based on the fact, that common usability patterns are already established by the user base of such popular mobile navigation services, the approach is adopted in this thesis (enhancement of user experience based on \cite{jakobs_law}): The user's focus is directed to the road network during the navigation phase, unimportant markers are discarded, roads are highlighted and the map's camera is adjusted to display a 2D perspective from the top.
 
-\subsection{Designing a good user experience for navigation}
+\subsection{Designing a good user experience for navigation} \label{sub:navigation_user_experience}
 Creating a robust and easy-to-use digital navigation system is a challenging task since it consists of digital instructions resulting in real-life actions.
 
 Based on \cite{jakobs_law}, it is beneficial for the user experience to orientate the design to industry standards. In this case, a polyline is usually used for the display of the calculated route, a round marker stands for the user's position and a change in color of the polyline tracks the already traveled path segment. The location marker is further mapped onto the polyline during navigation, as it marks the point between the traveled and preceding route.
@@ -186,8 +195,6 @@ To specify the design requirements for this section of the navigation process, t
 %	\caption{UX design for outdoor-indoor-outdoor transition}
 %\end{figure}
 
-\newpage
-
 \subsection{Chunking of information within the app}
 According to \cite{millers_law}, an organized visual information structure is key to providing a good user experience. Especially concerning the fact that a huge amount of campus data is available and exploration tasks are key activities in the app. Chunking is the task of grouping related information visually together and is a key enabler for an organized layout \cite{millers_law}. The following figure provides a clustered overview of the available data connected to TU Berlin's main campus:
 
@@ -200,6 +207,8 @@ According to \cite{millers_law}, an organized visual information structure is ke
 Based on connection count and data, the "Building" and "Course" clusters can be identified as key entities in the system. It is therefore advisable, to attach importance to the display of these groups in the user interface of the app. Other groups are therefore placed less prominently but also get referenced (according to the relations in the figure) in places where "Building" and "Course" are portrayed.
 
 According to \cite{law_of_common_region} and \cite{law_of_similarity}, it is advisable to display information related to one common cluster next to each other and similarly. This improves the user experience by emphasizing associated information. The comprehensibility of the visual design is also important: The user should directly understand the meaning of the portrayed data, which can be mainly achieved with descriptive texts and iconography.
+
+\newpage
 
 \subsection{Wireframes}
 Based on the previously defined requirements, wireframes outlining the basic design concept of the app are created. This section displays the most important pages and provides a brief enumerated overview of their features. (Note that not all wireframes are presented and that certain design and layout changes occur between UX and UI design.)
