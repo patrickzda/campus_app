@@ -103,38 +103,40 @@ The choice of app development framework is an important step while conceptualizi
 Based on the previously defined requirements, the Flutter framework \footnote{https://flutter.dev} is chosen for this work. In addition to its cross-platform capabilities, it also offers the ability to compile source code into platform-specific machine code for near-native execution performance. It further comes with access to thousands of packages through the dart package manager pub \footnote{https://pub.dev}, an extensive set of pre-built components for user interfaces and the ability to write platform-specific code for low-level API access. Since Flutter lacks 3d rendering capabilities, the Unity engine \footnote{https://unity.com/de} is additionally used to create and display the campus map. It gets included in the Flutter build and is responsible for rendering and interacting with the 3d campus map.
 
 \section{User experience design}
-The following sections provide an overview of the whole user experience (UX) design for the campus app. In the scope of this thesis, the complete process is broken down into UX research and wireframe design.
+The following sections provide an overview of the whole user experience (UX) design for the campus app. This design process is broken down into UX research and wireframe design for the scope of this thesis.
 
-UX research is a process where the main goals and tasks associated with the app are identified and broken down into its most relevant UX aspects. This helps to find out the key usability requirements for the visual user interface design, consisting of wireframes and high-fidelity mockups (user interface design).
+UX research is a process where the main goals and tasks associated with the app are identified and broken down into its most relevant UX aspects. This helps to find out the key usability requirements for the visual interface design, consisting of wireframes and high-fidelity mockups (user interface design).
 
-Wireframes, on the other hand, form the first visual version of the app design. They determine the basic structure of the app, its layout, the placement of basic user interface elements as well as their hierarchy. Wireframes are based on the previously defined usability requirements in the UX research process.
+Wireframes, on the other hand, present the outline for the visual version of the app design. They determine the basic structure of the app, its layout, the placement of basic user interface elements as well as their hierarchy. Wireframes are based on the previously defined usability requirements in the UX research process.
 
-It is important to notice that all these design choices are not chosen arbitrarily, but rather based on previous research in the studies of user experience design. Important work was contributed over the years by psychologists and researchers like Dr. Jakob Nielsen \cite{jakob_nielsen}, Dr. Paul Fitts \cite{paul_fitts}, Jon Postel and research conducted at IBM and Xerox Corporation. An overview of the most important research and its consequences for user experience design can be found in Jon Yablonski's book "Laws of UX" \cite{yablonski2020laws} (web-version \cite{yablonski_web}).
+It is important to notice that all these design choices are not chosen arbitrarily, but rather based on previous research in the studies of user experience design. Important work was contributed over the years by psychologists and researchers like Dr. Jakob Nielsen \cite{jakob_nielsen}, Dr. Paul Fitts \cite{paul_fitts}, Jon Postel and research conducted at IBM and Xerox Corporation. An overview of the most important research topics and their consequences for user experience design can be found in Jon Yablonski's book "Laws of UX" \cite{yablonski2020laws} (web-version \cite{yablonski_web}), which is used as a foundation for the following design choices. (Note: All used references in the following design sections link to the book's shortened web version.)
 
 The next paragraphs describe a set of important usability requirements that are then further incorporated into the wireframe design.
 
-\subsection{Search versus exploration}
-One of the most important usability requirements for the app results from the clash of two important user needs, namely search and exploration. These needs result from the fact that users may use the app for different purposes and with different expectations.\\
+\newpage
 
-Search, on the one hand, describes a scenario, in which the user tries to find or locate a specific piece of information within the app. This search for information can be expressed with concrete questions, e.g.:
+\subsection{Search versus exploration}
+One of the most important usability requirements for the app results from the clash of two important user needs, namely search and exploration. These needs result from the fact that users may use the app for different purposes and with different expectations.
+
+\textbf{Search:} Search, on the one hand, describes a scenario, in which the user tries to find or locate a specific piece of information within the app. This search for information can be expressed with concrete questions, e.g.:
 
 \begin{itemize}
     \item What is the fastest way between MAR and TEL buildings?
     \item What are the opening times of the TU library?
-    \item What food can I get tomorrow at the main cafeteria?
+    \item What food can I get tomorrow in the MAR canteen?
     \item Where does course App-Entwicklung take place?
     \item In which building is the SNET department located?
 \end{itemize}
 
-One main requirement for the user experience of the app is therefore the possibility for fast, easy and structured access to important key information about TU Berlin's campus. Based on \cite{fitts_law} and \cite{jakobs_law}, all search-task-related user interface elements should be easily identifiable as such, prominently positioned and accessible to the user. Additionally, to reduce the search time for the seeking person, the design should also provide multiple ways to access the most important information. Important user interface elements in this case are search bars, descriptive icons and textual hints as well as an adequately chunked information hierarchy in the whole app. This usage of commonly used user interface elements also supports \cite{jakobs_law}.\\
+One main requirement for the user experience of the app is therefore the possibility for fast, easy and structured access to important key information about TU Berlin's campus. Based on \cite{fitts_law} and \cite{jakobs_law}, all search-task-related user interface elements should be easily identifiable as such, prominently positioned and accessible to the user. Additionally, to reduce the search time for the seeking person, the design should also provide multiple ways to access the most important information. Important user interface elements in this case are search bars, descriptive icons and textual hints as well as an adequately chunked information hierarchy in the whole app. This usage of commonly used user interface elements also supports \cite{jakobs_law}.
 
-Exploration, on the other hand, is an app use case, in which the user "just browses around" in search of nothing particular. The seeking person either wants to learn, find out or experience something new or uses the app with an open question in mind. In this scenario, the user does not seek a specific piece of information but rather expects the app to provide the possibility, to easily navigate and view through structured content without the need for a concrete search.
+\textbf{Exploration:} Exploration, on the other hand, is an app use case, in which the user "just browses around" in search of nothing particular. The seeking person either wants to learn, find out or experience something new or uses the app with an open question in mind. In this scenario, the user does not seek a specific piece of information but rather expects the app to provide the possibility, to easily navigate and view through structured content without the need for a concrete search.
 
 Examples of goals and questions for exploration use cases can be the following:
 
 \begin{itemize}
     \item Are there any interesting places on TU Berlin's campus that I could visit?
-    \item Which cafeteria has the best food today?
+    \item Which canteen has the best food today?
     \item Are there any appealing courses, outside of the scope of my studies, that I can attend this semester?
     \item Search for upcoming events by TU Berlin or Studierendenwerk
     \item Search for learning spaces at TU Berlin
@@ -144,24 +146,24 @@ In these use cases, the outcome of the exploration action is often determined by
 
 This results in two important requirements for the app design. Firstly, visual elements for the structured presentation of information need to be used. These elements help the user by giving hints about existing information in the app and by structuring related information, which then can be easily overviewed and potentially compared while exploring. Further motivation for this can be found in principles \cite{jakobs_law}, \cite{law_of_common_region}, \cite{hicks_law} and \cite{millers_law}. Examples of such elements can be tables, scrollable lists, clearly designed information cards and different kinds of markers on the campus map.
 
-Secondly, the choice of which information is portrayed in the app is important. Since too much information provision risks a bloating of the app (and therefore leads to a reduced user experience) \cite{hicks_law}, the final campus data needs to be carefully selected and filtered for in-app usage. The establishment of a clear hierarchy between important, frequently used data and less important information also contributes to this.
+Secondly, the choice of information portrayed in the app is important. Since too much information provision risks a bloating of the app (and therefore leads to a reduced user experience \cite{hicks_law}), the final campus data needs to be carefully selected and filtered for in-app usage. The establishment of a clear hierarchy between important, frequently used data and less important information also contributes to this.
 
 \subsection{Designing a user-friendly campus map} \label{sub:campus_user_experience}
 A precise and clear map of TU Berlin's main campus in Charlottenburg is the most important user interface element in the app. Accordingly, special emphasis should be placed on the design of it. This section describes possible requirements for the map element and the resulting implications for its appearance and implementation in the app.
 
-There are two intended ways how the users should interact with the map: Interaction for exploration/search tasks and interaction for navigation purposes. Both these tasks come with separate design requirements.
+There are two intended ways how the users should interact with the map: Interaction for exploration/search tasks and interaction for navigation purposes. Both tasks come with separate design requirements.
 
-Exploration and search tasks, mainly interacting with POI and buildings on TU Berlin's campus, have a strong focus on its entities. A straightforward map design with a focus on the recognizability of buildings, pathways, natural areas and POI is important. This supports the user's need for orientation and simplifies the process of matching real-life buildings with their counterparts on the digital map, which is proven to enhance the user experience \cite{jakobs_law}.
+\textbf{Exploration and search:} Exploration and search tasks, mainly interacting with POI and buildings on TU Berlin's campus, have a strong focus on its entities. A straightforward map design with a focus on the recognizability of buildings, pathways, natural areas and other POI is important. This supports the user's need for orientation and simplifies the process of matching real-life buildings with their counterparts on the digital map, which is proven to enhance the user experience \cite{jakobs_law}.
 
-This mostly differs from popular available mobile navigation services since their primary tasks are navigation and orientation of the user. They are also laid out for presenting huge areas, e.g., districts or even complete cities. A detailed portrayal of a specific area is therefore not feasible, perfomant or necessary.
+This mostly differs from popular available mobile navigation services since their primary tasks are navigation and orientation of the user. They are also laid out for presenting huge areas, e.g., districts or even complete cities. A detailed portrayal of a specific area is therefore not feasible, nor perfomant or necessary.
 
-The campus map only deals with a pre-defined and small area. This provides the possibility for the creation of a detailed and complex map, with a pleasing aesthetic (based on \cite{aesthetic_usability_effect}) and a strong focus on TU Berlin's entities on campus Charlottenburg. To achieve maximum recognition value for the buildings, parks and pathways on the campus, a 3D overview, similar to TU Berlin's campus plan \cite{campus_plan}, is used for portrayal. This is especially beneficial for users who are familiar with the official campus plan of TU Berlin, who can transfer their learning from the manual map onto the digital one, which plays well with \cite{jakobs_law}. The 3D perspective also lays out a clear emphasis on buildings, which are the most important entities on the campus and prominently stick out on the map. It is nevertheless also beneficial for other entities, which can be more easily localized with the buildings.
+The campus map, on the other hand, only deals with a pre-defined and small area. This provides the possibility for the creation of a detailed and complex map, with a pleasing aesthetic (based on \cite{aesthetic_usability_effect}) and a strong focus on TU Berlin's entities on campus Charlottenburg. To achieve maximum recognition value for the buildings, parks and pathways on the campus, a 3D overview, similar to TU Berlin's campus plan \footnote{https://www.tu.berlin/studieren/uni-leben/campusplan}, is used for portrayal. This is especially beneficial for users who are familiar with the official campus plan of TU Berlin and therefore can transfer their learnings from the manual map onto the digital one (which emphasizes \cite{jakobs_law}). The 3D perspective also lays out a clear emphasis on buildings, which are the most important entities on the campus and prominently stick out on the map. It is nevertheless also beneficial for streets, parks and water areas, which can be more easily localized with the help of named buildings.
 
-To direct the focus even more onto TU Berlin's campus, all of its surroundings are not used in the 3D view (based on \cite{law_of_common_region}). Furthermore, all important buildings are labeled with their respective abbreviations through markers on the map. Lastly, the user also gets the possibility to alter the map view between 2D and 3D modes, so that the preferred style of view can be selected.
+To direct the focus even more onto TU Berlin's campus, all of its surroundings are not used in the 3D view (based on \cite{law_of_common_region}). All important buildings are furthermore labeled with their respective abbreviations, the most commonly used identifiers at TU Berlin, through markers on the map. The user also gets the possibility to alter the map view between 2D and 3D modes, so that a preferred style of view can be selected.
 
-Another important aspect is the zoom range the user can utilize while interacting. Considering that the campus area is small and that the app wants to focus on its details, a close zoom, with a little room maneuver should be appropriate.
+Another important aspect is the zoom range the user can utilize while interacting. Considering that the campus area is small and that the app wants to focus on its details, a close zoom, with a little room to maneuver should be appropriate.
 
-Navigation tasks, namely interacting with / following a polyline route and working with a marker that displays the current user location, have a strong focus on pathways and routes on TU Berlin's main campus. It is therefore important to highlight these routes in the design accordingly. Other entities like buildings, natural areas (green areas, water) and POI have a lower priority in this case but are nevertheless important for orientation purposes. To design for this use case one can take inspiration from already established mobile map services like Google Maps \footnote{https://developers.google.com/maps?hl=de} and Apple Maps \footnote{https://www.apple.com/de/maps}. These apps mainly display the road network, important markers and POI while in navigation mode and only present low-priority entities (e.g., outlines of buildings) on a close zoom level.
+\textbf{Navigation:} Navigation tasks, namely interacting with / following a polyline route and working with a marker that displays the current user location, have a strong focus on pathways and routes on TU Berlin's main campus. It is therefore important to highlight these routes in the design accordingly. Other entities like buildings, natural areas (green areas, water) and POI have a lower priority in this case but are nevertheless important for orientation purposes. To design for this use case one can take inspiration from already established mobile map services like Google Maps \footnote{https://developers.google.com/maps?hl=de} and Apple Maps \footnote{https://www.apple.com/de/maps}. These apps mainly display the road network, important markers and POI while in navigation mode and only present low-priority entities (e.g., outlines of buildings) on a close zoom level.
 
 \begin{figure}[H]
 	\centering
@@ -176,7 +178,7 @@ Creating a robust and easy-to-use digital navigation system is a challenging tas
 
 Based on \cite{jakobs_law}, it is beneficial for the user experience to orientate the design to industry standards. In this case, a polyline is usually used for the display of the calculated route, a round marker stands for the user's position and a change in color of the polyline tracks the already traveled path segment. The location marker is further mapped onto the polyline during navigation, as it marks the point between the traveled and preceding route.
 
-Nevertheless, one important difference between established navigation systems and campus navigation is the fact that the latter can also lead through buildings of TU Berlin. Since the app only detects whether (and where) the user enters or leaves a building (the traditional polyline approach is therefore not feasible) and the user base is likely not familiar with a switch from outdoor to indoor navigation, a robust and clear user experience has to be provided during this phase.
+One important difference between established navigation systems and the navigation on campus is the fact that the latter can also lead through buildings of TU Berlin. Since the app only detects whether (and where) the user enters or leaves a building and the user base is likely not familiar with a switch from outdoor to indoor navigation, a robust and clear user experience has to be provided during this phase.
 
 To specify the design requirements for this section of the navigation process, the outdoor indoor switch can be broken down into a set of phases, each with its demands:
 
@@ -196,7 +198,7 @@ To specify the design requirements for this section of the navigation process, t
 %\end{figure}
 
 \subsection{Chunking of information within the app}
-According to \cite{millers_law}, an organized visual information structure is key to providing a good user experience. Especially concerning the fact that a huge amount of campus data is available and exploration tasks are key activities in the app. Chunking is the task of grouping related information visually together and is a key enabler for an organized layout \cite{millers_law}. The following figure provides a clustered overview of the available data connected to TU Berlin's main campus:
+According to \cite{millers_law}, an organized visual information structure is key to providing a good user experience. This is especially important, because a huge amount of campus data is available and exploration tasks are key activities in the app. Chunking is the task of grouping related information visually together and is a key enabler for an organized layout \cite{millers_law}. To perform such chunking, the app's campus data first needs to be determined. The following figure provides therefore a clustered overview of the available data:
 
 \begin{figure}[H]
 	\centering
@@ -204,9 +206,9 @@ According to \cite{millers_law}, an organized visual information structure is ke
 	\caption{Clustered data of TU Berlin with their relationships}
 \end{figure}
 
-Based on connection count and data, the "Building" and "Course" clusters can be identified as key entities in the system. It is therefore advisable, to attach importance to the display of these groups in the user interface of the app. Other groups are therefore placed less prominently but also get referenced (according to the relations in the figure) in places where "Building" and "Course" are portrayed.
+Based on connection count and data, the "Building" and "Course" clusters can be identified as key entities in the system. It is therefore advisable, to attach importance to the display of these groups in the user interface of the app. Other groups are placed less prominently but also get referenced (according to the relations in the figure) in places where "Building" and "Course" are portrayed.
 
-According to \cite{law_of_common_region} and \cite{law_of_similarity}, it is advisable to display information related to one common cluster next to each other and similarly. This improves the user experience by emphasizing associated information. The comprehensibility of the visual design is also important: The user should directly understand the meaning of the portrayed data, which can be mainly achieved with descriptive texts and iconography.
+According to \cite{law_of_common_region} and \cite{law_of_similarity}, it is advisable to display information related to one common cluster next to each other and similarly. This improves the user experience by emphasizing associated information and can be achieved by creating separate app pages for individual categories of information (e.g., a building page, a course page, \ldots). The comprehensibility of the visual design is also important: The user should directly understand the meaning of the portrayed data, which can be mainly achieved with descriptive texts and iconography.
 
 \newpage
 
@@ -228,7 +230,7 @@ Based on the previously defined requirements, wireframes outlining the basic des
     \item Search bars are prominently placed on the main and search pages. The positioning is inspired by already established apps and enhances the UX due to \cite{jakobs_law}.
     \item To speed up the search process for certain entities, filter options are placed beneath the search bars.
     \item A button, that toggles whether the information cards are visible or not. This gives the user the decision whether to explore TU Belin's campus with the help of cards or directly by moving the map. This element also breaks down the number of choices by grouping entities by category, which, due to \cite{hicks_law}, also improves usability.
-    \item Markers are placed on buildings with their respective abbreviations, the main communication symbol for buildings on TU Berlin's campus. A detailed information page is opened when clicked. They provide a sense of familiarity from other navigation services \cite{jakobs_law}.
+    \item Markers are placed on buildings with their respective abbreviations, the main communication symbol for buildings on TU Berlin's campus. A detailed information page is opened when clicked. They furthermore provide a sense of familiarity from other navigation services \cite{jakobs_law}.
     \item Information cards are displayed for every entity on the campus. They present the most important data of a landmark and, when in focus, move the map to the selected place and highlight it. The cards are positioned prominently on the button, to strengthen the interactivity \cite{fitts_law}.
     \item A button that toggles between 3d and 2d map perspective.
     \item A button that detects the GPS position of the user and moves the map to it.
@@ -236,7 +238,7 @@ Based on the previously defined requirements, wireframes outlining the basic des
     \item A doubled search bar, inspired by common navigation apps \cite{jakobs_law} for start and destination input.
     \item A special marker, which represents the current GPS position of the user.
     \item An overview of the calculated route, which pops up after inputting the start and the destination. It presents the most important information for the route as well as an opportunity to start the navigation. Placed on the bottom for easier access \cite{fitts_law}.
-    \item Tags with the most important key facts on the detail pages for certain entities. The detail pages as well as the tags are all designed in a similar way to provide the user a structured, well-organized experience.
+    \item Tags with the most important key facts on the detail pages for certain entities. The detail pages as well as the tags are all designed in a similar way to provide the user a structured, familiar and well-organized experience.
     \item A small pager displaying the courses, that currently take place, on the detail page for a building. They are linked to the respective course detail pages.
     \item A primary action button, prominently placed to guide the user to the navigation functionality of the app. When clicked, the app switches into navigation mode with the current building selected as the destination.
     \item A list of rooms, that can be found inside of the selected building. All cards are linked to the respective room detail pages.
@@ -257,15 +259,17 @@ Concepts to which particular attention is paid in UI design are choice of color,
 	\caption{Styleguide with colors, typography and iconography}
 \end{figure}
 
-\begin{itemize}
-    \item DM Sans \footnote{https://fonts.google.com/specimen/DM+Sans?query=DM+Sans} is chosen as the main font for the app, it is usually written in real black (HEX \#000000) and is used in its regular, medium and bold variations throughout the app. It occurs in font sizes 12px, 16px and 32px.
-    \item The open-source Remix-Icon \footnote{https://remixicon.com} icon set with its respective Flutter package. The icons are used in their not-filled versions and set a basis for a slightly rounded design language for the entire app. Icons are consistently 20px * 20px sized and colored in HEX \#000000 black.
-    \item The main color of the app is the green tone HEX \#47C083, which is supported by real black \#000000 for icons and text and real white \#FFFFFF for backgrounds and areas. Additionally, several colors representing the individual campus entities are selected: HEX \#BCC4FF (blue) for buildings, HEX \#FFBBF5 (pink) for courses, \#FAF268 (yellow) for canteens as well as HEX \#E8D4C7 (beige) for events. Furthermore, to color bigger areas inside of the white layout, two grey tones are introduced: HEX \#F1F1F1 (light grey) and HEX \#BBBBBB (dark grey) are used e.g., in a search bar, where light grey colors the element and dark grey the overlaying hint text.
-    \item Animations are all 250ms long and consist of two different curves: While all map-related camera animations in Unity use a linear curve to present animation progress (camera movement over the map), the animations in the remaining user interface are based on Flutter's "Ease" curve \footnote{https://api.flutter.dev/flutter/animation/Curves/ease-constant.html}, which consists of a cubic curve mapping from [0, 1] to [0, 1] parametrized by two control points (0.25, 0.1) and (0.25, 1.0). By mimicking physical movement (which is often based on constant acceleration, e.g., gravity), the latter animation curve provides a sense of naturalness to the user while the first linear animation style makes it easier to follow the camera across the map.
-    \item Usage of media: Images of TU Berlin's buildings are presented on the respective pages to provide the user with another possibility for visual reference while browsing through the app.
-\end{itemize}
+\textbf{Font:} DM Sans \footnote{https://fonts.google.com/specimen/DM+Sans?query=DM+Sans} is chosen as the main font for the app. It is usually displayed in real black (HEX \#000000) and used in its regular, medium and bold variations throughout the app. It occurs in font sizes 12px, 16px and 32px.
 
-The following figure provides an overview of the most important screens of the final user interface design of the app.
+\textbf{Icons:} The open-source Remix-Icon \footnote{https://remixicon.com} icon set with its respective Flutter package is chosen for iconography. The icons are used in their not-filled versions and set a basis for a slightly rounded design language. The icons are consistently 20px * 20px sized and colored in HEX \#000000 black.
+
+\textbf{Colors:} The main color of the app is the green tone HEX \#47C083, which is supported by real black \#000000 for icons and text and real white \#FFFFFF for backgrounds and areas. Additionally, several colors representing the individual campus entities are selected: HEX \#BCC4FF (blue) for buildings, HEX \#FFBBF5 (pink) for courses, HEX \#FAF268 (yellow) for canteens as well as HEX \#E8D4C7 (beige) for events. Furthermore, to color bigger areas inside the white layout, two grey tones are introduced: HEX \#F1F1F1 (light grey) and HEX \#BBBBBB (dark grey) can be used e.g., in a search bar, where light grey colors the actual element and dark grey the overlaying hint text.
+
+\textbf{Animations:} Animations are all 250ms long and consist of two different curves: While all map-related camera animations in Unity use a linear curve to present animation progress (camera movement over the map), the animations in the remaining user interface are based on Flutter's "Ease" curve \footnote{https://api.flutter.dev/flutter/animation/Curves/ease-constant.html}. The latter one consists of a cubic curve mapping from time $t \in [0, 1]$ to progress $x \in [0, 1]$ parametrized by two control points at $(0.25, 0.1)$ and $(1.0, 1.0)$. By mimicking physical movement (which is often based on quadratic equations), the "Ease" animation curve provides a sense of naturalness to the user while the first linear animation style makes it easier to follow the camera across the map.
+
+\textbf{Usage of media:} Images of TU Berlin's buildings are presented on the respective pages to provide the user with another possibility for visual reference during app usage.
+
+After defining the most influential aspects of the corporate design, the Styleguide is applied to the previously elaborated wireframes. The following figure provides a brief overview of the most important screens from the final user interface design of the app.
 
 \begin{figure}[H]
 	\centering

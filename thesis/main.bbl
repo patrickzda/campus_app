@@ -219,18 +219,10 @@ J.~Yablonski, \emph{Laws of UX: Using Psychology to Design Better Products \&
   \url{https://lawsofux.com/aesthetic-usability-effect}
 \BIBentrySTDinterwordspacing
 
-\bibitem{campus_plan}
-\BIBentryALTinterwordspacing
-``{Campusplan: Standorte der Technischen
-  Universit{\ifmmode\ddot{a}\else\"{a}\fi}t Berlin},'' Jan. 2024, [Online;
-  accessed 11. Jan. 2024]. [Online]. Available:
-  \url{https://www.tu.berlin/studieren/uni-leben/campusplan}
-\BIBentrySTDinterwordspacing
-
 \bibitem{teslers_law}
 \BIBentryALTinterwordspacing
-J.~Yablonski, ``{Home {$\vert$} Laws of UX},'' Jan. 2024, [Online; accessed 13.
-  Jan. 2024]. [Online]. Available: \url{https://lawsofux.com/teslers-law}
+------, ``{Home {$\vert$} Laws of UX},'' Jan. 2024, [Online; accessed 13. Jan.
+  2024]. [Online]. Available: \url{https://lawsofux.com/teslers-law}
 \BIBentrySTDinterwordspacing
 
 \bibitem{law_of_proximity}
@@ -289,6 +281,14 @@ J.~Yablonski, ``{Home {$\vert$} Laws of UX},'' Jan. 2024, [Online; accessed 13.
 \bibitem{triangulation_by_ear_clipping}
 M.~Held, ``Efficient and reliable triangulation of polygons,'' pp. 633--643,
   1998.
+
+\bibitem{campus_plan}
+\BIBentryALTinterwordspacing
+``{Campusplan: Standorte der Technischen
+  Universit{\ifmmode\ddot{a}\else\"{a}\fi}t Berlin},'' Jan. 2024, [Online;
+  accessed 11. Jan. 2024]. [Online]. Available:
+  \url{https://www.tu.berlin/studieren/uni-leben/campusplan}
+\BIBentrySTDinterwordspacing
 
 \bibitem{average_walking_speed}
 \BIBentryALTinterwordspacing
