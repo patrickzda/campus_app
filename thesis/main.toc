@@ -4,61 +4,61 @@
 \contentsline {section}{\numberline {1.1}Context and background}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Motivation}{1}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Proposed solution}{2}{section.1.3}%
-\contentsline {chapter}{\numberline {2}Related Work}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}GPS}{5}{section.2.1}%
-\contentsline {section}{\numberline {2.2}OSM mapping service}{5}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Techniques used in navigation systems for mobile devices}{6}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Routing}{6}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Location detection}{7}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Estimated time of arrival (ETA)}{8}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Visual design}{8}{subsection.2.3.4}%
-\contentsline {section}{\numberline {2.4}Location-based services}{8}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Geofencing}{9}{subsection.2.4.1}%
-\contentsline {chapter}{\numberline {3}Concept and Design}{11}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Key features and technologies}{11}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Digital map of campus Charlottenburg}{11}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Navigation across the campus}{12}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Information layer}{14}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Offline-first design}{16}{subsection.3.1.4}%
-\contentsline {section}{\numberline {3.2}App development framework}{16}{section.3.2}%
-\contentsline {section}{\numberline {3.3}User experience design}{17}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Search versus exploration}{17}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Designing a user-friendly campus map}{19}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Designing a good user experience for navigation}{20}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Chunking of information within the app}{22}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Wireframes}{24}{subsection.3.3.5}%
-\contentsline {section}{\numberline {3.4}User interface design}{26}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Implementation}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Collection of geodata and POI}{29}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Overview of needed geodata}{29}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Collection data from OSM via Overpass Turbo API}{30}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Correction of OSM data for map generation in QGIS}{30}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}Generation of digital campus map}{32}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Data import and conversion in Unity}{32}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Mesh generation for streets, green areas, water and 3d buildings}{33}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Camera setup}{35}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}Implementing common interaction gestures}{36}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Map design}{37}{subsection.4.2.5}%
-\contentsline {section}{\numberline {4.3}Navigation system development}{39}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Representation of geodata for navigation}{39}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Manual generation of TU Berlin's street network}{39}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Defining weights and calculating ETA}{40}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Routing across the campus}{41}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Embedding the current user location via GPS}{41}{subsection.4.3.5}%
-\contentsline {section}{\numberline {4.4}Interactive information layer development}{42}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Underlying data model}{42}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Collection of campus relevant information from the web}{43}{subsection.4.4.2}%
-\contentsline {chapter}{\numberline {5}Evaluation}{47}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Campus map verfication}{47}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Comparison of map resolution}{47}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Comparison of geocoding capabilities for campus-specific names and identifiers}{49}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Navigation system verification}{50}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Conclusion}{53}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Campus app and its impact on introductory problems}{53}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Future work}{54}{section.6.2}%
-\contentsline {chapter}{\nonumberline List of Tables}{57}{chapter*.34}%
-\contentsline {chapter}{\nonumberline List of Figures}{59}{chapter*.35}%
-\contentsline {chapter}{\nonumberline Bibliography}{61}{chapter*.36}%
-\contentsline {chapter}{Appendices}{65}{section*.37}%
-\contentsline {chapter}{\nonumberline Appendix 1}{67}{chapter*.38}%
+\contentsline {chapter}{\numberline {2}Related Work}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}GPS}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}OSM mapping service}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Techniques used in navigation systems for mobile devices}{4}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Routing}{4}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Location detection}{5}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Estimated time of arrival (ETA)}{6}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Visual design}{6}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Location-based services}{6}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Geofencing}{7}{subsection.2.4.1}%
+\contentsline {chapter}{\numberline {3}Concept and Design}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Key features and technologies}{9}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Digital map of campus Charlottenburg}{9}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Navigation across the campus}{10}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Information layer}{12}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Offline-first design}{14}{subsection.3.1.4}%
+\contentsline {section}{\numberline {3.2}App development framework}{14}{section.3.2}%
+\contentsline {section}{\numberline {3.3}User experience design}{15}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Search versus exploration}{15}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Designing a user-friendly campus map}{17}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Designing a good user experience for navigation}{18}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Chunking of information within the app}{20}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Wireframes}{22}{subsection.3.3.5}%
+\contentsline {section}{\numberline {3.4}User interface design}{24}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Implementation}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Collection of geodata and POI}{27}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Overview of needed geodata}{27}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Collection data from OSM via Overpass Turbo API}{28}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Correction of OSM data for map generation in QGIS}{28}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Generation of digital campus map}{30}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Data import and conversion in Unity}{30}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Mesh generation for streets, green areas, water and 3d buildings}{31}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Camera setup}{33}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Implementing common interaction gestures}{34}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Map design}{35}{subsection.4.2.5}%
+\contentsline {section}{\numberline {4.3}Navigation system development}{37}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Representation of geodata for navigation}{37}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Manual generation of TU Berlin's street network}{37}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Defining weights and calculating ETA}{38}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Routing across the campus}{39}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Embedding the current user location via GPS}{39}{subsection.4.3.5}%
+\contentsline {section}{\numberline {4.4}Interactive information layer development}{40}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Underlying data model}{40}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Collection of campus relevant information from the web}{41}{subsection.4.4.2}%
+\contentsline {chapter}{\numberline {5}Evaluation}{45}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Campus map verfication}{45}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Comparison of map resolution}{45}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Comparison of geocoding capabilities for campus-specific names and identifiers}{47}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Navigation system verification}{48}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Conclusion}{51}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Campus app and its impact on introductory problems}{51}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Future work}{52}{section.6.2}%
+\contentsline {chapter}{\nonumberline List of Tables}{55}{chapter*.34}%
+\contentsline {chapter}{\nonumberline List of Figures}{57}{chapter*.35}%
+\contentsline {chapter}{\nonumberline Bibliography}{59}{chapter*.36}%
+\contentsline {chapter}{Appendices}{63}{section*.37}%
+\contentsline {chapter}{\nonumberline Appendix 1}{65}{chapter*.38}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
