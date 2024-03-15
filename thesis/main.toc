@@ -1,4 +1,5 @@
-\babel@toc {english}{}
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Context and background}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Motivation}{1}{section.1.2}%
@@ -38,7 +39,7 @@
 \contentsline {subsection}{\numberline {4.2.3}Camera setup}{33}{subsection.4.2.3}%
 \contentsline {subsection}{\numberline {4.2.4}Implementing common interaction gestures}{34}{subsection.4.2.4}%
 \contentsline {subsection}{\numberline {4.2.5}Map design}{35}{subsection.4.2.5}%
-\contentsline {section}{\numberline {4.3}Navigation system development}{36}{section.4.3}%
+\contentsline {section}{\numberline {4.3}Navigation system development}{37}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Representation of geodata for navigation}{37}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Manual generation of TU Berlin's street network}{37}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}Defining weights and calculating ETA}{38}{subsection.4.3.3}%
@@ -46,7 +47,7 @@
 \contentsline {subsection}{\numberline {4.3.5}Embedding the current user location via GPS}{39}{subsection.4.3.5}%
 \contentsline {section}{\numberline {4.4}Interactive information layer development}{40}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Underlying data model}{40}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Collection of campus relevant information from the web}{41}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.2}Collection of campus relevant information from the web}{42}{subsection.4.4.2}%
 \contentsline {chapter}{\numberline {5}Evaluation}{45}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Campus map verfication}{45}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Comparison of map resolution}{45}{subsection.5.1.1}%
@@ -60,4 +61,5 @@
 \contentsline {chapter}{\nonumberline Bibliography}{59}{chapter*.36}%
 \contentsline {chapter}{Appendices}{63}{section*.37}%
 \contentsline {chapter}{\nonumberline Appendix 1}{65}{chapter*.38}%
+\contentsline {chapter}{\nonumberline List of abbreviations}{67}{chapter*.40}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

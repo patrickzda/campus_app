@@ -1,6 +1,6 @@
 \chapter{Evaluation}
 \label{cha:evaluation}
-This section provides an overview of a set of metrics established to compare the developed campus app to already established routing solutions for mobile devices (Google Maps and Apple Maps), highlight the benefits of the campus app over the manual campus map provided by TU Berlin and measure the improvement of usability when compared to TU Berlin's online web resources. Furthermore, all steps regarding implementation, data acquisition and measurement as well as the resulting consequences for the respective metric are presented.
+This section provides an overview of a set of metrics used to compare the developed campus app to the already-established navigation solutions for mobile devices (Google Maps and Apple Maps). Furthermore, all steps regarding implementation, data acquisition and measurement as well as the resulting consequences for the respective metric are presented.
 
 \section{Campus map verfication} \label{sec:campus_map_verification}
 The digital campus map of TU Berlin forms the app's most important element. It is therefore essential to evaluate and compare its implementation to other digital maps. This section presents an overview of different metrics that can be evaluated quantitatively for map verification and compares the actual measurements to the geolocation services of Android and IOS.
@@ -29,7 +29,7 @@ It can be assumed that the distances of the candidate points returned by a geoco
 
 \vspace{2mm}
 
-For practical implementation, the campus is split into \hyperref[table:campus_regions]{3 bounding boxes}. A total of 250 random geographic points are generated for each bounding box and the average closest point distances are calculated for each campus region and each geocoding provider API (campus app, Android and IOS). The following figure presents the results:
+For practical implementation, the campus is split into \hyperref[table:campus_regions]{3 bounding boxes}. A total of 250 random geographic points are generated for each bounding box and the average closest point distances are calculated for every campus region and each geocoding provider API (campus app, Android and IOS). The following figure presents the results:
 
 \begin{figure}[H]
 	\centering
@@ -37,7 +37,7 @@ For practical implementation, the campus is split into \hyperref[table:campus_re
 	\caption{Average distance between campus point and suggested point}
 \end{figure}
 
-The figure shows that the campus app outperforms the geocoding capabilities of the Android and IOS operating system geocoding services on randomly sampled point datasets for every region of campus Charlottenburg by factors 1 to 3 for Google Maps and 2 to 10 for Apple Maps.
+The figure shows that the campus app outperforms the geocoding capabilities of the Android and IOS geocoding services on randomly sampled point datasets for every region of campus Charlottenburg by factors 1 to 3 for Google Maps and 2 to 10 for Apple Maps.
 
 The values for the entire campus are 18,08 m for the campus app, 37,21 m (approx. factor 2) for Google Maps and 105,08 m (approx. factor 5) for Apple Maps. When extrapolated for the entirety of all geographical points on the campus, it can be concluded that the overall resolution of campus Charlottenburg differs by presented factors between those geocoding APIs.
 
@@ -51,7 +51,7 @@ To provide a more differentiated evaluation of the campus coverage, a set of hea
 	\caption{Heatmaps for campus map coverage by average point distance}
 \end{figure}
 
-One important factor that can be drawn from both data representations is the fact that the north side of campus Charlottenburg has a better geodata coverage than the south side and the middle section throughout all different providers. The heatmaps also present the fact that the campus app has the best average campus resolution and that its resolution weaknesses can (since no important entity or pathway is located in these areas) be seen as negligible for the proper functionality of the system.
+One important factor that can be seen in both data representations is the fact that the north side of campus Charlottenburg has a better geodata coverage than both other sections throughout all different providers. The heatmaps also present the fact that the campus app has the best average campus resolution and that its resolution weaknesses can (since no important entity or pathway is located in these areas) be seen as negligible for the proper functionality of the system.
 
 Generally can be said that the Android geolocation services are more precise than the IOS counterparts in the scope of campus Charlottenburg. Both systems nevertheless struggle when points are queried for the south side of campus Charlottenburg as well as for Straße des 17. Juli. The latter weakness mostly arises from the fact that every geolocation in the campus-splitting section of Straße des 17. Juli gets mapped onto the TU main building.
 

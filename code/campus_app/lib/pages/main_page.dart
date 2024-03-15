@@ -1,5 +1,6 @@
 import 'package:campus_app/constants/constants.dart';
 import 'package:campus_app/constants/data/course_data.dart';
+import 'package:campus_app/constants/network_constants.dart';
 import 'package:campus_app/data/building.dart';
 import 'package:campus_app/data/coordinates.dart';
 import 'package:campus_app/data/navigation_job.dart';
@@ -23,6 +24,7 @@ import 'package:location/location.dart';
 import 'package:remix_flutter/remix_flutter.dart';
 import '../constants/sizes.dart';
 import '../data/campus_entity.dart';
+import '../data/event.dart';
 import '../services/unity_communication_service.dart';
 import '../utils/AppUtils.dart';
 
@@ -39,11 +41,13 @@ class _MainPageState extends State<MainPage> {
   PageController pageController = PageController(viewportFraction: 0.8);
   int selectedCardIndex = 0;
   List<CampusEntity> entities = [];
+  List<Event> events = [];
   bool expandedCards = true;
 
   @override
   void initState() {
     resumeUnity();    //???
+    NetworkConstants.initialize();
     if(widget.navigationJob != null){
       navigationService.initNavigation(widget.navigationJob!.startNode, widget.navigationJob!.destinationNode);
     }else{
@@ -57,6 +61,13 @@ class _MainPageState extends State<MainPage> {
         entities.add(navigationService.courses[i]);
       }
     }
+
+    Event.loadEvents().then((List<Event> results){
+      setState(() {
+        events = results;
+        entities.addAll(events);
+      });
+    });
 
     super.initState();
   }
@@ -123,7 +134,7 @@ class _MainPageState extends State<MainPage> {
                             });
 
                             if(entities.isNotEmpty && expandedCards){
-                              if(!(entities[0] is Building && !(entities[0] as Building).isOnMainCampus)){
+                              if(!(entities[0] is Building && !(entities[0] as Building).isOnMainCampus) && entities[selectedCardIndex].getPosition().latitude != 0 && entities[selectedCardIndex].getPosition().longitude != 0){
                                 UnityCommunicationService.moveCameraTo(entities[0].getPosition());
                                 UnityCommunicationService.zoomCameraTo(4);
                               }else{
@@ -165,6 +176,8 @@ class _MainPageState extends State<MainPage> {
                               entities.add(navigationService.courses[i]);
                             }
                           }
+                        }else if(index == 4){
+                          entities.addAll(events);
                         }
 
                         selectedCardIndex = 0;
@@ -174,7 +187,7 @@ class _MainPageState extends State<MainPage> {
                         }
 
                         if(entities.isNotEmpty && expandedCards){
-                          if(!(entities[0] is Building && !(entities[0] as Building).isOnMainCampus)){
+                          if(!(entities[0] is Building && !(entities[0] as Building).isOnMainCampus) && entities[selectedCardIndex].getPosition().latitude != 0 && entities[selectedCardIndex].getPosition().longitude != 0){
                             UnityCommunicationService.moveCameraTo(entities[0].getPosition());
                             UnityCommunicationService.zoomCameraTo(4);
                           }else{
@@ -285,7 +298,7 @@ class _MainPageState extends State<MainPage> {
                   });
 
                   if(entities.isNotEmpty && expandedCards){
-                    if(!(entities[0] is Building && !(entities[0] as Building).isOnMainCampus)){
+                    if(!(entities[0] is Building && !(entities[0] as Building).isOnMainCampus) && entities[selectedCardIndex].getPosition().latitude != 0 && entities[selectedCardIndex].getPosition().longitude != 0){
                       UnityCommunicationService.moveCameraTo(entities[0].getPosition());
                       UnityCommunicationService.zoomCameraTo(4);
                     }else{

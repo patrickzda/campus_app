@@ -1,14 +1,19 @@
 import 'package:campus_app/data/campus_entity.dart';
+import 'package:campus_app/data/canteen.dart';
 import 'package:campus_app/pages/detail_pages/building_page.dart';
+import 'package:campus_app/pages/detail_pages/canteen_page.dart';
 import 'package:campus_app/pages/detail_pages/course_page.dart';
+import 'package:campus_app/pages/detail_pages/event_page.dart';
 import 'package:campus_app/widgets/text_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_scale_tap/flutter_scale_tap.dart';
 import 'package:remix_flutter/remix_flutter.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import '../constants/Constants.dart';
 import '../constants/Sizes.dart';
 import '../data/building.dart';
 import '../data/course.dart';
+import '../data/event.dart';
 import '../pages/search_page.dart';
 import '../utils/AppUtils.dart';
 
@@ -28,6 +33,10 @@ class EntityCardWidget extends StatelessWidget {
           AppUtils.switchPage(context, BuildingPage(building: entity as Building));
         }else if(entity is Course){
           AppUtils.switchPage(context, CoursePage(course: entity as Course));
+        }else if(entity is Canteen){
+          AppUtils.switchPage(context, CanteenPage(canteen: entity as Canteen));
+        }else if(entity is Event){
+          AppUtils.switchPage(context, EventPage(event: entity as Event));
         }
       },
       child: AnimatedContainer(
@@ -57,7 +66,7 @@ class EntityCardWidget extends StatelessWidget {
                       charLimit: 8,
                     ),
                     DMSansMediumText(
-                      text: entity is Course ? "" : entity.getDescription().contains("OPEN") ? "Open" : "Closed",
+                      text: entity is Course ? "" : entity is Event ? "${(entity as Event).day}. ${(entity as Event).month}" : entity.getDescription().contains("OPEN") ? "Open" : "Closed",
                       size: Sizes.textSizeSmall,
                       color: green,
                     ),
@@ -69,7 +78,7 @@ class EntityCardWidget extends StatelessWidget {
                     text: entity.getTitle(),
                     size: Sizes.textSizeRegular,
                     color: black,
-                    charLimit: 55,
+                    charLimit: entity is Event ? 45 : 55,
                   ),
                 )
               ],
@@ -79,25 +88,31 @@ class EntityCardWidget extends StatelessWidget {
               scaleCurve: animationCurve,
               scaleMinValue: !(entity is Building && !(entity as Building).isOnMainCampus) ? 0.75 : 1,
               onPressed: (){
-                if(!(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0){
+                if(entity is Event){
+                  try{
+                    launchUrlString((entity as Event).url);
+                  }catch(e){
+                    print(e);
+                  }
+                }else if(!(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0){
                   AppUtils.switchPage(context, SearchPage(destinationEntity: entity));
                 }
               },
               child: Container(
                 decoration: BoxDecoration(
-                  color: !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? green : lightGrey,
+                  color: !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? green : (entity is Building || entity is Canteen || entity is Course) ? lightGrey : green,
                   borderRadius: BorderRadius.circular(Sizes.borderRadius)
                 ),
                 padding: EdgeInsets.all(Sizes.paddingSmall),
                 child: Row(
-                  mainAxisAlignment: !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? MainAxisAlignment.spaceBetween : MainAxisAlignment.center,
+                  mainAxisAlignment: !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 || entity is Event ? MainAxisAlignment.spaceBetween : MainAxisAlignment.center,
                   children: [
                     DMSansMediumText(
-                      text: !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? "Start navigation" : "Building not on campus",
+                      text: !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? "Start navigation" : (entity is Building || entity is Canteen || entity is Course) ? "Building not on campus" : "Open website",
                       color: black,
                       size: Sizes.textSizeSmall,
                     ),
-                    !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 ? Icon(
+                    !(entity is Building && !(entity as Building).isOnMainCampus) && entity.getPosition().latitude != 0 && entity.getPosition().longitude != 0 || entity is Event ? Icon(
                       RemixIcon.arrow_right_line,
                       size: Sizes.iconSize,
                       color: black,

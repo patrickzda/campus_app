@@ -2,6 +2,7 @@ import 'package:campus_app/constants/Constants.dart';
 import 'package:campus_app/constants/data/course_data.dart';
 import 'package:campus_app/data/building.dart';
 import 'package:campus_app/data/course_event.dart';
+import 'package:campus_app/pages/detail_pages/room_page.dart';
 import 'package:campus_app/pages/main_page.dart';
 import 'package:campus_app/utils/AppUtils.dart';
 import 'package:campus_app/widgets/data_chip_widget.dart';
@@ -14,6 +15,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../constants/Sizes.dart';
 import '../../data/course.dart';
 import '../../data/room.dart';
+import 'course_page.dart';
 
 class BuildingPage extends StatelessWidget {
   final Building building;
@@ -50,41 +52,42 @@ class BuildingPage extends StatelessWidget {
           padding: EdgeInsets.all(Sizes.paddingRegular),
           child: Column(
             children: [
+              GestureDetector(
+                onTap: (){
+                  AppUtils.switchPage(context, MainPage());
+                },
+                child: Container(
+                  padding: EdgeInsets.only(bottom: Sizes.paddingRegular),
+                  decoration: const BoxDecoration(
+                    color: white
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: Sizes.paddingSmall),
+                        child: Icon(
+                          RemixIcon.arrow_left_line,
+                          color: black,
+                          size: Sizes.iconSize,
+                        ),
+                      ),
+                      DMSansMediumText(
+                        text: "Building",
+                        size: Sizes.textSizePageTitle,
+                        color: black,
+                      )
+                    ],
+                  ),
+                ),
+              ),
               Expanded(
                 child: RemoveGlowBehavior(
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        GestureDetector(
-                          onTap: (){
-                            AppUtils.switchPage(context, MainPage());
-                          },
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              color: white
-                            ),
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(right: Sizes.paddingSmall),
-                                  child: Icon(
-                                    RemixIcon.arrow_left_line,
-                                    color: black,
-                                    size: Sizes.iconSize,
-                                  ),
-                                ),
-                                DMSansMediumText(
-                                  text: "Building",
-                                  size: Sizes.textSizePageTitle,
-                                  color: black,
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
                         Padding(
-                          padding: EdgeInsets.symmetric(vertical: Sizes.paddingRegular),
+                          padding: EdgeInsets.only(bottom: Sizes.paddingRegular),
                           child: DMSansBoldText(
                             text: building.names[0],
                             color: black,
@@ -117,7 +120,7 @@ class BuildingPage extends StatelessWidget {
                           ),
                         ) : const SizedBox(),
                         currentCourses.isNotEmpty ? SizedBox(
-                          height: Sizes.heightPercent * 10,
+                          height: Sizes.heightPercent * 15,
                           child: RemoveGlowBehavior(
                             child: PageView(
                               controller: pageController,
@@ -126,29 +129,37 @@ class BuildingPage extends StatelessWidget {
                                 CourseEvent currentEvent = currentCourses[index].getCurrentEvent()!;
                                 String time = "${AppUtils.formatTime(currentEvent.start.hour, currentEvent.start.minute)} - ${AppUtils.formatTime(currentEvent.end.hour, currentEvent.end.minute)}";
 
-                                return Container(
-                                  margin: EdgeInsets.symmetric(horizontal: Sizes.paddingSmall / 2),
-                                  padding: EdgeInsets.all(Sizes.paddingRegular),
-                                  height: Sizes.heightPercent * 10,
-                                  decoration: BoxDecoration(
-                                    color: lightGrey,
-                                    borderRadius: BorderRadius.circular(Sizes.borderRadius)
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      DMSansBoldText(
-                                        text: currentCourses[index].name,
-                                        color: black,
-                                        size: Sizes.textSizeSmall,
-                                      ),
-                                      DMSansMediumText(
-                                        text: time,
-                                        color: black,
-                                        size: Sizes.textSizeSmall,
-                                      )
-                                    ],
+                                return ScaleTap(
+                                  duration: animationDuration,
+                                  scaleCurve: animationCurve,
+                                  scaleMinValue: 0.75,
+                                  onPressed: (){
+                                    AppUtils.switchPage(context, CoursePage(course: currentCourses[index]));
+                                  },
+                                  child: Container(
+                                    margin: EdgeInsets.symmetric(horizontal: Sizes.paddingSmall / 2),
+                                    padding: EdgeInsets.all(Sizes.paddingRegular),
+                                    height: Sizes.heightPercent * 15,
+                                    decoration: BoxDecoration(
+                                      color: lightGrey,
+                                      borderRadius: BorderRadius.circular(Sizes.borderRadius)
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        DMSansBoldText(
+                                          text: currentCourses[index].name,
+                                          color: black,
+                                          size: Sizes.textSizeSmall,
+                                        ),
+                                        DMSansMediumText(
+                                          text: time,
+                                          color: black,
+                                          size: Sizes.textSizeSmall,
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 );
                               }),
@@ -172,37 +183,55 @@ class BuildingPage extends StatelessWidget {
                             ),
                           ),
                         ) : const SizedBox(),
-                        Padding(
+                        building.rooms.isNotEmpty ? Padding(
                           padding: EdgeInsets.only(top: Sizes.paddingRegular, bottom: Sizes.paddingSmall),
                           child: DMSansBoldText(
                             text: "Rooms",
                             size: Sizes.textSizePageTitle,
                             color: black,
                           ),
-                        ),
-                        Wrap(
+                        ) : const SizedBox(),
+                        building.rooms.isNotEmpty ? Wrap(
                           spacing: Sizes.paddingRegular,
                           runSpacing: Sizes.paddingRegular,
                           children: List.generate(building.rooms.length, (int index){
-                            return Container(
-                              width: (Sizes.width - Sizes.paddingRegular * 5) / 4,
-                              height: (Sizes.width - Sizes.paddingRegular * 5) / 4,
-                              padding: EdgeInsets.all(Sizes.paddingSmall * 0.5),
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                color: filledRooms.contains(building.rooms[index]) ? lightGrey : green,
-                                borderRadius: BorderRadius.circular(Sizes.borderRadius)
-                              ),
-                              child: DMSansBoldText(
-                                text: building.rooms[index].name,
-                                color: black,
-                                size: Sizes.textSizeSmall * 0.8,
-                                charLimit: 9,
-                                textAlign: TextAlign.center,
+                            return ScaleTap(
+                              duration: animationDuration,
+                              scaleCurve: animationCurve,
+                              scaleMinValue: 0.75,
+                              onPressed: (){
+                                AppUtils.switchPage(context, RoomPage(room: building.rooms[index]));
+                              },
+                              child: Container(
+                                width: (Sizes.width - Sizes.paddingRegular * 5) / 4,
+                                height: (Sizes.width - Sizes.paddingRegular * 5) / 4,
+                                padding: EdgeInsets.all(Sizes.paddingSmall * 0.5),
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: filledRooms.contains(building.rooms[index]) ? lightGrey : green,
+                                  borderRadius: BorderRadius.circular(Sizes.borderRadius)
+                                ),
+                                child: DMSansBoldText(
+                                  text: building.rooms[index].name,
+                                  color: black,
+                                  size: Sizes.textSizeSmall * 0.8,
+                                  charLimit: 9,
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                             );
                           }),
-                        )
+                        ) : Container(
+                          width: double.infinity,
+                          height: Sizes.heightPercent * 30,
+                          alignment: Alignment.center,
+                          child: DMSansRegularText(
+                            text: "No rooms available",
+                            textAlign: TextAlign.center,
+                            color: black,
+                            size: Sizes.textSizeSmall,
+                          ),
+                        ),
                       ],
                     ),
                   ),

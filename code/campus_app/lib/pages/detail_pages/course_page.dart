@@ -38,42 +38,44 @@ class CoursePage extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(Sizes.paddingRegular),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              GestureDetector(
+                onTap: (){
+                  AppUtils.switchPage(context, MainPage());
+                },
+                child: Container(
+                  padding: EdgeInsets.only(bottom: Sizes.paddingRegular),
+                  decoration: const BoxDecoration(
+                    color: white
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: Sizes.paddingSmall),
+                        child: Icon(
+                          RemixIcon.arrow_left_line,
+                          color: black,
+                          size: Sizes.iconSize,
+                        ),
+                      ),
+                      DMSansMediumText(
+                        text: "Course",
+                        size: Sizes.textSizePageTitle,
+                        color: black,
+                      )
+                    ],
+                  ),
+                ),
+              ),
               Expanded(
                 child: RemoveGlowBehavior(
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        GestureDetector(
-                          onTap: (){
-                            AppUtils.switchPage(context, MainPage());
-                          },
-                          child: Container(
-                            decoration: const BoxDecoration(
-                                color: white
-                            ),
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(right: Sizes.paddingSmall),
-                                  child: Icon(
-                                    RemixIcon.arrow_left_line,
-                                    color: black,
-                                    size: Sizes.iconSize,
-                                  ),
-                                ),
-                                DMSansMediumText(
-                                  text: "Course",
-                                  size: Sizes.textSizePageTitle,
-                                  color: black,
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
                         Padding(
-                          padding: EdgeInsets.symmetric(vertical: Sizes.paddingRegular),
+                          padding: EdgeInsets.only(bottom: Sizes.paddingRegular),
                           child: DMSansBoldText(
                             text: course.fullName,
                             color: black,

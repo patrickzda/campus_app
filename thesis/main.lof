@@ -1,4 +1,5 @@
-\babel@toc {english}{}
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -14,7 +15,7 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Mesh generation process for a cube\relax }}{31}{figure.caption.18}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Mesh generation process for a street\relax }}{32}{figure.caption.19}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Mesh generation process for a building\relax }}{33}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Camera setups for "3d" and top-down "2d" view\relax }}{34}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Camera setups for "3D" and top-down "2D" view\relax }}{34}{figure.caption.21}%
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Overview of the generated campus map\relax }}{36}{figure.caption.22}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Manually annotated street network of campus Charlottenburg\relax }}{38}{figure.caption.24}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Database schema of the campus app\relax }}{41}{figure.caption.26}%
@@ -24,6 +25,7 @@
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Average distance between campus point and suggested point\relax }}{48}{figure.caption.30}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Average percentual time savings for different route lengths\relax }}{49}{figure.caption.32}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Average percentual distance savings for different route lengths\relax }}{50}{figure.caption.33}%
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

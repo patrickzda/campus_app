@@ -13,6 +13,10 @@ const Color yellow = Color.fromARGB(255, 250, 242, 104);
 const Color pink = Color.fromARGB(255, 255, 187, 245);
 const Color beige = Color.fromARGB(255, 232, 212, 199);
 
+const String domain = "INSERT_APPWRITE_DOMAIN";
+const String projectId = "INSERT_APPWRITE_PROJECT_ID";
+const String databaseId = "INSERT_APPWRITE_DATABASE_ID";
+
 const List<String> tagNames = ["All", "Buildings", "Canteens", "Current courses", "Events"];
 const List<Color> tagColors = [green, blue, yellow, pink, beige];
 const List<IconData> tagIcons = [RemixIcon.function_line, RemixIcon.community_line, RemixIcon.restaurant_line, RemixIcon.presentation_line, RemixIcon.calendar_event_line];
